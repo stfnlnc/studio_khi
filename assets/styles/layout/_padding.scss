@@ -1,0 +1,26 @@
+$pos: ("t": top, "b": bottom, "l": left, "r": right);
+$scale: 5;
+
+.p {
+    @for $i from 0 through 20 {
+        $s: 0;
+        @if $i == 0 { $s: 0 } @else {$s: #{$i * $scale}px}
+        &--#{$i} {
+            padding: #{$s}
+        }
+    }
+}
+
+.p {
+    @each $key, $p in $pos {
+        &#{$key} {
+            @for $i from 0 through 20 {
+                $s: 0;
+                @if $i == 0 { $s: 0 } @else {$s: #{$i * $scale}px}
+                &--#{$i} {
+                    padding-#{$p}: #{$s}
+                }
+            }
+        }
+    }
+}

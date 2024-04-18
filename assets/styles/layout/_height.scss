@@ -1,0 +1,16 @@
+.h-auto {
+    height: auto;
+}
+
+.h-fit-content {
+    height: fit-content;
+}
+
+@for $i from 1 through 10 {
+    $h: $i * 10;
+    .h {
+        &--#{$h} {
+            height: #{$h}#{'%'}
+        }
+    }
+}

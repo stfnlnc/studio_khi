@@ -3,5 +3,17 @@
 {% block title %}Hello MainController!{% endblock %}
 
 {% block body %}
-    <component-react></component-react>
+    <div class="flex col gap--4 mt--4">
+        <button-react data-content="Main button"></button-react>
+        <button-react data-content="Main button" data-color="light"></button-react>
+        <button-react data-content="Main button" data-color="dark"></button-react>
+        <link-react data-icon="1" data-border="1" data-content="Secondary button"></link-react>
+        <div class="p--2 primary-dark--bg">
+            <link-react data-content="Secondary button" data-color="light"></link-react>
+        </div>
+        <menu-item-react data-content="Secondary button"></menu-item-react>
+        <div class="p--2 primary-dark--bg">
+            <menu-item-react data-content="Secondary button" data-color="light"></menu-item-react>
+        </div>
+    </div>
 {% endblock %}

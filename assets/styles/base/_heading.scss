@@ -1,0 +1,24 @@
+:root {
+    --h1: 6.125rem;
+    --h2: 4.6875rem;
+    --h3: 3.5rem;
+    --font-heading: "Overused Grotesk", sans-serif;
+    --weight-heading: 400;
+    --height-heading: 95%;
+    --letter-spacing-heading: 0;
+}
+
+@for $i from 1 through 3 {
+    h#{$i}, .h#{$i} {
+        font-family: var(--font-heading);
+        font-size: var(--h#{$i});
+        font-weight: var(--weight-heading);
+        line-height: var(--height-heading);
+        letter-spacing: var(--letter-spacing-heading);
+        margin: 0;
+    }
+}
+
+h1, .h1 {
+    font-weight: 500;
+}

@@ -1,0 +1,45 @@
+p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.1875rem;
+    line-height: 150%;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+.text {
+    line-height: 140%;
+    letter-spacing: 0;
+    &--s {
+        font-size: 1rem;
+        line-height: 150%;
+        letter-spacing: 0;
+    }
+    &--m {
+        font-size: 1.1875rem;
+        line-height: 150%;
+        letter-spacing: -3%;
+    }
+    &--l {
+        font-size: 1.625rem;
+        line-height: 150%;
+        letter-spacing: -3%;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+.lowercase {
+    text-transform: lowercase;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+.underline {
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+}
+.overline {
+    text-decoration: overline;
+}

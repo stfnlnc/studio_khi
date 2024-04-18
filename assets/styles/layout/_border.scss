@@ -1,0 +1,19 @@
+$pos: ("t": top, "b": bottom, "l": left, "r": right);
+
+.border {
+    border: 1px solid;
+    @each $key, $p in $pos {
+        &--#{$p} {
+            border-#{$p}: 1px solid;
+        }
+    }
+    &--color-dark {
+        border-color: var(--primary-dark);
+    }
+    &--color-light {
+        border-color: var(--primary-light);
+    }
+    &--color-accent {
+        border-color: var(--primary-accent);
+    }
+}

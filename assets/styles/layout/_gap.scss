@@ -1,0 +1,19 @@
+.gap {
+    @for $i from 0 through 20 {
+        $s: 0;
+        @if $i == 0 { $s: 0 } @else {$s: #{$i * 5}px}
+        &--#{$i} {
+            gap: #{$s}
+        }
+    }
+}
+
+.grid-gap {
+    @for $i from 0 through 20 {
+        $s: 0;
+        @if $i == 0 { $s: 0 } @else {$s: #{$i * 5}px}
+        &--#{$i} {
+            grid-gap: #{$s}
+        }
+    }
+}

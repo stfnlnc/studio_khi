@@ -1,0 +1,136 @@
+.form-input, .form-textarea, .form-select {
+    padding: 12px;
+    border: 1px solid var(--primary-dark);
+    color: var(--primary-dark);
+    background-color: var(--primary-light);
+    font-size: 1rem;
+    width: 300px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.form-file {
+    cursor: pointer;
+}
+
+textarea, .tinymce-editor {
+    resize: vertical;
+    width: 100%;
+}
+
+.form-check, .form-toggle {
+    position: relative;
+}
+
+.form-check input, .form-toggle input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-check label, .form-toggle label {
+    display: grid;
+    grid-template-areas: "checkbox label";
+    gap: .7em;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.form-check label, .form-toggle label {
+    grid-template-columns: 1em 1fr;
+}
+
+.form-check label::before, .form-toggle label::before, .form-check label::after, .form-toggle label::after {
+    content: "";
+    grid-area: checkbox;
+    display: block;
+    margin-top: 0.2em;
+}
+
+.form-check label::before {
+    width: 1em;
+    height: 1em;
+    border: 1px solid var(--primary-dark);
+    background-color: var(--primary-light);
+    transition: background-color .3s, border .3s;
+}
+
+.form-check input:checked + label::before {
+    content: "";
+    color: var(--light);
+    background-color: var(--primary-dark);
+    border: 1px solid var(--primary-dark);
+}
+
+.form-check input:checked + label::after {
+    content: "";
+    grid-area: checkbox;
+    display: inline-block;
+    transform: rotate(45deg) translate(0.3em, -0.2em);
+    height: 0.6em;
+    width: 0.3em;
+    border-bottom: var(--primary-light) solid 2px;
+    border-right: var(--primary-light) solid 2px;
+}
+
+.form-toggle label {
+    grid-template-columns: 2em 1fr;
+}
+
+.form-toggle label::before {
+    width: 2em;
+    height: 1em;
+    border: 1px solid var(--primary-dark);
+    border-radius: 1em;
+    background-color: var(--primary-light);
+    transition: background-color .3s, border .3s;
+}
+
+.form-toggle label::after {
+    position: relative;
+    left: 2px;
+    top: 2px;
+    width: calc(1em - 2px);
+    height: calc(1em - 2px);
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondary-grey-stroke);
+    transition: background-color .3s, transform .3s;
+}
+
+.form-toggle input:checked + label::before {
+    content: "";
+    color: var(--light);
+    background-color: var(--primary-dark);
+    border: 1px solid var(--primary-dark);
+}
+
+.form-toggle input:checked + label::after {
+    transform: translateX(1em);
+    background-color: var(--primary-light);
+}
+
+.form-input:focus, .form-textarea:focus, .form-check input:focus + label::before, .form-toggle input:focus + label::before {
+    box-shadow: 0 0 0.1em 0.02em var(--primary-accent);
+    outline: none;
+}
+
+.label {
+    font-size: 14px;
+    margin: 0;
+    padding: 0 5px;
+    text-transform: uppercase;
+}
+
+.errors {
+    font-size: 14px;
+    color: var(--danger);
+    & > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 5px;
+        width: 350px;
+    }
+}

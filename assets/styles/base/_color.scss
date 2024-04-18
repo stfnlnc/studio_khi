@@ -1,0 +1,80 @@
+:root {
+    --primary-dark: #191919;
+    --primary-light: #FFFFFF;
+    --primary-grey: #808182;
+    --secondary-green: #D3E0D3;
+    --secondary-blue: #CDDFE6;
+    --secondary-violet: #DAD6EA;
+    --stroke-light: #E0E0E0;
+    --stroke-dark: #3F3E3E;
+    --info: #d2bfa9;
+    --success: #c5e1ab;
+    --danger: #daacac;
+}
+
+.primary-dark {
+    color: var(--primary-dark);
+    &--bg {
+        background-color: var(--primary-dark);
+    }
+}
+.primary-light {
+    color: var(--primary-light);
+    &--bg {
+        background-color: var(--primary-light);
+    }
+}
+.primary-grey {
+    color: var(--primary-grey);
+    &--bg {
+        background-color: var(--primary-grey);
+    }
+}
+.secondary-green {
+    color: var(--secondary-green);
+    &--bg {
+        background-color: var(--secondary-green);
+    }
+}
+.secondary-blue {
+    color: var(--secondary-blue);
+    &--bg {
+        background-color: var(--secondary-blue);
+    }
+}
+.secondary-dark-violet {
+    color: var(--secondary-dark-violet);
+    &--bg {
+        background-color: var(--secondary-dark-violet);
+    }
+}
+.stroke-light {
+    color: var(--stroke-light);
+    &--bg {
+        background-color: var(--stroke-light);
+    }
+}
+.stroke-dark {
+    color: var(--stroke-dark);
+    &--bg {
+        background-color: var(--stroke-dark);
+    }
+}
+.info {
+    color: var(--info);
+    &--bg {
+        background-color: var(--info);
+    }
+}
+.success {
+    color: var(--success);
+    &--bg {
+        background-color: var(--success);
+    }
+}
+.danger {
+    color: var(--danger);
+    &--bg {
+        background-color: var(--danger);
+    }
+}

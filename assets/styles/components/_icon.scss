@@ -1,0 +1,30 @@
+.icon {
+    height: 0.875rem;
+    fill: var(--primary-light);
+    transition: fill .3s;
+    &--primary-dark {
+        fill: var(--primary-dark);
+    }
+    &--primary-accent {
+        fill: var(--primary-accent);
+    }
+    &--primary-light {
+        fill: var(--primary-light);
+    }
+    &--secondary-light {
+        fill: var(--secondary-light);
+    }
+    &--secondary-dark {
+        fill: var(--secondary-dark);
+    }
+    &--secondary-light-accent {
+        fill: var(--secondary-light-accent);
+    }
+    &--secondary-medium-accent {
+        fill: var(--secondary-medium-accent);
+    }
+    &--secondary-dark-accent {
+        fill: var(--secondary-dark-accent);
+    }
+}
+

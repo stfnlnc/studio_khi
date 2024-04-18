@@ -1,0 +1,16 @@
+.w-auto {
+    width: auto;
+}
+
+.w-fit-content {
+    width: fit-content;
+}
+
+@for $i from 1 through 10 {
+    $w: $i * 10;
+    .w {
+        &--#{$w} {
+            width: #{$w}#{'%'}
+        }
+    }
+}
