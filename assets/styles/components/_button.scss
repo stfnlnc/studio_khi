@@ -1,4 +1,4 @@
-$duration: .3s;
+$duration: var(--hover-duration);
 
 .btn {
     color: var(--primary-light);
@@ -64,7 +64,7 @@ $duration: .3s;
 .link {
     color: var(--primary-dark);
     background-color: unset;
-    text-align: center;
+    text-align: left;
     border-radius: unset;
     border-bottom: 1px solid var(--primary-dark);
 

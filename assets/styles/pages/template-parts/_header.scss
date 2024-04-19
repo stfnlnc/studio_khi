@@ -1,0 +1,22 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--stroke-light);
+    transition: border var(--dropdown-duration) cubic-bezier(.8,.21,.39,.95);
+    &__nav {
+        width: 100%;
+        max-width: var(--max-width);
+        padding: var(--nav-padding-v) var(--main-padding-h);
+        z-index: 5;
+    }
+    &__logo {
+        width: 12.875rem;
+        height: 2.9375rem;
+        fill: var(--primary-dark);
+        transition: fill var(--dropdown-duration) cubic-bezier(.8,.21,.39,.95);
+    }
+}

@@ -16,4 +16,10 @@ $pos: ("t": top, "b": bottom, "l": left, "r": right);
     &-grey {
         border-color: var(--primary-grey);
     }
+    &-stroke-dark {
+        border-color: var(--stroke-dark);
+    }
+    &-stroke-light {
+        border-color: var(--stroke-light);
+    }
 }

@@ -1,3 +1,13 @@
+:root {
+    --main-padding-v: 4.38rem;
+    --main-padding-h: 6.25rem;
+    --nav-padding-v: 3.12rem;
+    --dropdown-padding-v: 7.81em;
+    --max-width: 1440px;
+    --hover-duration: .3s;
+    --dropdown-duration: .8s;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -25,7 +35,6 @@ body {
 
 section {
     width: 100%;
-    max-width: 1440px;
 }
 
 a {

@@ -1,8 +1,5 @@
-:root {
-    --padding-container: 4.38rem 6.25rem;
-}
-
 .container {
     width: 100%;
-    padding: var(--padding-container);
+    max-width: var(--max-width);
+    padding: var(--main-padding-v) var(--main-padding-h);
 }

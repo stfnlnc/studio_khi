@@ -7,16 +7,16 @@
 @import 'components/tag';
 @import 'components/button';
 
-@import 'pages/template-parts/forms';
-@import 'pages/template-parts/sidebar';
-@import 'pages/template-parts/footer';
-@import 'pages/template-parts/header';
-
 @import 'base/text';
 @import 'base/heading';
 @import 'base/font';
 @import 'base/color';
 @import 'base/global';
+
+@import 'pages/template-parts/forms';
+@import 'pages/template-parts/sidebar';
+@import 'pages/template-parts/footer';
+@import 'pages/template-parts/header';
 
 @import 'layout/container';
 @import 'layout/border';

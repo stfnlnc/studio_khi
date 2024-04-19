@@ -1,4 +1,4 @@
-$duration: .3s;
+$duration: var(--hover-duration);
 
 .menu__item {
     color: var(--primary-dark);
@@ -22,7 +22,7 @@ $duration: .3s;
     gap: 8.4375rem;
 
     width: fit-content;
-    transition: background-color $duration, color $duration, border $duration;
+    transition: background-color $duration, color var(--dropdown-duration) cubic-bezier(.8,.21,.39,.95), border $duration;
     &:hover {
         cursor: pointer;
         border-bottom: 1px solid var(--primary-dark);
@@ -38,5 +38,23 @@ $duration: .3s;
         &--active {
             border-bottom: 1px solid var(--primary-light);
         }
+    }
+}
+
+.dropdown {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 0;
+    background-color: var(--primary-dark);
+    transition: top var(--dropdown-duration) cubic-bezier(.8,.21,.39,.95);
+    &__menu {
+        width: 100%;
+        max-width: var(--max-width);
+        padding: var(--dropdown-padding-v) var(--main-padding-h);
+        z-index: 0;
     }
 }

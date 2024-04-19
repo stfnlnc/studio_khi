@@ -1,4 +1,4 @@
-$duration: .3s;
+$duration: var(--hover-duration);
 
 .filter {
     color: var(--primary-dark);

@@ -21,7 +21,7 @@
   align-items: center;
   gap: 8.4375rem;
   width: fit-content;
-  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  transition: background-color var(--hover-duration), color var(--dropdown-duration) cubic-bezier(0.8, 0.21, 0.39, 0.95), border var(--hover-duration);
 }
 .menu__item:hover {
   cursor: pointer;
@@ -38,6 +38,24 @@
 }
 .menu__item__light--active {
   border-bottom: 1px solid var(--primary-light);
+}
+
+.dropdown {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 0;
+  background-color: var(--primary-dark);
+  transition: top var(--dropdown-duration) cubic-bezier(0.8, 0.21, 0.39, 0.95);
+}
+.dropdown__menu {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: var(--dropdown-padding-v) var(--main-padding-h);
+  z-index: 0;
 }
 
 .icon {
@@ -237,7 +255,7 @@ textarea, .tinymce-editor {
   padding: 0.31rem 0.63rem;
   cursor: pointer;
   width: fit-content;
-  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  transition: background-color var(--hover-duration), color var(--hover-duration), border var(--hover-duration);
 }
 .filter--active {
   color: var(--primary-light);
@@ -292,7 +310,7 @@ textarea, .tinymce-editor {
   align-items: center;
   gap: 0.1875rem;
   width: fit-content;
-  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  transition: background-color var(--hover-duration), color var(--hover-duration), border var(--hover-duration);
 }
 .btn:hover {
   cursor: pointer;
@@ -304,7 +322,7 @@ textarea, .tinymce-editor {
   height: 1.125rem;
   fill: none;
   stroke: var(--primary-light);
-  transition: stroke 0.3s;
+  transition: stroke var(--hover-duration);
 }
 .btn__light {
   color: var(--primary-dark);
@@ -334,7 +352,7 @@ textarea, .tinymce-editor {
 .link {
   color: var(--primary-dark);
   background-color: unset;
-  text-align: center;
+  text-align: left;
   border-radius: unset;
   border-bottom: 1px solid var(--primary-dark);
   font-family: "Inter", sans-serif;
@@ -350,14 +368,14 @@ textarea, .tinymce-editor {
   align-items: center;
   gap: 8.4375rem;
   width: fit-content;
-  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  transition: background-color var(--hover-duration), color var(--hover-duration), border var(--hover-duration);
 }
 .link__icon {
   width: 1.125rem;
   height: 1.125rem;
   fill: none;
   stroke: var(--primary-dark);
-  transition: stroke 0.3s, transform 0.3s;
+  transition: stroke var(--hover-duration), transform var(--hover-duration);
 }
 .link:hover {
   cursor: pointer;
@@ -606,6 +624,16 @@ h1, .h1 {
   background-color: var(--danger);
 }
 
+:root {
+  --main-padding-v: 4.38rem;
+  --main-padding-h: 6.25rem;
+  --nav-padding-v: 3.12rem;
+  --dropdown-padding-v: 7.81em;
+  --max-width: 1440px;
+  --hover-duration: .3s;
+  --dropdown-duration: .8s;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -633,7 +661,6 @@ body {
 
 section {
   width: 100%;
-  max-width: 1440px;
 }
 
 a {
@@ -658,13 +685,33 @@ a {
   fill: var(--primary-dark);
 }
 
-:root {
-  --padding-container: 4.38rem 6.25rem;
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--stroke-light);
+  transition: border var(--dropdown-duration) cubic-bezier(0.8, 0.21, 0.39, 0.95);
+}
+.header__nav {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: var(--nav-padding-v) var(--main-padding-h);
+  z-index: 5;
+}
+.header__logo {
+  width: 12.875rem;
+  height: 2.9375rem;
+  fill: var(--primary-dark);
+  transition: fill var(--dropdown-duration) cubic-bezier(0.8, 0.21, 0.39, 0.95);
 }
 
 .container {
   width: 100%;
-  padding: var(--padding-container);
+  max-width: var(--max-width);
+  padding: var(--main-padding-v) var(--main-padding-h);
 }
 
 .border {
@@ -690,6 +737,12 @@ a {
 }
 .border-grey {
   border-color: var(--primary-grey);
+}
+.border-stroke-dark {
+  border-color: var(--stroke-dark);
+}
+.border-stroke-light {
+  border-color: var(--stroke-light);
 }
 
 .h-auto {
