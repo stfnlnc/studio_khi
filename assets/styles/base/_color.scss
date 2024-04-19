@@ -5,6 +5,7 @@
     --secondary-green: #D3E0D3;
     --secondary-blue: #CDDFE6;
     --secondary-violet: #DAD6EA;
+    --secondary-beige: #EAE0D6;
     --stroke-light: #E0E0E0;
     --stroke-dark: #3F3E3E;
     --info: #d2bfa9;
@@ -42,10 +43,16 @@
         background-color: var(--secondary-blue);
     }
 }
-.secondary-dark-violet {
-    color: var(--secondary-dark-violet);
+.secondary-violet {
+    color: var(--secondary-violet);
     &--bg {
-        background-color: var(--secondary-dark-violet);
+        background-color: var(--secondary-violet);
+    }
+}
+.secondary-beige {
+    color: var(--secondary-beige);
+    &--bg {
+        background-color: var(--secondary-beige);
     }
 }
 .stroke-light {

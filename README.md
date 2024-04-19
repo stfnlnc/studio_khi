@@ -42,3 +42,9 @@
   - active
   - href
   - content
+
+``` <tag-react> ```
+
+- *HTMLElement dataset*
+  - color : green, blue, violet
+  - content

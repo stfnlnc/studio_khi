@@ -1,0 +1,31 @@
+.tag {
+    color: var(--primary-dark);
+    background-color: var(--primary-light);
+    text-align: center;
+    border-radius: 0.375rem;
+    border: none;
+
+    font-family: "Inter", sans-serif;
+    font-size: 1.1875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.03563rem;
+
+    padding: 0.31rem 0.63rem;
+
+    width: fit-content;
+    user-select: none;
+    &__green {
+        background-color: var(--secondary-green);
+    }
+    &__blue {
+        background-color: var(--secondary-blue);
+    }
+    &__violet {
+        background-color: var(--secondary-violet);
+    }
+    &__beige {
+        background-color: var(--secondary-beige);
+    }
+}

@@ -10,17 +10,17 @@ p {
 .text {
     line-height: 140%;
     letter-spacing: 0;
-    &--s {
+    &__s {
         font-size: 1rem;
         line-height: 150%;
         letter-spacing: 0;
     }
-    &--m {
+    &__m {
         font-size: 1.1875rem;
         line-height: 150%;
         letter-spacing: -3%;
     }
-    &--l {
+    &__l {
         font-size: 1.625rem;
         line-height: 150%;
         letter-spacing: -3%;
@@ -42,4 +42,13 @@ p {
 }
 .overline {
     text-decoration: overline;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
 }
