@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <main class="container flex col align--center justify--center gap--10">
+    <div class="container flex col align--center justify--center gap--10">
         <section class="flex col gap--10 w--100">
             <div class="flex col gap--10 border p--10">
                 <h2 class="border--bottom pb--3">Logo</h2>
@@ -119,10 +119,10 @@
                 </div>
                 <div class="flex row gap--4">
                     <div class="p--4 border w-fit-content">
-                        <menu-item-react data-content="Menu" data-href="#"></menu-item-react>
+                        <menu-item-react data-id="disableDropdown" data-content="Menu" data-href="#"></menu-item-react>
                     </div>
                     <div class="p--4 border w-fit-content primary-dark--bg">
-                        <menu-item-react data-content="Menu" data-color="light" data-href="#"></menu-item-react>
+                        <menu-item-react data-id="disableDropdown" data-content="Menu" data-color="light" data-href="#"></menu-item-react>
                     </div>
                 </div>
                 <h2 class="primary-dark border--bottom pb--3 mt--6 mb--6">Tags & Filter</h2>
@@ -139,6 +139,6 @@
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 
 {% endblock %}

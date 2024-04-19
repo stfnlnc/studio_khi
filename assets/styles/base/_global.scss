@@ -1,11 +1,12 @@
 :root {
-    --main-padding-v: 4.38rem;
-    --main-padding-h: 6.25rem;
-    --nav-padding-v: 3.12rem;
+    --main-padding-h: 4.38rem;
+    --main-padding-v: 6.25rem;
+    --nav-padding-v: 2rem;
     --dropdown-padding-v: 7.81em;
     --max-width: 1440px;
     --hover-duration: .3s;
     --dropdown-duration: .8s;
+    --dropdown-cubic: cubic-bezier(.8,.21,.39,.95);
 }
 
 * {
@@ -29,8 +30,22 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: var(--primary-light);
+    background-color: var(--primary-dark);
     color: var(--primary-dark);
+}
+
+main {
+    position: relative;
+    z-index: 3;
+    background-color: var(--primary-light);
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: filter var(--dropdown-duration) var(--dropdown-cubic);
 }
 
 section {

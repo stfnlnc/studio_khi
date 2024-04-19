@@ -7,16 +7,20 @@ function Dropdown(props) {
 
     const handleLeave = () => {
             document.querySelectorAll('.menu__item').forEach((item) => {
-                item.classList.remove('menu__item__light')
+                if(item.id !== 'disableDropdown') {
+                    item.classList.remove('menu__item__light')
+                }
             })
             document.querySelector('header').style.borderColor = 'var(--stroke-light)'
             document.querySelector('.header__logo').style.fill = 'var(--primary-dark)'
-            document.querySelector('.dropdown').style.top = '-100%'
+            document.querySelector('.dropdown').style.transform = 'translate(-50%, -100%)'
+            document.querySelector('main').style.filter = 'blur(0)'
+            document.querySelector('footer').style.filter = 'blur(0)'
     }
 
     return <div id="dropdown" className="dropdown flex col align--center justify--center">
-        <div className="p--15"></div>
-        <div onMouseLeave={handleLeave} className="dropdown__menu primary-light grid grid--3 gap--11">
+        <div className="header__gap"></div>
+        <div onMouseLeave={handleLeave} className="dropdown__menu primary-light flex row align--start justify--space-between">
             <div className="flex col gap--5">
                 <div className="flex col">
                     <p className="text__m">01</p>

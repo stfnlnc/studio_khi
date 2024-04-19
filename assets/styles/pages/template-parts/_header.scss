@@ -6,7 +6,8 @@
     width: 100%;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--stroke-light);
-    transition: border var(--dropdown-duration) cubic-bezier(.8,.21,.39,.95);
+    transition: border var(--dropdown-duration) var(--dropdown-cubic), transform var(--dropdown-duration) ease;
+    z-index: 5;
     &__nav {
         width: 100%;
         max-width: var(--max-width);
@@ -17,6 +18,10 @@
         width: 12.875rem;
         height: 2.9375rem;
         fill: var(--primary-dark);
-        transition: fill var(--dropdown-duration) cubic-bezier(.8,.21,.39,.95);
+        transition: fill var(--dropdown-duration) var(--dropdown-cubic);
+    }
+    &__gap {
+        height: 115px;
+        background-color: var(--primary-light);
     }
 }
