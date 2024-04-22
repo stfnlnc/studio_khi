@@ -1,0 +1,28 @@
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+$pos: ("t": top, "b": bottom, "l": left, "r": right);
+$scale: 5;
+
+.pos- {
+    @each $key, $p in $pos {
+        &#{$key} {
+            @for $i from 0 through 20 {
+                $s: 0;
+                @if $i == 0 { $s: 0 } @else {$s: #{$i * $scale}px}
+                &--#{$i} {
+                    #{$p}: #{$s}
+                }
+            }
+        }
+    }
+}

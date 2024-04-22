@@ -52,3 +52,17 @@ p {
 .text-right {
     text-align: right;
 }
+
+@media screen and (max-width: 1080px) {
+    .text {
+        &__s {
+            font-size: 0.875rem;
+        }
+        &__m {
+            font-size: 1rem;
+        }
+        &__l {
+            font-size: 1.25rem;
+        }
+    }
+}

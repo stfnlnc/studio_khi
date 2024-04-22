@@ -13,6 +13,7 @@
         max-width: var(--max-width);
         padding: var(--nav-padding-v) var(--main-padding-h);
         z-index: 5;
+        transition: padding var(--dropdown-duration) var(--dropdown-cubic);
     }
     &__logo {
         width: 12.875rem;
@@ -23,5 +24,26 @@
     &__gap {
         height: 115px;
         background-color: var(--primary-light);
+    }
+    &__icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .header {
+        &__logo {
+            width: 10.3725rem;
+            height: 1.28938rem;
+            fill: var(--primary-dark);
+            transition: fill var(--dropdown-duration) var(--dropdown-cubic);
+        }
+        &__gap {
+            height: 92px;
+        }
+        &__icon {
+            display: block;
+            fill: var(--primary-dark);
+        }
     }
 }

@@ -2,7 +2,7 @@ import React from "react"
 import {createRoot} from "react-dom/client";
 import {unmountComponentAtNode} from "react-dom";
 
-function Button(props) {
+export default function Button(props) {
     let color, icon
 
     if(props.color) {
@@ -14,7 +14,7 @@ function Button(props) {
     }
 
     return <a href={props.href} className={'btn' + color}>
-        {props.content}
+        {props.content}{props.children}
         <svg className={'btn__icon' + icon} viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.5 13.5L13.5 4.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M6.1875 4.5H13.5V11.8125" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

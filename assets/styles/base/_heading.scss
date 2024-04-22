@@ -22,3 +22,11 @@
 h1, .h1 {
     font-weight: 500;
 }
+
+@media screen and (max-width: 870px) {
+    :root {
+        --h1: 3.4375rem;
+        --h2: 2.8125rem;
+        --h3: 2.3125rem;
+    }
+}

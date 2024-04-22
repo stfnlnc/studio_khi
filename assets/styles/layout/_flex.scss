@@ -65,3 +65,12 @@
         justify-content: space-evenly;
     }
 }
+
+@media screen and (max-width: 1080px) {
+    .col-mobile {
+        flex-direction: column;
+    }
+    .gap-mobile {
+        gap: 0.3rem
+    }
+}
