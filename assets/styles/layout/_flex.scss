@@ -70,7 +70,16 @@
     .col-mobile {
         flex-direction: column;
     }
-    .gap-mobile {
-        gap: 0.3rem
+    .col-rev-mobile {
+        flex-direction: column-reverse;
+    }
+    .row-mobile {
+        flex-direction: row;
+    }
+    .row-rev-mobile {
+        flex-direction: row-reverse;
+    }
+    .align--center-mobile {
+        align-items: center;
     }
 }

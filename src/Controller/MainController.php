@@ -14,4 +14,12 @@ class MainController extends AbstractController
     {
         return $this->render('main/index.html.twig');
     }
+
+    #[Route('/service/{slug}', name: 'service')]
+    public function service(): Response
+    {
+
+
+        return $this->render('main/service.html.twig');
+    }
 }

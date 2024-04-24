@@ -89,6 +89,7 @@ $duration: var(--hover-duration);
 }
 
 .plus__icon {
+    cursor: pointer;
     width: 1.125rem;
     height: 1.125rem;
     transition: transform var(--dropdown-duration) var(--dropdown-cubic), fill var(--dropdown-duration) var(--dropdown-cubic);

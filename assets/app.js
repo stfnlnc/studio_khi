@@ -1,6 +1,7 @@
 import './styles/app.css';
 import './react/Component.jsx'
 import './react/Cookies.jsx'
+import './react/Faq.jsx'
 import './react/Tag.jsx'
 import './react/Filter.jsx'
 import './react/Dropdown.jsx'
@@ -17,7 +18,7 @@ document.addEventListener('scroll', () => {
         document.querySelector('header').style.borderColor = 'transparent'
     } else {
         document.querySelector('.header__nav').style.padding = 'var(--nav-padding-v) var(--main-padding-h)'
-        document.querySelector('header').style.borderColor = '1px solid #000'
+        document.querySelector('header').style.borderColor = 'var(--stroke-light)'
     }
 })
 

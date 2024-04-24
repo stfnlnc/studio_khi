@@ -1,7 +1,6 @@
 import React from "react"
 import {createRoot} from "react-dom/client";
 import {unmountComponentAtNode} from "react-dom";
-import Link from './Link'
 
 function Cookies(props) {
 

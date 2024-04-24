@@ -17,3 +17,15 @@
         }
     }
 }
+
+@media screen and (max-width: 1080px) {
+    .gap-mobile {
+        gap: 0.3rem
+    }
+    .gap-small-mobile {
+        gap: 1rem
+    }
+    .gap-large-mobile {
+        gap: 2rem
+    }
+}

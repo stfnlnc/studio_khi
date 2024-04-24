@@ -1,0 +1,10 @@
+.faq {
+    &__icon {
+        fill: var(--primary-grey);
+    }
+    &__answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--dropdown-duration) var(--dropdown-cubic);
+    }
+}

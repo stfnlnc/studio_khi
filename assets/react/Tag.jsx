@@ -11,7 +11,7 @@ function Tag(props) {
         color = ''
     }
 
-    return <span className={'tag' + color}>
+    return <span className={'tag text__m' + color}>
         {props.content}
     </span>
 

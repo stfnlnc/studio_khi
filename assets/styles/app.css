@@ -87,6 +87,7 @@
 }
 
 .plus__icon {
+  cursor: pointer;
   width: 1.125rem;
   height: 1.125rem;
   transition: transform var(--dropdown-duration) var(--dropdown-cubic), fill var(--dropdown-duration) var(--dropdown-cubic);
@@ -110,26 +111,17 @@
 .icon--primary-dark {
   fill: var(--primary-dark);
 }
-.icon--primary-accent {
-  fill: var(--primary-accent);
-}
 .icon--primary-light {
   fill: var(--primary-light);
 }
-.icon--secondary-light {
-  fill: var(--secondary-light);
+.icon--primary-grey {
+  fill: var(--primary-grey);
 }
-.icon--secondary-dark {
-  fill: var(--secondary-dark);
+.icon--stroke-dark {
+  fill: var(--stroke-dark);
 }
-.icon--secondary-light-accent {
-  fill: var(--secondary-light-accent);
-}
-.icon--secondary-medium-accent {
-  fill: var(--secondary-medium-accent);
-}
-.icon--secondary-dark-accent {
-  fill: var(--secondary-dark-accent);
+.icon--stroke-light {
+  fill: var(--stroke-light);
 }
 
 .form-input, .form-textarea, .form-select {
@@ -313,7 +305,6 @@ textarea, .tinymce-editor {
   border-radius: 0.375rem;
   border: none;
   font-family: "Inter", sans-serif;
-  font-size: 1.1875rem;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -525,6 +516,15 @@ p {
   .text__l {
     font-size: 1.25rem;
   }
+  .text-center-mobile {
+    text-align: center;
+  }
+  .text-left-mobile {
+    text-align: left;
+  }
+  .text-right-mobile {
+    text-align: right;
+  }
 }
 :root {
   --h1: 6.125rem;
@@ -543,6 +543,7 @@ h1, .h1 {
   line-height: var(--height-heading);
   letter-spacing: var(--letter-spacing-heading);
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 h2, .h2 {
@@ -552,6 +553,7 @@ h2, .h2 {
   line-height: var(--height-heading);
   letter-spacing: var(--letter-spacing-heading);
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 h3, .h3 {
@@ -561,13 +563,14 @@ h3, .h3 {
   line-height: var(--height-heading);
   letter-spacing: var(--letter-spacing-heading);
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 h1, .h1 {
   font-weight: 500;
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 1080px) {
   :root {
     --h1: 3.4375rem;
     --h2: 2.8125rem;
@@ -691,6 +694,15 @@ h1, .h1 {
   background-color: var(--danger);
 }
 
+.faq__icon {
+  fill: var(--primary-grey);
+}
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--dropdown-duration) var(--dropdown-cubic);
+}
+
 .footer {
   /*    position: fixed;
       top: 0;
@@ -794,17 +806,43 @@ h1, .h1 {
   }
 }
 .home__logo {
-  width: 79.57563rem;
-  height: 9.8985rem;
+  width: 100%;
+  height: auto;
   fill: var(--primary-dark);
   position: absolute;
   transform: translate(-50%, 0);
   bottom: 20px;
   left: 50%;
 }
-.home__img {
+.home__logo-mobile {
   width: 100%;
+  height: auto;
+  fill: var(--primary-dark);
+  padding: 2rem 0;
+}
+.home__img {
   border-radius: 1rem;
+  width: 100%;
+}
+.home__img-case {
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 4/2;
+}
+.home__img-post {
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+}
+.home__img-studio-left {
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+}
+.home__img-studio-right {
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 6/4;
 }
 
 .relative {
@@ -1119,6 +1157,27 @@ h1, .h1 {
   border-color: var(--stroke-light);
 }
 
+.border-rounded {
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+  .border {
+    border: 1px solid var(--primary-dark);
+  }
+  .border--top-mobile {
+    border-top: 1px solid;
+  }
+  .border--bottom-mobile {
+    border-bottom: 1px solid;
+  }
+  .border--left-mobile {
+    border-left: 1px solid;
+  }
+  .border--right-mobile {
+    border-right: 1px solid;
+  }
+}
 .h-auto {
   height: auto;
 }
@@ -1348,6 +1407,17 @@ h1, .h1 {
   grid-gap: 100px;
 }
 
+@media screen and (max-width: 1080px) {
+  .gap-mobile {
+    gap: 0.3rem;
+  }
+  .gap-small-mobile {
+    gap: 1rem;
+  }
+  .gap-large-mobile {
+    gap: 2rem;
+  }
+}
 .p--0 {
   padding: 0;
 }
@@ -2245,6 +2315,11 @@ h1, .h1 {
   grid-template-columns: repeat(6, 1fr);
 }
 
+@media screen and (max-width: 1080px) {
+  .grid-1-mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .flex {
   display: flex;
 }
@@ -2313,8 +2388,17 @@ h1, .h1 {
   .col-mobile {
     flex-direction: column;
   }
-  .gap-mobile {
-    gap: 0.3rem;
+  .col-rev-mobile {
+    flex-direction: column-reverse;
+  }
+  .row-mobile {
+    flex-direction: row;
+  }
+  .row-rev-mobile {
+    flex-direction: row-reverse;
+  }
+  .align--center-mobile {
+    align-items: center;
   }
 }
 :root {
@@ -2405,6 +2489,10 @@ a {
 
 .display-mobile {
   display: none;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1280px) {

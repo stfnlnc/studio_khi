@@ -6,3 +6,9 @@
         }
     }
 }
+
+@media screen and (max-width: 1080px) {
+    .grid-1-mobile {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

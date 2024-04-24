@@ -1,15 +1,41 @@
 .home {
     &__logo {
-        width: 79.57563rem;
-        height: 9.8985rem;
+        width: 100%;
+        height: auto;
         fill: var(--primary-dark);
         position: absolute;
         transform: translate(-50%, 0);
         bottom: 20px;
         left: 50%;
+        &-mobile {
+            width: 100%;
+            height: auto;
+            fill: var(--primary-dark);
+            padding: 2rem 0;
+        }
     }
     &__img {
-        width: 100%;
         border-radius: 1rem;
+        width: 100%;
+        &-case {
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 4/2;
+        }
+        &-post {
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 1/1;
+        }
+        &-studio-left {
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 1/1;
+        }
+        &-studio-right {
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 6/4;
+        }
     }
 }

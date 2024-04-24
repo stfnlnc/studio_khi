@@ -23,3 +23,18 @@ $pos: ("t": top, "b": bottom, "l": left, "r": right);
         border-color: var(--stroke-light);
     }
 }
+
+.border-rounded {
+    border-radius: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+    .border {
+        border: 1px solid var(--primary-dark);
+        @each $key, $p in $pos {
+            &--#{$p}-mobile {
+                border-#{$p}: 1px solid;
+            }
+        }
+    }
+}

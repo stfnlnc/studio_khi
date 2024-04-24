@@ -87,6 +87,10 @@ a {
     display: none;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1280px) {
     :root {
         --main-padding-h: 1.25rem;
