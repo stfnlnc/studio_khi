@@ -1,0 +1,287 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="container container__top flex col gap--16 gap-large-mobile align--start justify--center">
+        <h1 class="w--60 w-100-mobile">Découvrir notre studio</h1>
+        <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
+            <p>
+                Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des Pyrénées. Nous créons des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web, et ce, à travers la France.
+            </p>
+            <button-react data-href="#" data-content="Commencer votre projet"></button-react>
+        </div>
+    </div>
+    <div class="container pt--0 pb--0">
+        <img class="studio__img studio__img-top" src="{{ asset('build/images/uploads/studio-1.jpg') }}" alt="">
+    </div>
+    <div class="container flex row col-mobile gap-small-mobile">
+        <p class="text__l w--40 w-100-mobile">
+            Notre approche
+        </p>
+        <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+            <h3>
+                Combiner design et développement web pour créer des marques et des sites que l’on remarque.
+            </h3>
+            <p class="w--80 w-100-mobile primary-grey text__m">
+                Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
+                opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance du
+                design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
+                amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le design
+                n'est plus juste une option, mais une nécessité pour se démarquer.
+                <br><br>
+                Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir des
+                outils à la fois créatifs, intuitifs et performants.
+            </p>
+        </div>
+    </div>
+    <div class="container__large primary-light primary-dark--bg">
+        <div class="container flex col gap--16 align--start justify--center">
+            <h3 class="w--50 w-100-mobile">
+                Une agence à 360° pour tout votre site
+            </h3>
+            <div class="w--100 grid grid--3 grid-gap--11 grid--1-mobile">
+                <div class="flex col gap--5">
+                    <p>
+                        01 <br>
+                        L'appel découverte
+                    </p>
+                    <p class="primary-grey">
+                        Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web pour renforcer votre présence en ligne.
+                    </p>
+                    <link-react data-href="" data-color="light" data-icon="1" data-content="Infos & Tarifs"></link-react>
+                </div>
+                <div class="flex col gap--5">
+                    <p>
+                        02 <br>
+                        Le brief créatif
+                    </p>
+                    <p class="primary-grey">
+                        Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web pour renforcer votre présence en ligne.
+                    </p>
+                    <link-react data-href="" data-color="light" data-icon="1" data-content="Infos & Tarifs"></link-react>
+                </div>
+                <div class="flex col gap--5">
+                    <p>
+                        03 <br>
+                        Recherches & inspirations
+                    </p>
+                    <p class="primary-grey">
+                        Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web pour renforcer votre présence en ligne.
+                    </p>
+                    <link-react data-href="" data-color="light" data-icon="1" data-content="Infos & Tarifs"></link-react>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container flex col gap--16">
+        <div class="flex row col-mobile gap-small-mobile">
+            <p class="text__l w--40 w-100-mobile">
+                L'équipe
+            </p>
+            <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                <h3>
+                    Un duo de passionnés dévoués à des projets passionnants.
+                </h3>
+            </div>
+        </div>
+        <div class="flex row  col-mobile gap--4 gap-large-mobile">
+            <div class="w--100">
+                <img src="{{ asset('build/images/uploads/studio-1.jpg') }}" alt="" class="studio__img studio__img-about">
+                <div class="flex col gap--5">
+                    <p class="text__l flex col gap--0">
+                        Cynthia Jego <br>
+                        <span class="text__m primary-grey">Designer</span>
+                    </p>
+                    <link-react data-content="LinkedIn" data-href="#" data-border="1"></link-react>
+                </div>
+            </div>
+            <div class="w--100">
+                <img src="{{ asset('build/images/uploads/studio-2.jpg') }}" alt="" class="studio__img studio__img-about">
+                <div class="flex col gap--5">
+                    <p class="text__l flex col gap--0">
+                        Stéfan Lancelot <br>
+                        <span class="text__m primary-grey">Développeur Web</span>
+                    </p>
+                    <link-react data-content="LinkedIn" data-href="#" data-border="1"></link-react>
+                </div>
+            </div>
+            <div class="w--80 w-100-mobile">
+                <img src="{{ asset('build/images/uploads/studio-2.jpg') }}" alt="" class="studio__img studio__img-about">
+                <div class="flex col gap--5">
+                    <p class="text__l flex col gap--0">
+                        Loki <br>
+                        <span class="text__m primary-grey">Fidèle assistant</span>
+                    </p>
+                    <link-react data-content="LinkedIn" data-href="#" data-border="1"></link-react>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container__large primary-light primary-dark--bg">
+        <div class="container flex col gap--16 align--center justify--center">
+            <div class="flex row col-mobile gap-small-mobile">
+                <p class="text__l w--40 w-100-mobile">
+                    Notre process
+                </p>
+                <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                    <h3 class="w--80 w-100-mobile">
+                        Nous travaillons en étroite collaboration avec nos clients pour valoriser leur marque.
+                    </h3>
+                </div>
+            </div>
+            <div class="w--100 grid grid--3 grid-gap--11 hide-mobile">
+                <div class="flex col gap--5">
+                    <p>
+                        01 <br>
+                        L'appel découverte
+                    </p>
+                    <p class="primary-grey">
+                        Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé.
+                    </p>
+                </div>
+                <div class="flex col gap--5">
+                    <p>
+                        02 <br>
+                        Le brief créatif
+                    </p>
+                    <p class="primary-grey">
+                        À partir des informations recueillies, nous élaborons le brief créatif. Celui-ci synthétise les éléments essentiels du projet, tels que vos objectifs, votre vision, votre public cible, les contraintes et les délais. Ce document servira de référence tout au long du processus de création. Notre mission débute à réception du devis signé et d'un acompte engagé.
+                    </p>
+                </div>
+                <div class="flex col gap--5">
+                    <p>
+                        03 <br>
+                        Recherches & inspirations
+                    </p>
+                    <p class="primary-grey">
+                        Nous effectuons des recherches approfondies pour trouver des sources d'inspiration pertinentes. Cela peut inclure l'étude des tendances du secteur, l'analyse de la concurrence et la collecte de références visuelles pour nourrir notre processus créatif et définir le bon positionnement pour votre marque.
+                    </p>
+                </div>
+                <div class="flex col gap--5">
+                    <p>
+                        04 <br>
+                        La conception & le développement
+                    </p>
+                    <p class="primary-grey">
+                        C’est ici que votre projet commence à prendre forme. Cette phase implique la mise en œuvre des idées créatives pour donner vie au projet. Que ce soit pour la création d'un site web ou d'une identité visuelle, nous travaillons à concevoir des maquettes, des prototypes ou des concepts visuels.
+                    </p>
+                </div>
+                <div class="flex col gap--5">
+                    <p>
+                        05 <br>
+                        Les retours et corrections
+                    </p>
+                    <p class="primary-grey">
+                        Une fois que nos premières propositions vous sont soumises, nous recueillons vos retours pour ajuster et affiner notre travail. Vos idées et vos suggestions sont intégrées à chaque étape du processus. Votre feedback est essentiel pour affiner chaque détail et garantir que le résultat final corresponde parfaitement à vos attentes.
+                    </p>
+                </div>
+                <div class="flex col gap--5">
+                    <p>
+                        06 <br>
+                        Le suivi
+                    </p>
+                    <p class="primary-grey">
+                        Notre engagement ne s'arrête pas à votre validation finale. Nous assurons un suivi de votre projet pour surveiller, adapter et affiner, si le besoin s’en fait ressentir. Cela peut inclure la fourniture de fichiers finaux, la coordination avec d'autres intervenants (vos équipes, imprimeurs, etc.) et un soutien continu si nécessaire.
+                    </p>
+                </div>
+            </div>
+            <div class="w--100 grid grid--1 display-mobile">
+                <faq-react data-id="process-1" data-title="L'appel découverte" data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
+                <faq-react data-id="process-1" data-title="L'appel découverte" data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
+                <faq-react data-id="process-1" data-title="L'appel découverte" data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
+                <faq-react data-id="process-1" data-title="L'appel découverte" data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
+            </div>
+        </div>
+    </div>
+    <div class="container flex row col-mobile gap-small-mobile">
+        <p class="text__l w--40 w-100-mobile">
+            Notre approche
+        </p>
+        <div class="w--60 w-100-mobile flex col align--start justify--start gap--5">
+            <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" fill="#191919"/>
+                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"/>
+                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z" fill="white"/>
+                </svg>
+                <p class="text__l">
+                    Moodboards
+                </p>
+                <p class="text__m primary-grey">
+                    Plongez dans un univers visuel inspirant avec nos moodboards, des tableaux dynamiques qui vous aident à cristalliser l'essence et le style de votre projet, vous propulsant vers la création de quelque chose de vraiment unique.
+                </p>
+            </div>
+            <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" fill="#191919"/>
+                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"/>
+                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z" fill="white"/>
+                </svg>
+                <p class="text__l">
+                    Moodboards
+                </p>
+                <p class="text__m primary-grey">
+                    Plongez dans un univers visuel inspirant avec nos moodboards, des tableaux dynamiques qui vous aident à cristalliser l'essence et le style de votre projet, vous propulsant vers la création de quelque chose de vraiment unique.
+                </p>
+            </div>
+            <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" fill="#191919"/>
+                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"/>
+                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z" fill="white"/>
+                </svg>
+                <p class="text__l">
+                    Moodboards
+                </p>
+                <p class="text__m primary-grey">
+                    Plongez dans un univers visuel inspirant avec nos moodboards, des tableaux dynamiques qui vous aident à cristalliser l'essence et le style de votre projet, vous propulsant vers la création de quelque chose de vraiment unique.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container__large border--top border-stroke-light">
+        <div class="container flex col gap--16 align--center justify--center">
+            <div class="flex row col-mobile gap-large-mobile">
+                <p class="text__l w--40 w-100-mobile">
+                    Nos clients
+                </p>
+                <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                    <h3>
+                        Ne vous contentez pas de nous croire sur parole. Voici ce que nos clients disent de nous.
+                    </h3>
+                    <p class="w--80 w-100-mobile primary-grey">
+                        Nous avons eu la chance de travailler sur des projets passionnants et nous cherchons à former
+                        des partenariats créatifs et durables avec tous nos clients.
+                    </p>
+                    <link-react data-icon="1" data-content="Lire tous les avis" data-href="#"></link-react>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pt--0 pb--0">
+        <img class="studio__img studio__img-top" src="{{ asset('build/images/uploads/studio-1.jpg') }}" alt="">
+    </div>
+    <div class="container flex row col-mobile gap-large-mobile">
+        <p class="text__l w--40 w-100-mobile">
+            FAQ
+        </p>
+        <div class="w--60 w-100-mobile flex col align--start justify--start">
+            <faq-react class="w--100" data-id="1" data-title="Pourquoi faire confiance au Studio Khi ?" data-content="Chez Studio Khi, nous nous adaptons rapidement à vos demandes afin d'explorer des solutions créatives et innovantes, offrant ainsi des résultats uniques et originaux pour chaque projet. Nous sommes passionnés par notre travail et nous sommes dévoués à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. De plus, nous prenons en charge l'ensemble du processus, de la conception à la mise en ligne, vous permettant ainsi de vous concentrer sur d'autres aspects de votre entreprise."></faq-react>
+            <faq-react class="w--100" data-id="2" data-title="Pourquoi faire confiance au Studio Khi ?" data-content="Chez Studio Khi, nous nous adaptons rapidement à vos demandes afin d'explorer des solutions créatives et innovantes, offrant ainsi des résultats uniques et originaux pour chaque projet. Nous sommes passionnés par notre travail et nous sommes dévoués à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. De plus, nous prenons en charge l'ensemble du processus, de la conception à la mise en ligne, vous permettant ainsi de vous concentrer sur d'autres aspects de votre entreprise."></faq-react>
+            <faq-react class="w--100" data-id="3" data-title="Pourquoi faire confiance au Studio Khi ?" data-content="Chez Studio Khi, nous nous adaptons rapidement à vos demandes afin d'explorer des solutions créatives et innovantes, offrant ainsi des résultats uniques et originaux pour chaque projet. Nous sommes passionnés par notre travail et nous sommes dévoués à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. De plus, nous prenons en charge l'ensemble du processus, de la conception à la mise en ligne, vous permettant ainsi de vous concentrer sur d'autres aspects de votre entreprise."></faq-react>
+        </div>
+    </div>
+    <div class="container__large secondary-beige--bg">
+        <div class="container flex col align--center justify--center gap--11 text-center">
+            <h2 class="w--70 w-100-mobile">
+                Prêts à nous partager votre projet ?
+            </h2>
+            <button-react data-href="" data-content="Demander votre devis"></button-react>
+        </div>
+    </div>
+{% endblock %}
+
+

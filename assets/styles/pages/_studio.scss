@@ -1,0 +1,16 @@
+.studio {
+    &__img {
+        border-radius: 1rem;
+        width: 100%;
+        &-top {
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 4/2;
+        }
+        &-about {
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 5/6.5;
+        }
+    }
+}

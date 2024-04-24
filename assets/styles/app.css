@@ -303,7 +303,7 @@ textarea, .tinymce-editor {
   background-color: var(--primary-light);
   text-align: center;
   border-radius: 0.375rem;
-  border: none;
+  border: 1px solid var(--primary-dark);
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -314,15 +314,19 @@ textarea, .tinymce-editor {
   user-select: none;
 }
 .tag__green {
+  border: none;
   background-color: var(--secondary-green);
 }
 .tag__blue {
+  border: none;
   background-color: var(--secondary-blue);
 }
 .tag__violet {
+  border: none;
   background-color: var(--secondary-violet);
 }
 .tag__beige {
+  border: none;
   background-color: var(--secondary-beige);
 }
 
@@ -798,13 +802,28 @@ h1, .h1 {
     transition: fill var(--dropdown-duration) var(--dropdown-cubic);
   }
   .header__gap {
-    height: 92px;
+    height: 89px;
   }
   .header__icon {
     display: block;
     fill: var(--primary-dark);
   }
 }
+.studio__img {
+  border-radius: 1rem;
+  width: 100%;
+}
+.studio__img-top {
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 4/2;
+}
+.studio__img-about {
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 5/6.5;
+}
+
 .home__logo {
   width: 100%;
   height: auto;
@@ -1125,7 +1144,22 @@ h1, .h1 {
   flex-direction: row;
   justify-content: center;
 }
+.container__scroll {
+  overflow: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.container__scroll::-webkit-scrollbar {
+  display: none;
+}
 
+@media screen and (max-width: 1080px) {
+  .container__top {
+    height: calc(100vh - 89px);
+    min-height: 600px;
+  }
+}
 .border {
   border: 1px solid var(--primary-dark);
 }
@@ -2316,8 +2350,26 @@ h1, .h1 {
 }
 
 @media screen and (max-width: 1080px) {
-  .grid-1-mobile {
+  .grid {
+    display: grid;
+  }
+  .grid--1-mobile {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .grid--2-mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid--3-mobile {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid--4-mobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid--5-mobile {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid--6-mobile {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 .flex {
@@ -2399,6 +2451,9 @@ h1, .h1 {
   }
   .align--center-mobile {
     align-items: center;
+  }
+  .justify--start-mobile {
+    justify-content: start;
   }
 }
 :root {

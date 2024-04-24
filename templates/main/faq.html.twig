@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="container flex col gap--16 gap-large-mobile align--start">
+        <h1>Des questions ?</h1>
+        <p class="w--60 w-100-mobile text__l align--self-end">
+            Nous avons peut-être déjà les réponses à vos questions ! Ne manquez pas notre FAQ pour trouver les réponses dont vous avez besoin.
+        </p>
+    </div>
+    <div class="container__large border--top border--bottom border-stroke-light">
+        <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
+            <filter-react data-content="Général"></filter-react>
+            <filter-react data-content="Branding & Logo"></filter-react>
+            <filter-react data-content="Webdesign & UI/UX Design"></filter-react>
+            <filter-react data-content="Site Web & Développement"></filter-react>
+        </div>
+    </div>
+    <div class="container flex row col-mobile gap-large-mobile">
+        <p class="text__l w--40 w-100-mobile">
+            FAQ
+        </p>
+        <div class="w--60 w-100-mobile flex col align--start justify--start">
+            <faq-react class="w--100" data-id="1" data-title="Pourquoi faire confiance au Studio Khi ?" data-content="Chez Studio Khi, nous nous adaptons rapidement à vos demandes afin d'explorer des solutions créatives et innovantes, offrant ainsi des résultats uniques et originaux pour chaque projet. Nous sommes passionnés par notre travail et nous sommes dévoués à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. De plus, nous prenons en charge l'ensemble du processus, de la conception à la mise en ligne, vous permettant ainsi de vous concentrer sur d'autres aspects de votre entreprise."></faq-react>
+            <faq-react class="w--100" data-id="2" data-title="Pourquoi faire confiance au Studio Khi ?" data-content="Chez Studio Khi, nous nous adaptons rapidement à vos demandes afin d'explorer des solutions créatives et innovantes, offrant ainsi des résultats uniques et originaux pour chaque projet. Nous sommes passionnés par notre travail et nous sommes dévoués à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. De plus, nous prenons en charge l'ensemble du processus, de la conception à la mise en ligne, vous permettant ainsi de vous concentrer sur d'autres aspects de votre entreprise."></faq-react>
+            <faq-react class="w--100" data-id="3" data-title="Pourquoi faire confiance au Studio Khi ?" data-content="Chez Studio Khi, nous nous adaptons rapidement à vos demandes afin d'explorer des solutions créatives et innovantes, offrant ainsi des résultats uniques et originaux pour chaque projet. Nous sommes passionnés par notre travail et nous sommes dévoués à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. De plus, nous prenons en charge l'ensemble du processus, de la conception à la mise en ligne, vous permettant ainsi de vous concentrer sur d'autres aspects de votre entreprise."></faq-react>
+        </div>
+    </div>
+    <div class="container__large secondary-beige--bg">
+        <div class="container flex col align--center justify--center gap--11 text-center">
+            <h2 class="w--70 w-100-mobile">
+                Autre chose ?
+            </h2>
+            <button-react data-href="" data-content="Contactez-nous directement"></button-react>
+        </div>
+    </div>
+
+{% endblock %}

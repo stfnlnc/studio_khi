@@ -8,7 +8,12 @@
 }
 
 @media screen and (max-width: 1080px) {
-    .grid-1-mobile {
-        grid-template-columns: repeat(1, 1fr);
+    .grid {
+        display: grid;
+        @for $i from 1 through 6 {
+            &--#{$i}-mobile {
+                grid-template-columns: repeat(#{$i}, 1fr);
+            }
+        }
     }
 }
