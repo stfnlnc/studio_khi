@@ -22,6 +22,7 @@ $duration: var(--hover-duration);
     gap: 0.1875rem;
 
     width: fit-content;
+    height: fit-content;
     transition: background-color $duration, color $duration, border $duration;
     &:hover {
         cursor: pointer;

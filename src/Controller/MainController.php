@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/', name: 'app_')]
+#[Route('', name: 'app_')]
 class MainController extends AbstractController
 {
     #[Route('/', name: 'index')]
@@ -25,6 +25,12 @@ class MainController extends AbstractController
     public function studio(): Response
     {
         return $this->render('main/studio.html.twig');
+    }
+
+    #[Route('/tarifs', name: 'prices')]
+    public function prices(): Response
+    {
+        return $this->render('main/prices.html.twig');
     }
 
     #[Route('/realisations', name: 'projects')]
@@ -55,5 +61,11 @@ class MainController extends AbstractController
     public function faq(): Response
     {
         return $this->render('main/faq.html.twig');
+    }
+
+    #[Route('/contact', name: 'contact')]
+    public function contact(): Response
+    {
+        return $this->render('main/contact.html.twig');
     }
 }

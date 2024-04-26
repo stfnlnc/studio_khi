@@ -52,7 +52,7 @@ export default function MenuItemMobile({dropmenu, href, ...props}) {
                 } else {
                     className = ''
                 }
-                return <a key={i} className={className} href="">{menu[0]}</a>
+                return <a key={i} className={className} href={menu[1]}>{menu[0]}</a>
             })}
         </div>
     </div>

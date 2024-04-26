@@ -1,0 +1,26 @@
+{{ form_start(form, {'attr': {'class': 'w--100 flex col gap--4'}}) }}
+    <div class="flex row gap--4">
+        <div class="flex col gap--1">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+            <div class="errors">
+                {{ form_errors(form.name) }}
+            </div>
+        </div>
+        <div class="flex col gap--1">
+            {{ form_label(form.slug) }}
+            {{ form_widget(form.slug) }}
+            <div class="errors">
+                {{ form_errors(form.slug) }}
+            </div>
+        </div>
+        <div class="flex col gap--1">
+            {{ form_label(form.color) }}
+            {{ form_widget(form.color) }}
+            <div class="errors">
+                {{ form_errors(form.color) }}
+            </div>
+        </div>
+    </div>
+{{ form_widget(form.save) }}
+{{ form_end(form) }}

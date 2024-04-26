@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Les projets - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container__large">
+        <div class="container border--bottom border-stroke-light">
+            <h1>Éditer le projet</h1>
+        </div>
+    </div>
+    {% include 'admin/project/template-part/_form.html.twig' %}
+
+{% endblock %}

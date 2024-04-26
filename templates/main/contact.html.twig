@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container__large">
+        <div class="container border--bottom border-stroke-light">
+            <h1>Parlons de votre projet</h1>
+        </div>
+    </div>
+    <div class="container grid grid--2 grid-gap--6 grid--1-mobile">
+        <div class="h-auto flex col justify--space-between">
+            <p class="text__l w--50 w-100-mobile">
+                Remplissez le formulaire de contact ci-dessous et parlez-nous de votre projet.
+            </p>
+            <button-react class="hide-mobile" data-content="Demander un devis" data-href="#"></button-react>
+        </div>
+        <div>
+            <form action="" class="flex col gap--5">
+                <div class="grid grid--2 grid--1-mobile grid-gap--5">
+                    <label class="form-label" for="lastname">
+                        Nom*
+                        <input class="form-input" name="lastname" type="text" placeholder="Votre nom">
+                    </label>
+                    <label class="form-label" for="firstname">
+                        Prénom*
+                        <input class="form-input" name="firstname" type="text" placeholder="Votre prénom">
+                    </label>
+                    <label class="form-label" for="email">
+                        Email*
+                        <input class="form-input" name="email" type="text" placeholder="Votre email">
+                    </label>
+                    <label class="form-label" for="tel">
+                        Téléphone*
+                        <input class="form-input" name="tel" type="text" placeholder="Votre numéro de téléphone">
+                    </label>
+                </div>
+                <label class="form-label" for="message">
+                    Message
+                    <textarea class="form-textarea" name="message" id="message" rows="10" placeholder="Votre message"></textarea>
+                </label>
+                <button class="btn btn__dark">
+                    Envoyer au studio
+                    <svg class="btn__icon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 13.5L13.5 4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.1875 4.5H13.5V11.8125" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="container__large secondary-beige--bg">
+        <div class="container grid grid--3 grid-gap--4 grid--1-mobile">
+            <div class="flex col gap--1 text-center text-left-mobile">
+                <p class="primary-grey text__s">
+                    Email
+                </p>
+                <p class="text__m">
+                    hello@studiokhi.com
+                </p>
+            </div>
+            <div class="flex col gap--1 text-center text-left-mobile">
+                <p class="primary-grey text__s">
+                    Téléphone
+                </p>
+                <p class="text__m">
+                    09 87 19 28 88
+                </p>
+            </div>
+            <div class="flex col gap--1 text-center text-left-mobile">
+                <p class="primary-grey text__s">
+                    Studio
+                </p>
+                <p class="text__m">
+                    Remote depuis les Pyrénées
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

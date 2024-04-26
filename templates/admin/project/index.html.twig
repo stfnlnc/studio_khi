@@ -1,0 +1,78 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Les projets - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container__large">
+        <div class="container border--bottom border-stroke-light">
+            <h1>Les projets en ligne</h1>
+        </div>
+    </div>
+    <div class="container__large border--bottom border-stroke-light">
+        <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
+            <button-react data-content="Nouveau projet" data-href="{{ path('app_admin_project_new') }}"></button-react>
+        </div>
+    </div>
+    <div class="container">
+        <div class="grid grid--1 grid-gap--4">
+            <div class="grid grid--6 grid-gap--4 border--bottom border-stroke-light pb--4 primary-grey">
+                <p class="text__s">Nom</p>
+                <p class="text__s">Slug</p>
+                <p class="text__s">Tags</p>
+                <p class="text__s">Crée le</p>
+                <p class="text__s">Modifié le</p>
+                <p class="text__s">Actions</p>
+            </div>
+            {% for project in projects %}
+                <div class="grid grid--6 grid-gap--4 border--bottom border-stroke-light pb--4">
+                    <p class="text__s">{{ project.name }}</p>
+                    <p class="text__s">{{ project.slug }}</p>
+                    <div class="text__s flex row gap--2">
+                        {% for tag in project.tag %}
+                            <p class="p--1 text__s tag tag__{{ tag.color }}">{{ tag.name }}</p>
+                        {% endfor %}
+                    </div>
+                    <p class="text__s">{{ project.createdAt|date("d M Y, H:i") }}</p>
+                    <p class="text__s">{{ project.updatedAt|date("d M Y, H:i") }}</p>
+                    <div class="flex row gap--4 align--center">
+                        <a href="{{ path('app_admin_project_edit', {id: project.id}) }}" class="btn border-light text__s">Éditer</a>
+                        <form action="{{ path('app_admin_project_delete', {id: project.id}) }}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn danger--bg border-light text__s">Supprimer</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+            {% if projects is empty %}
+                <div class="flex row justify--center p--4">
+                    <p class="text__s">Aucun projet n'a été trouvé</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="container flex col gap--11">
+        <h3 class="mb--8">Gérer les Tags</h3>
+        {% include 'admin/project/template-part/_tag-form.html.twig' %}
+        <div class="flex row gap--4">
+            {% for tag in tags %}
+                <div class="flex row gap--1 align--center">
+                    <tag-react data-content="{{ tag.name }}" data-color="{{ tag.color }}"></tag-react>
+                    <form action="{{ path('app_admin_tag_delete', {id: tag.id}) }}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn border-light danger--bg pointer text__s">X</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+        {% if tags is empty %}
+            <div class="flex row justify--start">
+                <p class="text__s">Aucun tag n'a été trouvé</p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="container__large secondary-beige--bg">
+        <div class="container flex col align--center justify--center gap--11 text-center">
+            <button-react data-href="{{ path('app_admin_index') }}" data-content="Retour"></button-react>
+        </div>
+    </div>
+{% endblock %}

@@ -8,18 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta property="og:locale" content="" />
-        <meta property="og:title" content="" />
-        <meta property="og:type" content="" />
-        <meta property="og:description" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:image" content="" />
-        <meta property="og:image:secure_url" content="" />
-        <meta property="og:image:width" content="" />
-        <meta property="og:image:height" content="" />
-        <meta property="og:site_name" content="" />
-
+        <meta name="robots" content="noindex">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -31,9 +20,6 @@
     <body>
     <dropdown-react data-href='{"branding": "{{ path("app_projects") }}", "webdesign": "{{ path("app_projects") }}", "dev": "{{ path("app_projects") }}"}'></dropdown-react>
     <dropdown-mobile-react data-href='{
-        "branding": "{{ path("app_projects") }}",
-        "webdesign": "{{ path("app_projects") }}",
-        "dev": "{{ path("app_projects") }}",
         "projects": "{{ path("app_projects") }}",
         "faq": "{{ path("app_faq") }}",
         "studio": "{{ path("app_studio") }}",
@@ -59,7 +45,6 @@
                 </svg>
             </a>
             <div class="flex row gap--8 hide-mobile">
-                <menu-item-react class="dropdown-link" data-id="dropdown" data-content="Services" data-href="" data-active=""></menu-item-react>
                 <menu-item-react data-content="Projets" data-href="{{ path('app_projects') }}" data-active=""></menu-item-react>
                 <menu-item-react data-content="FAQ" data-href="{{ path('app_faq') }}" data-active=""></menu-item-react>
                 <menu-item-react data-content="Studio" data-href="{{ path('app_studio') }}" data-active=""></menu-item-react>
@@ -102,9 +87,9 @@
             <div class="flex row col-mobile align--start justify--space-between gap--4 pb--10 border--bottom border-stroke-dark mb--7">
                 <div class="flex col">
                     <p class="text__m primary-grey mb--3">Le Studio</p>
-                    <link-react data-content="Home" data-color="light" data-href="{{ path("app_index") }}"></link-react>
-                    <link-react data-content="Réalisations" data-color="light" data-href="{{ path("app_projects") }}"></link-react>
-                    <link-react data-content="À propos" data-color="light" data-href="{{ path("app_studio") }}"></link-react>
+                    <link-react data-content="Home" data-color="light" data-href="#"></link-react>
+                    <link-react data-content="Réalisations" data-color="light" data-href="#"></link-react>
+                    <link-react data-content="À propos" data-color="light" data-href="#"></link-react>
                 </div>
                 <div class="flex col">
                     <p class="text__m primary-grey mb--3">Services</p>
@@ -114,10 +99,10 @@
                 </div>
                 <div class="flex col">
                     <p class="text__m primary-grey mb--3">Questions</p>
-                    <link-react data-content="Articles & Blog" data-color="light" data-href="{{ path("app_posts") }}"></link-react>
-                    <link-react data-content="FAQs" data-color="light" data-href="{{ path("app_faq") }}"></link-react>
-                    <link-react data-content="Tarifs" data-color="light" data-href="{{ path("app_prices") }}"></link-react>
-                    <link-react data-content="Contact" data-color="light" data-href="{{ path("app_contact") }}"></link-react>
+                    <link-react data-content="Articles & Blog" data-color="light" data-href="#"></link-react>
+                    <link-react data-content="FAQs" data-color="light" data-href="#"></link-react>
+                    <link-react data-content="Tarifs" data-color="light" data-href="#"></link-react>
+                    <link-react data-content="Contact" data-color="light" data-href="#"></link-react>
                 </div>
                 <div class="flex col">
                     <p class="text__m primary-grey mb--3">Socials</p>

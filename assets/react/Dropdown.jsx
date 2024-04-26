@@ -17,6 +17,7 @@ function Dropdown(props) {
             document.querySelector('main').style.filter = 'blur(0)'
             document.querySelector('footer').style.filter = 'blur(0)'
     }
+    const href = JSON.parse(props.href)
 
     return <div id="dropdown" className="dropdown flex col align--center justify--center">
         <div className="header__gap"></div>
@@ -24,7 +25,7 @@ function Dropdown(props) {
             <div className="flex col gap--5">
                 <div className="flex col">
                     <p className="text__m">01</p>
-                    <Link href="#" content="" color="light" icon="1">Branding & <br/> Direction Artistique</Link>
+                    <Link href={href.branding} content="" color="light" icon="1">Branding & <br/> Direction Artistique</Link>
                 </div>
                 <div>
                     <p className="text__s primary-grey">
@@ -40,7 +41,7 @@ function Dropdown(props) {
             <div className="flex col gap--5">
                 <div className="flex col">
                     <p className="text__m">02</p>
-                    <Link href="#" content="" color="light" icon="1">Webdesign & <br/> Design Digital</Link>
+                    <Link href={href.webdesign} content="" color="light" icon="1">Webdesign & <br/> Design Digital</Link>
                 </div>
                 <div>
                     <p className="text__s primary-grey">
@@ -55,7 +56,7 @@ function Dropdown(props) {
             <div className="flex col gap--5">
                 <div className="flex col">
                     <p className="text__m">03</p>
-                    <Link href="#" content="" color="light" icon="1">Développement Web & <br/> Sites Sur Mesure</Link>
+                    <Link href={href.dev} content="" color="light" icon="1">Développement Web & <br/> Sites Sur Mesure</Link>
                 </div>
                 <div>
                     <p className="text__s primary-grey">

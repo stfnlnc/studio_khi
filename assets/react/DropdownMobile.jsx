@@ -7,16 +7,22 @@ import MenuItemMobile from "./MenuItemMobile";
 
 function DropdownMobile(props) {
 
+    const href = JSON.parse(props.href)
+
     return <div id="dropdown-mobile" className="dropdown-mobile flex col align--start justify--start">
         <div className="header__gap mb--4"></div>
         <div className="flex col w--100 border--top border-stroke-dark">
-            <MenuItemMobile dropmenu='{"Branding & Direction Artistique": "#", "Webdesign & Design Digital": "#", "Développement Web & Sites Sur Mesure": "#"}'>Services</MenuItemMobile>
-            <MenuItemMobile href="#">Réalisations</MenuItemMobile>
-            <MenuItemMobile href="#">FAQ</MenuItemMobile>
-            <MenuItemMobile href="#">Studio</MenuItemMobile>
-            <MenuItemMobile href="#">Articles</MenuItemMobile>
+            <MenuItemMobile dropmenu={
+                '{"Branding & Direction Artistique": "' + href.branding + '",' +
+                '"Webdesign & Design Digital": "' + href.webdesign + '",' +
+                '"Développement Web & Sites Sur Mesure": "' + href.webdesign + '"}'
+                }>Services</MenuItemMobile>
+            <MenuItemMobile href={href.projects}>Réalisations</MenuItemMobile>
+            <MenuItemMobile href={href.faq}>FAQ</MenuItemMobile>
+            <MenuItemMobile href={href.studio}>Studio</MenuItemMobile>
+            <MenuItemMobile href={href.posts}>Articles</MenuItemMobile>
             <span className="container pt--8 pb--0">
-                <Button href="#" color="light">Contact</Button>
+                <Button href={href.contact} color="light">Contact</Button>
             </span>
         </div>
     </div>
