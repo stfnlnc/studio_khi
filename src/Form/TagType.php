@@ -53,6 +53,7 @@ class TagType extends AbstractType
                     ]
                 ],
                 'label' => 'Couleur',
+                'placeholder' => false,
                 'attr' => [
                     'class' => 'form-input'
                 ],

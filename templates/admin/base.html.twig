@@ -56,6 +56,12 @@
     </header>
     <main>
         <div class="header__gap"></div>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="pointer alert alert__{{ label }} box-shadow" onclick="this.style.display = 'none'">{{ message }}</div>
+            {% endfor %}
+        {% endfor %}
+
         {% block body %}{% endblock %}
     </main>
     {#<div class="footer__gap hide-mobile"></div>#}

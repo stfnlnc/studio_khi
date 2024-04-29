@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Event\PostSubmitEvent;
 use Symfony\Component\Form\Event\PreSubmitEvent;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -72,6 +73,24 @@ class ProjectType extends AbstractType
                 ],
                 'label_attr' => [
                     'class' => 'form-label'
+                ],
+                'required' => false
+            ])
+            ->add('image', FileType::class, [
+                'label' => '+ Ajouter une image',
+                'multiple' => false,
+                'mapped' => false,
+                'label_attr' => [
+                    'class' => 'form-input form-file'
+                ],
+                'required' => false
+            ])
+            ->add('images', FileType::class, [
+                'label' => '+ Ajouter des images',
+                'multiple' => true,
+                'mapped' => false,
+                'label_attr' => [
+                    'class' => 'form-input form-file'
                 ],
                 'required' => false
             ])

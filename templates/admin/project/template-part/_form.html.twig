@@ -1,10 +1,22 @@
-<div class="container flex row justify--center">
+
+
+<div id="form"  class="container flex row col-mobile gap--8 align--start justify--start">
     {{ form_start(form, {'attr': {'class': 'w--100 flex col gap--8'}}) }}
     <div class="flex col gap--1">
         {{ form_label(form.slug) }}
         {{ form_widget(form.slug) }}
         <div class="errors">
         {{ form_errors(form.slug) }}
+        </div>
+    </div>
+    <div class="flex col gap--1">
+        <div class="flex col gap--1">
+            <label class="form-label">Image à la une</label>
+            {{ form_label(form.image) }}
+            {{ form_widget(form.image) }}
+            <div class="errors">
+                {{ form_errors(form.image) }}
+            </div>
         </div>
     </div>
     <div class="flex col gap--1">
@@ -54,9 +66,60 @@
             {{ form_errors(form.date) }}
             </div>
         </div>
+
+    </div>
+    <div class="flex col gap--1">
+        <label class="form-label">Galerie d'images</label>
+        {{ form_label(form.images) }}
+        {{ form_widget(form.images) }}
+        <div class="errors">
+            {{ form_errors(form.images) }}
+        </div>
     </div>
     {{ form_widget(form.save) }}
     {{ form_end(form) }}
+    <div class="flex col gap--8">
+        {% if project is defined and project.image != null %}
+            <div class="flex col gap--4">
+                <p class="text__s">Image à la une</p>
+                <div class="relative w-fit-content">
+                    <form class="btn__delete" action="{{ path('app_admin_image_delete', {id: project.id}) }}#form" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">x</button>
+                    </form>
+                    <img width="{{ width }}" height="{{ height }}" src="{{ asset('uploads/projects/featured/thumbnails/') ~ width ~ 'x' ~ height ~ '-' ~ project.image }}" alt="">
+                </div>
+            </div>
+        {% endif %}
+        <div class="flex col gap--4">
+            {% if project is defined and project.images.toArray is not empty %}
+            <p class="text__s">Galerie d'images</p>
+            <div class="grid grid--2 grid-gap--4">
+                {% for image in project.images.toArray|sort((a, b) => a.issue <=> b.issue) %}
+                    <div class="relative w-fit-content">
+                        <form class="btn__delete" action="{{ path('app_admin_images_delete', {id: image.id}) }}#form" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">x</button>
+                        </form>
+                        {% if image.issue != 1 %}
+                            <form class="btn__prev" action="{{ path('app_admin_images_prev', {id: image.id}) }}#form" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit"> < </button>
+                            </form>
+                        {% endif %}
+                        {% if image.issue != project.images.toArray|length %}
+                        <form class="btn__next" action="{{ path('app_admin_images_next', {id: image.id}) }}#form" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit"> > </button>
+                        </form>
+                        {% endif %}
+                        <img width="{{ width }}" height="{{ height }}" src="{{ asset('uploads/projects/gallery/thumbnails/') ~ width ~ 'x' ~ height ~ '-' ~ image.name }}" alt="">
+                    </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
 </div>
 <div class="container__large secondary-beige--bg">
     <div class="container flex col align--center justify--center gap--11 text-center">
