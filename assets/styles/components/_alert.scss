@@ -2,13 +2,13 @@
     padding: 1em;
     margin: 1em;
     border-bottom: 2px solid;
-    &-info {
+    &__info {
         border-color: var(--info);
     }
-    &-success {
+    &__success {
         border-color: var(--success);
     }
-    &-danger {
+    &__danger {
         border-color: var(--danger);
     }
 }

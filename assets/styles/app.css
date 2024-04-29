@@ -271,13 +271,13 @@ textarea {
   margin: 1em;
   border-bottom: 2px solid;
 }
-.alert-info {
+.alert__info {
   border-color: var(--info);
 }
-.alert-success {
+.alert__success {
   border-color: var(--success);
 }
-.alert-danger {
+.alert__danger {
   border-color: var(--danger);
 }
 
@@ -392,6 +392,51 @@ textarea {
   color: var(--primary-light);
   background-color: var(--primary-grey);
   border-color: var(--primary-grey);
+}
+.btn__delete {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+}
+.btn__delete > button {
+  border-radius: 100%;
+  border: none;
+  color: var(--primary-light);
+  background-color: var(--danger);
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.btn__next {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.2rem;
+}
+.btn__next > button {
+  border-radius: 100%;
+  border: 1px solid var(--primary-dark);
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.btn__prev {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.2rem;
+}
+.btn__prev > button {
+  border-radius: 100%;
+  border: 1px solid var(--primary-dark);
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .link {
@@ -615,9 +660,9 @@ h1, .h1 {
   --secondary-beige: #EAE0D6;
   --stroke-light: #E0E0E0;
   --stroke-dark: #3F3E3E;
-  --info: #3fb1de;
-  --success: #c5e1ab;
-  --danger: #daacac;
+  --info: #e0d94d;
+  --success: #4de08d;
+  --danger: #e04d4d;
 }
 
 .primary-dark {

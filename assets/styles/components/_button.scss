@@ -60,6 +60,51 @@ $duration: var(--hover-duration);
             border-color: var(--primary-grey);
         }
     }
+    &__delete {
+        position: absolute;
+        top: -0.750rem;
+        right: -0.750rem;
+        & > button {
+            border-radius: 100%;
+            border: none;
+            color: var(--primary-light);
+            background-color: var(--danger);
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    }
+    &__next {
+        position: absolute;
+        bottom: 0.6rem;
+        right: 0.2rem;
+        & > button {
+            border-radius: 100%;
+            border: 1px solid var(--primary-dark);
+            color: var(--primary-dark);
+            background-color: var(--primary-light);
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    }
+    &__prev {
+        position: absolute;
+        bottom: 0.6rem;
+        left: 0.2rem;
+        & > button {
+            border-radius: 100%;
+            border: 1px solid var(--primary-dark);
+            color: var(--primary-dark);
+            background-color: var(--primary-light);
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    }
 }
 
 .link {
