@@ -6,17 +6,14 @@
 
 {% block body %}
     <div class="container__large primary-light primary-dark--bg"
-         style="background-image: url('{{ asset('build/images/uploads/studio-1.jpg') }}'); background-position: center; background-size: cover">
+         style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{ asset('uploads/projects/featured/') ~ project.image }}'); background-position: center; background-size: cover;">
         <div class="container container__top flex col gap--16 gap-large-mobile align--start justify--start">
-            <h1>Seen Creative Content</h1>
+            <h1>{{ project.name }}</h1>
             <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
                 <p>
-                    Kassia Melo est une photographe qui s’inspire de la nature et de ses voyages pour révéler des images
-                    qui reflètent le désir d'aventure et la quête d'expression personnelle. Nous avons conçu un
-                    prototype de site web pour mettre en valeur ses photographies sous la forme d’un portfolio.
+                    {{ project.excerpt }}
                 </p>
-                <link-react data-border="1" data-color="light" data-href="#"
-                            data-content="Scroll pour découvrir"></link-react>
+                <p class="text__m underline">Scroll pour découvrir</p>
             </div>
         </div>
     </div>
@@ -24,45 +21,48 @@
         <div class="flex col gap--11 text__l w--40 w-100-mobile hide-mobile">
             <span>Résumé du projet</span>
             <div class="flex col gap--2">
-                <tag-react data-content="Identité visuelle"></tag-react>
-                <tag-react data-content="Identité visuelle"></tag-react>
-                <tag-react data-content="Identité visuelle"></tag-react>
+                {% for tag in project.tag.toArray %}
+                    <tag-react data-content="{{ tag.name }}"></tag-react>
+                {% endfor %}
             </div>
         </div>
         <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
             <h3>
-                Un portfolio web pour mettre en valeur les photographies.
+                {{ project.title }}
             </h3>
             <p class="w--80 w-100-mobile primary-grey text__m">
-                Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
-                opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance du
-                design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
-                amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le design
-                n'est plus juste une option, mais une nécessité pour se démarquer.
-                <br><br>
-                Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir des
-                outils à la fois créatifs, intuitifs et performants.
+                {{ project.description }}
             </p>
             <div class="flex col align--start justify--start border--top border-stroke-light w--100">
+                {% if project.category is not empty %}
                 <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
                     <p class="text__m">Catégorie</p>
-                    <p class="text__m">Tech</p>
+                    <p class="text__m">{{ project.category }}</p>
                 </div>
+                {% endif %}
+                {% if project.type is not empty %}
                 <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
                     <p class="text__m">Type</p>
-                    <p class="text__m">Rebranding</p>
+                    <p class="text__m">{{ project.type }}</p>
                 </div>
-                <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
-                    <p class="text__m">Date</p>
-                    <p class="text__m">2023</p>
-                </div>
+                {% endif %}
+                {% if project.date is not empty %}
+                    <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
+                        <p class="text__m">Date</p>
+                        <p class="text__m">{{ project.date }}</p>
+                    </div>
+                {% endif %}
             </div>
-            <button-react data-href="" data-content="Voir le site"></button-react>
+            {% if project.url is not empty %}
+                <button-react data-target="_blank" data-href="{{ project.url }}" data-content="Voir le site"></button-react>
+            {% endif %}
         </div>
     </div>
     <div class="container container__project">
         <div class="flex col gap--2">
-            <img class="w-100 border-rounded" src="{{ asset('build/images/uploads/project.png') }}" alt="">
+            {% for image in project.images.toArray %}
+                <img class="w-100 border-rounded" src="{{ asset('uploads/projects/gallery/') ~ image.name }}" alt="">
+            {% endfor %}
         </div>
     </div>
     <div class="container flex col gap--16 gap-large-mobile align--start justify--center">

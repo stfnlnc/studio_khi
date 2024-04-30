@@ -13,61 +13,41 @@
     </div>
     <div class="container__large border--top border--bottom border-stroke-light">
         <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
-            <filter-react data-content="Tous les projets"></filter-react>
-            <filter-react data-content="Branding"></filter-react>
-            <filter-react data-content="UI/UX Design"></filter-react>
-            <filter-react data-content="Site Vitrine"></filter-react>
-            <filter-react data-content="E-Commerce"></filter-react>
+            <filter-react data-id="all" data-content="Tous les projets"></filter-react>
+            {% for tag in tags %}
+                <filter-react data-id="{{ tag.slug }}" data-content="{{ tag.name }}"></filter-react>
+            {% endfor %}
         </div>
     </div>
     <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
         <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
-            <div class="flex col gap--5">
-                <div class="relative">
-                    <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                         alt="">
-                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                        <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                        <tag-react data-color="violet" data-content="Design Digital"></tag-react>
-                    </div>
-                </div>
-                <div class="flex col gap--3">
-                    <p class="text__l">
-                        Nom du projet
-                    </p>
-                    <div class="flex col align--start justify--start gap--11">
-                        <p class="primary-grey text__m">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
+            {% for key, project in projects %}
+                <article class="flex col gap--5 mb--16 {% for tag in project.tag.toArray %}{{ tag.slug }} {% endfor %}">
+                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative">
+                        <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/') ~ project.image }}"
+                             alt="">
+                        <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                            {% for tag in project.tag.toArray %}
+                                <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                            {% endfor %}
+                        </div>
+                    </a>
+                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex col gap--3">
+                        <p class="text__l">
+                            {{ project.name }}
                         </p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex col gap--5">
-                <div class="relative">
-                    <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                         alt="">
-                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                        <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                        <tag-react data-color="violet" data-content="Design Digital"></tag-react>
-                    </div>
-                </div>
-                <div class="flex col gap--3">
-                    <p class="text__l">
-                        Nom du projet
-                    </p>
-                    <div class="flex col align--start justify--start gap--11">
-                        <p class="primary-grey text__m">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
-                        </p>
-                    </div>
-                </div>
-            </div>
+                        <div class="flex col align--start justify--start gap--11">
+                            <p class="primary-grey text__m">
+                                {{ project.excerpt }}
+                            </p>
+                        </div>
+                    </a>
+                </article>
+            {% endfor %}
         </div>
-        <div class="w--100 flex row justify--center">
+        {#<div class="w--100 flex row justify--center">
             <button-react data-color="light" data-content="Charger plus de projets"></button-react>
-        </div>
+        </div>#}
     </div>
 
 {% endblock %}

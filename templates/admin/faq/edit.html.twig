@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}FAQ - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container__large border--bottom border-stroke-light">
+        <div class="container">
+            <h1>Éditer la question</h1>
+        </div>
+    </div>
+    {% include 'admin/faq/template-part/_faq-form.html.twig' %}
+
+{% endblock %}

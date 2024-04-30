@@ -27,7 +27,7 @@
                 <div class="grid grid--6 grid-gap--4 border--bottom border-stroke-light pb--4">
                     <p class="text__s">{{ project.name }}</p>
                     <p class="text__s">{{ project.slug }}</p>
-                    <div class="text__s flex row gap--2">
+                    <div class="text__s flex col gap--2">
                         {% for tag in project.tag %}
                             <p class="p--1 h-fit-content text__s tag tag__{{ tag.color }}">{{ tag.name }}</p>
                         {% endfor %}

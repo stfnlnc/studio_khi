@@ -755,7 +755,7 @@ h1, .h1 {
 .faq__answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--dropdown-duration) var(--dropdown-cubic);
+  transition: max-height 1s ease-in-out;
 }
 
 .footer {
@@ -903,6 +903,7 @@ h1, .h1 {
   object-fit: cover;
   object-position: center;
   aspect-ratio: 1/1;
+  filter: brightness(90%);
 }
 .home__img-studio-left {
   object-fit: cover;

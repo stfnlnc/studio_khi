@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Event\PostSubmitEvent;
 use Symfony\Component\Form\Event\PreSubmitEvent;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -94,6 +95,39 @@ class ProjectType extends AbstractType
                 ],
                 'required' => false
             ])
+            ->add('type', TextType::class, [
+                'label' => 'Type',
+                'attr' => [
+                    'class' => 'form-input',
+                    'placeholder' => 'Type du projet'
+                ],
+                'label_attr' => [
+                    'class' => 'form-label'
+                ],
+                'required' => false
+            ])
+            ->add('category', TextType::class, [
+                'label' => 'Catégorie',
+                'attr' => [
+                    'class' => 'form-input',
+                    'placeholder' => 'Catégorie du projet'
+                ],
+                'label_attr' => [
+                    'class' => 'form-label'
+                ],
+                'required' => false
+            ])
+            ->add('url', TextType::class, [
+                'label' => 'Lien du site web',
+                'attr' => [
+                    'class' => 'form-input',
+                    'placeholder' => 'Lien du site web'
+                ],
+                'label_attr' => [
+                    'class' => 'form-label'
+                ],
+                'required' => false
+            ])
             ->add('date', TextType::class, [
                 'label' => 'Date',
                 'attr' => [
@@ -117,6 +151,16 @@ class ProjectType extends AbstractType
                 ],
                 'multiple' => true,
                 'expanded' => true,
+                'required' => false
+            ])
+            ->add('is_homepage', CheckboxType::class, [
+                'label' => 'Visible en page d\'accueil',
+                'label_attr' => [
+                    'class' => 'form-label'
+                ],
+                'attr' => [
+                    'class' => 'form-check'
+                ],
                 'required' => false
             ])
             ->add('save', SubmitType::class, [

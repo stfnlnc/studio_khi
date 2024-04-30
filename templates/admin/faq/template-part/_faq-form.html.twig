@@ -1,0 +1,28 @@
+<div id="form" class="container flex row col-mobile gap--8 align--start justify--start">
+{{ form_start(form, {'attr': {'class': 'w--100 flex col gap--4'}}) }}
+<div class="flex col gap--4">
+    <div class="flex col gap--1">
+        {{ form_label(form.question) }}
+        {{ form_widget(form.question) }}
+        <div class="errors">
+            {{ form_errors(form.question) }}
+        </div>
+    </div>
+    <div class="flex col gap--1">
+        {{ form_label(form.answer) }}
+        {{ form_widget(form.answer) }}
+        <div class="errors">
+            {{ form_errors(form.answer) }}
+        </div>
+    </div>
+    <div class="flex col gap--1">
+        {{ form_label(form.category) }}
+        {{ form_widget(form.category) }}
+        <div class="errors">
+            {{ form_errors(form.category) }}
+        </div>
+    </div>
+</div>
+{{ form_widget(form.save) }}
+{{ form_end(form) }}
+</div>

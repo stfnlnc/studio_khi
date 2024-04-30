@@ -13,7 +13,7 @@ export default function Button(props) {
         icon = ''
     }
 
-    return <a href={props.href} className={'btn text__m' + color}>
+    return <a target={props.target} href={props.href} className={'btn text__m' + color}>
         {props.content}{props.children}
         <svg className={'btn__icon' + icon} viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.5 13.5L13.5 4.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

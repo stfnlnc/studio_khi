@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Project;
+use App\Repository\FaqRepository;
+use App\Repository\ProjectRepository;
+use App\Repository\TagRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -10,9 +14,15 @@ use Symfony\Component\Routing\Attribute\Route;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(ProjectRepository $projectRepository, FaqRepository $faqRepository): Response
     {
-        return $this->render('main/index.html.twig');
+        $projects = $projectRepository->findBy(['is_homepage' => true]);
+        $faqs = $faqRepository->findBy(['category' => 'general']);
+
+        return $this->render('main/index.html.twig', [
+            'projects' => $projects,
+            'faqs' => $faqs,
+        ]);
     }
 
     #[Route('/service/{slug}', name: 'service')]
@@ -34,15 +44,23 @@ class MainController extends AbstractController
     }
 
     #[Route('/realisations', name: 'projects')]
-    public function projects(): Response
+    public function projects(ProjectRepository $repository, TagRepository $tagRepository): Response
     {
-        return $this->render('main/projects.html.twig');
+        $projects = $repository->findAll();
+        $tags = $tagRepository->findAll();
+
+        return $this->render('main/projects.html.twig', [
+            'projects' => $projects,
+            'tags' => $tags,
+        ]);
     }
 
     #[Route('/realisations/{slug}', name: 'show')]
-    public function show(): Response
+    public function show(Project $project): Response
     {
-        return $this->render('main/show.html.twig');
+        return $this->render('main/show.html.twig', [
+            'project' => $project,
+        ]);
     }
 
     #[Route('/blog', name: 'posts')]
@@ -58,9 +76,13 @@ class MainController extends AbstractController
     }
 
     #[Route('/faq', name: 'faq')]
-    public function faq(): Response
+    public function faq(FaqRepository $faqRepository): Response
     {
-        return $this->render('main/faq.html.twig');
+        $faqs = $faqRepository->findAll();
+
+        return $this->render('main/faq.html.twig', [
+            'faqs' => $faqs,
+        ]);
     }
 
     #[Route('/contact', name: 'contact')]

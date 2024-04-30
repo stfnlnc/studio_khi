@@ -3,9 +3,9 @@
 {% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
-    <div class="container__large border--bottom border-stroke-light">
+    <section class="container__large border--bottom border-stroke-light">
         <div class="container container__top flex col col-rev-mobile align--center justify--center relative">
-            <button-react data-content="Commander votre site" data-href="#" data-color="dark"></button-react>
+            <button-react data-content="Commencer votre projet" data-href="{{ path('app_contact') }}" data-color="dark"></button-react>
             <p class="w--50 primary-grey text-center mt--11 mb--8 w-100-mobile">
                 Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et
                 des
@@ -40,8 +40,8 @@
                 <path d="M168.43 197.514H164.562V217.517H168.43V197.514Z"/>
             </svg>
         </div>
-    </div>
-    <div class="container flex row col-mobile gap-small-mobile">
+    </section>
+    <section class="container flex row col-mobile gap-small-mobile">
         <p class="text__l w--40 w-100-mobile">
             Notre approche
         </p>
@@ -60,12 +60,12 @@
                 outils à la fois créatifs, intuitifs et performants.
             </p>
             <div class="flex col align--start justify--start gap--2">
-                <link-react data-icon="1" data-content="Découvrir nos services" data-href="#"></link-react>
-                <link-react data-icon="1" data-content="Voir nos réalisations" data-href="#"></link-react>
+                <link-react data-icon="1" data-content="Découvrir nos services" data-href="#branding"></link-react>
+                <link-react data-icon="1" data-content="Voir nos réalisations" data-href="{{ path('app_projects') }}"></link-react>
             </div>
         </div>
-    </div>
-    <div id="branding" class="container__large secondary-green--bg">
+    </section>
+    <section id="branding" class="container__large secondary-green--bg">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
@@ -92,8 +92,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="webdesign" class="container__large secondary-blue--bg">
+    </section>
+    <section id="webdesign" class="container__large secondary-blue--bg">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
@@ -120,8 +120,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="dev" class="container__large secondary-violet--bg">
+    </section>
+    <section id="dev" class="container__large secondary-violet--bg">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
@@ -149,8 +149,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
+    </section>
+    <section class="container flex col gap--16 gap-large-mobile align--start justify--center">
         <div class="flex row col-mobile">
             <p class="text__l w--40 w-100-mobile">
                 Nos réalisations
@@ -164,51 +164,38 @@
                 </p>
             </div>
         </div>
-        <div class="flex col gap--5">
-            <div class="relative">
-                <img class="home__img home__img-case" src="{{ asset('build/images/uploads/case-studies.png') }}" alt="">
-                <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                    <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                    <tag-react data-color="violet" data-content="Design Digital"></tag-react>
-                </div>
-            </div>
-            <div class="flex row col-mobile">
-                <p class="text__l w--40 w-100-mobile">
-                    Nom du projet
-                </p>
-                <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                    <p class="w--80 w-100-mobile primary-grey text__m">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore.
+        {% for project in projects %}
+            <article class="flex col gap--5">
+                <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative">
+                    {% if project.image is not empty %}
+                        <img class="home__img home__img-case" src="{{ asset('uploads/projects/featured/') ~ project.image }}" alt="{{ project.name }}">
+                    {% else %}
+                        <div class="home__img home__img-case stroke-dark--bg"></div>
+                    {% endif %}
+
+                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                        {% for tag in project.tag.toArray %}
+                            <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                        {% endfor %}
+                    </div>
+                </a>
+                <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex row col-mobile">
+                    <p class="text__l w--40 w-100-mobile">
+                        {{ project.name }}
                     </p>
-                </div>
-            </div>
-        </div>
-        <div class="flex col gap--5">
-            <div class="relative">
-                <img class="home__img home__img-case" src="{{ asset('build/images/uploads/case-studies.png') }}" alt="">
-                <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                    <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                    <tag-react data-color="violet" data-content="Design Digital"></tag-react>
-                </div>
-            </div>
-            <div class="flex row col-mobile">
-                <p class="text__l w--40 w-100-mobile">
-                    Nom du projet
-                </p>
-                <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                    <p class="w--80 w-100-mobile primary-grey text__m">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore.
-                    </p>
-                </div>
-            </div>
-        </div>
+                    <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                        <p class="w--80 w-100-mobile primary-grey text__m">
+                            {{ project.excerpt }}
+                        </p>
+                    </div>
+                </a>
+            </article>
+        {% endfor %}
         <div class="align--self-end">
-            <link-react data-icon="1" data-content="Voir tous les projets" data-href="#"></link-react>
+            <link-react data-icon="1" data-content="Voir tous les projets" data-href="{{ path('app_projects') }}"></link-react>
         </div>
-    </div>
-    <div class="container__large primary-light primary-dark--bg">
+    </section>
+    <section class="container__large primary-light primary-dark--bg">
         <div class="container flex col gap--16 align--center justify--center">
             <div class="flex row col-mobile gap-small-mobile">
                 <p class="text__l w--40 w-100-mobile">
@@ -305,16 +292,16 @@
                            data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
             </div>
         </div>
-    </div>
-    <div class="container__large secondary-beige--bg">
+    </section>
+    <section class="container__large secondary-beige--bg">
         <div class="container flex col align--center justify--center gap--11 text-center">
             <h2 class="w--70 w-100-mobile">
                 Vous souhaitez recevoir un devis sur mesure ?
             </h2>
             <button-react data-href="" data-content="Répondez à ce questionnaire"></button-react>
         </div>
-    </div>
-    <div class="container flex col gap--16">
+    </section>
+    <section class="container flex col gap--16">
         <div class="flex row col-mobile gap-small-mobile">
             <p class="text__l w--40 w-100-mobile">
                 Le studio
@@ -332,7 +319,7 @@
                     fermement à la simplicité et aux choix audacieux pour rendre votre marque unique et mémorable.
                 </p>
                 <div class="flex col align--start justify--start gap--2">
-                    <link-react data-icon="1" data-content="Découvrir le studio" data-href="#"></link-react>
+                    <link-react data-icon="1" data-content="Découvrir le studio" data-href="{{ path('app_studio') }}"></link-react>
                 </div>
             </div>
         </div>
@@ -346,8 +333,8 @@
                      class="home__img home__img-studio-right">
             </div>
         </div>
-    </div>
-    <div class="container__large border--top border-stroke-light">
+    </section>
+    <section class="container__large border--top border-stroke-light">
         <div class="container flex col gap--16 align--center justify--center">
             <div class="flex row col-mobile gap-large-mobile">
                 <p class="text__l w--40 w-100-mobile">
@@ -364,8 +351,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container__large primary-light primary-dark--bg">
+    </section>
+    <section class="container__large primary-light primary-dark--bg">
         <div class="container flex col gap--16 gap-large-mobile align--center justify--center">
             <div class="flex row col-mobile w--100">
                 <p class="text__l w--40 w-100-mobile">
@@ -415,18 +402,16 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container flex row col-mobile gap-large-mobile">
+    </section>
+    <section class="container flex row col-mobile gap-large-mobile">
         <p class="text__l w--40 w-100-mobile">
             FAQ
         </p>
         <div class="w--60 w-100-mobile flex col align--start justify--start">
-            <faq-react class="w--100" data-id="1" data-title="Pourquoi faire confiance au Studio Khi ?"
-                       data-content="Chez Studio Khi, nous nous adaptons rapidement à vos demandes afin d'explorer des solutions créatives et innovantes, offrant ainsi des résultats uniques et originaux pour chaque projet. Nous sommes passionnés par notre travail et nous sommes dévoués à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. De plus, nous prenons en charge l'ensemble du processus, de la conception à la mise en ligne, vous permettant ainsi de vous concentrer sur d'autres aspects de votre entreprise."></faq-react>
-            <faq-react class="w--100" data-id="2" data-title="Pourquoi faire confiance au Studio Khi ?"
-                       data-content="Chez Studio Khi, nous nous adaptons rapidement à vos demandes afin d'explorer des solutions créatives et innovantes, offrant ainsi des résultats uniques et originaux pour chaque projet. Nous sommes passionnés par notre travail et nous sommes dévoués à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. De plus, nous prenons en charge l'ensemble du processus, de la conception à la mise en ligne, vous permettant ainsi de vous concentrer sur d'autres aspects de votre entreprise."></faq-react>
-            <faq-react class="w--100" data-id="3" data-title="Pourquoi faire confiance au Studio Khi ?"
-                       data-content="Chez Studio Khi, nous nous adaptons rapidement à vos demandes afin d'explorer des solutions créatives et innovantes, offrant ainsi des résultats uniques et originaux pour chaque projet. Nous sommes passionnés par notre travail et nous sommes dévoués à fournir des solutions sur mesure qui répondent aux besoins uniques de chaque client. De plus, nous prenons en charge l'ensemble du processus, de la conception à la mise en ligne, vous permettant ainsi de vous concentrer sur d'autres aspects de votre entreprise."></faq-react>
+            {% for faq in faqs %}
+                <faq-react class="w--100" data-id="1" data-title="{{ faq.question }}"
+                           data-content="{{ faq.answer }}"></faq-react>
+            {% endfor %}
         </div>
-    </div>
+    </section>
 {% endblock %}
