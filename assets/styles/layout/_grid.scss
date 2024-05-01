@@ -1,6 +1,6 @@
 .grid {
     display: grid;
-    @for $i from 1 through 6 {
+    @for $i from 1 through 10 {
         &--#{$i} {
             grid-template-columns: repeat(#{$i}, 1fr);
         }
@@ -10,7 +10,7 @@
 @media screen and (max-width: 1080px) {
     .grid {
         display: grid;
-        @for $i from 1 through 6 {
+        @for $i from 1 through 10 {
             &--#{$i}-mobile {
                 grid-template-columns: repeat(#{$i}, 1fr);
             }

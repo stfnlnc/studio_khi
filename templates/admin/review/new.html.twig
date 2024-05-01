@@ -1,0 +1,14 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Les avis - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container__large border--bottom border-stroke-light">
+        <div class="container">
+            <h1>Créer un nouvel avis</h1>
+        </div>
+    </div>
+    {% include 'admin/review/template-part/_form.html.twig' %}
+
+{% endblock %}
+

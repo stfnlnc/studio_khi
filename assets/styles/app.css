@@ -266,6 +266,21 @@ textarea {
   width: 350px;
 }
 
+card {
+  border: 1px solid var(--primary-dark);
+  width: 412px;
+  height: 450px;
+  border-radius: 1rem;
+  white-space: wrap;
+  padding: 55px;
+}
+
+.star {
+  fill: var(--primary-dark);
+  width: 12px;
+  height: 12px;
+}
+
 .alert {
   padding: 1em;
   margin: 1em;
@@ -561,6 +576,17 @@ p {
   text-align: right;
 }
 
+blockquote {
+  border-left: 1px solid var(--primary-dark);
+  margin: 0;
+  padding: 0 2rem;
+}
+blockquote > p {
+  font-size: 1.625rem;
+  line-height: 150%;
+  letter-spacing: -3%;
+}
+
 @media screen and (max-width: 1080px) {
   .text__s {
     font-size: 0.875rem;
@@ -585,6 +611,9 @@ p {
   --h1: 6.125rem;
   --h2: 4.6875rem;
   --h3: 3.5rem;
+  --h4: 1.625rem;
+  --h5: 1.5rem;
+  --h6: 1rem;
   --font-heading: "Overused Grotesk", sans-serif;
   --weight-heading: 400;
   --height-heading: 95%;
@@ -592,7 +621,7 @@ p {
 }
 
 h1, .h1 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), sans-serif;
   font-size: var(--h1);
   font-weight: var(--weight-heading);
   line-height: var(--height-heading);
@@ -602,7 +631,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), sans-serif;
   font-size: var(--h2);
   font-weight: var(--weight-heading);
   line-height: var(--height-heading);
@@ -612,8 +641,38 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), sans-serif;
   font-size: var(--h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+h4, .h4 {
+  font-family: var(--font-heading), sans-serif;
+  font-size: var(--h4);
+  font-weight: var(--weight-heading);
+  line-height: var(--height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+h5, .h5 {
+  font-family: var(--font-heading), sans-serif;
+  font-size: var(--h5);
+  font-weight: var(--weight-heading);
+  line-height: var(--height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+h6, .h6 {
+  font-family: var(--font-heading), sans-serif;
+  font-size: var(--h6);
   font-weight: var(--weight-heading);
   line-height: var(--height-heading);
   letter-spacing: var(--letter-spacing-heading);
@@ -630,6 +689,9 @@ h1, .h1 {
     --h1: 3.4375rem;
     --h2: 2.8125rem;
     --h3: 2.3125rem;
+    --h4: 1.625rem;
+    --h5: 1.5rem;
+    --h6: 1rem;
   }
 }
 @font-face {
@@ -2419,6 +2481,18 @@ h1, .h1 {
 .grid--6 {
   grid-template-columns: repeat(6, 1fr);
 }
+.grid--7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+.grid--8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+.grid--9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+.grid--10 {
+  grid-template-columns: repeat(10, 1fr);
+}
 
 @media screen and (max-width: 1080px) {
   .grid {
@@ -2441,6 +2515,18 @@ h1, .h1 {
   }
   .grid--6-mobile {
     grid-template-columns: repeat(6, 1fr);
+  }
+  .grid--7-mobile {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .grid--8-mobile {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .grid--9-mobile {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid--10-mobile {
+    grid-template-columns: repeat(10, 1fr);
   }
 }
 .flex {

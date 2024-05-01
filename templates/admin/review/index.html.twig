@@ -1,0 +1,46 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Les avis - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container__large">
+        <div class="container border--bottom border-stroke-light">
+            <h1>Les avis en ligne</h1>
+        </div>
+    </div>
+    <div class="container__large border--bottom border-stroke-light">
+        <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
+            <button-react data-content="Nouvel avis" data-href="{{ path('app_admin_review_new') }}"></button-react>
+        </div>
+    </div>
+    <div class="container">
+        <div class="grid grid--1 grid-gap--4">
+            <div class="grid grid--2 grid-gap--4 border--bottom border-stroke-light pb--4 primary-grey">
+                <p class="text__s">Nom</p>
+                <p class="text__s">Actions</p>
+            </div>
+            {% for review in reviews %}
+                <div class="grid grid--2 grid-gap--4 border--bottom border-stroke-light pb--4">
+                    <p class="text__s">{{ review.name }}</p>
+                    <div class="flex row gap--4 align--center">
+                        <a href="{{ path('app_admin_review_edit', {id: review.id}) }}" class="btn border-light text__s">Éditer</a>
+                        <form action="{{ path('app_admin_review_delete', {id: review.id}) }}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn danger--bg border-light text__s">Supprimer</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+            {% if reviews is empty %}
+                <div class="flex row justify--center p--4">
+                    <p class="text__s">Aucun avis n'a été trouvé</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="container__large secondary-beige--bg">
+        <div class="container flex col align--center justify--center gap--11 text-center">
+            <button-react data-href="{{ path('app_admin_index') }}" data-content="Retour"></button-react>
+        </div>
+    </div>
+{% endblock %}

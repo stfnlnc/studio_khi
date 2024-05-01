@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Les article - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container__large border--bottom border-stroke-light">
+        <div class="container">
+            <h1>Éditer l'article</h1>
+        </div>
+    </div>
+    {% include 'admin/post/template-part/_form.html.twig' %}
+
+{% endblock %}

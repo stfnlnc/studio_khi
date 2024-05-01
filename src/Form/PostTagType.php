@@ -2,9 +2,8 @@
 
 namespace App\Form;
 
-use App\Entity\Project;
+use App\Entity\PostTag;
 use App\Entity\Tag;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Event\PostSubmitEvent;
 use Symfony\Component\Form\Event\PreSubmitEvent;
@@ -16,7 +15,7 @@ use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 
-class TagType extends AbstractType
+class PostTagType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -76,7 +75,7 @@ class TagType extends AbstractType
     public function setDate(PostSubmitEvent $event): void
     {
         $data = $event->getData();
-        if(!($data instanceof Tag)) {
+        if(!($data instanceof PostTag)) {
             return;
         }
         $dateTime = new \DateTimeImmutable('Europe/Paris');
@@ -99,7 +98,7 @@ class TagType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Tag::class,
+            'data_class' => PostTag::class,
         ]);
     }
 }

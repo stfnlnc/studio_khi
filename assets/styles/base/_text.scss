@@ -53,6 +53,17 @@ p {
     text-align: right;
 }
 
+blockquote {
+    border-left: 1px solid var(--primary-dark);
+    margin: 0;
+    padding: 0 2rem;
+    & > p {
+        font-size: 1.625rem;
+        line-height: 150%;
+        letter-spacing: -3%;
+    }
+}
+
 @media screen and (max-width: 1080px) {
     .text {
         &__s {

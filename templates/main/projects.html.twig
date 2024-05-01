@@ -22,7 +22,7 @@
     <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
         <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
             {% for key, project in projects %}
-                <article class="flex col gap--5 mb--16 {% for tag in project.tag.toArray %}{{ tag.slug }} {% endfor %}">
+                <article class="flex col gap--5 mb--16 {% for tag in project.tag.toArray %} {{ tag.slug }} {% endfor %}">
                     <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative">
                         <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/') ~ project.image }}"
                              alt="">

@@ -87,7 +87,7 @@
                             Design Réseaux Sociaux <br>
                             Pitchdeck
                         </p>
-                        <link-react data-icon="1" data-content="Infos & Tarifs" data-href="#"></link-react>
+                        <link-react data-icon="1" data-content="Infos & Tarifs" data-href="{{ path('app_service_branding') }}"></link-react>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                             Maquettes & Prototypes <br>
                             Design System
                         </p>
-                        <link-react data-icon="1" data-content="Infos & Tarifs" data-href="#"></link-react>
+                        <link-react data-icon="1" data-content="Infos & Tarifs" data-href="{{ path('app_service_webdesign') }}"></link-react>
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                             SEO & Référencement naturel <br>
                             Formation & Maintenance
                         </p>
-                        <link-react data-icon="1" data-content="Infos & Tarifs" data-href="#"></link-react>
+                        <link-react data-icon="1" data-content="Infos & Tarifs" data-href="{{ path('app_service_development') }}"></link-react>
                     </div>
                 </div>
             </div>
@@ -334,7 +334,7 @@
             </div>
         </div>
     </section>
-    <section class="container__large border--top border-stroke-light">
+    <section class="container__large border--top border-stroke-light flex col">
         <div class="container flex col gap--16 align--center justify--center">
             <div class="flex row col-mobile gap-large-mobile">
                 <p class="text__l w--40 w-100-mobile">
@@ -349,6 +349,38 @@
                     </p>
                     <link-react data-icon="1" data-content="Lire tous les avis" data-href="#"></link-react>
                 </div>
+            </div>
+        </div>
+        <div class="container__scroll p--10 pt--0 pb--20 flex row align--center justify--center justify--start-mobile gap--5">
+            <div class="flex row gap--5 w-fit-content">
+                {% for review in reviews %}
+                    <card class="flex col gap--2">
+                        <div class="flex row gap--1">
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                        </div>
+                        <p class="text__s">
+                            {{ review.name}} <br>
+                            <span class="primary-grey">{{ review.subtitle }}</span>
+                        </p>
+                        <p class="text__s mt--4">
+                            “ {{ review.description}} ”
+                        </p>
+                    </card>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -366,40 +398,26 @@
                 </div>
             </div>
             <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
-                <div class="flex col gap--5">
-                    <div class="relative">
-                        <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                             alt="">
-                        <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                            <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                            <tag-react data-color="violet" data-content="Design Digital"></tag-react>
+                {% for post in posts %}
+                    <article class="flex col gap--5">
+                        <div class="relative">
+                            <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/') ~ post.image }}"
+                                 alt="">
+                            <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                                {% for tag in post.tag.toArray %}
+                                    <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                                {% endfor %}
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex col gap--3">
-                        <p class="text__l">
-                            5 ways the power of Ai might impact your corporate vision
-                        </p>
-                        <link-react data-href="" data-border="1" data-content="Lire l'article"
-                                    data-color="light"></link-react>
-                    </div>
-                </div>
-                <div class="flex col gap--5">
-                    <div class="relative">
-                        <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                             alt="">
-                        <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                            <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                            <tag-react data-color="violet" data-content="Design Digital"></tag-react>
+                        <div class="flex col gap--3">
+                            <p class="text__l">
+                                {{ post.name }}
+                            </p>
+                            <link-react data-href="{{ path('app_post', {slug: post.slug}) }}" data-border="1" data-content="Lire l'article"
+                                        data-color="light"></link-react>
                         </div>
-                    </div>
-                    <div class="flex col gap--3">
-                        <p class="text__l">
-                            5 ways the power of Ai might impact your corporate vision
-                        </p>
-                        <link-react data-href="" data-border="1" data-content="Lire l'article"
-                                    data-color="light"></link-react>
-                    </div>
-                </div>
+                    </article>
+                {% endfor %}
             </div>
         </div>
     </section>

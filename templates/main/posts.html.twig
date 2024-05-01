@@ -8,66 +8,44 @@
     <div class="container flex col gap--16 gap-large-mobile align--start">
         <h1>Nos Réalisations</h1>
         <p class="w--60 w-100-mobile text__l align--self-end">
-            Découvrez une série de projets sur lesquels nous avons travaillé, allant de la création d'identités visuelles à la conception de sites web. Chaque projet est une histoire à part entière, reflétant notre passion pour le design et notre volonté de satisfaire nos clients.
+            Découvrez une série de projets sur lesquels nous avons travaillé, allant de la création d'identités
+            visuelles à la conception de sites web. Chaque projet est une histoire à part entière, reflétant notre
+            passion pour le design et notre volonté de satisfaire nos clients.
         </p>
     </div>
     <div class="container__large border--top border--bottom border-stroke-light">
         <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
-            <filter-react data-content="Tous les projets"></filter-react>
-            <filter-react data-content="Branding"></filter-react>
-            <filter-react data-content="UI/UX Design"></filter-react>
-            <filter-react data-content="Site Vitrine"></filter-react>
-            <filter-react data-content="E-Commerce"></filter-react>
+            <filter-react data-id="all" data-content="Tous les articles"></filter-react>
+            {% for tag in tags %}
+                <filter-react data-id="{{ tag.slug }}" data-content="{{ tag.name }}"></filter-react>
+            {% endfor %}
         </div>
     </div>
-    <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
+    <section class="container flex col gap--16 gap-large-mobile align--start justify--center">
         <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
-            <div class="flex col gap--5">
-                <div class="relative">
-                    <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                         alt="">
-                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                        <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                        <tag-react data-color="violet" data-content="Design Digital"></tag-react>
+            {% for post in posts %}
+                <article class="flex col gap--5 {% for tag in post.tag.toArray %} {{ tag.slug }} {% endfor %}">
+                    <div class="relative">
+                        <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/') ~ post.image }}"
+                             alt="">
+                        <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                            {% for tag in post.tag.toArray %}
+                                <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
-                <div class="flex col gap--3">
-                    <p class="text__l">
-                        Nom du projet
-                    </p>
-                    <div class="flex col align--start justify--start gap--11">
-                        <p class="primary-grey text__m">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
+                    <div class="flex col gap--3">
+                        <p class="text__l">
+                            {{ post.name }}
                         </p>
+                        <link-react data-border="1" data-href="{{ path('app_post', {slug: post.slug}) }}" data-content="Lire l'article"></link-react>
                     </div>
-                </div>
-            </div>
-            <div class="flex col gap--5">
-                <div class="relative">
-                    <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                         alt="">
-                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                        <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                        <tag-react data-color="violet" data-content="Design Digital"></tag-react>
-                    </div>
-                </div>
-                <div class="flex col gap--3">
-                    <p class="text__l">
-                        Nom du projet
-                    </p>
-                    <div class="flex col align--start justify--start gap--11">
-                        <p class="primary-grey text__m">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
-                        </p>
-                    </div>
-                </div>
-            </div>
+                </article>
+            {% endfor %}
         </div>
-        <div class="w--100 flex row justify--center">
+{#        <div class="w--100 flex row justify--center">
             <button-react data-color="light" data-content="Charger plus de projets"></button-react>
-        </div>
-    </div>
+        </div>#}
+    </section>
 
 {% endblock %}

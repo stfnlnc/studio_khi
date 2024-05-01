@@ -1,0 +1,14 @@
+card {
+    border: 1px solid var(--primary-dark);
+    width: 412px;
+    height: 450px;
+    border-radius: 1rem;
+    white-space: wrap;
+    padding: 55px;
+}
+
+.star {
+    fill: var(--primary-dark);
+    width: 12px;
+    height: 12px;
+}

@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container__large primary-light primary-dark--bg"
-         style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{ asset('uploads/projects/featured/') ~ project.image }}'); background-position: center; background-size: cover;">
+    <section class="container__large primary-light primary-dark--bg"
+             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{ asset('uploads/projects/featured/') ~ project.image }}'); background-position: center; background-size: cover;">
         <div class="container container__top flex col gap--16 gap-large-mobile align--start justify--start">
             <h1>{{ project.name }}</h1>
             <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
@@ -16,8 +16,8 @@
                 <p class="text__m underline">Scroll pour découvrir</p>
             </div>
         </div>
-    </div>
-    <div class="container flex row col-mobile gap-small-mobile">
+    </section>
+    <section class="container flex row col-mobile gap-small-mobile">
         <div class="flex col gap--11 text__l w--40 w-100-mobile hide-mobile">
             <span>Résumé du projet</span>
             <div class="flex col gap--2">
@@ -35,16 +35,16 @@
             </p>
             <div class="flex col align--start justify--start border--top border-stroke-light w--100">
                 {% if project.category is not empty %}
-                <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
-                    <p class="text__m">Catégorie</p>
-                    <p class="text__m">{{ project.category }}</p>
-                </div>
+                    <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
+                        <p class="text__m">Catégorie</p>
+                        <p class="text__m">{{ project.category }}</p>
+                    </div>
                 {% endif %}
                 {% if project.type is not empty %}
-                <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
-                    <p class="text__m">Type</p>
-                    <p class="text__m">{{ project.type }}</p>
-                </div>
+                    <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
+                        <p class="text__m">Type</p>
+                        <p class="text__m">{{ project.type }}</p>
+                    </div>
                 {% endif %}
                 {% if project.date is not empty %}
                     <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
@@ -54,18 +54,19 @@
                 {% endif %}
             </div>
             {% if project.url is not empty %}
-                <button-react data-target="_blank" data-href="{{ project.url }}" data-content="Voir le site"></button-react>
+                <button-react data-target="_blank" data-href="{{ project.url }}"
+                              data-content="Voir le site"></button-react>
             {% endif %}
         </div>
-    </div>
-    <div class="container container__project">
+    </section>
+    <section class="container container__project">
         <div class="flex col gap--2">
             {% for image in project.images.toArray %}
-                <img class="w-100 border-rounded" src="{{ asset('uploads/projects/gallery/') ~ image.name }}" alt="">
+                <img class="w-100 border-rounded" src="{{ asset('uploads/projects/gallery/') ~ image.name }}" alt="{{ project.name }}">
             {% endfor %}
         </div>
-    </div>
-    <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
+    </section>
+    <section class="container flex col gap--16 gap-large-mobile align--start justify--center">
         <div class="flex row col-mobile gap-small-mobile w--100">
             <p class="text__l w--40 w-100-mobile">
                 Découvrir un autre projet
@@ -77,50 +78,39 @@
             </div>
         </div>
         <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
-            <div class="flex col gap--5">
-                <div class="relative">
-                    <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                         alt="">
-                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                        <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                        <tag-react data-color="violet" data-content="Design Digital"></tag-react>
-                    </div>
-                </div>
-                <div class="flex col gap--3">
-                    <p class="text__l">
-                        Nom du projet
-                    </p>
-                    <div class="flex col align--start justify--start gap--11">
-                        <p class="primary-grey text__m">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex col gap--5">
-                <div class="relative">
-                    <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                         alt="">
-                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                        <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                        <tag-react data-color="violet" data-content="Design Digital"></tag-react>
-                    </div>
-                </div>
-                <div class="flex col gap--3">
-                    <p class="text__l">
-                        Nom du projet
-                    </p>
-                    <div class="flex col align--start justify--start gap--11">
-                        <p class="primary-grey text__m">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            {% for project in projects %}
+                <article class="flex col gap--5">
+                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative">
+                        {% if project.image is not empty %}
+                            <img class="home__img home__img-post"
+                                 src="{{ asset('uploads/projects/featured/') ~ project.image }}"
+                                 alt="{{ project.name }}">
+                        {% else %}
+                            <div class="home__img home__img-case stroke-dark--bg"></div>
+                        {% endif %}
+
+                        <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                            {% for tag in project.tag.toArray %}
+                                <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                            {% endfor %}
+                        </div>
+                    </a>
+                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex row col-mobile">
+                        <div class="flex col gap--3">
+                            <p class="text__l">
+                                {{ project.name }}
+                            </p>
+                            <div class="flex col align--start justify--start gap--11">
+                                <p class="primary-grey text__m">
+                                    {{ project.excerpt }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            {% endfor %}
         </div>
-    </div>
+    </section>
 
 {% endblock %}
 

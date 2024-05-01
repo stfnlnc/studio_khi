@@ -21,31 +21,20 @@ class ProjectRepository extends ServiceEntityRepository
         parent::__construct($registry, Project::class);
     }
 
-    public function findProjectWithImages($id)
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.id = :id')
-            ->setParameter('id', $id)
-            ->addSelect('i')
-            ->leftJoin('p.images', 'i')
-            ->getQuery()
-            ->getResult();
-    }
-
-    //    /**
-    //     * @return Project[] Returns an array of Project objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('p')
-    //            ->andWhere('p.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('p.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+        /**
+         * @return Project[] Returns an array of Project objects
+         */
+        public function findById($id): array
+        {
+            return $this->createQueryBuilder('p')
+                ->where('p.id != :id')
+                ->setParameter('id', $id)
+                ->orderBy('RAND()')
+                ->setMaxResults(2)
+                ->getQuery()
+                ->getResult()
+            ;
+        }
 
     //    public function findOneBySomeField($value): ?Project
     //    {

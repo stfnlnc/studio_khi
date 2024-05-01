@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Les articles - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container__large border--bottom border-stroke-light">
+        <div class="container">
+            <h1>Créer un nouvel article</h1>
+        </div>
+    </div>
+    {% include 'admin/post/template-part/_form.html.twig' %}
+
+{% endblock %}

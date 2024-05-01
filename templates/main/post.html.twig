@@ -4,62 +4,32 @@
 
 {% endblock %}
 
+
+
+
 {% block body %}
     <div class="container__large">
         <div class="container flex col gap--16 gap-large-mobile align--start justify--start">
-            <h1>Les bénéfices d'une identité visuelle impactante dans le digital</h1>
+            <h1>{{ post.name }}</h1>
         </div>
     </div>
     <div class="container flex row col-mobile gap-small-mobile">
         <div class="flex col gap--11 text__l w--40 w-100-mobile">
             <div class="flex col gap--2">
-                <tag-react data-content="Branding" data-color="green"></tag-react>
+                {% for tag in post.tag.toArray %}
+                    <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                {% endfor %}
                 <p class="text__m">Par Cynthia Jego <br> (Designer)</p>
-                <p class="text__m">23/04/2024</p>
+                <p class="text__m">{{ post.updatedAt|date("d/m/Y") }}</p>
             </div>
         </div>
         <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-            <p class="w--80 w-100-mobile primary-grey text__m">
-                Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
-                opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance du
-                design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
-                amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le design
-                n'est plus juste une option, mais une nécessité pour se démarquer.
-                <br><br>
-                Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir des
-                outils à la fois créatifs, intuitifs et performants.
-            </p>
-            <h3>
-                Un portfolio web pour mettre en valeur les photographies.
-            </h3>
-            <p class="w--80 w-100-mobile primary-grey text__m">
-                Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
-                opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance du
-                design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
-                amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le design
-                n'est plus juste une option, mais une nécessité pour se démarquer.
-                <br><br>
-                Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir des
-                outils à la fois créatifs, intuitifs et performants.
-            </p>
-            <h3>
-                Un portfolio web pour mettre en valeur les photographies.
-            </h3>
-            <p class="w--80 w-100-mobile primary-grey text__m">
-                Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
-                opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance du
-                design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
-                amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le design
-                n'est plus juste une option, mais une nécessité pour se démarquer.
-                <br><br>
-                Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir des
-                outils à la fois créatifs, intuitifs et performants.
-            </p>
+            {{ post.content|raw }}
         </div>
     </div>
     <div class="container__large secondary-beige--bg">
         <div class="container flex row col-mobile align--end justify--space-between align--center-mobile gap-large-mobile">
-            <h3 class="w--50 w-100-mobile text-center-mobile">Vous souhaitez travailler avec nous ? </h3>
+            <h3 class="w--50 w-100-mobile text-center-mobile">Vous souhaitez travailler avec nous ?</h3>
             <div class="flex row col-mobile align--center justify--center gap--5">
                 <button-react data-content="Commencer votre projet" data-href="#" data-color="light"></button-react>
                 <button-react data-content="Prendre contact" data-href="#"></button-react>
@@ -78,48 +48,33 @@
             </div>
         </div>
         <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
-            <div class="flex col gap--5">
-                <div class="relative">
-                    <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                         alt="">
-                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                        <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                        <tag-react data-color="violet" data-content="Design Digital"></tag-react>
-                    </div>
-                </div>
-                <div class="flex col gap--3">
-                    <p class="text__l">
-                        Nom du projet
-                    </p>
-                    <div class="flex col align--start justify--start gap--11">
-                        <p class="primary-grey text__m">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex col gap--5">
-                <div class="relative">
-                    <img class="home__img home__img-post" src="{{ asset('build/images/uploads/case-studies.png') }}"
-                         alt="">
-                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                        <tag-react data-color="blue" data-content="Design Digital"></tag-react>
-                        <tag-react data-color="violet" data-content="Design Digital"></tag-react>
-                    </div>
-                </div>
-                <div class="flex col gap--3">
-                    <p class="text__l">
-                        Nom du projet
-                    </p>
-                    <div class="flex col align--start justify--start gap--11">
-                        <p class="primary-grey text__m">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            {% for post in posts %}
+                <article class="flex col gap--5">
+                    <a href="{{ path('app_show', {'slug': post.slug}) }}" class="relative">
+                        {% if post.image is not empty %}
+                            <img class="home__img home__img-post"
+                                 src="{{ asset('uploads/posts/featured/') ~ post.image }}"
+                                 alt="{{ post.name }}">
+                        {% else %}
+                            <div class="home__img home__img-case stroke-dark--bg"></div>
+                        {% endif %}
+
+                        <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                            {% for tag in post.tag.toArray %}
+                                <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                            {% endfor %}
+                        </div>
+                    </a>
+                    <a href="{{ path('app_show', {'slug': post.slug}) }}" class="flex row col-mobile">
+                        <div class="flex col gap--3">
+                            <p class="text__l">
+                                {{ post.name }}
+                            </p>
+                            <link-react data-border="1" data-href="{{ path('app_post', {slug: post.slug}) }}" data-content="Lire l'article"></link-react>
+                        </div>
+                    </a>
+                </article>
+            {% endfor %}
         </div>
     </div>
 
