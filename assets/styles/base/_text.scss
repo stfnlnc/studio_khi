@@ -10,16 +10,19 @@ p {
 .text {
     line-height: 140%;
     letter-spacing: 0;
+
     &__s {
         font-size: 1rem;
         line-height: 150%;
         letter-spacing: 0;
     }
+
     &__m {
         font-size: 1.1875rem;
         line-height: 150%;
         letter-spacing: -3%;
     }
+
     &__l {
         font-size: 1.625rem;
         line-height: 150%;
@@ -30,25 +33,32 @@ p {
 .uppercase {
     text-transform: uppercase;
 }
+
 .lowercase {
     text-transform: lowercase;
 }
+
 .capitalize {
     text-transform: capitalize;
 }
+
 .underline {
     text-decoration: underline;
     text-underline-offset: 0.3rem;
 }
+
 .overline {
     text-decoration: overline;
 }
+
 .text-center {
     text-align: center;
 }
+
 .text-left {
     text-align: left;
 }
+
 .text-right {
     text-align: right;
 }
@@ -57,6 +67,7 @@ blockquote {
     border-left: 1px solid var(--primary-dark);
     margin: 0;
     padding: 0 2rem;
+
     & > p {
         font-size: 1.625rem;
         line-height: 150%;
@@ -69,9 +80,11 @@ blockquote {
         &__s {
             font-size: 0.875rem;
         }
+
         &__m {
             font-size: 1rem;
         }
+
         &__l {
             font-size: 1.25rem;
         }
@@ -84,5 +97,13 @@ blockquote {
     }
     .text-right-mobile {
         text-align: right;
+    }
+
+    blockquote {
+        padding: 0 1.5rem;
+
+        & > p {
+            font-size: 1.25rem;
+        }
     }
 }

@@ -58,7 +58,7 @@
         <div class="header__gap"></div>
         {% for label, messages in app.flashes %}
             {% for message in messages %}
-                <div class="pointer alert alert__{{ label }} box-shadow" onclick="this.style.display = 'none'">{{ message }}</div>
+                <div class="pointer alert alert__{{ label }} box-shadow">{{ message }}</div>
             {% endfor %}
         {% endfor %}
 

@@ -282,9 +282,14 @@ card {
 }
 
 .alert {
-  padding: 1em;
+  padding: 1em 2em;
   margin: 1em;
   border-bottom: 2px solid;
+  position: fixed;
+  top: 120px;
+  right: 30px;
+  z-index: 10;
+  background-color: var(--primary-light);
 }
 .alert__info {
   border-color: var(--info);
@@ -605,6 +610,12 @@ blockquote > p {
   }
   .text-right-mobile {
     text-align: right;
+  }
+  blockquote {
+    padding: 0 1.5rem;
+  }
+  blockquote > p {
+    font-size: 1.25rem;
   }
 }
 :root {

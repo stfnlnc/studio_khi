@@ -1,14 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
+    Nos Réalisations - {{ parent() }}
+{% endblock %}
 
+{% block meta %}
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:locale" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
+    <meta property="og:image:width" content="" />
+    <meta property="og:image:height" content="" />
+    <meta property="og:site_name" content="" />
 {% endblock %}
 
 {% block body %}
     <div class="container flex col gap--16 gap-large-mobile align--start">
         <h1>Nos Réalisations</h1>
         <p class="w--60 w-100-mobile text__l align--self-end">
-            Découvrez une série de projets sur lesquels nous avons travaillé, allant de la création d'identités visuelles à la conception de sites web. Chaque projet est une histoire à part entière, reflétant notre passion pour le design et notre volonté de satisfaire nos clients.
+            Découvrez une série de projets sur lesquels nous avons travaillé, allant de la création d'identités
+            visuelles à la conception de sites web. Chaque projet est une histoire à part entière, reflétant notre
+            passion pour le design et notre volonté de satisfaire nos clients.
         </p>
     </div>
     <div class="container__large border--top border--bottom border-stroke-light">
@@ -22,9 +41,11 @@
     <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
         <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
             {% for key, project in projects %}
-                <article class="flex col gap--5 mb--16 {% for tag in project.tag.toArray %} {{ tag.slug }} {% endfor %}">
+                <article
+                        class="flex col gap--5 mb--16 {% for tag in project.tag.toArray %} {{ tag.slug }} {% endfor %}">
                     <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative">
-                        <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/') ~ project.image }}"
+                        <img class="home__img home__img-post"
+                             src="{{ asset('uploads/projects/featured/') ~ project.image }}"
                              alt="">
                         <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
                             {% for tag in project.tag.toArray %}
@@ -45,9 +66,9 @@
                 </article>
             {% endfor %}
         </div>
-        {#<div class="w--100 flex row justify--center">
+        {# <div class="w--100 flex row justify--center">
             <button-react data-color="light" data-content="Charger plus de projets"></button-react>
-        </div>#}
+        </div> #}
     </div>
 
 {% endblock %}

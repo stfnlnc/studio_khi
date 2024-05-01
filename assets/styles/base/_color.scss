@@ -15,72 +15,95 @@
 
 .primary-dark {
     color: var(--primary-dark);
+
     &--bg {
         background-color: var(--primary-dark);
     }
 }
+
 .primary-light {
     color: var(--primary-light);
+
     &--bg {
         background-color: var(--primary-light);
     }
 }
+
 .primary-grey {
     color: var(--primary-grey);
+
     &--bg {
         background-color: var(--primary-grey);
     }
 }
+
 .secondary-green {
     color: var(--secondary-green);
+
     &--bg {
         background-color: var(--secondary-green);
     }
 }
+
 .secondary-blue {
     color: var(--secondary-blue);
+
     &--bg {
         background-color: var(--secondary-blue);
     }
 }
+
 .secondary-violet {
     color: var(--secondary-violet);
+
     &--bg {
         background-color: var(--secondary-violet);
     }
 }
+
 .secondary-beige {
     color: var(--secondary-beige);
+
     &--bg {
         background-color: var(--secondary-beige);
     }
 }
+
 .stroke-light {
     color: var(--stroke-light);
+
     &--bg {
         background-color: var(--stroke-light);
     }
 }
+
 .stroke-dark {
     color: var(--stroke-dark);
+
     &--bg {
         background-color: var(--stroke-dark);
     }
 }
+
 .info {
     color: var(--info);
+
     &--bg {
         background-color: var(--info);
     }
 }
+
 .success {
     color: var(--success);
+
     &--bg {
         background-color: var(--success);
     }
 }
+
 .danger {
     color: var(--danger);
+
     &--bg {
         background-color: var(--danger);
     }

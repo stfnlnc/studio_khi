@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-
+    Branding & Direction Artistique - {{ parent() }}
 {% endblock %}
 
 {% block body %}
-    <div class="container__large secondary-green--bg">
+    <section class="container__large secondary-green--bg">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
@@ -15,15 +15,19 @@
                 <div class="flex row justify--end">
                     <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
                         <p class="w--80 w-100-mobile text__m">
-                            Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une image qui vous ressemble et qui peut faire la différence. Nous traduisons visuellement votre histoire.
+                            Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos
+                            valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une image
+                            qui vous ressemble et qui peut faire la différence. Nous traduisons visuellement votre
+                            histoire.
                         </p>
-                        <button-react data-content="Commander votre branding" data-href="{{ path('app_contact') }}"></button-react>
+                        <button-react data-content="Commander votre branding"
+                                      data-href="{{ path('app_contact') }}"></button-react>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container flex row col-mobile gap-small-mobile">
+    </section>
+    <section class="container flex row col-mobile gap-small-mobile">
         <div class="w--40 w-100-mobile">
             <p class="text__l w--80 w-100-mobile">
                 Créer une identité visuelle unique pour que votre marque se fasse enfin remarquer sur le web.
@@ -33,71 +37,92 @@
             <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="#191919"/>
-                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"/>
-                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z" fill="white"/>
+                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
+                          stroke-miterlimit="10"/>
+                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
+                          fill="white"/>
                 </svg>
                 <p class="text__l">
                     Moodboards
                 </p>
                 <p class="text__m primary-grey">
-                    Avant chaque projet, nous créons des moodboards (ou planches d’ambiance) qui nous permettent de rassembler des idées et des inspirations pour guider le processus de création et assurer une cohérence visuelle.
+                    Avant chaque projet, nous créons des moodboards (ou planches d’ambiance) qui nous permettent de
+                    rassembler des idées et des inspirations pour guider le processus de création et assurer une
+                    cohérence visuelle.
                 </p>
             </div>
             <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="#191919"/>
-                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"/>
-                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z" fill="white"/>
+                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
+                          stroke-miterlimit="10"/>
+                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
+                          fill="white"/>
                 </svg>
                 <p class="text__l">
                     Logo & Identité Visuelle
                 </p>
                 <p class="text__m primary-grey">
-                    Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et votre discours. De la création du logo au choix de la typographie et des couleurs, nous élaborons ensemble une image qui vous ressemble et qui peut faire la différence.
+                    Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et
+                    votre discours. De la création du logo au choix de la typographie et des couleurs, nous élaborons
+                    ensemble une image qui vous ressemble et qui peut faire la différence.
                 </p>
             </div>
             <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="#191919"/>
-                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"/>
-                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z" fill="white"/>
+                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
+                          stroke-miterlimit="10"/>
+                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
+                          fill="white"/>
                 </svg>
                 <p class="text__l">
                     Charte Graphique
                 </p>
                 <p class="text__m primary-grey">
-                    Avec notre charte graphique, vous aurez toutes les clés en main pour maintenir une cohérence visuelle à travers tous vos supports. Ce document est indispensable pour définir l'ensemble des règles et des normes visuelles à respecter.
+                    Avec notre charte graphique, vous aurez toutes les clés en main pour maintenir une cohérence
+                    visuelle à travers tous vos supports. Ce document est indispensable pour définir l'ensemble des
+                    règles et des normes visuelles à respecter.
                 </p>
             </div>
             <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="#191919"/>
-                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"/>
-                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z" fill="white"/>
+                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
+                          stroke-miterlimit="10"/>
+                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
+                          fill="white"/>
                 </svg>
                 <p class="text__l">
                     Design Réseaux Sociaux
                 </p>
                 <p class="text__m primary-grey">
-                    Nous prenons en charge l’aspect graphique de vos réseaux sociaux pour renforcer votre identité de marque et pour s’assurer de sa cohérence. Car nous consommons d’abord avec les yeux, les réseaux sociaux sont très souvent la première vitrine de votre marque. Il est donc primordial de penser à votre social branding, en créant un univers soigné et solide.
+                    Nous prenons en charge l’aspect graphique de vos réseaux sociaux pour renforcer votre identité de
+                    marque et pour s’assurer de sa cohérence. Car nous consommons d’abord avec les yeux, les réseaux
+                    sociaux sont très souvent la première vitrine de votre marque. Il est donc primordial de penser à
+                    votre social branding, en créant un univers soigné et solide.
                 </p>
             </div>
             <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="#191919"/>
-                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"/>
-                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z" fill="white"/>
+                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
+                          stroke-miterlimit="10"/>
+                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
+                          fill="white"/>
                 </svg>
                 <p class="text__l">
                     Pitchdeck
                 </p>
                 <p class="text__m primary-grey">
-                    Laissez-nous transformer vos idées en présentations marketing percutantes qui captivent et convainquent. Présentations PowerPoint ou autre Google Slides, nous nous occupons de créer des templates créatifs, en lien avec votre image et faciles à utiliser.
+                    Laissez-nous transformer vos idées en présentations marketing percutantes qui captivent et
+                    convainquent. Présentations PowerPoint ou autre Google Slides, nous nous occupons de créer des
+                    templates créatifs, en lien avec votre image et faciles à utiliser.
                 </p>
             </div>
         </div>
-    </div>
-    <div class="container__large border--top border-stroke-light">
+    </section>
+    <section class="container__large border--top border-stroke-light">
         <div class="container flex col gap--16 align--center justify--center">
             <div class="flex row col-mobile gap-small-mobile">
                 <p class="text__l w--40 w-100-mobile">
@@ -115,7 +140,10 @@
                         Adobe Designer
                     </p>
                     <p class="primary-grey">
-                        Nous utilisons la suite Adobe Creative pour donner vie à votre marque. Ces logiciels offrent une gamme d'outils polyvalents et performants, allant de la conception de logos à la création de documents marketing. Nous pouvons ainsi exprimer pleinement la personnalité et les valeurs de votre marque à travers des designs percutants et professionnels.
+                        Nous utilisons la suite Adobe Creative pour donner vie à votre marque. Ces logiciels offrent une
+                        gamme d'outils polyvalents et performants, allant de la conception de logos à la création de
+                        documents marketing. Nous pouvons ainsi exprimer pleinement la personnalité et les valeurs de
+                        votre marque à travers des designs percutants et professionnels.
                     </p>
                 </div>
                 <div class="flex col gap--5">
@@ -123,7 +151,10 @@
                         Des designs orientés web
                     </p>
                     <p class="primary-grey">
-                        Nos designs sont principalement pensés et conçus pour le web. C'est notre terrain de jeu, et il requiert une approche spécifique. En fusionnant notre expertise des principes graphiques avec les spécificités du monde numérique, nous créons des designs qui renforceront votre image de marque de manière cohérente et engageante.
+                        Nos designs sont principalement pensés et conçus pour le web. C'est notre terrain de jeu, et il
+                        requiert une approche spécifique. En fusionnant notre expertise des principes graphiques avec
+                        les spécificités du monde numérique, nous créons des designs qui renforceront votre image de
+                        marque de manière cohérente et engageante.
                     </p>
                 </div>
                 <div class="flex col gap--5">
@@ -131,13 +162,16 @@
                         Cohérence de la marque
                     </p>
                     <p class="primary-grey">
-                        L'identité de votre marque ne se limite pas à un seul support. C'est pourquoi nous assurons une déclinaison de votre identité visuelle sur une multitude de supports, des réseaux sociaux en passant par les présentations powerpoint. Chaque interaction avec votre marque est pensée pour garantir une cohérence et un impact maximal.
+                        L'identité de votre marque ne se limite pas à un seul support. C'est pourquoi nous assurons une
+                        déclinaison de votre identité visuelle sur une multitude de supports, des réseaux sociaux en
+                        passant par les présentations powerpoint. Chaque interaction avec votre marque est pensée pour
+                        garantir une cohérence et un impact maximal.
                     </p>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container__large primary-dark--bg">
+    </section>
+    <section class="container__large primary-dark--bg">
         <div class="container pt--3 pb--3 grid grid--6 grid--3-mobile grid-gap--3">
             <div class="flex row justify--center">
                 <img src="{{ asset('build/images/icons/tools/design/figma.svg') }}" alt="">
@@ -158,28 +192,30 @@
                 <img src="{{ asset('build/images/icons/tools/design/procreate.svg') }}" alt="">
             </div>
         </div>
-    </div>
-    <div class="container__large secondary-green--bg">
+    </section>
+    <section class="container__large secondary-green--bg">
         <div class="container flex row col-mobile align--end justify--space-between align--center-mobile gap-large-mobile">
             <h3 class="w--50 w-100-mobile text-center-mobile">Vous souhaitez connaître nos tarifs ? </h3>
             <button-react data-content="Accéder aux tarifs" data-href="{{ path('app_prices') }}"></button-react>
         </div>
-    </div>
-    <div class="container flex row col-mobile gap-large-mobile">
+    </section>
+    <section class="container flex row col-mobile gap-large-mobile">
         <p class="text__l w--40 w-100-mobile">
             FAQ
         </p>
         <div class="w--60 w-100-mobile flex col align--start justify--start">
             {% for key, faq in faqs %}
-                <faq-react class="w--100" data-id="{{ key }}" data-title="{{ faq.question }}" data-content="{{ faq.answer }}"></faq-react>
+                <faq-react class="w--100" data-id="{{ key }}" data-title="{{ faq.question }}"
+                           data-content="{{ faq.answer }}"></faq-react>
             {% endfor %}
         </div>
-    </div>
-    <div class="container__large primary-light primary-dark--bg">
+    </section>
+    <section class="container__large primary-light primary-dark--bg">
         <div class="container flex col gap--16">
             <div class="flex row col-mobile align--end justify--space-between align--center-mobile gap-large-mobile">
                 <h3 class="w--50 w-100-mobile text-center-mobile">Une agence à 360° <br>pour tout votre site</h3>
-                <button-react data-color="light" data-content="Contacter le studio" data-href="{{ path('app_contact') }}"></button-react>
+                <button-react data-color="light" data-content="Contacter le studio"
+                              data-href="{{ path('app_contact') }}"></button-react>
             </div>
             <div class="w--100 grid grid--3 grid-gap--11 hide-mobile">
                 <div class="flex col gap--5">
@@ -189,7 +225,8 @@
                         Direction Artistique
                     </p>
                     <p class="primary-grey">
-                        Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web pour renforcer votre présence en ligne.
+                        Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web
+                        pour renforcer votre présence en ligne.
                     </p>
                 </div>
                 <div class="flex col gap--5">
@@ -199,7 +236,8 @@
                         Design Digital
                     </p>
                     <p class="primary-grey">
-                        La phase de design sur Figma permet de créer une maquette de site web qui répond à vos attentes tout en proposant une expérience utilisateur optimale.
+                        La phase de design sur Figma permet de créer une maquette de site web qui répond à vos attentes
+                        tout en proposant une expérience utilisateur optimale.
                     </p>
                 </div>
                 <div class="flex col gap--5">
@@ -209,12 +247,13 @@
                         Sites Sur Mesure
                     </p>
                     <p class="primary-grey">
-                        Nous développons votre site en langage web, identique à la maquette, tout en respectant les meilleures pratiques du web.
+                        Nous développons votre site en langage web, identique à la maquette, tout en respectant les
+                        meilleures pratiques du web.
                     </p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <section class="container__large secondary-green--bg">
         <div class="container flex col align--center justify--center gap--11 text-center">
             <h2 class="w--70 w-100-mobile">

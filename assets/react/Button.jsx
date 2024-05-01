@@ -3,15 +3,9 @@ import {createRoot} from "react-dom/client";
 import {unmountComponentAtNode} from "react-dom";
 
 export default function Button(props) {
-    let color, icon
 
-    if(props.color) {
-        color = ' btn__' + props.color
-        icon = ' btn__' + props.color + '__icon'
-    } else {
-        color = ''
-        icon = ''
-    }
+    let color = props.color ? (' btn__' + props.color) : ''
+    let icon = props.color ? (' btn__' + props.color + '__icon') : ''
 
     return <a target={props.target} href={props.href} className={'btn text__m' + color}>
         {props.content}{props.children}

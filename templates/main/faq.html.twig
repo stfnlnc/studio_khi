@@ -1,17 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
+    FAQ - {{ parent() }}
+{% endblock %}
 
+{% block meta %}
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:locale" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
+    <meta property="og:image:width" content="" />
+    <meta property="og:image:height" content="" />
+    <meta property="og:site_name" content="" />
 {% endblock %}
 
 {% block body %}
-    <div class="container flex col gap--16 gap-large-mobile align--start">
+    <section class="container flex col gap--16 gap-large-mobile align--start">
         <h1>Des questions ?</h1>
         <p class="w--60 w-100-mobile text__l align--self-end">
-            Nous avons peut-être déjà les réponses à vos questions ! Ne manquez pas notre FAQ pour trouver les réponses dont vous avez besoin.
+            Nous avons peut-être déjà les réponses à vos questions ! Ne manquez pas notre FAQ pour trouver les réponses
+            dont vous avez besoin.
         </p>
-    </div>
-    <div class="container__large border--top border--bottom border-stroke-light">
+    </section>
+    <section class="container__large border--top border--bottom border-stroke-light">
         <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
             <filter-react data-id="all" data-content="Tout"></filter-react>
             <filter-react data-id="general" data-content="Général"></filter-react>
@@ -19,26 +37,28 @@
             <filter-react data-id="webdesign" data-content="Webdesign & UI/UX Design"></filter-react>
             <filter-react data-id="website" data-content="Site Web & Développement"></filter-react>
         </div>
-    </div>
-    <div class="container flex row col-mobile gap-large-mobile">
+    </section>
+    <section class="container flex row col-mobile gap-large-mobile">
         <p class="text__l w--40 w-100-mobile">
             FAQ
         </p>
         <div class="w--60 w-100-mobile flex col align--start justify--start">
             {% for key, faq in faqs %}
                 <article class="w--100 {{ faq.category }}">
-                    <faq-react class="w--100" data-id="{{ key }}" data-title="{{ faq.question }}" data-content="{{ faq.answer }}"></faq-react>
+                    <faq-react class="w--100" data-id="{{ key }}" data-title="{{ faq.question }}"
+                               data-content="{{ faq.answer }}"></faq-react>
                 </article>
             {% endfor %}
         </div>
-    </div>
-    <div class="container__large secondary-beige--bg">
+    </section>
+    <section class="container__large secondary-beige--bg">
         <div class="container flex col align--center justify--center gap--11 text-center">
             <h2 class="w--70 w-100-mobile">
                 Autre chose ?
             </h2>
-            <button-react data-href="{{ path('app_contact') }}" data-content="Contactez-nous directement"></button-react>
+            <button-react data-href="{{ path('app_contact') }}"
+                          data-content="Contactez-nous directement"></button-react>
         </div>
-    </div>
+    </section>
 
 {% endblock %}

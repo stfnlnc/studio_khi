@@ -46,5 +46,13 @@ document.addEventListener('scroll', () => {
     }
 })
 
+// Delete alert on click
+const alerts = document.querySelectorAll('.alert')
+alerts.forEach(alert => {
+    alert.addEventListener('click', () => {
+        alert.style.display = 'none'
+    })
+})
+
 
 

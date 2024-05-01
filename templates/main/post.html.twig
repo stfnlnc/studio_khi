@@ -1,19 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-
+    {{ post.name }} - {{ parent() }}
 {% endblock %}
 
-
-
+{% block meta %}
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:locale" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
+    <meta property="og:image:width" content="" />
+    <meta property="og:image:height" content="" />
+    <meta property="og:site_name" content="" />
+{% endblock %}
 
 {% block body %}
-    <div class="container__large">
+    <section class="container__large">
         <div class="container flex col gap--16 gap-large-mobile align--start justify--start">
             <h1>{{ post.name }}</h1>
         </div>
-    </div>
-    <div class="container flex row col-mobile gap-small-mobile">
+    </section>
+    <section class="container flex row col-mobile gap-small-mobile">
         <div class="flex col gap--11 text__l w--40 w-100-mobile">
             <div class="flex col gap--2">
                 {% for tag in post.tag.toArray %}
@@ -26,8 +40,8 @@
         <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
             {{ post.content|raw }}
         </div>
-    </div>
-    <div class="container__large secondary-beige--bg">
+    </section>
+    <section class="container__large secondary-beige--bg">
         <div class="container flex row col-mobile align--end justify--space-between align--center-mobile gap-large-mobile">
             <h3 class="w--50 w-100-mobile text-center-mobile">Vous souhaitez travailler avec nous ?</h3>
             <div class="flex row col-mobile align--center justify--center gap--5">
@@ -35,8 +49,8 @@
                 <button-react data-content="Prendre contact" data-href="#"></button-react>
             </div>
         </div>
-    </div>
-    <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
+    </section>
+    <section class="container flex col gap--16 gap-large-mobile align--start justify--center">
         <div class="flex row col-mobile gap-small-mobile w--100">
             <p class="text__l w--40 w-100-mobile">
                 Lire un autre article
@@ -70,13 +84,14 @@
                             <p class="text__l">
                                 {{ post.name }}
                             </p>
-                            <link-react data-border="1" data-href="{{ path('app_post', {slug: post.slug}) }}" data-content="Lire l'article"></link-react>
+                            <link-react data-border="1" data-href="{{ path('app_post', {slug: post.slug}) }}"
+                                        data-content="Lire l'article"></link-react>
                         </div>
                     </a>
                 </article>
             {% endfor %}
         </div>
-    </div>
+    </section>
 
 {% endblock %}
 

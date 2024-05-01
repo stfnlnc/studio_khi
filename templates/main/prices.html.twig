@@ -1,23 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
+    Nos Tarifs - {{ parent() }}
+{% endblock %}
 
+{% block meta %}
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:locale" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
+    <meta property="og:image:width" content="" />
+    <meta property="og:image:height" content="" />
+    <meta property="og:site_name" content="" />
 {% endblock %}
 
 {% block body %}
-    <div class="container__large">
+    <section class="container__large">
         <div class="container border--bottom border-stroke-light">
             <h1>Nos tarifs</h1>
         </div>
-    </div>
-    <div class="container__large border--bottom border-stroke-light">
+    </section>
+    <section class="container__large border--bottom border-stroke-light">
         <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
             <filter-react data-content="Branding & Logo"></filter-react>
             <filter-react data-content="Webdesign & UI/UX Design"></filter-react>
             <filter-react data-content="Site Web & Développement"></filter-react>
         </div>
-    </div>
-    <div class="container flex row col-mobile gap--6">
+    </section>
+    <section class="container flex row col-mobile gap--6">
         <div class="w--40 w-100-mobile">
             <p class="text__l">
                 Votre devis sur mesure
@@ -25,18 +42,21 @@
         </div>
         <div class="w--60 w-100-mobile">
             <p class="text__s primary-grey">
-                *Bien que nous proposions une grille tarifaire de départ pour nos services, il est important de noter que chaque projet est unique et peut nécessiter des besoins spécifiques. Nos tarifs de départ fournissent une estimation générale, mais pour obtenir un devis précis et adapté à votre projet, nous vous invitons à nous contacter directement.
+                *Bien que nous proposions une grille tarifaire de départ pour nos services, il est important de noter
+                que chaque projet est unique et peut nécessiter des besoins spécifiques. Nos tarifs de départ
+                fournissent une estimation générale, mais pour obtenir un devis précis et adapté à votre projet, nous
+                vous invitons à nous contacter directement.
             </p>
         </div>
-    </div>
-    <div class="container__large secondary-beige--bg">
+    </section>
+    <section class="container__large secondary-beige--bg">
         <div class="container flex col align--center justify--center gap--11 text-center">
             <h2 class="w--70 w-100-mobile">
                 Vous souhaitez recevoir un devis sur mesure ?
             </h2>
             <button-react data-href="" data-content="Répondez à ces quelques questions"></button-react>
         </div>
-    </div>
+    </section>
 {% endblock %}
 
 
