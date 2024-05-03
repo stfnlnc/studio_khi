@@ -9,18 +9,44 @@ function DropdownMobile(props) {
 
     const href = JSON.parse(props.href)
 
+    let data
+    data = Object.keys(href).map((key) =>
+        [key, href[key]]
+    )
+
+
+
+
     return <div id="dropdown-mobile" className="dropdown-mobile flex col align--start justify--start">
         <div className="header__gap mb--4"></div>
         <div className="flex col w--100 border--top border-stroke-dark">
-            <MenuItemMobile dropmenu={
-                '{"Branding & Direction Artistique": "' + href.branding + '",' +
-                '"Webdesign & Design Digital": "' + href.webdesign + '",' +
-                '"Développement Web & Sites Sur Mesure": "' + href.webdesign + '"}'
-                }>Services</MenuItemMobile>
-            <MenuItemMobile href={href.projects}>Réalisations</MenuItemMobile>
-            <MenuItemMobile href={href.faq}>FAQ</MenuItemMobile>
-            <MenuItemMobile href={href.studio}>Studio</MenuItemMobile>
-            <MenuItemMobile href={href.posts}>Articles</MenuItemMobile>
+            {
+                data.map((href, key) => {
+
+                    let drops
+                    let dropmenu
+
+                    if(href[1].drop) {
+                        drops = Object.keys(href[1].drop).map((key) =>
+                            [key, href[1].drop[key]]
+                        )
+                        drops.map((drop, key) => {
+                            if(key === 0) {
+                                dropmenu = '{"' + drop[1].name + '": "' + drop[1].path + '",'
+                            } else if(key === drops.length - 1) {
+                                dropmenu += '"' + drop[1].name + '": "' + drop[1].path + '"}'
+                            } else {
+                                dropmenu += '"' + drop[1].name + '": "' + drop[1].path + '",'
+                            }
+                        })
+                    } else {
+                        dropmenu = '';
+                    }
+                    return <MenuItemMobile key={key} href={href[1].path} dropmenu={dropmenu}>
+                        {href[1].name}
+                    </MenuItemMobile>
+                })
+            }
             <span className="container pt--8 pb--0">
                 <Button href={href.contact} color="light">Contact</Button>
             </span>

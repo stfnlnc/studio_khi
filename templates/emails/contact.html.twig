@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<table width="60%" border="0" cellspacing="0" cellpadding="0" role="presentation" style="padding: 30px; border-radius: 30px; background-color: #D3E0D3; font-family: Arial, sans-serif">
+    <tr>
+        <td>
+            <h2>Nouveau message</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>Nom</h4>
+            <p>{{ data.lastname }}</p>
+        </td>
+        <td>
+            <h4>Email</h4>
+            <p><a href="mailto:{{ data.email }}">{{ data.email }}</a></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>Prénom</h4>
+            <p>{{ data.firstname }}</p>
+        </td>
+        <td>
+            <h4>Téléphone</h4>
+            <p><a href="tel:{{ data.phone }}">{{ data.phone }}</a></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>Message</h4>
+            <p>{{ data.message }}</p>
+        </td>
+    </tr>
+</table>
+
+</html>

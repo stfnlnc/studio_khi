@@ -8,10 +8,14 @@ function Faq(props) {
     const [rotate, setRotate] = useState('45deg')
 
     const handleClick = () => {
-        if(rotate === '45deg') {
+        if (rotate === '45deg') {
             setRotate('0')
-            document.getElementById(props.id).style.fill = 'var(--primary-dark)'
-            document.querySelector('.faq__answer-' + props.id).style.maxHeight = '1000px'
+            if(props.color) {
+                document.getElementById(props.id).style.fill = 'var(--primary-light)'
+            } else {
+                document.getElementById(props.id).style.fill = 'var(--primary-dark)'
+            }
+            document.querySelector('.faq__answer-' + props.id).style.maxHeight = '500px'
         } else {
             setRotate('45deg')
             document.getElementById(props.id).style.fill = 'var(--primary-grey)'
@@ -20,7 +24,7 @@ function Faq(props) {
         document.getElementById(props.id).style.transform = 'rotate(' + rotate + ')'
     }
 
-    return <div className="flex col border--bottom border-stroke-light pt--4 pb--4">
+    return <div className={'flex col pt--4 pb--4 border--bottom ' + (props.color ? ' border-stroke-dark' : ' border-stroke-light')}>
         <div onClick={handleClick} className="flex row align--center justify--space-between pointer">
             <p className="text__l">
                 {props.title}

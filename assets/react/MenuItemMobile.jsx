@@ -9,7 +9,7 @@ export default function MenuItemMobile({dropmenu, href, ...props}) {
     const handleClick = () => {
         if(dropmenu) {
             if (rotate === '45deg') {
-                document.getElementById('dropdown-menu').style.maxHeight = '1000px'
+                document.getElementById('dropdown-menu').style.maxHeight = '200px'
             } else {
                 document.getElementById('dropdown-menu').style.maxHeight = '0'
             }
@@ -42,6 +42,7 @@ export default function MenuItemMobile({dropmenu, href, ...props}) {
             {props.children}
             {data ? <MenuIcon id="menu"></MenuIcon> : ''}
         </a>
+        {dropmenu ?
         <div id="dropdown-menu" className="flex col gap--2 pl--4">
             {dataMenu.map((menu) => {
                 i++
@@ -54,7 +55,7 @@ export default function MenuItemMobile({dropmenu, href, ...props}) {
                 }
                 return <a key={i} className={className} href={menu[1]}>{menu[0]}</a>
             })}
-        </div>
+        </div> : '' }
     </div>
 
 }

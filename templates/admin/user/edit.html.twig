@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Les utilisateurs - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container__large border--bottom border-stroke-light">
+        <div class="container">
+            <h1>Éditer l'utilisateur</h1>
+        </div>
+    </div>
+    {% include 'admin/user/template-part/_form.html.twig' %}
+
+{% endblock %}

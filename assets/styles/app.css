@@ -281,6 +281,13 @@ card {
   height: 12px;
 }
 
+@media screen and (max-width: 1080px) {
+  card {
+    width: 350px;
+    height: 420px;
+    padding: 30px;
+  }
+}
 .alert {
   padding: 1em 2em;
   margin: 1em;

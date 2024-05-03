@@ -31,17 +31,48 @@
         {% endblock %}
     </head>
     <body>
-    <dropdown-react data-href='{"branding": "{{ path("app_projects") }}", "webdesign": "{{ path("app_projects") }}", "dev": "{{ path("app_projects") }}"}'></dropdown-react>
-    <dropdown-mobile-react data-href='{
+    <dropdown-react data-href='{
         "branding": "{{ path("app_projects") }}",
         "webdesign": "{{ path("app_projects") }}",
-        "dev": "{{ path("app_projects") }}",
-        "projects": "{{ path("app_projects") }}",
-        "faq": "{{ path("app_faq") }}",
-        "studio": "{{ path("app_studio") }}",
-        "posts": "{{ path("app_posts") }}",
-        "contact": "{{ path("app_contact") }}"
-        }'></dropdown-mobile-react>
+        "dev": "{{ path("app_projects") }}"
+        }'></dropdown-react>
+    <dropdown-mobile-react data-href='{
+        "1": {
+            "name": "Services",
+            "path": "#",
+            "drop": {
+                "1": {
+                    "name": "Branding & Direction Artistique",
+                    "path": "{{ path('app_service_branding') }}"
+                },
+                "2": {
+                    "name": "Webdesign & Design Digital",
+                    "path": "{{ path('app_service_webdesign') }}"
+                },
+                "3": {
+                    "name": "Développement Web & Sites Sur Mesure",
+                    "path": "{{ path('app_service_development') }}"
+                }
+            }
+        },
+        "2": {
+            "name": "Réalisations",
+            "path": "{{ path("app_projects") }}"
+        },
+        "3": {
+            "name": "FAQ",
+            "path": "{{ path("app_faq") }}"
+        },
+        "4": {
+            "name": "Studio",
+            "path": "{{ path("app_studio") }}"
+        },
+        "5": {
+            "name": "Articles",
+            "path": "{{ path("app_posts") }}"
+        }
+        }'>
+    </dropdown-mobile-react>
     <header class="header flex row justify--center">
         <nav class="header__nav flex row align--center justify--space-between">
             <a href="{{ path('app_index') }}">

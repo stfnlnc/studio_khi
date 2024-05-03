@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div id="form" class="container flex row col-mobile gap--8 align--center justify--center">
+            <form method="post" class="w--50 flex col gap--8 w-100-mobile">
+                {% if error %}
+                    <div class="alert alert__danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                <div class="flex col gap--4 w--100">
+                    <label class="form-label" for="inputEmail">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-input" autocomplete="email" required autofocus>
+                    <label class="form-label" for="inputPassword">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="form-input" autocomplete="current-password" required>
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}">
+                    <div class="form-check">
+                        <input type="checkbox" id="_remember_me" name="_remember_me">
+                        <label for="_remember_me">Se souvenir de moi</label>
+                    </div>
+                    <button class="btn" type="submit">
+                        Se connecter
+                        <svg class="btn__icon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.5 13.5L13.5 4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.1875 4.5H13.5V11.8125" stroke-width="1.5" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+    </div>
+{% endblock %}
+

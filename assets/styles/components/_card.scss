@@ -12,3 +12,11 @@ card {
     width: 12px;
     height: 12px;
 }
+
+@media screen and (max-width: 1080px) {
+    card {
+        width: 350px;
+        height: 420px;
+        padding: 30px;
+    }
+}

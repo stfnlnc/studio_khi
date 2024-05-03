@@ -2,16 +2,23 @@
 
 namespace App\Controller;
 
+use App\DTO\ContactDTO;
 use App\Entity\Post;
 use App\Entity\Project;
+use App\Form\ContactType;
 use App\Repository\FaqRepository;
 use App\Repository\PostRepository;
 use App\Repository\PostTagRepository;
 use App\Repository\ProjectRepository;
 use App\Repository\ReviewRepository;
 use App\Repository\TagRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('', name: 'app_')]
@@ -101,9 +108,33 @@ class MainController extends AbstractController
         ]);
     }
 
+    /**
+     * @throws TransportExceptionInterface
+     */
     #[Route('/contact', name: 'contact')]
-    public function contact(): Response
+    public function contact(Request $request, MailerInterface $mailer): Response
     {
-        return $this->render('main/contact.html.twig');
+        $data = new ContactDTO();
+        $form = $this->createForm(ContactType::class, $data);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $email = (new TemplatedEmail())
+                ->from('hello@studiokhi.com')
+                ->to('stefan@studiokhi.com')
+                ->replyTo($data->email)
+                ->cc('cynthia@studiokhi.com')
+                ->subject('Nouveau message depuis studiokhi.com')
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'data' => $data
+                ]);
+
+            $mailer->send($email);
+        }
+
+        return $this->render('main/contact.html.twig', [
+            'form' => $form,
+        ]);
     }
 }

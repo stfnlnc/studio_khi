@@ -12,7 +12,7 @@ function Cookies(props) {
 
     const handleClick = () => {
         cookies.style.opacity = '0'
-        document.cookie = "cookies=agree; path=/; secure; SameSite=strict";
+        document.cookie = "cookies=agree; path=/; SameSite=strict; Secure";
         setTimeout(() => {
             cookies.style.display ='none'
         }, 500)
