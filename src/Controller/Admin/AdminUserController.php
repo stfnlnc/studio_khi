@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/admin', name: 'app_admin_')]
+#[Route('/admin', name: 'app_admin_user_')]
 class AdminUserController extends AbstractController
 {
     private EntityManagerInterface $em;
@@ -21,7 +21,7 @@ class AdminUserController extends AbstractController
         $this->em = $em;
     }
 
-    #[Route('/utilisateurs', name: 'user')]
+    #[Route('/utilisateurs', name: 'index')]
     public function index(AdminUserRepository $userRepository): Response
     {
         $users = $userRepository->findAll();
@@ -31,7 +31,7 @@ class AdminUserController extends AbstractController
         ]);
     }
 
-    #[Route('/utilisateurs/edit/{id}', name: 'user_edit', methods: ['POST', 'GET'])]
+    #[Route('/utilisateurs/edit/{id}', name: 'edit', methods: ['POST', 'GET'])]
     public function edit(AdminUser $user, Request $request): Response
     {
         $form = $this->createForm(AdminUserType::class, $user);
@@ -49,7 +49,7 @@ class AdminUserController extends AbstractController
         ]);
     }
 
-    #[Route('/utilisateurs/delete/{id}', name: 'user_delete', methods: 'DELETE')]
+    #[Route('/utilisateurs/delete/{id}', name: 'delete', methods: 'DELETE')]
     public function delete(AdminUser $user): Response
     {
         $this->em->remove($user);

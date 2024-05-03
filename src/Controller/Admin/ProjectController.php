@@ -18,7 +18,7 @@ use Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Route('/admin/projets', name: 'app_admin_')]
+#[Route('/admin/projets', name: 'app_admin_project_')]
 class ProjectController extends AbstractController
 {
 
@@ -33,8 +33,8 @@ class ProjectController extends AbstractController
         $this->height = 150;
     }
 
-    #[Route('/', name: 'project')]
-    public function project(ProjectRepository $repository, TagRepository $tagRepository, Request $request): Response
+    #[Route('/', name: 'index')]
+    public function index(ProjectRepository $repository, TagRepository $tagRepository, Request $request): Response
     {
         $tag = new Tag();
         $form = $this->createForm(TagType::class, $tag);
@@ -59,7 +59,7 @@ class ProjectController extends AbstractController
     /**
      * @throws Exception
      */
-    #[Route('/new', name: 'project_new', methods: ['POST', 'GET'])]
+    #[Route('/new', name: 'new', methods: ['POST', 'GET'])]
     public function new(Request $request, ImageService $service): Response
     {
         $project = new Project();
@@ -98,7 +98,7 @@ class ProjectController extends AbstractController
     /**
      * @throws Exception
      */
-    #[Route('/edit/{id}', name: 'project_edit', methods: ['POST', 'GET'])]
+    #[Route('/edit/{id}', name: 'edit', methods: ['POST', 'GET'])]
     public function edit(Project $project, ProjectImageRepository $repository, Request $request, ImageService $service): Response
     {
         $form = $this->createForm(ProjectType::class, $project);
@@ -146,7 +146,7 @@ class ProjectController extends AbstractController
         ]);
     }
 
-    #[Route('/delete/{id}', name: 'project_delete', methods: 'DELETE')]
+    #[Route('/delete/{id}', name: 'delete', methods: 'DELETE')]
     public function delete(Project $project, ImageService $service): Response
     {
         if ($project->getImage()) {

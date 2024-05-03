@@ -24,7 +24,7 @@ use Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Route('/admin/articles', name: 'app_admin_')]
+#[Route('/admin/articles', name: 'app_admin_post_')]
 class PostController extends AbstractController
 {
 
@@ -39,8 +39,8 @@ class PostController extends AbstractController
         $this->height = 150;
     }
 
-    #[Route('/', name: 'post')]
-    public function post(PostRepository $repository, PostTagRepository $tagRepository, Request $request): Response
+    #[Route('/', name: 'index')]
+    public function index(PostRepository $repository, PostTagRepository $tagRepository, Request $request): Response
     {
         $tag = new PostTag();
         $form = $this->createForm(PostTagType::class, $tag);
@@ -65,7 +65,7 @@ class PostController extends AbstractController
     /**
      * @throws Exception
      */
-    #[Route('/new', name: 'post_new', methods: ['POST', 'GET'])]
+    #[Route('/new', name: 'new', methods: ['POST', 'GET'])]
     public function new(Request $request, ImageService $service): Response
     {
         $post = new Post();
@@ -93,7 +93,7 @@ class PostController extends AbstractController
     /**
      * @throws Exception
      */
-    #[Route('/edit/{id}', name: 'post_edit', methods: ['POST', 'GET'])]
+    #[Route('/edit/{id}', name: 'edit', methods: ['POST', 'GET'])]
     public function edit(Post $post, Request $request, ImageService $service): Response
     {
         $form = $this->createForm(PostType::class, $post);
@@ -124,7 +124,7 @@ class PostController extends AbstractController
         ]);
     }
 
-    #[Route('/delete/{id}', name: 'post_delete', methods: 'DELETE')]
+    #[Route('/delete/{id}', name: 'delete', methods: 'DELETE')]
     public function delete(Post $post, ImageService $service): Response
     {
         if ($post->getImage()) {
@@ -137,7 +137,7 @@ class PostController extends AbstractController
         return $this->redirectToRoute('app_admin_post');
     }
 
-    #[Route('/tags/delete/{id}', name: 'post_tag_delete', methods: 'DELETE')]
+    #[Route('/tags/delete/{id}', name: 'tag_delete', methods: 'DELETE')]
     public function tagDelete(PostTag $tag): Response
     {
         $this->em->remove($tag);
@@ -146,7 +146,7 @@ class PostController extends AbstractController
         return $this->redirectToRoute('app_admin_post');
     }
 
-    #[Route('/image/delete/{id}', name: 'post_image_delete', methods: 'DELETE')]
+    #[Route('/image/delete/{id}', name: 'image_delete', methods: 'DELETE')]
     public function imageDelete(Post $post, ImageService $service): Response
     {
         if ($post->getImage()) {

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[\Symfony\Component\Routing\Annotation\Route('/admin/faq', name: 'app_admin_')]
+#[\Symfony\Component\Routing\Annotation\Route('/admin/faq', name: 'app_admin_faq_')]
 class FaqController extends AbstractController
 {
     private EntityManagerInterface $em;
@@ -21,7 +21,7 @@ class FaqController extends AbstractController
         $this->em = $em;
     }
 
-    #[Route('/', name: 'faq', methods: ['POST', 'GET'])]
+    #[Route('/', name: 'index', methods: ['POST', 'GET'])]
     public function index(Request $request, FaqRepository $faqRepository): Response
     {
         $faq = new Faq();
@@ -42,7 +42,7 @@ class FaqController extends AbstractController
         ]);
     }
 
-    #[Route('/edit/{id}', name: 'faq_edit', methods: ['POST', 'GET'])]
+    #[Route('/edit/{id}', name: 'edit', methods: ['POST', 'GET'])]
     public function editFaq(Faq $faq, Request $request): Response
     {
         $form = $this->createForm(FaqType::class, $faq);
@@ -60,7 +60,7 @@ class FaqController extends AbstractController
         ]);
     }
 
-    #[Route('/delete/{id}', name: 'faq_delete', methods: ['DELETE'])]
+    #[Route('/delete/{id}', name: 'delete', methods: ['DELETE'])]
     public function deleteFaq(Faq $faq): Response
     {
         $this->em->remove($faq);

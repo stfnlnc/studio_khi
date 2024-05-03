@@ -19,7 +19,7 @@ class RegistrationController extends AbstractController
     /**
      * @throws TransportExceptionInterface
      */
-    #[Route('/admin/inscription', name: 'app_admin_register')]
+    #[Route('/admin/inscription', name: 'app_admin_user_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, MailerInterface $mailer): Response
     {
         $user = new AdminUser();

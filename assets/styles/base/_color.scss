@@ -18,6 +18,22 @@
 
     &--bg {
         background-color: var(--primary-dark);
+        position: relative;
+        z-index: 1;
+    }
+    &--bg::before {
+        content: "";
+        background-image: url("../images/background/noise.gif");
+        background-size: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.04;
+        z-index: -1;
     }
 }
 
@@ -26,6 +42,22 @@
 
     &--bg {
         background-color: var(--primary-light);
+        position: relative;
+        z-index: 1;
+    }
+    &--bg::before {
+        content: "";
+        background-image: url("../images/background/noise.gif");
+        background-size: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.04;
+        z-index: -1;
     }
 }
 
@@ -39,33 +71,93 @@
 
 .secondary-green {
     color: var(--secondary-green);
-
     &--bg {
         background-color: var(--secondary-green);
+        position: relative;
+        z-index: 1;
+    }
+    &--bg::before {
+        content: "";
+        background-image: url("../images/background/noise.gif");
+        background-size: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.04;
+        z-index: -1;
     }
 }
 
 .secondary-blue {
     color: var(--secondary-blue);
-
     &--bg {
         background-color: var(--secondary-blue);
+        position: relative;
+        z-index: 1;
+    }
+    &--bg::before {
+        content: "";
+        background-image: url("../images/background/noise.gif");
+        background-size: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.04;
+        z-index: -1;
     }
 }
 
 .secondary-violet {
     color: var(--secondary-violet);
-
     &--bg {
         background-color: var(--secondary-violet);
+        position: relative;
+        z-index: 1;
+    }
+    &--bg::before {
+        content: "";
+        background-image: url("../images/background/noise.gif");
+        background-size: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.04;
+        z-index: -1;
     }
 }
 
 .secondary-beige {
     color: var(--secondary-beige);
-
     &--bg {
         background-color: var(--secondary-beige);
+        position: relative;
+        z-index: 1;
+    }
+    &--bg::before {
+        content: "";
+        background-image: url("../images/background/noise.gif");
+        background-size: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.04;
+        z-index: -1;
     }
 }
 

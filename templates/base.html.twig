@@ -31,10 +31,18 @@
         {% endblock %}
     </head>
     <body>
+    {% if app.user %}
+        <div class="alert alert__info">
+            <a class="btn__delete">
+                <button>x</button>
+            </a>
+            {{ app.user.userIdentifier }}
+        </div>
+    {% endif %}
     <dropdown-react data-href='{
-        "branding": "{{ path("app_projects") }}",
-        "webdesign": "{{ path("app_projects") }}",
-        "dev": "{{ path("app_projects") }}"
+        "branding": "{{ path("app_service_branding") }}",
+        "webdesign": "{{ path("app_service_webdesign") }}",
+        "dev": "{{ path("app_service_development") }}"
         }'></dropdown-react>
     <dropdown-mobile-react data-href='{
         "1": {
@@ -102,12 +110,12 @@
             <menu-icon-react class="display-mobile" data-id="header"></menu-icon-react>
         </nav>
     </header>
-    <main>
+    <main class="noise">
         <div class="header__gap"></div>
         {% block body %}{% endblock %}
     </main>
     {#<div class="footer__gap hide-mobile"></div>#}
-    <footer class="footer flex row align--start justify--center">
+    <footer class="footer flex row align--start justify--center primary-dark--bg">
         <div class="footer__container primary-light flex col">
             <div class="flex row align--start justify--space-between pb--10 border--bottom border-stroke-dark mb--10">
                 <div class="flex col gap--11">

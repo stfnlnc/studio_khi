@@ -30,7 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: var(--primary-dark);
+    background-color: var(--primary-light);
     color: var(--primary-dark);
 }
 
@@ -90,6 +90,19 @@ a {
 
 .pointer {
     cursor: pointer;
+}
+
+.noise::before {
+    content: "";
+    background-image: url("../images/background/noise.gif");
+    background-size: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.04;
+    z-index: -1;
 }
 
 @media screen and (max-width: 1280px) {

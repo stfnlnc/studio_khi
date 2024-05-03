@@ -115,7 +115,7 @@
             <div class="flex col gap--4">
                 <p class="text__s">Image à la une</p>
                 <div class="relative w-fit-content">
-                    <form class="btn__delete" action="{{ path('app_admin_image_delete', {id: project.id}) }}#form"
+                    <form class="btn__delete" action="{{ path('app_admin_project_image_delete', {id: project.id}) }}#form"
                           method="POST">
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit">x</button>
@@ -133,20 +133,20 @@
                     {% for image in project.images.toArray|sort((a, b) => a.issue <=> b.issue) %}
                         <div class="relative w-fit-content">
                             <form class="btn__delete"
-                                  action="{{ path('app_admin_images_delete', {id: image.id}) }}#form" method="POST">
+                                  action="{{ path('app_admin_project_images_delete', {id: image.id}) }}#form" method="POST">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit">x</button>
                             </form>
                             {% if image.issue != 1 %}
                                 <form class="btn__prev"
-                                      action="{{ path('app_admin_images_prev', {id: image.id}) }}#form" method="POST">
+                                      action="{{ path('app_admin_project_images_prev', {id: image.id}) }}#form" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button type="submit"> <</button>
                                 </form>
                             {% endif %}
                             {% if image.issue != project.images.toArray|length %}
                                 <form class="btn__next"
-                                      action="{{ path('app_admin_images_next', {id: image.id}) }}#form" method="POST">
+                                      action="{{ path('app_admin_project_images_next', {id: image.id}) }}#form" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button type="submit"> ></button>
                                 </form>
@@ -163,6 +163,6 @@
 </div>
 <div class="container__large secondary-beige--bg">
     <div class="container flex col align--center justify--center gap--11 text-center">
-        <button-react data-href="{{ path('app_admin_project') }}" data-content="Retour"></button-react>
+        <button-react data-href="{{ path('app_admin_project_index') }}" data-content="Retour"></button-react>
     </div>
 </div>

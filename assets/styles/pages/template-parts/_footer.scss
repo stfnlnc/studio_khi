@@ -3,9 +3,8 @@
     top: 0;
     left: 0;
     z-index: 0;*/
-    background-color: var(--primary-dark);
     width: 100%;
-    height: 100vh;
+    height: auto;
     min-height: 700px;
     transition: filter var(--dropdown-duration) var(--dropdown-cubic);
 /*    overflow-y: auto;

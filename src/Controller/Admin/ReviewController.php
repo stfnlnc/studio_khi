@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('admin/avis', name: 'app_admin_')]
+#[Route('admin/avis', name: 'app_admin_review_')]
 class ReviewController extends AbstractController
 {
     private EntityManagerInterface $em;
@@ -21,8 +21,8 @@ class ReviewController extends AbstractController
         $this->em = $em;
     }
 
-    #[Route('/', name: 'review')]
-    public function review(ReviewRepository $reviewRepository): Response
+    #[Route('/', name: 'index')]
+    public function index(ReviewRepository $reviewRepository): Response
     {
         $reviews = $reviewRepository->findAll();
 
@@ -31,7 +31,7 @@ class ReviewController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'review_new', methods: ['POST', 'GET'])]
+    #[Route('/new', name: 'new', methods: ['POST', 'GET'])]
     public function new(Request $request): Response
     {
         $review = new Review();
@@ -50,7 +50,7 @@ class ReviewController extends AbstractController
         ]);
     }
 
-    #[Route('/edit/{id}', name: 'review_edit', methods: ['POST', 'GET'])]
+    #[Route('/edit/{id}', name: 'edit', methods: ['POST', 'GET'])]
     public function edit(Review $review, Request $request): Response
     {
         $form = $this->createForm(ReviewType::class, $review);
@@ -69,7 +69,7 @@ class ReviewController extends AbstractController
         ]);
     }
 
-    #[Route('/delete/{id}', name: 'review_delete', methods: 'DELETE')]
+    #[Route('/delete/{id}', name: 'delete', methods: 'DELETE')]
     public function delete(Review $review): Response
     {
         $this->em->remove($review);
