@@ -5,20 +5,18 @@
 {% endblock %}
 
 {% block meta %}
-    <meta name="description" content="">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:locale" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:image:secure_url" content="" />
-    <meta property="og:image:width" content="" />
-    <meta property="og:image:height" content="" />
-    <meta property="og:site_name" content="" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Studio Khi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web." />
+    <meta property="og:url" content="https://studiokhi.com" />
+    <meta property="og:image" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image:secure_url" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image:width" content="152" />
+    <meta property="og:image:height" content="152" />
+    <meta property="og:site_name" content="Studio Khi" />
 {% endblock %}
 
 {% block body %}
@@ -303,12 +301,16 @@
             <div class="w--100 grid grid--1 display-mobile">
                 <faq-react data-color="light" data-id="process-1" data-title="L'appel découverte"
                            data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
-                <faq-react data-color="light" data-id="process-2" data-title="L'appel découverte"
-                           data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
-                <faq-react data-color="light" data-id="process-3" data-title="L'appel découverte"
-                           data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
-                <faq-react data-color="light" data-id="process-4" data-title="L'appel découverte"
-                           data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
+                <faq-react data-color="light" data-id="process-2" data-title="Le brief créatif"
+                           data-content="À partir des informations recueillies, nous élaborons le brief créatif. Celui-ci synthétise les éléments essentiels du projet, tels que vos objectifs, votre vision, votre public cible, les contraintes et les délais. Ce document servira de référence tout au long du processus de création. Notre mission débute à réception du devis signé et d'un acompte engagé."></faq-react>
+                <faq-react data-color="light" data-id="process-3" data-title="Recherches & inspirations"
+                           data-content="Nous effectuons des recherches approfondies pour trouver des sources d'inspiration pertinentes. Cela peut inclure l'étude des tendances du secteur, l'analyse de la concurrence et la collecte de références visuelles pour nourrir notre processus créatif et définir le bon positionnement pour votre marque."></faq-react>
+                <faq-react data-color="light" data-id="process-4" data-title="La conception & le développement"
+                           data-content="C’est ici que votre projet commence à prendre forme. Cette phase implique la mise en œuvre des idées créatives pour donner vie au projet. Que ce soit pour la création d'un site web ou d'une identité visuelle, nous travaillons à concevoir des maquettes, des prototypes ou des concepts visuels."></faq-react>
+                <faq-react data-color="light" data-id="process-5" data-title="Les retours et corrections"
+                           data-content="Une fois que nos premières propositions vous sont soumises, nous recueillons vos retours pour ajuster et affiner notre travail. Vos idées et vos suggestions sont intégrées à chaque étape du processus. Votre feedback est essentiel pour affiner chaque détail et garantir que le résultat final corresponde parfaitement à vos attentes."></faq-react>
+                <faq-react data-color="light" data-id="process-6" data-title="Le suivi"
+                           data-content="Notre engagement ne s'arrête pas à votre validation finale. Nous assurons un suivi de votre projet pour surveiller, adapter et affiner, si le besoin s’en fait ressentir. Cela peut inclure la fourniture de fichiers finaux, la coordination avec d'autres intervenants (vos équipes, imprimeurs, etc.) et un soutien continu si nécessaire."></faq-react>
             </div>
         </div>
     </section>
@@ -317,7 +319,7 @@
             <h2 class="w--70 w-100-mobile">
                 Vous souhaitez recevoir un devis sur mesure ?
             </h2>
-            <button-react data-href="" data-content="Répondez à ce questionnaire"></button-react>
+            <button-react data-href="" data-content="Répondez à ces quelques questions"></button-react>
         </div>
     </section>
     <section class="container flex col gap--16">
@@ -366,7 +368,7 @@
                         <br><br>
                         Ne vous contentez pas de nous croire sur parole. Voici ce que nos clients disent de nous.
                     </p>
-                    <link-react data-icon="1" data-content="Lire tous les avis" data-href="#"></link-react>
+                    <link-react data-icon="1" data-target="_blank" data-content="Lire tous les avis" data-href="https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA"></link-react>
                 </div>
             </div>
         </div>

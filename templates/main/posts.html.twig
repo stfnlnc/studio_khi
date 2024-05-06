@@ -5,29 +5,25 @@
 {% endblock %}
 
 {% block meta %}
-    <meta name="description" content="">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:locale" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:image:secure_url" content="" />
-    <meta property="og:image:width" content="" />
-    <meta property="og:image:height" content="" />
-    <meta property="og:site_name" content="" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Articles - Studio Khi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles." />
+    <meta property="og:url" content="https://studiokhi.com{{ path('app_posts') }}" />
+    <meta property="og:image" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image:secure_url" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image:width" content="152" />
+    <meta property="og:image:height" content="152" />
+    <meta property="og:site_name" content="Studio Khi" />
 {% endblock %}
 
 {% block body %}
     <div class="container flex col gap--16 gap-large-mobile align--start">
-        <h1>Nos Réalisations</h1>
+        <h1>Articles & Blog</h1>
         <p class="w--60 w-100-mobile text__l align--self-end">
-            Découvrez une série de projets sur lesquels nous avons travaillé, allant de la création d'identités
-            visuelles à la conception de sites web. Chaque projet est une histoire à part entière, reflétant notre
-            passion pour le design et notre volonté de satisfaire nos clients.
+            Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles.
         </p>
     </div>
     <div class="container__large border--top border--bottom border-stroke-light">

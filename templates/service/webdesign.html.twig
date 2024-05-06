@@ -4,9 +4,24 @@
     Webdesign & Design Digital - {{ parent() }}
 {% endblock %}
 
+{% block meta %}
+    <meta name="description" content="Nous sommes spécialisés dans la conception de sites web qui attirent et retiennent l'attention. Nous créons des designs web élégants et nous veillons à ce que l'architecture soit claire, logique et intuitive pour les utilisateurs. Notre approche est de trouver le juste équilibre entre beauté et fonctionnalité.">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Webdesign & Design Digital - Studio Khi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Nous sommes spécialisés dans la conception de sites web qui attirent et retiennent l'attention. Nous créons des designs web élégants et nous veillons à ce que l'architecture soit claire, logique et intuitive pour les utilisateurs. Notre approche est de trouver le juste équilibre entre beauté et fonctionnalité." />
+    <meta property="og:url" content="https://studiokhi.com{{ path('app_service_webdesign') }}" />
+    <meta property="og:image" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image:secure_url" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image:width" content="152" />
+    <meta property="og:image:height" content="152" />
+    <meta property="og:site_name" content="Studio Khi" />
+{% endblock %}
+
 {% block body %}
     <section class="container__large secondary-blue--bg">
-        <div class="container container__top">
+        <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
                     <p class="text__l">02</p>

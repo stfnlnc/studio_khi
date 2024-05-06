@@ -11,7 +11,7 @@ export default function Link(props) {
 
     let border = props.border || props.icon ? '' : ' link__no-underline ';
 
-    return <a href={props.href} className={'link ' + color + border + props.className}>
+    return <a target={props.target} href={props.href} className={'link ' + color + border + props.className}>
         {props.content}{props.children}
         {props.icon ? svg : ''}
     </a>

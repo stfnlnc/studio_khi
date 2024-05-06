@@ -4,9 +4,24 @@
     Branding & Direction Artistique - {{ parent() }}
 {% endblock %}
 
+{% block meta %}
+    <meta name="description" content="Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une image qui vous ressemble et qui peut faire la différence. Nous traduisons visuellement votre histoire.">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Branding & Direction Artistique - Studio Khi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une image qui vous ressemble et qui peut faire la différence. Nous traduisons visuellement votre histoire." />
+    <meta property="og:url" content="https://studiokhi.com{{ path('app_service_branding') }}" />
+    <meta property="og:image" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image:secure_url" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image:width" content="152" />
+    <meta property="og:image:height" content="152" />
+    <meta property="og:site_name" content="Studio Khi" />
+{% endblock %}
+
 {% block body %}
     <section class="container__large secondary-green--bg">
-        <div class="container container__top">
+        <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
                     <p class="text__l">01</p>
