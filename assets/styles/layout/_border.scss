@@ -21,11 +21,16 @@ $pos: ("t": top, "b": bottom, "l": left, "r": right);
     }
     &-stroke-light {
         border-color: var(--stroke-light);
+
     }
 }
 
 .border-rounded {
     border-radius: 1rem;
+}
+
+.border-dashed {
+    border-style: none none dashed none;
 }
 
 @media screen and (max-width: 1080px) {

@@ -34,7 +34,9 @@ function Filter(props) {
             document.querySelectorAll('article').forEach(post => {
                 post.style.display = 'none'
             })
-            document.querySelector('.' + e.target.id).style.display = 'flex'
+            document.querySelectorAll('.' + e.target.id).forEach(post => {
+                post.style.display = 'flex'
+            })
         }
 
     }
