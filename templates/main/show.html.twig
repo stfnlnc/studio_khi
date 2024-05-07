@@ -21,7 +21,7 @@
 
 {% block body %}
     <section class="container__large primary-light primary-dark--bg"
-             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{ asset('uploads/projects/featured/') ~ project.image }}'); background-position: center; background-size: cover;">
+             style="background-image: linear-gradient(rgba(0,0,0,0.6) 50%, rgba(0,0,0,0)), url('{{ asset('uploads/projects/featured/') ~ project.image }}'); background-position: center; background-size: cover;">
         <div class="container container__top flex col gap--16 gap-large-mobile align--start justify--start">
             <h1>{{ project.name }}</h1>
             <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
@@ -45,9 +45,9 @@
             <h3>
                 {{ project.title }}
             </h3>
-            <p class="w--80 w-100-mobile primary-grey text__m">
-                {{ project.description }}
-            </p>
+            <div class="w--80 w-100-mobile primary-grey text__m">
+                {{ project.description|raw }}
+            </div>
             <div class="flex col align--start justify--start border--top border-stroke-light w--100">
                 {% if project.category is not empty %}
                     <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
@@ -76,7 +76,7 @@
     </section>
     <section class="container container__project">
         <div class="flex col gap--2">
-            {% for image in project.images.toArray %}
+            {% for image in project.images.toArray|sort((a, b) => a.issue <=> b.issue) %}
                 <img class="w-100 border-rounded" src="{{ asset('uploads/projects/gallery/') ~ image.name }}"
                      alt="{{ project.name }}">
             {% endfor %}

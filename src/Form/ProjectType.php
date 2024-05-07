@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Project;
 use App\Entity\Tag;
+use Eckinox\TinymceBundle\Form\Type\TinymceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Event\PostSubmitEvent;
@@ -66,7 +67,7 @@ class ProjectType extends AbstractType
                 ],
                 'required' => false
             ])
-            ->add('description', TextareaType::class, [
+            ->add('description', TinymceType::class, [
                 'label' => 'Description',
                 'attr' => [
                     'class' => 'form-textarea',
