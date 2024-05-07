@@ -30,3 +30,9 @@ $scale: 5;
 .pos-t-100 {
     top: 100%
 }
+
+.pos-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

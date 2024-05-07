@@ -50,3 +50,19 @@
 #dev {
     z-index: 1;
 }
+
+.article > a > img {
+    transition: filter var(--hover-duration) ease;
+}
+.article:hover > a > img {
+    filter: brightness(0.7);
+}
+.article > a > svg {
+    transition: opacity var(--hover-duration) ease;
+    opacity: 0;
+    width: 125px;
+    height: 125px;
+}
+.article:hover > a > svg {
+    opacity: 1;
+}

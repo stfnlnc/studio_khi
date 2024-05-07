@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Faq;
+use Eckinox\TinymceBundle\Form\Type\TinymceType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -26,7 +27,7 @@ class FaqType extends AbstractType
                     'class' => 'form-label'
                 ]
             ])
-            ->add('answer', TextareaType::class, [
+            ->add('answer', TinymceType::class, [
                 'label' => 'Réponse',
                 'attr' => [
                     'class' => 'form-input',

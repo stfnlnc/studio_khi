@@ -2,21 +2,32 @@
     --h1: 6.125rem;
     --h2: 4.6875rem;
     --h3: 3.5rem;
-    --h4: 1.625rem;
+    --h4: 2rem;
     --h5: 1.5rem;
     --h6: 1rem;
     --font-heading: "Overused Grotesk", sans-serif;
     --weight-heading: 400;
-    --height-heading: 95%;
     --letter-spacing-heading: 0;
 }
 
-@for $i from 1 through 6 {
+@for $i from 1 through 3 {
     h#{$i}, .h#{$i} {
         font-family: var(--font-heading), sans-serif;
         font-size: var(--h#{$i});
         font-weight: var(--weight-heading);
-        line-height: var(--height-heading);
+        line-height: 95%;
+        letter-spacing: var(--letter-spacing-heading);
+        margin: 0;
+        overflow-wrap: break-word;
+    }
+}
+
+@for $i from 4 through 6 {
+    h#{$i}, .h#{$i} {
+        font-family: var(--font-heading), sans-serif;
+        font-size: var(--h#{$i});
+        font-weight: var(--weight-heading);
+        line-height: 120%;
         letter-spacing: var(--letter-spacing-heading);
         margin: 0;
         overflow-wrap: break-word;
@@ -32,7 +43,7 @@ h1, .h1 {
         --h1: 3.4375rem;
         --h2: 2.8125rem;
         --h3: 2.3125rem;
-        --h4: 1.625rem;
+        --h4: 2rem;
         --h5: 1.5rem;
         --h6: 1rem;
     }

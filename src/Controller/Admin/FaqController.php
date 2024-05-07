@@ -33,7 +33,7 @@ class FaqController extends AbstractController
             $this->em->persist($faq);
             $this->em->flush();
             $this->addFlash('success', 'Question créée avec succès');
-            return $this->redirectToRoute('app_admin_faq');
+            return $this->redirectToRoute('app_admin_faq_index');
         }
 
         return $this->render('admin/faq/index.html.twig', [
@@ -52,7 +52,7 @@ class FaqController extends AbstractController
             $this->em->persist($faq);
             $this->em->flush();
             $this->addFlash('success', 'Question éditée avec succès');
-            return $this->redirectToRoute('app_admin_faq');
+            return $this->redirectToRoute('app_admin_faq_index');
         }
 
         return $this->render('admin/faq/edit.html.twig', [
@@ -66,6 +66,6 @@ class FaqController extends AbstractController
         $this->em->remove($faq);
         $this->em->flush();
         $this->addFlash('danger', 'Question supprimée avec succès');
-        return $this->redirectToRoute('app_admin_faq');
+        return $this->redirectToRoute('app_admin_faq_index');
     }
 }

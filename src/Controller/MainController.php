@@ -41,9 +41,13 @@ class MainController extends AbstractController
     }
 
     #[Route('/studio', name: 'studio')]
-    public function studio(): Response
+    public function studio(ReviewRepository $reviewRepository): Response
     {
-        return $this->render('main/studio.html.twig');
+        $reviews = $reviewRepository->findAll();
+
+        return $this->render('main/studio.html.twig', [
+            'reviews' => $reviews,
+        ]);
     }
 
     #[Route('/tarifs', name: 'prices')]
@@ -108,9 +112,6 @@ class MainController extends AbstractController
         ]);
     }
 
-    /**
-     * @throws TransportExceptionInterface
-     */
     #[Route('/contact', name: 'contact')]
     public function contact(Request $request, MailerInterface $mailer): Response
     {
@@ -129,8 +130,14 @@ class MainController extends AbstractController
                 ->context([
                     'data' => $data
                 ]);
+            try {
+                $mailer->send($email);
+            } catch (TransportExceptionInterface $e) {
+                echo $e->getMessage();
+            }
 
-            $mailer->send($email);
+            $this->addFlash('success', 'Votre message a bien été envoyé');
+            return $this->redirectToRoute('app_contact');
         }
 
         return $this->render('main/contact.html.twig', [

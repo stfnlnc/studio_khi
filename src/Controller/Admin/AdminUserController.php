@@ -55,6 +55,6 @@ class AdminUserController extends AbstractController
         $this->em->remove($user);
         $this->em->flush();
         $this->addFlash('danger', 'Utilisateur supprimé avec succès');
-        return $this->redirectToRoute('app_admin_user');
+        return $this->redirectToRoute('app_admin_user_index');
     }
 }

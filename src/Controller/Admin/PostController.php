@@ -52,7 +52,7 @@ class PostController extends AbstractController
             $this->em->persist($tag);
             $this->em->flush();
             $this->addFlash('success', 'Tag créé avec succès');
-            return $this->redirectToRoute('app_admin_post');
+            return $this->redirectToRoute('app_admin_post_index');
         }
 
         return $this->render('admin/post/index.html.twig', [
@@ -82,7 +82,7 @@ class PostController extends AbstractController
             $this->em->persist($post);
             $this->em->flush();
             $this->addFlash('success', 'Article créé avec succès');
-            return $this->redirectToRoute('app_admin_post');
+            return $this->redirectToRoute('app_admin_post_index');
         }
 
         return $this->render('admin/post/new.html.twig', [
@@ -134,7 +134,7 @@ class PostController extends AbstractController
         $this->em->remove($post);
         $this->em->flush();
         $this->addFlash('danger', 'Article supprimé avec succès');
-        return $this->redirectToRoute('app_admin_post');
+        return $this->redirectToRoute('app_admin_post_index');
     }
 
     #[Route('/tags/delete/{id}', name: 'tag_delete', methods: 'DELETE')]
@@ -143,7 +143,7 @@ class PostController extends AbstractController
         $this->em->remove($tag);
         $this->em->flush();
         $this->addFlash('danger', 'Tag supprimé avec succès');
-        return $this->redirectToRoute('app_admin_post');
+        return $this->redirectToRoute('app_admin_post_index');
     }
 
     #[Route('/image/delete/{id}', name: 'image_delete', methods: 'DELETE')]

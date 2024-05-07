@@ -46,7 +46,7 @@ class ProjectController extends AbstractController
             $this->em->persist($tag);
             $this->em->flush();
             $this->addFlash('success', 'Tag créé avec succès');
-            return $this->redirectToRoute('app_admin_project');
+            return $this->redirectToRoute('app_admin_project_index');
         }
 
         return $this->render('admin/project/index.html.twig', [
@@ -87,7 +87,7 @@ class ProjectController extends AbstractController
             $this->em->persist($project);
             $this->em->flush();
             $this->addFlash('success', 'Projet créé avec succès');
-            return $this->redirectToRoute('app_admin_project');
+            return $this->redirectToRoute('app_admin_project_index');
         }
 
         return $this->render('admin/project/new.html.twig', [
@@ -156,7 +156,7 @@ class ProjectController extends AbstractController
         $this->em->remove($project);
         $this->em->flush();
         $this->addFlash('danger', 'Projet supprimé avec succès');
-        return $this->redirectToRoute('app_admin_project');
+        return $this->redirectToRoute('app_admin_project_index');
     }
 
     #[Route('/tags/delete/{id}', name: 'tag_delete', methods: 'DELETE')]
@@ -165,7 +165,7 @@ class ProjectController extends AbstractController
         $this->em->remove($tag);
         $this->em->flush();
         $this->addFlash('danger', 'Tag supprimé avec succès');
-        return $this->redirectToRoute('app_admin_project');
+        return $this->redirectToRoute('app_admin_project_index');
     }
 
     #[Route('/image/delete/{id}', name: 'image_delete', methods: 'DELETE')]

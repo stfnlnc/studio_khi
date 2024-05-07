@@ -20,7 +20,7 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container container__top flex col gap--16 gap-large-mobile align--start justify--center">
+    <section class="container container__top flex col gap--16 gap-large-mobile align--start justify--start">
         <h1 class="w--60 w-100-mobile">Découvrir notre studio</h1>
         <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
             <p>
@@ -110,7 +110,7 @@
                 </h3>
             </div>
         </div>
-        <div class="flex row  col-mobile gap--4 gap-large-mobile">
+        <div class="flex row col-mobile gap--4 gap-large-mobile align--end">
             <div class="w--100">
                 <img src="{{ asset('build/images/uploads/studio-1.jpg') }}" alt=""
                      class="studio__img studio__img-about">
@@ -233,14 +233,18 @@
                 </div>
             </div>
             <div class="w--100 grid grid--1 display-mobile">
-                <faq-react data-id="process-1" data-title="L'appel découverte"
+                <faq-react data-color="light" data-id="process-1" data-title="L'appel découverte"
                            data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
-                <faq-react data-id="process-1" data-title="L'appel découverte"
-                           data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
-                <faq-react data-id="process-1" data-title="L'appel découverte"
-                           data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
-                <faq-react data-id="process-1" data-title="L'appel découverte"
-                           data-content="Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins, vos objectifs et les spécificités du projet. Ensuite, nous vous envoyons un questionnaire en ligne auquel il faut répondre pour vous proposer un devis détaillé."></faq-react>
+                <faq-react data-color="light" data-id="process-2" data-title="Le brief créatif"
+                           data-content="À partir des informations recueillies, nous élaborons le brief créatif. Celui-ci synthétise les éléments essentiels du projet, tels que vos objectifs, votre vision, votre public cible, les contraintes et les délais. Ce document servira de référence tout au long du processus de création. Notre mission débute à réception du devis signé et d'un acompte engagé."></faq-react>
+                <faq-react data-color="light" data-id="process-3" data-title="Recherches & inspirations"
+                           data-content="Nous effectuons des recherches approfondies pour trouver des sources d'inspiration pertinentes. Cela peut inclure l'étude des tendances du secteur, l'analyse de la concurrence et la collecte de références visuelles pour nourrir notre processus créatif et définir le bon positionnement pour votre marque."></faq-react>
+                <faq-react data-color="light" data-id="process-4" data-title="La conception & le développement"
+                           data-content="C’est ici que votre projet commence à prendre forme. Cette phase implique la mise en œuvre des idées créatives pour donner vie au projet. Que ce soit pour la création d'un site web ou d'une identité visuelle, nous travaillons à concevoir des maquettes, des prototypes ou des concepts visuels."></faq-react>
+                <faq-react data-color="light" data-id="process-5" data-title="Les retours et corrections"
+                           data-content="Une fois que nos premières propositions vous sont soumises, nous recueillons vos retours pour ajuster et affiner notre travail. Vos idées et vos suggestions sont intégrées à chaque étape du processus. Votre feedback est essentiel pour affiner chaque détail et garantir que le résultat final corresponde parfaitement à vos attentes."></faq-react>
+                <faq-react data-color="light" data-id="process-6" data-title="Le suivi"
+                           data-content="Notre engagement ne s'arrête pas à votre validation finale. Nous assurons un suivi de votre projet pour surveiller, adapter et affiner, si le besoin s’en fait ressentir. Cela peut inclure la fourniture de fichiers finaux, la coordination avec d'autres intervenants (vos équipes, imprimeurs, etc.) et un soutien continu si nécessaire."></faq-react>
             </div>
         </div>
     </section>
@@ -302,8 +306,8 @@
             </div>
         </div>
     </section>
-    <section class="container__large border--top border-stroke-light">
-        <div class="container flex col gap--16 align--center justify--center">
+    <section class="container__large border--top border-stroke-light flex col align--center justify--center">
+        <div class="container flex col gap--16">
             <div class="flex row col-mobile gap-large-mobile">
                 <p class="text__l w--40 w-100-mobile">
                     Nos clients
@@ -318,6 +322,38 @@
                     </p>
                     <link-react data-icon="1" data-content="Lire tous les avis" data-href="#"></link-react>
                 </div>
+            </div>
+        </div>
+        <div class="container container__scroll p--10 pt--0 pb--20 flex row align--center justify--center justify--start-mobile gap--5">
+            <div class="flex row gap--5 w-fit-content">
+                {% for review in reviews %}
+                    <card class="flex col gap--2">
+                        <div class="flex row gap--1">
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
+                            </svg>
+                        </div>
+                        <p class="text__s">
+                            {{ review.name}} <br>
+                            <span class="primary-grey">{{ review.subtitle }}</span>
+                        </p>
+                        <p class="text__s mt--4">
+                            “ {{ review.description}} ”
+                        </p>
+                    </card>
+                {% endfor %}
             </div>
         </div>
     </section>

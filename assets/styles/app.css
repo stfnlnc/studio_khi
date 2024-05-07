@@ -629,12 +629,11 @@ blockquote > p {
   --h1: 6.125rem;
   --h2: 4.6875rem;
   --h3: 3.5rem;
-  --h4: 1.625rem;
+  --h4: 2rem;
   --h5: 1.5rem;
   --h6: 1rem;
   --font-heading: "Overused Grotesk", sans-serif;
   --weight-heading: 400;
-  --height-heading: 95%;
   --letter-spacing-heading: 0;
 }
 
@@ -642,7 +641,7 @@ h1, .h1 {
   font-family: var(--font-heading), sans-serif;
   font-size: var(--h1);
   font-weight: var(--weight-heading);
-  line-height: var(--height-heading);
+  line-height: 95%;
   letter-spacing: var(--letter-spacing-heading);
   margin: 0;
   overflow-wrap: break-word;
@@ -652,7 +651,7 @@ h2, .h2 {
   font-family: var(--font-heading), sans-serif;
   font-size: var(--h2);
   font-weight: var(--weight-heading);
-  line-height: var(--height-heading);
+  line-height: 95%;
   letter-spacing: var(--letter-spacing-heading);
   margin: 0;
   overflow-wrap: break-word;
@@ -662,7 +661,7 @@ h3, .h3 {
   font-family: var(--font-heading), sans-serif;
   font-size: var(--h3);
   font-weight: var(--weight-heading);
-  line-height: var(--height-heading);
+  line-height: 95%;
   letter-spacing: var(--letter-spacing-heading);
   margin: 0;
   overflow-wrap: break-word;
@@ -672,7 +671,7 @@ h4, .h4 {
   font-family: var(--font-heading), sans-serif;
   font-size: var(--h4);
   font-weight: var(--weight-heading);
-  line-height: var(--height-heading);
+  line-height: 120%;
   letter-spacing: var(--letter-spacing-heading);
   margin: 0;
   overflow-wrap: break-word;
@@ -682,7 +681,7 @@ h5, .h5 {
   font-family: var(--font-heading), sans-serif;
   font-size: var(--h5);
   font-weight: var(--weight-heading);
-  line-height: var(--height-heading);
+  line-height: 120%;
   letter-spacing: var(--letter-spacing-heading);
   margin: 0;
   overflow-wrap: break-word;
@@ -692,7 +691,7 @@ h6, .h6 {
   font-family: var(--font-heading), sans-serif;
   font-size: var(--h6);
   font-weight: var(--weight-heading);
-  line-height: var(--height-heading);
+  line-height: 120%;
   letter-spacing: var(--letter-spacing-heading);
   margin: 0;
   overflow-wrap: break-word;
@@ -707,7 +706,7 @@ h1, .h1 {
     --h1: 3.4375rem;
     --h2: 2.8125rem;
     --h3: 2.3125rem;
-    --h4: 1.625rem;
+    --h4: 2rem;
     --h5: 1.5rem;
     --h6: 1rem;
   }
@@ -1103,6 +1102,25 @@ h1, .h1 {
   z-index: 1;
 }
 
+.article > a > img {
+  transition: filter var(--hover-duration) ease;
+}
+
+.article:hover > a > img {
+  filter: brightness(0.7);
+}
+
+.article > a > svg {
+  transition: opacity var(--hover-duration) ease;
+  opacity: 0;
+  width: 125px;
+  height: 125px;
+}
+
+.article:hover > a > svg {
+  opacity: 1;
+}
+
 .relative {
   position: relative;
 }
@@ -1370,6 +1388,12 @@ h1, .h1 {
 
 .pos-t-100 {
   top: 100%;
+}
+
+.pos-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .container {

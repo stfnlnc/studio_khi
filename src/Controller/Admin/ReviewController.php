@@ -42,7 +42,7 @@ class ReviewController extends AbstractController
             $this->em->persist($review);
             $this->em->flush();
             $this->addFlash('success', 'Avis créé avec succès');
-            return $this->redirectToRoute('app_admin_review');
+            return $this->redirectToRoute('app_admin_review_index');
         }
 
         return $this->render('admin/review/new.html.twig', [
@@ -75,6 +75,6 @@ class ReviewController extends AbstractController
         $this->em->remove($review);
         $this->em->flush();
         $this->addFlash('danger', 'Avis supprimé avec succès');
-        return $this->redirectToRoute('app_admin_review');
+        return $this->redirectToRoute('app_admin_review_index');
     }
 }
