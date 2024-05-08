@@ -43,6 +43,9 @@ class Post
     #[ORM\ManyToMany(targetEntity: PostTag::class, inversedBy: 'posts')]
     private Collection $tag;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $author = null;
+
     public function __construct()
     {
         $this->tag = new ArrayCollection();
@@ -157,6 +160,18 @@ class Post
     public function removeTag(PostTag $tag): static
     {
         $this->tag->removeElement($tag);
+
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?string $author): static
+    {
+        $this->author = $author;
 
         return $this;
     }

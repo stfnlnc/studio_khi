@@ -46,6 +46,16 @@ class AdminUserType extends AbstractType
                     'class' => 'form-label'
                 ]
             ])
+            ->add('job', TextType::class, [
+                'label' => 'Poste',
+                'attr' => [
+                    'class' => 'form-input',
+                    'placeholder' => 'Poste'
+                ],
+                'label_attr' => [
+                    'class' => 'form-label'
+                ]
+            ])
             ->add('phone', TelType::class, [
                 'label' => 'Téléphone',
                 'attr' => [

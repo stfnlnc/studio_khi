@@ -32,14 +32,6 @@
         {% endblock %}
     </head>
     <body>
-    {% if app.user %}
-        <div class="alert alert__info">
-            <a class="btn__delete">
-                <button>x</button>
-            </a>
-            {{ app.user.userIdentifier }}
-        </div>
-    {% endif %}
     {% for label, messages in app.flashes %}
         {% for message in messages %}
             <div class="pointer alert alert__{{ label }}">

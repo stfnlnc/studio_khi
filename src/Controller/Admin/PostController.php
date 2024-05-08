@@ -79,6 +79,12 @@ class PostController extends AbstractController
                 $file = $service->add($image, $folder, $this->width, $this->height);
                 $post->setImage($file);
             }
+            $user = $this->getUser();
+            if ($user) {
+                $author = $user->getFirstname() . ' ' . $user->getLastname() . ' <br> ' . '(' . $user->getJob() .')';
+                $post->setAuthor($author);
+            }
+
             $this->em->persist($post);
             $this->em->flush();
             $this->addFlash('success', 'Article créé avec succès');
@@ -108,6 +114,11 @@ class PostController extends AbstractController
                 }
                 $file = $service->add($image, $folder, $this->width, $this->height);
                 $post->setImage($file);
+            }
+            $user = $this->getUser();
+            if ($user) {
+                $author = $user->getFirstname() . ' ' . $user->getLastname() . ' <br> ' . '(' . $user->getJob() .')';
+                $post->setAuthor($author);
             }
 
             $this->em->persist($post);

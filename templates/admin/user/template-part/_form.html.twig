@@ -33,6 +33,15 @@
                 </div>
             </div>
         </div>
+        <div class="flex col gap--4">
+            <div class="flex col gap--1">
+                {{ form_label(form.job) }}
+                {{ form_widget(form.job) }}
+                <div class="errors">
+                    {{ form_errors(form.job) }}
+                </div>
+            </div>
+        </div>
     </div>
     {{ form_widget(form.save) }}
     {{ form_end(form) }}
