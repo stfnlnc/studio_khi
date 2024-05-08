@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use VictorPrdh\RecaptchaBundle\Form\ReCaptchaType;
 
 class ContactType extends AbstractType
 {
@@ -74,10 +75,7 @@ class ContactType extends AbstractType
                 ],
                 'required' => false
             ])
-            ->add('captcha', Recaptcha3Type::class, [
-                'constraints' => new Recaptcha3(),
-                'action_name' => 'contact'
-            ])
+            ->add('captcha', ReCaptchaType::class)
         ;
     }
 
