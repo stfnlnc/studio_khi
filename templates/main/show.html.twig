@@ -12,8 +12,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ project.excerpt }}" />
     <meta property="og:url" content="https://studiokhi.com{{ path('app_show', {slug: project.slug}) }}" />
-    <meta property="og:image" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
-    <meta property="og:image:secure_url" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image" content="https://studiokhi.com{{ asset('uploads/projects/featured/small/') ~ project.image }}" />
+    <meta property="og:image:secure_url" content="https://studiokhi.com{{ asset('uploads/projects/featured/small/') ~ project.image }}" />
     <meta property="og:image:width" content="152" />
     <meta property="og:image:height" content="152" />
     <meta property="og:site_name" content="Studio Khi" />
@@ -21,7 +21,7 @@
 
 {% block body %}
     <section class="container__large primary-light primary-dark--bg"
-             style="background-image: linear-gradient(rgba(0,0,0,0.6) 50%, rgba(0,0,0,0)), url('{{ asset('uploads/projects/featured/') ~ project.image }}'); background-position: center; background-size: cover;">
+             style="background-image: linear-gradient(rgba(0,0,0,0.6) 50%, rgba(0,0,0,0)), url('{{ asset('uploads/projects/featured/full/') ~ project.image }}'); background-position: center; background-size: cover;">
         <div class="container container__top flex col gap--16 gap-large-mobile align--start justify--start">
             <h1>{{ project.name }}</h1>
             <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
@@ -77,7 +77,7 @@
     <section class="container container__project">
         <div class="flex col gap--2">
             {% for image in project.images.toArray|sort((a, b) => a.issue <=> b.issue) %}
-                <img class="w-100 border-rounded" src="{{ asset('uploads/projects/gallery/') ~ image.name }}"
+                <img class="w-100 border-rounded" src="{{ asset('uploads/projects/gallery/large/') ~ image.name }}"
                      alt="{{ project.name }}">
             {% endfor %}
         </div>
@@ -98,7 +98,7 @@
                 <article class="flex col gap--5 article mb--20">
                     <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative {% for tag in project.tag.toArray %} {{ tag.slug }} {% endfor %}">
                         {% if project.image is not empty %}
-                            <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/') ~ project.image }}"
+                            <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/medium/') ~ project.image }}"
                                  alt="">
                         {% else %}
                             <div class="home__img home__img-post stroke-dark--bg"></div>

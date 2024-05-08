@@ -12,8 +12,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Chaque projet est une histoire à part entière, reflétant notre passion pour le design et notre volonté de satisfaire nos clients. " />
     <meta property="og:url" content="https://studiokhi.com{{ path('app_post', {slug: post.slug}) }}" />
-    <meta property="og:image" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
-    <meta property="og:image:secure_url" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
+    <meta property="og:image" content="https://studiokhi.com{{ asset('uploads/posts/featured/small/') ~ post.image }}" />
+    <meta property="og:image:secure_url" content="https://studiokhi.com{{ asset('uploads/posts/featured/small/') ~ post.image }}" />
     <meta property="og:image:width" content="152" />
     <meta property="og:image:height" content="152" />
     <meta property="og:site_name" content="Studio Khi" />
@@ -27,7 +27,7 @@
     </section>
     <section class="container flex row col-mobile gap-small-mobile">
         <div class="flex col gap--11 text__l w--40 w-100-mobile">
-            <div class="flex col gap--2">
+            <div class="flex col gap--5">
                 {% for tag in post.tag.toArray %}
                     <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
                 {% endfor %}
@@ -64,7 +64,7 @@
                 <article class="flex col gap--5 article {% for tag in post.tag.toArray %}{{ tag.slug }}{% endfor %}">
                     <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}">
                         {% if post.image is not empty %}
-                            <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/') ~ post.image }}"
+                            <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
                                  alt="{{ post.name }}">
                         {% else %}
                             <div class="home__img home__img-post stroke-dark--bg"></div>
@@ -80,12 +80,12 @@
                             <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
-                    <div class="flex col gap--3">
+                    <a href="{{ path('app_post', {slug: post.slug}) }}" class="flex col gap--3">
                         <p class="text__l">
                             {{ post.name }}
                         </p>
                         <link-react data-href="{{ path('app_post', {slug: post.slug}) }}" data-border="1" data-content="Lire l'article"></link-react>
-                    </div>
+                    </a>
                 </article>
             {% endfor %}
         </div>

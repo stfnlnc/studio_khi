@@ -37,10 +37,10 @@
     <section class="container flex col gap--16 gap-large-mobile align--start justify--center">
         <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
             {% for post in posts %}
-                <article class="flex col gap--5 article {% for tag in post.tag.toArray %}{{ tag.slug }}{% endfor %}">
+                <article class="flex col gap--5 article mb--20 {% for tag in post.tag.toArray %}{{ tag.slug }}{% endfor %}">
                     <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}">
                         {% if post.image is not empty %}
-                            <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/') ~ post.image }}"
+                            <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
                                  alt="{{ post.name }}">
                         {% else %}
                             <div class="home__img home__img-post stroke-dark--bg"></div>
@@ -56,12 +56,12 @@
                             <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
-                    <div class="flex col gap--3">
+                    <a href="{{ path('app_post', {slug: post.slug}) }}" class="flex col gap--3">
                         <p class="text__l">
                             {{ post.name }}
                         </p>
                         <link-react data-href="{{ path('app_post', {slug: post.slug}) }}" data-border="1" data-content="Lire l'article"></link-react>
-                    </div>
+                    </a>
                 </article>
             {% endfor %}
         </div>

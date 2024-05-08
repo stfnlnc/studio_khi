@@ -185,7 +185,7 @@
             <article class="flex col gap--5 article">
                 <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative">
                     {% if project.image is not empty %}
-                        <img class="home__img home__img-case" src="{{ asset('uploads/projects/featured/') ~ project.image }}" alt="{{ project.name }}">
+                        <img class="home__img home__img-case" src="{{ asset('uploads/projects/featured/large/') ~ project.image }}" alt="{{ project.name }}">
                     {% else %}
                         <div class="home__img home__img-case stroke-dark--bg"></div>
                     {% endif %}
@@ -429,7 +429,7 @@
                     <article class="flex col gap--5 article">
                         <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}">
                             {% if post.image is not empty %}
-                                <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/') ~ post.image }}"
+                                <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
                                      alt="">
                             {% else %}
                                 <div class="home__img home__img-post stroke-dark--bg"></div>

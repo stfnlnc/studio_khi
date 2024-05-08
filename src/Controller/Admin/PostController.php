@@ -8,17 +8,9 @@ use App\Form\PostTagType;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use App\Repository\PostTagRepository;
-use App\Repository\ProjectImageRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Project;
-use App\Entity\ProjectImage;
-use App\Entity\Tag;
-use App\Form\ProjectType;
-use App\Form\TagType;
-use App\Repository\ProjectRepository;
-use App\Repository\TagRepository;
 use App\Service\ImageService;
 use Exception;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,14 +21,11 @@ class PostController extends AbstractController
 {
 
     private EntityManagerInterface $em;
-    private int $width;
-    private int $height;
+
 
     public function __construct(EntityManagerInterface $em)
     {
         $this->em = $em;
-        $this->width = 150;
-        $this->height = 150;
     }
 
     #[Route('/', name: 'index')]
@@ -76,7 +65,7 @@ class PostController extends AbstractController
             $image = $form->get('image')->getData();
             $folder = 'posts/featured';
             if ($image !== null) {
-                $file = $service->add($image, $folder, $this->width, $this->height);
+                $file = $service->add($image, $post->getSlug(), $folder);
                 $post->setImage($file);
             }
             $user = $this->getUser();
@@ -110,9 +99,9 @@ class PostController extends AbstractController
             $folder = 'posts/featured';
             if ($image !== null) {
                 if ($post->getImage()) {
-                    $service->delete($project->getImage(), $folder, $this->width, $this->height);
+                    $service->delete($post->getImage(), $folder);
                 }
-                $file = $service->add($image, $folder, $this->width, $this->height);
+                $file = $service->add($image, $post->getSlug(), $folder);
                 $post->setImage($file);
             }
             $user = $this->getUser();
@@ -129,9 +118,7 @@ class PostController extends AbstractController
 
         return $this->render('admin/post/edit.html.twig', [
             'form' => $form,
-            'post' => $post,
-            'width' => $this->width,
-            'height' => $this->height
+            'post' => $post
         ]);
     }
 
@@ -140,7 +127,7 @@ class PostController extends AbstractController
     {
         if ($post->getImage()) {
             $folder = 'posts/featured';
-            $service->delete($post->getImage(), $folder, $this->width, $this->height);
+            $service->delete($post->getImage(), $folder);
         }
         $this->em->remove($post);
         $this->em->flush();
@@ -180,7 +167,7 @@ class PostController extends AbstractController
     {
         if ($post->getImage()) {
             $folder = 'posts/featured';
-            $service->delete($post->getImage(), $folder, $this->width, $this->height);
+            $service->delete($post->getImage(), $folder);
         }
         $post->setImage(null);
         $this->em->flush();

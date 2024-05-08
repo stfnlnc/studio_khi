@@ -23,14 +23,10 @@ class ProjectController extends AbstractController
 {
 
     private EntityManagerInterface $em;
-    private int $width;
-    private int $height;
 
     public function __construct(EntityManagerInterface $em)
     {
         $this->em = $em;
-        $this->width = 150;
-        $this->height = 150;
     }
 
     #[Route('/', name: 'index')]
@@ -71,7 +67,7 @@ class ProjectController extends AbstractController
             $folder = 'projects/gallery';
             foreach ($images as $image) {
                 $issue++;
-                $file = $service->add($image, $folder, $this->width, $this->height);
+                $file = $service->add($image, $project->getSlug(), $folder);
                 $img = new ProjectImage();
                 $img->setName($file);
                 $img->setIssue($issue);
@@ -81,7 +77,7 @@ class ProjectController extends AbstractController
             $image = $form->get('image')->getData();
             $folder = 'projects/featured';
             if ($image !== null) {
-                $file = $service->add($image, $folder, $this->width, $this->height);
+                $file = $service->add($image, $project->getSlug(), $folder);
                 $project->setImage($file);
             }
             $this->em->persist($project);
@@ -115,7 +111,7 @@ class ProjectController extends AbstractController
             $folder = 'projects/gallery';
             foreach ($images as $image) {
                 $issue++;
-                $file = $service->add($image, $folder, $this->width, $this->height);
+                $file = $service->add($image, $project->getSlug(), $folder);
                 $img = new ProjectImage();
                 $img->setName($file);
                 $img->setIssue($issue);
@@ -126,9 +122,9 @@ class ProjectController extends AbstractController
             $folder = 'projects/featured';
             if ($image !== null) {
                 if ($project->getImage()) {
-                    $service->delete($project->getImage(), $folder, $this->width, $this->height);
+                    $service->delete($project->getImage(), $folder);
                 }
-                $file = $service->add($image, $folder, $this->width, $this->height);
+                $file = $service->add($image, $project->getSlug(), $folder);
                 $project->setImage($file);
             }
 
@@ -140,9 +136,7 @@ class ProjectController extends AbstractController
 
         return $this->render('admin/project/edit.html.twig', [
             'form' => $form,
-            'project' => $project,
-            'width' => $this->width,
-            'height' => $this->height
+            'project' => $project
         ]);
     }
 
@@ -151,13 +145,13 @@ class ProjectController extends AbstractController
     {
         if ($project->getImage()) {
             $folder = 'projects/featured';
-            $service->delete($project->getImage(), $folder, $this->width, $this->height);
+            $service->delete($project->getImage(), $folder);
         }
         $images = $imageRepository->findBy(['project' => $project->getId()]);
 
         foreach($images as $image) {
             $folder = 'projects/gallery';
-            $service->delete($image->getName(), $folder, $this->width, $this->height);
+            $service->delete($image->getName(), $folder);
         }
 
         $this->em->remove($project);
@@ -198,7 +192,7 @@ class ProjectController extends AbstractController
     {
         if ($project->getImage()) {
             $folder = 'projects/featured';
-            $service->delete($project->getImage(), $folder, $this->width, $this->height);
+            $service->delete($project->getImage(), $folder);
         }
         $project->setImage(null);
         $this->em->flush();
@@ -211,7 +205,7 @@ class ProjectController extends AbstractController
     {
         if ($image->getId()) {
             $folder = 'projects/gallery';
-            $service->delete($image->getName(), $folder, $this->width, $this->height);
+            $service->delete($image->getName(), $folder);
         }
         $this->em->remove($image);
         $this->em->flush();
@@ -228,7 +222,7 @@ class ProjectController extends AbstractController
     }
 
     #[Route('/images/next/{id}', name: 'images_next', methods: 'DELETE')]
-    public function imagesNext(ProjectImage $image, ProjectImageRepository $repository, ImageService $service): Response
+    public function imagesNext(ProjectImage $image, ProjectImageRepository $repository): Response
     {
         $issue = $image->getIssue();
         $issueNext = $issue + 1;
@@ -244,7 +238,7 @@ class ProjectController extends AbstractController
     }
 
     #[Route('/images/prev/{id}', name: 'images_prev', methods: 'DELETE')]
-    public function imagesPrev(ProjectImage $image, ProjectImageRepository $repository, ImageService $service): Response
+    public function imagesPrev(ProjectImage $image, ProjectImageRepository $repository): Response
     {
         $issue = $image->getIssue();
         $issuePrev = $issue - 1;
