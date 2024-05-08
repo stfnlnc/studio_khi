@@ -207,7 +207,7 @@ class ProjectController extends AbstractController
     {
         $issue = $image->getIssue();
         $issueNext = $issue + 1;
-        $imageNext = $repository->findOneBy(['issue' => $issueNext]);
+        $imageNext = $repository->findOneBy(['issue' => $issueNext, 'project' => $image->getProject()]);
 
         $image->setIssue($issueNext);
         $imageNext->setIssue($issue);
@@ -223,7 +223,7 @@ class ProjectController extends AbstractController
     {
         $issue = $image->getIssue();
         $issuePrev = $issue - 1;
-        $imagePrev = $repository->findOneBy(['issue' => $issuePrev]);
+        $imagePrev = $repository->findOneBy(['issue' => $issuePrev, 'project' => $image->getProject()]);
 
         $image->setIssue($issuePrev);
         $imagePrev->setIssue($issue);
