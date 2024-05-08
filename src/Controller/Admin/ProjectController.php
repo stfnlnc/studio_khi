@@ -147,12 +147,19 @@ class ProjectController extends AbstractController
     }
 
     #[Route('/delete/{id}', name: 'delete', methods: 'DELETE')]
-    public function delete(Project $project, ImageService $service): Response
+    public function delete(Project $project, ProjectImageRepository $imageRepository, ImageService $service): Response
     {
         if ($project->getImage()) {
             $folder = 'projects/featured';
             $service->delete($project->getImage(), $folder, $this->width, $this->height);
         }
+        $images = $imageRepository->findBy(['project' => $project->getId()]);
+
+        foreach($images as $image) {
+            $folder = 'projects/gallery';
+            $service->delete($image->getName(), $folder, $this->width, $this->height);
+        }
+
         $this->em->remove($project);
         $this->em->flush();
         $this->addFlash('danger', 'Projet supprimé avec succès');
