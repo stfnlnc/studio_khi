@@ -54,7 +54,9 @@
         <div class="flex row gap--4">
             {% for tag in tags %}
                 <div class="flex row gap--1 align--center relative">
-                    <tag-react data-content="{{ tag.name }}" data-color="{{ tag.color }}"></tag-react>
+                    <a href="{{ path('app_admin_post_tag_edit', {id: tag.id}) }}">
+                        <tag-react data-content="{{ tag.name }}" data-color="{{ tag.color }}"></tag-react>
+                    </a>
                     <form class="btn__delete" action="{{ path('app_admin_post_tag_delete', {id: tag.id}) }}" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit">x</button>

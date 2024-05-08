@@ -166,6 +166,24 @@ class ProjectController extends AbstractController
         return $this->redirectToRoute('app_admin_project_index');
     }
 
+    #[Route('/tags/edit/{id}', name: 'tag_edit', methods: ['POST', 'GET'])]
+    public function tagEdit(Tag $tag, Request $request): Response
+    {
+        $form = $this->createForm(TagType::class, $tag);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->em->persist($tag);
+            $this->em->flush();
+            $this->addFlash('success', 'Tag modifié avec succès');
+            return $this->redirectToRoute('app_admin_project_index');
+        }
+
+        return $this->render('admin/project/tag/edit.html.twig', [
+            'form' => $form,
+        ]);
+    }
+
     #[Route('/tags/delete/{id}', name: 'tag_delete', methods: 'DELETE')]
     public function tagDelete(Tag $tag): Response
     {

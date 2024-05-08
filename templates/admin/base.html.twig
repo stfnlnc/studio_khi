@@ -86,14 +86,14 @@
         {% block body %}{% endblock %}
     </main>
     {#<div class="footer__gap hide-mobile"></div>#}
-    <footer class="footer flex row align--start justify--center">
-        <div class="footer__container primary-light flex col">
-            <div class="flex row align--start justify--space-between pb--10 border--bottom border-stroke-dark mb--10">
+    <footer class="footer container__large flex row align--start justify--center primary-dark--bg">
+        <div class="primary-light flex col align--center w--100">
+            <div class="container flex row align--start justify--space-between pb--16">
                 <div class="flex col gap--11">
                     <h3 class="w--70 w-100-mobile">Nous avons hâte d'écouter votre projet</h3>
                     <div class="flex row gap--5 col-mobile gap-mobile">
-                        <button-react data-content="Commander votre site ou design" data-color="light" data-href="#"></button-react>
-                        <button-react data-content="Contactez nous par mail" data-color="dark" data-href="#"></button-react>
+                        <button-react data-content="Commander votre site ou design" data-color="light" data-href="{{ path('app_contact') }}"></button-react>
+                        <button-react data-content="Contactez nous par mail" data-color="dark" data-href="mailto:hello@studiokhi.com"></button-react>
                     </div>
                 </div>
                 <svg class="footer__logo hide-mobile" viewBox="0 0 169 219" xmlns="http://www.w3.org/2000/svg">
@@ -111,37 +111,39 @@
                     <path d="M168.43 197.514H164.562V217.517H168.43V197.514Z"/>
                 </svg>
             </div>
-            <div class="flex row col-mobile align--start justify--space-between gap--4 pb--10 border--bottom border-stroke-dark mb--7">
+            <div class="border--bottom border-stroke-dark w--100"></div>
+            <div class="container flex row col-mobile align--start justify--space-between gap--4 pt--16 pb--16">
                 <div class="flex col">
                     <p class="text__m primary-grey mb--3">Le Studio</p>
-                    <link-react data-content="Home" data-color="light" data-href="#"></link-react>
-                    <link-react data-content="Réalisations" data-color="light" data-href="#"></link-react>
-                    <link-react data-content="À propos" data-color="light" data-href="#"></link-react>
+                    <link-react data-content="Home" data-color="light" data-href="{{ path("app_index") }}"></link-react>
+                    <link-react data-content="Réalisations" data-color="light" data-href="{{ path("app_projects") }}"></link-react>
+                    <link-react data-content="À propos" data-color="light" data-href="{{ path("app_studio") }}"></link-react>
                 </div>
                 <div class="flex col">
                     <p class="text__m primary-grey mb--3">Services</p>
-                    <link-react data-content="Branding" data-color="light" data-href="#"></link-react>
-                    <link-react data-content="Webdesign" data-color="light" data-href="#"></link-react>
-                    <link-react data-content="Développement web" data-color="light" data-href="#"></link-react>
+                    <link-react data-content="Branding" data-color="light" data-href="{{ path("app_service_branding") }}"></link-react>
+                    <link-react data-content="Webdesign" data-color="light" data-href="{{ path("app_service_webdesign") }}"></link-react>
+                    <link-react data-content="Développement web" data-color="light" data-href="{{ path("app_service_development") }}"></link-react>
                 </div>
                 <div class="flex col">
                     <p class="text__m primary-grey mb--3">Questions</p>
-                    <link-react data-content="Articles & Blog" data-color="light" data-href="#"></link-react>
-                    <link-react data-content="FAQs" data-color="light" data-href="#"></link-react>
-                    <link-react data-content="Tarifs" data-color="light" data-href="#"></link-react>
-                    <link-react data-content="Contact" data-color="light" data-href="#"></link-react>
+                    <link-react data-content="Articles & Blog" data-color="light" data-href="{{ path("app_posts") }}"></link-react>
+                    <link-react data-content="FAQs" data-color="light" data-href="{{ path("app_faq") }}"></link-react>
+                    <link-react data-content="Tarifs" data-color="light" data-href="{{ path("app_prices") }}"></link-react>
+                    <link-react data-content="Contact" data-color="light" data-href="{{ path("app_contact") }}"></link-react>
                 </div>
                 <div class="flex col">
                     <p class="text__m primary-grey mb--3">Socials</p>
-                    <link-react data-content="Instagram" data-color="light" data-href="#"></link-react>
-                    <link-react data-content="Linkedin" data-color="light" data-href="#"></link-react>
-                    <link-react data-content="Behance" data-color="light" data-href="#"></link-react>
+                    <link-react target="_blank" data-content="Instagram" data-color="light" data-href="https://www.instagram.com/studio_khi/"></link-react>
+                    <link-react target="_blank" data-content="Linkedin" data-color="light" data-href="https://www.linkedin.com/company/studio-khi"></link-react>
+                    <link-react target="_blank" data-content="Behance" data-color="light" data-href="https://www.behance.net/studiokhi"></link-react>
                 </div>
                 <div class="flex col">
                     <link-react data-content="Back to Top" data-color="light" data-href="#" data-border="1"></link-react>
                 </div>
             </div>
-            <div class="flex row col-mobile align--start justify--space-between gap-mobile">
+            <div class="border--bottom border-stroke-dark w--100"></div>
+            <div class="container pt--6 flex row col-mobile align--start justify--space-between gap-mobile">
                 <svg class="footer__logo-mobile display-mobile mb--7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 173 224" >
                     <path d="M98.3774 115.635L172.897 40.8838L132.173 0.0339596L57.6569 74.782L57.6564 0.000452542L0.0640945 0V116.593C0.0640945 126.812 4.11087 136.613 11.3143 143.84L29.5331 162.117C36.7378 169.345 46.5096 173.405 56.699 173.405L172.935 173.404L172.935 115.634L98.3774 115.635Z"/>
                     <path d="M12.241 208.496L8.80178 208.09C5.71694 207.683 4.17587 206.477 4.17587 204.471C4.17587 203.171 4.70852 202.134 5.77246 201.361C6.8364 200.588 8.24205 200.202 9.9894 200.202C11.8451 200.202 13.2783 200.595 14.2881 201.381C15.2978 202.168 15.9384 203.388 16.2119 205.04H20.2235C19.9775 202.493 18.9469 200.487 17.1328 199.023C16.039 198.141 14.72 197.558 13.2255 197.207C12.2396 196.976 11.1915 196.827 10.0305 196.827C8.79952 196.827 7.70127 196.975 6.67976 197.207C5.187 197.548 3.89014 198.105 2.84515 198.942C1.08471 200.351 0.205386 202.262 0.205386 204.674C0.205386 206.816 0.887445 208.51 2.25157 209.757C3.61614 211.004 5.59416 211.776 8.18788 212.074L11.7909 212.48C15.0924 212.86 16.7441 214.147 16.7441 216.343C16.7441 217.643 16.2182 218.674 15.1674 219.433C14.1161 220.192 12.7325 220.571 11.0123 220.571C8.93856 220.571 7.34152 220.171 6.2225 219.372C5.10304 218.572 4.39344 217.345 4.09462 215.692H0C0.273546 218.186 1.37225 220.184 3.29655 221.689C5.2204 223.193 7.77892 223.945 10.9721 223.945C12.9366 223.945 14.6492 223.626 16.1099 222.99C17.5684 222.353 18.7018 221.459 19.5066 220.307C20.3115 219.155 20.715 217.806 20.715 216.261C20.715 211.736 17.8893 209.147 12.241 208.496Z"/>
@@ -165,6 +167,5 @@
             </div>
         </div>
     </footer>
-    <cookies-react id="cookies"></cookies-react>
     </body>
 </html>

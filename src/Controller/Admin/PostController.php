@@ -137,6 +137,24 @@ class PostController extends AbstractController
         return $this->redirectToRoute('app_admin_post_index');
     }
 
+    #[Route('/tags/edit/{id}', name: 'tag_edit', methods: ['POST', 'GET'])]
+    public function tagEdit(PostTag $tag, Request $request): Response
+    {
+        $form = $this->createForm(PostTagType::class, $tag);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->em->persist($tag);
+            $this->em->flush();
+            $this->addFlash('success', 'Tag modifié avec succès');
+            return $this->redirectToRoute('app_admin_post_index');
+        }
+
+        return $this->render('admin/post/tag/edit.html.twig', [
+            'form' => $form,
+        ]);
+    }
+
     #[Route('/tags/delete/{id}', name: 'tag_delete', methods: 'DELETE')]
     public function tagDelete(PostTag $tag): Response
     {
