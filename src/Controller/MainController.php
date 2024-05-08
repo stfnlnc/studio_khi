@@ -18,7 +18,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('', name: 'app_')]
@@ -41,12 +40,14 @@ class MainController extends AbstractController
     }
 
     #[Route('/studio', name: 'studio')]
-    public function studio(ReviewRepository $reviewRepository): Response
+    public function studio(ReviewRepository $reviewRepository, FaqRepository $faqRepository): Response
     {
         $reviews = $reviewRepository->findAll();
+        $faqs = $faqRepository->findBy(['category' => 'general']);
 
         return $this->render('main/studio.html.twig', [
             'reviews' => $reviews,
+            'faqs' => $faqs
         ]);
     }
 

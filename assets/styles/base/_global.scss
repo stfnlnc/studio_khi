@@ -6,7 +6,7 @@
     --max-width: 1440px;
     --hover-duration: .3s;
     --dropdown-duration: .8s;
-    --dropdown-cubic: cubic-bezier(0.87, 0, 0.13, 1);
+    --dropdown-cubic: cubic-bezier(0.49, 0.17, 0, 0.87);
 }
 
 * {
@@ -32,6 +32,7 @@ body {
     width: 100%;
     background-color: var(--primary-light);
     color: var(--primary-dark);
+    overflow: hidden;
 }
 
 main {

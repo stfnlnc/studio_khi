@@ -11,28 +11,45 @@ import './react/MenuIcon.jsx'
 import './react/Link.jsx'
 import './react/Button.jsx'
 
+
+// Preloader
+const preloaderIcon = document.querySelector('.preloader__icon')
+preloaderIcon.classList.add('preloader__icon-active')
+const preloaderText = document.querySelector('.preloader__text')
+preloaderText.classList.add('preloader__text-active')
+const preloader = document.querySelector('.preloader')
+
+setTimeout(() => {
+    preloader.classList.add('preloader__remove')
+    const body = document.querySelector('body')
+    body.style.overflow = 'auto'
+}, 1000)
+
 // Resize header when scrolling
+const header = document.querySelector('header')
+const headerNav = document.querySelector('.header__nav')
 function resizeHeader () {
     if(window.scrollY > 100 ) {
-        document.querySelector('.header__nav').style.padding = '10px var(--main-padding-h)'
-        document.querySelector('header').style.borderColor = 'transparent'
+        headerNav.style.padding = '10px var(--main-padding-h)'
+        header.style.borderColor = 'transparent'
+        header.style.backdropFilter = 'blur(10px)'
     } else {
-        document.querySelector('.header__nav').style.padding = 'var(--nav-padding-v) var(--main-padding-h)'
-        document.querySelector('header').style.borderColor = 'var(--stroke-light)'
+        header.style.backdropFilter = 'blur(0)'
+        headerNav.style.padding = 'var(--nav-padding-v) var(--main-padding-h)'
+        header.style.borderColor = 'var(--stroke-light)'
     }
 }
 
 resizeHeader()
 
 // Remove header when footer appears
+const main = document.querySelector('main')
 document.addEventListener('scroll', () => {
-
     resizeHeader()
-
-    if((window.scrollY + (window.innerHeight / 3)) > (document.querySelector('main').scrollHeight)) {
-        document.querySelector('header').style.transform = 'translate(-50%, -100%)'
+    if((window.scrollY + (window.innerHeight / 3)) > main.scrollHeight) {
+        header.style.transform = 'translate(-50%, -100%)'
     } else {
-        document.querySelector('header').style.transform = 'translate(-50%, 0)'
+        header.style.transform = 'translate(-50%, 0)'
     }
 })
 

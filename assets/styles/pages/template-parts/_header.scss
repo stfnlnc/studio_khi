@@ -4,7 +4,6 @@
     left: 50%;
     transform: translate(-50%, 0);
     width: 100%;
-    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--stroke-light);
     transition: border var(--dropdown-duration) var(--dropdown-cubic), transform var(--dropdown-duration) ease;
     z-index: 5;

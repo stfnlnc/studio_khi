@@ -36,7 +36,7 @@ function Faq(props) {
             </svg>
         </div>
         <div className={'faq__answer faq__answer-' + props.id}>
-            <p dangerouslySetInnerHTML={{ __html: props.content }} className="primary-grey pt--2">
+            <p dangerouslySetInnerHTML={{ __html: props.content }} className="primary-grey text__s pt--2">
             </p>
         </div>
     </div>
