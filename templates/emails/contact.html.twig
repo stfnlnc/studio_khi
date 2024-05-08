@@ -10,18 +10,16 @@
     <tr>
         <td>
             <h4>Nom</h4>
-            <p>{{ data.lastname }}</p>
+            <p>{{ data.lastname }} {{ data.firstname }}</p>
         </td>
+    </tr>
+    <tr>
         <td>
             <h4>Email</h4>
             <p><a href="mailto:{{ data.email }}">{{ data.email }}</a></p>
         </td>
     </tr>
     <tr>
-        <td>
-            <h4>Prénom</h4>
-            <p>{{ data.firstname }}</p>
-        </td>
         <td>
             <h4>Téléphone</h4>
             <p><a href="tel:{{ data.phone }}">{{ data.phone }}</a></p>

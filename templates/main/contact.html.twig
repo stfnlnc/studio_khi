@@ -72,6 +72,12 @@
                         {{ form_errors(form.message) }}
                     </div>
                 </div>
+                <div class="flex col gap--1">
+                    {{ form_widget(form.captcha) }}
+                    <div class="errors">
+                        {{ form_errors(form.captcha) }}
+                    </div>
+                </div>
                 <button type="submit" class="btn btn__dark">
                     Envoyer au studio
                     <svg class="btn__icon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
