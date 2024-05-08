@@ -1564,6 +1564,11 @@ h1, .h1 {
   height: 100vh;
 }
 
+@media screen and (max-width: 870px) {
+  .h-50-mobile {
+    height: 30vh;
+  }
+}
 .w-auto {
   width: auto;
 }
