@@ -5,6 +5,7 @@
         <title>{% block title %}Studio Khi{% endblock %}</title>
         <link rel="icon" href="{{ asset('build/images/logos/favicon.svg') }}">
         <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('build/images/logos/apple-icon.svg') }}">
+        // +++++++ REMOVE BEFORE PROD +++++++ //
         <meta name="robots" content="noindex">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -206,9 +207,9 @@
                 </svg>
                 <p class="text__s primary-grey">© 2024 Studio Khi. All rights reserved</p>
                 <div class="flex row col-mobile align--start justify--end gap--5 gap-mobile">
-                    <a href="#" class="text__s primary-grey">Politique de confidentialité</a>
-                    <a href="#" class="text__s primary-grey">Mentions légales</a>
-                    <a href="#" class="text__s primary-grey">Cookies</a>
+                    <a href="{{ path('app_privacy_policy') }}" class="text__s primary-grey">Politique de confidentialité</a>
+                    <a href="{{ path('app_legal_notice') }}" class="text__s primary-grey">Mentions légales</a>
+                    <a href="{{ path('app_cookies') }}" class="text__s primary-grey">Cookies</a>
                 </div>
             </div>
         </div>
