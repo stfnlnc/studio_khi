@@ -6,17 +6,10 @@
 
 {% block meta %}
     <meta name="description" content="Chaque projet est une histoire à part entière, reflétant notre passion pour le design et notre volonté de satisfaire nos clients. ">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:locale" content="fr_FR" />
     <meta property="og:title" content="{{ post.name }} - Studio Khi" />
-    <meta property="og:type" content="website" />
     <meta property="og:description" content="Chaque projet est une histoire à part entière, reflétant notre passion pour le design et notre volonté de satisfaire nos clients. " />
     <meta property="og:url" content="https://studiokhi.com{{ path('app_post', {slug: post.slug}) }}" />
-    <meta property="og:image" content="https://studiokhi.com{{ asset('uploads/posts/featured/small/') ~ post.image }}" />
-    <meta property="og:image:secure_url" content="https://studiokhi.com{{ asset('uploads/posts/featured/small/') ~ post.image }}" />
-    <meta property="og:image:width" content="152" />
-    <meta property="og:image:height" content="152" />
-    <meta property="og:site_name" content="Studio Khi" />
+    {{ parent() }}
 {% endblock %}
 
 {% block body %}

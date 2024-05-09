@@ -6,17 +6,10 @@
 
 {% block meta %}
     <meta name="description" content="Nous développons des sites web sur mesure qui rehaussent la présence en ligne de votre marque. Grâce à notre expertise technique, nous transformons vos idées en réalité digitale. Avec nous, votre site sera fonctionnel, sécurisé, performant et parfaitement adapté à vos besoins.">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:locale" content="fr_FR" />
     <meta property="og:title" content="Développement Web & Sites Sur Mesure - Studio Khi" />
-    <meta property="og:type" content="website" />
     <meta property="og:description" content="Nous développons des sites web sur mesure qui rehaussent la présence en ligne de votre marque. Grâce à notre expertise technique, nous transformons vos idées en réalité digitale. Avec nous, votre site sera fonctionnel, sécurisé, performant et parfaitement adapté à vos besoins." />
     <meta property="og:url" content="https://studiokhi.com{{ path('app_service_development') }}" />
-    <meta property="og:image" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
-    <meta property="og:image:secure_url" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
-    <meta property="og:image:width" content="152" />
-    <meta property="og:image:height" content="152" />
-    <meta property="og:site_name" content="Studio Khi" />
+    {{ parent() }}
 {% endblock %}
 
 {% block body %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Cookies - {{ parent() }}
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Vous souhaitez recevoir un devis sur mesure ? Remplissez le formulaire de contact et parlez-nous de votre projet. Nous avons hâte d'écouter votre projet.">
+    <meta property="og:title" content="Contact - Studio Khi" />
+    <meta property="og:description" content="Vous souhaitez recevoir un devis sur mesure ? Remplissez le formulaire de contact et parlez-nous de votre projet. Nous avons hâte d'écouter votre projet." />
+    <meta property="og:url" content="https://studiokhi.com{{ path('app_cookies') }}" />
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <section class="container__large border--bottom border-stroke-light">
+        <div class="container">
+            <h1>Parlons de votre projet</h1>
+        </div>
+    </section>
+
+{% endblock %}
