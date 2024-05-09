@@ -58,7 +58,7 @@ class MainController extends AbstractController
         return $this->render('main/prices.html.twig');
     }
 
-    #[Route('/projets', name: 'projects')]
+    #[Route('/realisations', name: 'projects')]
     public function projects(ProjectRepository $repository, TagRepository $tagRepository): Response
     {
         $projects = $repository->findAll();
@@ -70,7 +70,7 @@ class MainController extends AbstractController
         ]);
     }
 
-    #[Route('/projets/{slug}', name: 'show')]
+    #[Route('/realisations/{slug}', name: 'show')]
     public function show(Project $project, ProjectRepository $projectRepository): Response
     {
         $projects = $projectRepository->findById($project->getId());

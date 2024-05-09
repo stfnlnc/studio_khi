@@ -31,7 +31,8 @@ class FaqType extends AbstractType
                 'label' => 'Réponse',
                 'attr' => [
                     'class' => 'form-input',
-                    'placeholder' => 'Réponse'
+                    'placeholder' => 'Réponse',
+                    'plugins' => 'advlist autolink link table lists'
                 ],
                 'label_attr' => [
                     'class' => 'form-label'

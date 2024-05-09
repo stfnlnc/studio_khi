@@ -16,18 +16,13 @@ import './react/Button.jsx'
 const preloader = document.querySelector('.preloader')
 const preloaderIcon = document.querySelector('.preloader__icon')
 const preloaderText = document.querySelector('.preloader__text')
-const body = document.querySelector('body')
+
 if(preloader) {
     preloaderIcon.classList.add('preloader__icon-active')
     preloaderText.classList.add('preloader__text-active')
     setTimeout(() => {
         preloader.classList.add('preloader__remove')
-        setTimeout(() => {
-            body.style.overflow = 'auto'
-        }, 600)
     }, 1000)
-} else {
-    body.style.overflow = 'auto'
 }
 
 

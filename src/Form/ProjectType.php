@@ -71,7 +71,8 @@ class ProjectType extends AbstractType
                 'label' => 'Description',
                 'attr' => [
                     'class' => 'form-textarea',
-                    'placeholder' => 'Description du projet'
+                    'placeholder' => 'Description du projet',
+                    'plugins' => 'advlist autolink link table lists'
                 ],
                 'label_attr' => [
                     'class' => 'form-label'

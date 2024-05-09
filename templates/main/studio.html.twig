@@ -21,7 +21,7 @@
                 Pyrénées. Nous créons des sites et des designs sur mesure pour des marques et des entrepreneurs qui
                 souhaitent se démarquer sur le web, et ce, à travers la France.
             </p>
-            <button-react data-href="#" data-content="Commencer votre projet"></button-react>
+            <button-react data-href="{{path('app_contact') }}" data-content="Commencer votre projet"></button-react>
         </div>
     </section>
     <section class="container__large primary-light primary-dark--bg"
@@ -66,7 +66,7 @@
                         Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web
                         pour renforcer votre présence en ligne.
                     </p>
-                    <link-react data-href="" data-color="light" data-icon="1"
+                    <link-react data-href="{{ path('app_service_branding') }}" data-color="light" data-icon="1"
                                 data-content="Infos & Tarifs"></link-react>
                 </div>
                 <div class="flex col gap--5">
@@ -78,10 +78,9 @@
                         </span>
                     </p>
                     <p class="primary-grey text__s">
-                        Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web
-                        pour renforcer votre présence en ligne.
+                        La phase de design sur Figma permet de créer une maquette de site web qui répond à vos attentes tout en proposant une expérience utilisateur optimale.
                     </p>
-                    <link-react data-href="" data-color="light" data-icon="1"
+                    <link-react data-href="{{ path('app_service_webdesign') }}" data-color="light" data-icon="1"
                                 data-content="Infos & Tarifs"></link-react>
                 </div>
                 <div class="flex col gap--5">
@@ -93,10 +92,9 @@
                         </span>
                     </p>
                     <p class="primary-grey text__s">
-                        Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web
-                        pour renforcer votre présence en ligne.
+                        Nous développons votre site en langage web, identique à la maquette, tout en respectant les meilleures pratiques du web.
                     </p>
-                    <link-react data-href="" data-color="light" data-icon="1"
+                    <link-react data-href="{{ path('app_service_development') }}" data-color="light" data-icon="1"
                                 data-content="Infos & Tarifs"></link-react>
                 </div>
             </div>
@@ -122,7 +120,7 @@
                         Cynthia Jego <br>
                         <span class="text__m primary-grey">Designer</span>
                     </p>
-                    <link-react data-content="LinkedIn" data-href="#" data-border="1"></link-react>
+                    <link-react data-content="LinkedIn" data-href="https://www.linkedin.com/in/cynthia-jego/" data-border="1"></link-react>
                 </div>
             </div>
             <div>
@@ -133,7 +131,7 @@
                         Stéfan Lancelot <br>
                         <span class="text__m primary-grey">Développeur Web</span>
                     </p>
-                    <link-react data-content="LinkedIn" data-href="#" data-border="1"></link-react>
+                    <link-react data-content="LinkedIn" data-href="https://www.linkedin.com/in/stefan-lancelot/" data-border="1"></link-react>
                 </div>
             </div>
         </div>
@@ -201,7 +199,7 @@
                     Pour les entrepreneurs et les entreprises
                 </p>
                 <p class="text__s primary-grey">
-                    Que vous soyez en phase de refonte de site internet ou en train de développer une nouvelle marque, nos accompagnons aussi bien les entrepreneurs solo que les entreprises dans cette étape de transformation ou création.
+                    Que vous soyez en phase de refonte de site internet ou en train de développer une nouvelle marque, nous accompagnons aussi bien les entrepreneurs solo que les entreprises dans cette étape de transformation ou création.
                 </p>
             </div>
         </div>
@@ -220,7 +218,7 @@
                         Nous avons eu la chance de travailler sur des projets passionnants et nous cherchons à former
                         des partenariats créatifs et durables avec tous nos clients.
                     </p>
-                    <link-react data-icon="1" data-content="Lire tous les avis" data-href="https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA"></link-react>
+                    <link-react data-target="_blank" data-icon="1" data-content="Lire tous les avis" data-href="https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA"></link-react>
                 </div>
             </div>
         </div>
@@ -277,7 +275,7 @@
             <h2 class="w--70 w-100-mobile">
                 Prêts à nous partager votre projet ?
             </h2>
-            <button-react data-href="" data-content="Demander votre devis"></button-react>
+            <button-react data-href="{{ path('app_contact') }}" data-content="Demander votre devis"></button-react>
         </div>
     </section>
 {% endblock %}

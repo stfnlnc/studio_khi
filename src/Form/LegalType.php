@@ -18,7 +18,8 @@ class LegalType extends AbstractType
                 'label' => 'Mentions Légales',
                 'attr' => [
                     'class' => 'form-textarea',
-                    'placeholder' => 'Mentions Légales'
+                    'placeholder' => 'Mentions Légales',
+                    'plugins' => 'advlist autolink link table lists'
                 ],
                 'label_attr' => [
                     'class' => 'form-label'
@@ -29,7 +30,8 @@ class LegalType extends AbstractType
                 'label' => 'Politique de Confidentialité',
                 'attr' => [
                     'class' => 'form-textarea',
-                    'placeholder' => 'Politique de Confidentialité'
+                    'placeholder' => 'Politique de Confidentialité',
+                    'plugins' => 'advlist autolink link table lists'
                 ],
                 'label_attr' => [
                     'class' => 'form-label'
@@ -40,7 +42,8 @@ class LegalType extends AbstractType
                 'label' => 'Cookies',
                 'attr' => [
                     'class' => 'form-textarea',
-                    'placeholder' => 'Cookies'
+                    'placeholder' => 'Cookies',
+                    'plugins' => 'advlist autolink link table lists'
                 ],
                 'label_attr' => [
                     'class' => 'form-label'

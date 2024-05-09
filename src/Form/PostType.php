@@ -48,7 +48,8 @@ class PostType extends AbstractType
                 'label' => 'Contenu',
                 'attr' => [
                     'class' => 'form-textarea',
-                    'placeholder' => 'Extrait haut de page'
+                    'placeholder' => 'Extrait haut de page',
+                    'plugins' => 'advlist autolink link table lists'
                 ],
                 'label_attr' => [
                     'class' => 'form-label'
