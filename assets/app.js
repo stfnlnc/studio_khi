@@ -18,11 +18,12 @@ preloaderIcon.classList.add('preloader__icon-active')
 const preloaderText = document.querySelector('.preloader__text')
 preloaderText.classList.add('preloader__text-active')
 const preloader = document.querySelector('.preloader')
-
+const body = document.querySelector('body')
 setTimeout(() => {
     preloader.classList.add('preloader__remove')
-    const body = document.querySelector('body')
-    body.style.overflow = 'auto'
+    setTimeout(() => {
+        body.style.overflow = 'auto'
+    }, 600)
 }, 1000)
 
 // Resize header when scrolling

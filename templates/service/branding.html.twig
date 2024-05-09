@@ -5,18 +5,20 @@
 {% endblock %}
 
 {% block meta %}
-    <meta name="description" content="Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une image qui vous ressemble et qui peut faire la différence. Nous traduisons visuellement votre histoire.">
+    <meta name="description"
+          content="Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une image qui vous ressemble et qui peut faire la différence. Nous traduisons visuellement votre histoire.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:title" content="Branding & Direction Artistique - Studio Khi" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une image qui vous ressemble et qui peut faire la différence. Nous traduisons visuellement votre histoire." />
-    <meta property="og:url" content="https://studiokhi.com{{ path('app_service_branding') }}" />
-    <meta property="og:image" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
-    <meta property="og:image:secure_url" content="{{ asset('build/images/logos/apple-icon.svg') }}" />
-    <meta property="og:image:width" content="152" />
-    <meta property="og:image:height" content="152" />
-    <meta property="og:site_name" content="Studio Khi" />
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:title" content="Branding & Direction Artistique - Studio Khi"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description"
+          content="Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une image qui vous ressemble et qui peut faire la différence. Nous traduisons visuellement votre histoire."/>
+    <meta property="og:url" content="https://studiokhi.com{{ path('app_service_branding') }}"/>
+    <meta property="og:image" content="{{ asset('build/images/logos/apple-icon.svg') }}"/>
+    <meta property="og:image:secure_url" content="{{ asset('build/images/logos/apple-icon.svg') }}"/>
+    <meta property="og:image:width" content="152"/>
+    <meta property="og:image:height" content="152"/>
+    <meta property="og:site_name" content="Studio Khi"/>
 {% endblock %}
 
 {% block body %}
@@ -151,7 +153,7 @@
             </div>
             <div class="w--100 grid grid--3 grid-gap--11 grid--1-mobile">
                 <div class="flex col gap--5">
-                    <p>
+                    <p class="text__m">
                         Adobe Designer
                     </p>
                     <p class="primary-grey text__s">
@@ -162,7 +164,7 @@
                     </p>
                 </div>
                 <div class="flex col gap--5">
-                    <p>
+                    <p class="text__m">
                         Des designs orientés web
                     </p>
                     <p class="primary-grey text__s">
@@ -173,7 +175,7 @@
                     </p>
                 </div>
                 <div class="flex col gap--5">
-                    <p>
+                    <p class="text__m">
                         Cohérence de la marque
                     </p>
                     <p class="primary-grey text__s">
@@ -234,34 +236,40 @@
             </div>
             <div class="w--100 grid grid--3 grid-gap--11 hide-mobile">
                 <div class="flex col gap--5">
-                    <p class="text__l">
+                    <p class="text__m">
                         01 <br>
-                        Branding & <br>
-                        Direction Artistique
+                        <span class="text__l">
+                            Branding & <br>
+                            Direction Artistique
+                        </span>
                     </p>
-                    <p class="primary-grey">
+                    <p class="primary-grey text__s">
                         Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web
                         pour renforcer votre présence en ligne.
                     </p>
                 </div>
                 <div class="flex col gap--5">
-                    <p class="text__l">
+                    <p class="text__m">
                         02 <br>
-                        Webdesign & <br>
-                        Design Digital
+                        <span class="text__l">
+                            Webdesign & <br>
+                            Design Digital
+                        </span>
                     </p>
-                    <p class="primary-grey">
+                    <p class="primary-grey text__s">
                         La phase de design sur Figma permet de créer une maquette de site web qui répond à vos attentes
                         tout en proposant une expérience utilisateur optimale.
                     </p>
                 </div>
                 <div class="flex col gap--5">
-                    <p class="text__l">
+                    <p class="text__m">
                         03 <br>
-                        Développement Web & <br>
-                        Sites Sur Mesure
+                        <span class="text__l">
+                            Développement Web & <br>
+                            Sites Sur Mesure
+                        </span>
                     </p>
-                    <p class="primary-grey">
+                    <p class="primary-grey text__s">
                         Nous développons votre site en langage web, identique à la maquette, tout en respectant les
                         meilleures pratiques du web.
                     </p>

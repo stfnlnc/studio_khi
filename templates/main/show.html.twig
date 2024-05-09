@@ -25,7 +25,7 @@
         <div class="container container__top flex col gap--16 gap-large-mobile align--start justify--start">
             <h1>{{ project.name }}</h1>
             <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
-                <p>
+                <p class="text__l">
                     {{ project.excerpt }}
                 </p>
                 <p class="text__m underline">Scroll pour découvrir</p>
@@ -33,8 +33,8 @@
         </div>
     </section>
     <section class="container flex row col-mobile gap-small-mobile">
-        <div class="flex col gap--11 text__l w--40 w-100-mobile hide-mobile">
-            <span>Résumé du projet</span>
+        <div class="flex col gap--11 w--40 w-100-mobile hide-mobile">
+            <span class="text__l">Résumé du projet</span>
             <div class="flex col gap--2">
                 {% for tag in project.tag.toArray %}
                     <tag-react data-content="{{ tag.name }}"></tag-react>
