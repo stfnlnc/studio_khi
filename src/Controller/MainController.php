@@ -7,6 +7,7 @@ use App\Entity\Post;
 use App\Entity\Project;
 use App\Form\ContactType;
 use App\Repository\FaqRepository;
+use App\Repository\LegalRepository;
 use App\Repository\PostRepository;
 use App\Repository\PostTagRepository;
 use App\Repository\ProjectRepository;
@@ -143,6 +144,33 @@ class MainController extends AbstractController
 
         return $this->render('main/contact.html.twig', [
             'form' => $form,
+        ]);
+    }
+
+    #[Route('/mentions-legales', name: 'legal_notice')]
+    public function legalNotice(LegalRepository $legalRepository): Response
+    {
+        $legal = $legalRepository->findOneBy(['id' => 1]);
+        return $this->render('legal/legal-notice.html.twig', [
+            'legal' => $legal
+        ]);
+    }
+
+    #[Route('/politique-de-confidentialite', name: 'privacy_policy')]
+    public function privacyPolicy(LegalRepository $legalRepository): Response
+    {
+        $legal = $legalRepository->findOneBy(['id' => 1]);
+        return $this->render('legal/privacy-policy.html.twig', [
+            'legal' => $legal
+        ]);
+    }
+
+    #[Route('/cookies', name: 'cookies')]
+    public function cookies(LegalRepository $legalRepository): Response
+    {
+        $legal = $legalRepository->findOneBy(['id' => 1]);
+        return $this->render('legal/cookies.html.twig', [
+            'legal' => $legal
         ]);
     }
 }

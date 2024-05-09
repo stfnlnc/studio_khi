@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Mentions légales - {{ parent() }}
+    Mentions Légales - {{ parent() }}
 {% endblock %}
 
 {% block meta %}
@@ -16,8 +16,11 @@
 
     <section class="container__large border--bottom border-stroke-light">
         <div class="container">
-            <h1>Parlons de votre projet</h1>
+            <h1>Mentions Légales</h1>
         </div>
+    </section>
+    <section class="container text__m">
+        {{ legal.legalNotice|raw }}
     </section>
 
 {% endblock %}
