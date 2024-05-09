@@ -356,7 +356,7 @@
         <div class="w--60 w-100-mobile flex col align--start justify--start">
             {% for key, faq in faqs %}
                 <faq-react class="w--100" data-id="{{ key }}" data-title="{{ faq.question }}"
-                           data-content="{{ faq.answer|raw }}"></faq-react>
+                           data-content="{{ faq.answer }}"></faq-react>
             {% endfor %}
         </div>
     </section>

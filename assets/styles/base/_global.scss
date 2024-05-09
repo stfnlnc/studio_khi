@@ -57,6 +57,11 @@ a {
     text-decoration: none;
 }
 
+p > a {
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+}
+
 .favicon {
     width: 1.92325rem;
     height: 1.92325rem;

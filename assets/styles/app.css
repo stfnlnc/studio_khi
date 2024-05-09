@@ -1086,7 +1086,7 @@ h1, .h1 {
   left: 50%;
 }
 .home__logo-mobile {
-  width: 100%;
+  width: 200px;
   height: auto;
   fill: var(--primary-dark);
   padding: 2rem 0;
@@ -2847,6 +2847,11 @@ section {
 a {
   color: unset;
   text-decoration: none;
+}
+
+p > a {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
 }
 
 .favicon {

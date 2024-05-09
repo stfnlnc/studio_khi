@@ -20,6 +20,10 @@
             "path": "{{ path("app_admin_user_index") }}"
         },
         "6": {
+            "name": "Mentions",
+            "path": "{{ path('app_admin_legal_edit', {'id': 1}) }}"
+        },
+        "7": {
             "name": "Se déconnecter",
             "path": "{{ path("app_logout") }}"
         }
@@ -49,6 +53,7 @@
             <menu-item-react data-content="FAQ" data-href="{{ path('app_admin_faq_index') }}" data-active=""></menu-item-react>
             <menu-item-react data-content="Avis" data-href="{{ path('app_admin_review_index') }}" data-active=""></menu-item-react>
             <menu-item-react data-content="Utilisateurs" data-href="{{ path('app_admin_user_index') }}" data-active=""></menu-item-react>
+            <menu-item-react data-content="Mentions" data-href="{{ path('app_admin_legal_edit', {'id': 1}) }}" data-active=""></menu-item-react>
         </div>
         <button-react class="hide-mobile" data-href="{{ path('app_logout') }}" data-content="Se déconnecter" data-color="light"></button-react>
         <menu-icon-react class="display-mobile" data-id="header"></menu-icon-react>
