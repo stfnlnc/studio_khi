@@ -48,7 +48,7 @@ function DropdownMobile(props) {
                 })
             }
             <span className="container pt--8 pb--0">
-                <Button href={href.contact} color="light">Contact</Button>
+                <Button href={props.contact} color="light">Contact</Button>
             </span>
         </div>
     </div>
