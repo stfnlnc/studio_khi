@@ -178,7 +178,7 @@
             <article class="flex col gap--5 article">
                 <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative" aria-label="{{ project.name }}">
                     {% if project.image is not empty %}
-                        <img class="home__img home__img-case" src="{{ asset('uploads/projects/featured/large/') ~ project.image }}" alt="{{ project.name }}">
+                        <img class="home__img home__img-case" src="{{ asset('uploads/projects/featured/large/') ~ project.image }}" loading="lazy" alt="{{ project.name }}">
                     {% else %}
                         <div class="home__img home__img-case stroke-dark--bg"></div>
                     {% endif %}
@@ -244,12 +244,12 @@
         </div>
         <div class="flex row gap--4 hide-mobile">
             <div class="w--40">
-                <img src="{{ asset('build/images/uploads/studio-1.webp') }}" alt=""
-                     class="home__img home__img-studio-left">
+                <img src="{{ asset('build/images/uploads/studio-1.webp') }}"
+                     class="home__img home__img-studio-left" loading="lazy" alt="Le Studio">
             </div>
             <div class="w--60">
-                <img src="{{ asset('build/images/uploads/studio-2.webp') }}" alt=""
-                     class="home__img home__img-studio-right">
+                <img src="{{ asset('build/images/uploads/studio-2.webp') }}"
+                     class="home__img home__img-studio-right" loading="lazy" alt="Le Studio">
             </div>
         </div>
     </section>
@@ -322,7 +322,7 @@
                         <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}" aria-label="{{ post.name }}">
                             {% if post.image is not empty %}
                                 <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
-                                     alt="">
+                                     loading="lazy" alt="{{ post.name }}">
                             {% else %}
                                 <div class="home__img home__img-post stroke-dark--bg"></div>
                             {% endif %}

@@ -36,7 +36,7 @@
                     <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative" aria-label="{{ project.name }}">
                         {% if project.image is not empty %}
                             <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/large/') ~ project.image }}"
-                                 alt="{{ project.name }}">
+                                 loading="lazy" alt="{{ project.name }}">
                         {% else %}
                             <div class="home__img home__img-post stroke-dark--bg"></div>
                         {% endif %}

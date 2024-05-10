@@ -71,7 +71,7 @@
         <div class="flex col gap--2">
             {% for image in project.images.toArray|sort((a, b) => a.issue <=> b.issue) %}
                 <img class="w-100 border-rounded" src="{{ asset('uploads/projects/gallery/large/') ~ image.name }}"
-                     alt="{{ project.name }}">
+                     loading="lazy" alt="{{ project.name }}">
             {% endfor %}
         </div>
     </section>
@@ -92,7 +92,7 @@
                     <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative {% for tag in project.tag.toArray %} {{ tag.slug }} {% endfor %}" aria-label="{{ project.name }}">
                         {% if project.image is not empty %}
                             <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/large/') ~ project.image }}"
-                                 alt="">
+                                 loading="lazy" alt="{{ project.name }}">
                         {% else %}
                             <div class="home__img home__img-post stroke-dark--bg"></div>
                         {% endif %}
