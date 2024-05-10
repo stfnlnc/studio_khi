@@ -31,7 +31,7 @@
         <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
             {% for post in posts %}
                 <article class="flex col gap--5 article mb--20 {% for tag in post.tag.toArray %}{{ tag.slug }}{% endfor %}">
-                    <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}">
+                    <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}" aria-label="{{ post.name }}">
                         {% if post.image is not empty %}
                             <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
                                  alt="{{ post.name }}">

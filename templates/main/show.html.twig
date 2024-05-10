@@ -89,7 +89,7 @@
         <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
             {% for project in projects %}
                 <article class="flex col gap--5 article mb--20">
-                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative {% for tag in project.tag.toArray %} {{ tag.slug }} {% endfor %}">
+                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative {% for tag in project.tag.toArray %} {{ tag.slug }} {% endfor %}" aria-label="{{ project.name }}">
                         {% if project.image is not empty %}
                             <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/large/') ~ project.image }}"
                                  alt="">
