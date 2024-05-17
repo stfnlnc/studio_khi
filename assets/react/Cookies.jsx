@@ -2,15 +2,9 @@ import React from "react"
 import {createRoot} from "react-dom/client";
 import {unmountComponentAtNode} from "react-dom";
 
-
-
 function Cookies(props) {
 
     const cookies = document.getElementById('cookies')
-
-    if(document.cookie.includes('cookies=agree')) {
-        cookies.style.display ='none'
-    }
 
     const handleClick = () => {
         cookies.style.opacity = '0'

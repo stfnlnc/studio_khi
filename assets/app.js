@@ -62,5 +62,13 @@ alerts.forEach(alert => {
     })
 })
 
+// Cookies alert display
+
+const cookies = document.getElementById('cookies')
+
+if(document.cookie.includes('cookies=agree')) {
+    cookies.style.display ='none'
+}
+
 
 
