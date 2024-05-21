@@ -1,17 +1,7 @@
 .footer {
-/*    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;*/
+    z-index: 0;
     width: 100%;
-    height: auto;
-    min-height: 700px;
     transition: filter var(--dropdown-duration) var(--dropdown-cubic);
-/*    overflow-y: auto;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-        display: none;
-    }*/
     &__container {
         width: 100%;
         max-width: var(--max-width);

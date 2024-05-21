@@ -5,17 +5,20 @@
 {% endblock %}
 
 {% block meta %}
-    <meta name="description" content="Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web.">
-    <meta property="og:title" content="Studio Khi" />
-    <meta property="og:description" content="Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web." />
-    <meta property="og:url" content="https://studiokhi.com" />
+    <meta name="description"
+          content="Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web.">
+    <meta property="og:title" content="Studio Khi"/>
+    <meta property="og:description"
+          content="Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web."/>
+    <meta property="og:url" content="https://studiokhi.com"/>
     {{ parent() }}
 {% endblock %}
 
 {% block body %}
     <section class="container__large border--bottom border-stroke-light">
         <div class="container container__top flex col col-rev-mobile align--center justify--center relative">
-            <button-react data-content="Commencer votre projet" data-href="{{ path('app_contact') }}" data-color="dark"></button-react>
+            <button-react data-content="Commencer votre projet" data-href="{{ path('app_contact') }}"
+                          data-color="dark"></button-react>
             <p class="w--50 primary-grey text-center mt--11 mb--8 w-100-mobile text__m">
                 Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et
                 des
@@ -71,7 +74,8 @@
             </p>
             <div class="flex col align--start justify--start gap--2">
                 <link-react data-icon="1" data-content="Découvrir nos services" data-href="#branding"></link-react>
-                <link-react data-icon="1" data-content="Voir nos réalisations" data-href="{{ path('app_projects') }}"></link-react>
+                <link-react data-icon="1" data-content="Voir nos réalisations"
+                            data-href="{{ path('app_projects') }}"></link-react>
             </div>
         </div>
     </section>
@@ -86,7 +90,8 @@
                     <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
                         <p class="w--80 w-100-mobile primary-grey text__m">
                             Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos
-                            valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une image
+                            valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une
+                            image
                             qui vous ressemble pour renforcer votre présence en ligne.
                         </p>
                         <p class="text__m">
@@ -97,7 +102,8 @@
                             Design Réseaux Sociaux <br>
                             Pitchdeck
                         </p>
-                        <link-react data-icon="1" data-content="Infos & Tarifs" data-href="{{ path('app_service_branding') }}"></link-react>
+                        <link-react data-icon="1" data-content="Infos & Tarifs"
+                                    data-href="{{ path('app_service_branding') }}"></link-react>
                     </div>
                 </div>
             </div>
@@ -114,8 +120,10 @@
                     <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
                         <p class="w--80 w-100-mobile primary-grey text__m">
                             Nous sommes spécialisés dans la conception de sites web qui attirent et retiennent
-                            l'attention. Nous créons des designs web élégants et nous veillons à ce que l'architecture
-                            soit claire, logique et intuitive pour les utilisateurs. Notre approche est de trouver le
+                            l'attention. Nous créons des designs web élégants et nous veillons à ce que
+                            l'architecture
+                            soit claire, logique et intuitive pour les utilisateurs. Notre approche est de trouver
+                            le
                             juste équilibre entre beauté et fonctionnalité.
                         </p>
                         <p class=" text__m">
@@ -125,7 +133,8 @@
                             Maquettes & Prototypes <br>
                             Design System
                         </p>
-                        <link-react data-icon="1" data-content="Infos & Tarifs" data-href="{{ path('app_service_webdesign') }}"></link-react>
+                        <link-react data-icon="1" data-content="Infos & Tarifs"
+                                    data-href="{{ path('app_service_webdesign') }}"></link-react>
                     </div>
                 </div>
             </div>
@@ -142,8 +151,10 @@
                     <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
                         <p class="w--80 w-100-mobile primary-grey text__m">
                             Nous développons des sites web sur mesure qui rehaussent la présence en ligne de votre
-                            marque. Grâce à notre expertise technique, nous transformons vos idées en réalité digitale.
-                            Avec nous, votre site sera fonctionnel, sécurisé, performant et parfaitement adapté à vos
+                            marque. Grâce à notre expertise technique, nous transformons vos idées en réalité
+                            digitale.
+                            Avec nous, votre site sera fonctionnel, sécurisé, performant et parfaitement adapté à
+                            vos
                             besoins.
                         </p>
                         <p class="text__m">
@@ -154,7 +165,8 @@
                             SEO & Référencement naturel <br>
                             Formation & Maintenance
                         </p>
-                        <link-react data-icon="1" data-content="Infos & Tarifs" data-href="{{ path('app_service_development') }}"></link-react>
+                        <link-react data-icon="1" data-content="Infos & Tarifs"
+                                    data-href="{{ path('app_service_development') }}"></link-react>
                     </div>
                 </div>
             </div>
@@ -176,9 +188,12 @@
         </div>
         {% for project in projects %}
             <article class="flex col gap--5 article">
-                <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative" aria-label="{{ project.name }}">
+                <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative"
+                   aria-label="{{ project.name }}">
                     {% if project.image is not empty %}
-                        <img class="home__img home__img-case" src="{{ asset('uploads/projects/featured/large/') ~ project.image }}" loading="lazy" alt="{{ project.name }}">
+                        <img class="home__img home__img-case"
+                             src="{{ asset('uploads/projects/featured/large/') ~ project.image }}" loading="lazy"
+                             alt="{{ project.name }}">
                     {% else %}
                         <div class="home__img home__img-case stroke-dark--bg"></div>
                     {% endif %}
@@ -188,10 +203,13 @@
                             <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
                         {% endfor %}
                     </div>
-                    <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
                         <circle id="Ellipse 1" cx="62.5" cy="62.5" r="62.5" fill="white"/>
-                        <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                        <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
                 <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex row col-mobile">
@@ -208,7 +226,8 @@
             </article>
         {% endfor %}
         <div class="align--self-end">
-            <link-react data-icon="1" data-content="Voir toutes les réalisations" data-href="{{ path('app_projects') }}"></link-react>
+            <link-react data-icon="1" data-content="Voir toutes les réalisations"
+                        data-href="{{ path('app_projects') }}"></link-react>
         </div>
     </section>
     {% include 'main/template-part/_process.html.twig' %}
@@ -238,7 +257,8 @@
                     fermement à la simplicité et aux choix audacieux pour rendre votre marque unique et mémorable.
                 </p>
                 <div class="flex col align--start justify--start gap--2">
-                    <link-react data-icon="1" data-content="Découvrir le studio" data-href="{{ path('app_studio') }}"></link-react>
+                    <link-react data-icon="1" data-content="Découvrir le studio"
+                                data-href="{{ path('app_studio') }}"></link-react>
                 </div>
             </div>
         </div>
@@ -266,7 +286,8 @@
                         <br><br>
                         Ne vous contentez pas de nous croire sur parole. Voici ce que nos clients disent de nous.
                     </p>
-                    <link-react data-icon="1" data-target="_blank" data-content="Lire tous les avis" data-href="https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA"></link-react>
+                    <link-react data-icon="1" data-target="_blank" data-content="Lire tous les avis"
+                                data-href="https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA"></link-react>
                 </div>
             </div>
         </div>
@@ -292,11 +313,11 @@
                             </svg>
                         </div>
                         <p class="text__s">
-                            {{ review.name}} <br>
+                            {{ review.name }} <br>
                             <span class="primary-grey">{{ review.subtitle }}</span>
                         </p>
                         <p class="text__s mt--4">
-                            “ {{ review.description}} ”
+                            “ {{ review.description }} ”
                         </p>
                     </card>
                 {% endfor %}
@@ -319,29 +340,35 @@
             <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
                 {% for post in posts %}
                     <article class="flex col gap--5 article">
-                        <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}" aria-label="{{ post.name }}">
+                        <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}"
+                           aria-label="{{ post.name }}">
                             {% if post.image is not empty %}
-                                <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
+                                <img class="home__img home__img-post"
+                                     src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
                                      loading="lazy" alt="{{ post.name }}">
                             {% else %}
                                 <div class="home__img home__img-post stroke-dark--bg"></div>
                             {% endif %}
-                                <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                                    {% for tag in post.tag.toArray %}
-                                        <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
-                                    {% endfor %}
-                                </div>
-                                <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle id="Ellipse 1" cx="62.5" cy="62.5" r="62.5" fill="white"/>
-                                    <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                                {% for tag in post.tag.toArray %}
+                                    <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                                {% endfor %}
+                            </div>
+                            <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle id="Ellipse 1" cx="62.5" cy="62.5" r="62.5" fill="white"/>
+                                <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </a>
                         <div class="flex col gap--3">
                             <p class="text__l">
                                 {{ post.name }}
                             </p>
-                            <link-react data-href="{{ path('app_post', {slug: post.slug}) }}" data-border="1" data-content="Lire l'article"
+                            <link-react data-href="{{ path('app_post', {slug: post.slug}) }}" data-border="1"
+                                        data-content="Lire l'article"
                                         data-color="light"></link-react>
                         </div>
                     </article>

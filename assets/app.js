@@ -70,5 +70,26 @@ if(document.cookie.includes('cookies=agree')) {
     cookies.style.display ='none'
 }
 
+// Scrolling sections
+const branding = document.getElementById('branding')
+const webdesign = document.getElementById('webdesign')
+const dev = document.getElementById('dev')
 
-
+if(branding || webdesign || dev) {
+    window.addEventListener('scroll', () => {
+        if((branding.offsetHeight + branding.offsetTop) < (window.scrollY + window.innerHeight)) {
+            branding.style.transform = 'translateY(' + ((window.scrollY + window.innerHeight) - (branding.offsetHeight + branding.offsetTop)) + 'px)'
+        } else {
+            branding.style.transform = 'translateY(0)'
+        }
+        if((webdesign.offsetHeight + webdesign.offsetTop) < (window.scrollY + window.innerHeight)) {
+            webdesign.style.transform = 'translateY(' + ((window.scrollY + window.innerHeight) - (webdesign.offsetHeight + webdesign.offsetTop)) + 'px)'
+        } else {
+            webdesign.style.transform = 'translateY(0)'
+        }
+        if((dev.offsetHeight + dev.offsetTop) < (window.scrollY + window.innerHeight)) {
+            branding.style.transform = 'translateY(0)'
+            webdesign.style.transform = 'translateY(0)'
+        }
+    })
+}
