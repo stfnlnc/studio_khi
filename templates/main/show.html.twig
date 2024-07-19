@@ -24,9 +24,10 @@
             </div>
         </div>
     </section>
-    <section class="container__large primary-light primary-dark--bg"
-             style="background-image: url('{{ asset('uploads/projects/featured/full/') ~ project.image }}'); background-position: center; background-size: cover;">
-        <div class="container container__top">
+    <section class="p--0 w--100">
+        <div class="">
+                <img class="w--100" src="{{ asset('uploads/projects/featured/full/') ~ project.image }}"
+                     loading="lazy" alt="{{ project.name }}">
         </div>
     </section>
     <section class="container flex row col-mobile gap-small-mobile">
