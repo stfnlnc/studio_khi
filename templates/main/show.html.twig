@@ -13,8 +13,7 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container__large primary-light primary-dark--bg"
-             style="background-image: linear-gradient(rgba(0,0,0,0.6) 50%, rgba(0,0,0,0)), url('{{ asset('uploads/projects/featured/full/') ~ project.image }}'); background-position: center; background-size: cover;">
+    <section class="container__large primary-light primary-dark--bg">
         <div class="container container__top flex col gap--16 gap-large-mobile align--start justify--start">
             <h1>{{ project.name }}</h1>
             <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
@@ -23,6 +22,11 @@
                 </p>
                 <p class="text__m underline">Scroll pour découvrir</p>
             </div>
+        </div>
+    </section>
+    <section class="container__large primary-light primary-dark--bg"
+             style="background-image: url('{{ asset('uploads/projects/featured/full/') ~ project.image }}'); background-position: center; background-size: cover;">
+        <div class="container container__top">
         </div>
     </section>
     <section class="container flex row col-mobile gap-small-mobile">

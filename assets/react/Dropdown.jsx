@@ -11,7 +11,6 @@ function Dropdown(props) {
                     item.classList.remove('menu__item__light')
                 }
             })
-            document.querySelector('header').style.borderColor = 'var(--stroke-light)'
             document.querySelector('.header__logo').style.fill = 'var(--primary-dark)'
             document.querySelector('.dropdown').style.transform = 'translate(-50%, -100%)'
             document.querySelector('main').style.filter = 'blur(0)'
