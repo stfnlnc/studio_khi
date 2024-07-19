@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinTable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 #[UniqueEntity(fields: ['name'], message: 'Ce projet existe déjà')]
@@ -18,12 +19,15 @@ class Project
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['projects.index'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['projects.index'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['projects.index'])]
     private ?string $slug = null;
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $excerpt = null;
@@ -51,6 +55,7 @@ class Project
      */
     #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'projects')]
     #[JoinTable(name: 'project_tag')]
+    #[Groups(['projects.show'])]
     private Collection $tag;
 
     /**

@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: TagRepository::class)]
 #[UniqueEntity(fields: ['name'], message: 'Ce tag existe déjà')]
@@ -19,6 +20,7 @@ class Tag
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['projects.show'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]

@@ -4,7 +4,9 @@ namespace App\Repository;
 
 use App\Entity\Project;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @extends ServiceEntityRepository<Project>
@@ -34,6 +36,19 @@ class ProjectRepository extends ServiceEntityRepository
                 ->getQuery()
                 ->getResult()
             ;
+        }
+
+        public function paginateProjects(int $page, int $limit): Paginator
+        {
+
+            return new Paginator($this
+                ->createQueryBuilder('p')
+                ->setFirstResult(($page - 1) * $limit)
+                ->setMaxResults($limit)
+                ->getQuery()
+                ->setHint(Paginator::HINT_ENABLE_DISTINCT, false),
+            false
+            );
         }
 
     //    public function findOneBySomeField($value): ?Project

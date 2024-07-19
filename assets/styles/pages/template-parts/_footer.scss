@@ -1,6 +1,8 @@
 .footer {
+
     z-index: 0;
     width: 100%;
+    height: fit-content;
     transition: filter var(--dropdown-duration) var(--dropdown-cubic);
     &__container {
         width: 100%;
@@ -28,17 +30,5 @@
 }
 
 @media screen and (max-width: 1080px) {
-    .footer {
-        position: unset;
-        top: unset;
-        left: unset;
-        scrollbar-width: unset;
-        height: auto;
-        &::-webkit-scrollbar {
-            display: unset;
-        }
-        &__gap {
-            display: none;
-        }
-    }
+
 }

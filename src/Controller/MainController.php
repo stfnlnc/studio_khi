@@ -61,7 +61,7 @@ class MainController extends AbstractController
     #[Route('/realisations', name: 'projects')]
     public function projects(ProjectRepository $repository, TagRepository $tagRepository): Response
     {
-        $projects = $repository->findAll();
+        $projects = $repository->findBy([], ['updated_at' => 'DESC']);
         $tags = $tagRepository->findAll();
 
         return $this->render('main/projects.html.twig', [
@@ -84,7 +84,7 @@ class MainController extends AbstractController
     #[Route('/articles', name: 'posts')]
     public function posts(PostRepository $postRepository, PostTagRepository $postTagRepository): Response
     {
-        $posts = $postRepository->findAll();
+        $posts = $postRepository->findBy([], ['updated_at' => 'DESC']);
         $tags = $postTagRepository->findAll();
 
         return $this->render('main/posts.html.twig', [
