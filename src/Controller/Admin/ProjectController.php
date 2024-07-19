@@ -35,7 +35,7 @@ class ProjectController extends AbstractController
         $tag = new Tag();
         $form = $this->createForm(TagType::class, $tag);
         $form->handleRequest($request);
-        $projects = $repository->findAll();
+        $projects = $repository->findBy([], ['updated_at' => 'DESC']);
         $tags = $tagRepository->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {

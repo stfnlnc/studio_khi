@@ -35,7 +35,7 @@ class PostController extends AbstractController
         $form = $this->createForm(PostTagType::class, $tag);
         $form->handleRequest($request);
         $tags = $tagRepository->findAll();
-        $posts = $repository->findAll();
+        $posts = $repository->findBy([], ['updated_at' => 'DESC']);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->persist($tag);
