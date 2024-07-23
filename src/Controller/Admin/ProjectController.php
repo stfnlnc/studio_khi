@@ -82,7 +82,7 @@ class ProjectController extends AbstractController
      * @throws Exception
      */
     #[Route('/new', name: 'new', methods: ['POST', 'GET'])]
-    public function new(Request $request, ImageService $service): Response
+    public function new(Request $request, ImageService $service, ProjectRepository $repository): Response
     {
         $project = new Project();
         $form = $this->createForm(ProjectType::class, $project);
@@ -99,13 +99,13 @@ class ProjectController extends AbstractController
                 $img->setIssue($issue);
                 $project->addImage($img);
             }
-
             $image = $form->get('image')->getData();
             $folder = 'projects/featured';
             if ($image !== null) {
                 $file = $service->add($image, $project->getSlug(), $folder);
                 $project->setImage($file);
             }
+            $project->setIssue(count($repository->findAll()));
             $this->em->persist($project);
             $this->em->flush();
             $this->addFlash('success', 'Projet créé avec succès');
