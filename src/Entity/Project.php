@@ -76,6 +76,9 @@ class Project
     #[ORM\Column]
     private ?bool $is_homepage = false;
 
+    #[ORM\Column]
+    private ?int $issue = null;
+
     public function __construct()
     {
         $this->tag = new ArrayCollection();
@@ -293,6 +296,18 @@ class Project
     public function setIsHomepage(bool $is_homepage): static
     {
         $this->is_homepage = $is_homepage;
+
+        return $this;
+    }
+
+    public function getIssue(): ?int
+    {
+        return $this->issue;
+    }
+
+    public function setIssue(int $issue): static
+    {
+        $this->issue = $issue;
 
         return $this;
     }

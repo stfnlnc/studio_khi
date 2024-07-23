@@ -35,7 +35,7 @@ class ProjectController extends AbstractController
         $tag = new Tag();
         $form = $this->createForm(TagType::class, $tag);
         $form->handleRequest($request);
-        $projects = $repository->findBy([], ['updated_at' => 'DESC']);
+        $projects = $repository->findBy([], ['issue' => 'ASC']);
         $tags = $tagRepository->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -50,6 +50,32 @@ class ProjectController extends AbstractController
             'tags' => $tags,
             'form' => $form
         ]);
+    }
+
+    #[Route('/up/{id}', name: 'up', methods: ['POST', 'GET'])]
+    public function up(Project $project, Request $request, ProjectRepository $repository): Response
+    {
+        $downProject = $repository->findOneBy(['issue' => $project->getIssue() - 1]);
+        $downProject->setIssue($project->getIssue());
+        $project->setIssue($project->getIssue() - 1);
+        $this->em->persist($downProject);
+        $this->em->persist($project);
+        $this->em->flush();
+
+        return $this->redirectToRoute('app_admin_project_index');
+    }
+
+    #[Route('/down/{id}', name: 'down', methods: ['POST', 'GET'])]
+    public function down(Project $project, Request $request, ProjectRepository $repository): Response
+    {
+        $upProject = $repository->findOneBy(['issue' => $project->getIssue() + 1]);
+        $upProject->setIssue($project->getIssue());
+        $project->setIssue($project->getIssue() + 1);
+        $this->em->persist($upProject);
+        $this->em->persist($project);
+        $this->em->flush();
+
+        return $this->redirectToRoute('app_admin_project_index');
     }
 
     /**

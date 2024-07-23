@@ -61,7 +61,7 @@ class MainController extends AbstractController
     #[Route('/realisations', name: 'projects')]
     public function projects(ProjectRepository $repository, TagRepository $tagRepository): Response
     {
-        $projects = $repository->findBy([], ['updated_at' => 'DESC']);
+        $projects = $repository->findBy([], ['issue' => 'ASC']);
         $tags = $tagRepository->findAll();
 
         return $this->render('main/projects.html.twig', [
