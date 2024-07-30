@@ -93,7 +93,7 @@
             <menu-item-react data-content="Studio" data-href="{{ path('app_studio') }}" data-active=""></menu-item-react>
             <menu-item-react data-content="Articles" data-href="{{ path('app_posts') }}" data-active=""></menu-item-react>
         </div>
-        <button-react class="hide-mobile" data-href="{{ path('app_contact') }}" data-content="Contact" data-color="light"></button-react>
+        {% include 'main/components/button.html.twig' with {href: path('app_contact'), content: "Contact", color: "light", target: "_blank", icon: true} %}
         <menu-icon-react class="display-mobile" data-id="header"></menu-icon-react>
     </nav>
 </header>

@@ -1,0 +1,9 @@
+<a target="{{ target|default(null) }}" href="{{ href|default(null) }}" class="{{ color|default(null) ? 'btn text__m btn__' ~ color : 'btn text__m' }}">
+{{ content|default(null) }}
+    {% if icon|default(null) %}
+        <svg class="{{ icon ? 'btn__icon btn__' ~ color|default(null) ~'__icon' : 'btn__icon' }}" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.5 13.5L13.5 4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.1875 4.5H13.5V11.8125" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    {% endif %}
+</a>

@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF5RWF7F3S"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF5RWF7F3S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-            gtag('config', 'G-EF5RWF7F3S');
-        </script>
-        <meta charset="UTF-8">
-        <title>{% block title %}Studio Khi{% endblock %}</title>
-        <link rel="icon" href="{{ asset('build/images/logos/favicon.svg') }}">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('build/images/logos/apple-icon.png') }}">
-        <link rel="apple-touch-icon" href="{{ asset('build/images/logos/apple-icon.png') }}">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('build/images/logos/apple-icon-ipad.png') }}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('build/images/logos/apple-icon-iphone-retina.png') }}">
-        <link rel="apple-touch-icon" sizes="167x167" href="{{ asset('build/images/logos/apple-icon-ipad-retina.png') }}">
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
-        {% block meta %}
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <meta property="og:locale" content="fr_FR" />
-            <meta property="og:type" content="website" />
-            <meta property="og:image" content="https://studiokhi.com{{ asset('build/images/logos/logo.png') }}" />
-            <meta property="og:image:secure_url" content="https://studiokhi.com{{ asset('build/images/logos/logo.png') }}" />
-            <meta property="og:image:width" content="750" />
-            <meta property="og:image:height" content="750" />
-            <meta property="og:site_name" content="Studio Khi" />
-        {% endblock %}
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body class="body">
-    {% include 'header/header.html.twig' %}
-    <main class="noise">
-        <div class="header__gap"></div>
-        {% block body %}{% endblock %}
-    </main>
-    <div id="footer"></div>
-    {% include 'footer/footer.html.twig' %}
-    <cookies-react id="cookies"></cookies-react>
-    </body>
+        gtag('js', new Date());
+
+        gtag('config', 'G-EF5RWF7F3S');
+    </script>
+    <meta charset="UTF-8">
+    <title>{% block title %}Studio Khi{% endblock %}</title>
+    <link rel="icon" href="{{ asset('build/images/logos/favicon.svg') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('build/images/logos/apple-icon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('build/images/logos/apple-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('build/images/logos/apple-icon-ipad.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('build/images/logos/apple-icon-iphone-retina.png') }}">
+    <link rel="apple-touch-icon" sizes="167x167" href="{{ asset('build/images/logos/apple-icon-ipad-retina.png') }}">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    {% block meta %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta property="og:locale" content="fr_FR"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="https://studiokhi.com{{ asset('build/images/logos/logo.png') }}"/>
+        <meta property="og:image:secure_url" content="https://studiokhi.com{{ asset('build/images/logos/logo.png') }}"/>
+        <meta property="og:image:width" content="750"/>
+        <meta property="og:image:height" content="750"/>
+        <meta property="og:site_name" content="Studio Khi"/>
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body class="body">
+{% include 'header/header.html.twig' %}
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+        <main class="noise">
+            {% block body %}{% endblock %}
+        </main>
+        <div id="footer"></div>
+        {% include 'footer/footer.html.twig' %}
+        <cookies-react id="cookies"></cookies-react>
+    </div>
+</div>
+</body>
 </html>

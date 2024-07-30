@@ -4,8 +4,8 @@
             <div class="flex col gap--11">
                 <h3 class="w--70 w-100-mobile">Nous avons hâte d'écouter votre projet</h3>
                 <div class="flex row gap--5 col-mobile gap-mobile">
-                    <button-react data-content="Commander votre site ou design" data-color="light" data-href="{{ path('app_contact') }}"></button-react>
-                    <button-react data-content="Contactez nous par mail" data-color="dark" data-href="mailto:hello@studiokhi.com"></button-react>
+                    {% include 'main/components/button.html.twig' with {href: path('app_contact'), content: "Commander votre site ou design", color: "light", target: "", icon: true} %}
+                    {% include 'main/components/button.html.twig' with {href: "mailto:hello@studiokhi.com", content: "Contactez nous par mail", color: "dark", target: "", icon: true} %}
                 </div>
             </div>
             <svg class="footer__logo hide-mobile" viewBox="0 0 169 219" xmlns="http://www.w3.org/2000/svg">

@@ -15,16 +15,15 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container__large border--bottom border-stroke-light">
+    <section id="top-content" class="container__large h--100 flex row align--end">
         <div class="container container__top flex col col-rev-mobile align--center justify--center relative">
-            <button-react data-content="Commencer votre projet" data-href="{{ path('app_contact') }}"
-                          data-color="dark"></button-react>
+            {% include 'main/components/button.html.twig' with {href: path('app_contact'), content: "Commencer votre projet", color: "dark", target: "", icon: true} %}
             <p class="w--50 primary-grey text-center mt--11 mb--8 w-100-mobile text__m">
                 Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et
                 des
                 entrepreneurs qui souhaitent se démarquer sur le web.
             </p>
-            <svg class="home__logo hide-mobile" viewBox="0 0 805 100" xmlns="http://www.w3.org/2000/svg">
+            <svg class="home__logo hide-mobile reveal" viewBox="0 0 805 100" xmlns="http://www.w3.org/2000/svg">
                 <path d="M44.5839 43.1077L32.057 41.6177C20.8225 40.1252 15.209 35.7012 15.209 28.3382C15.209 23.5652 17.149 19.7608 21.0228 16.9248C24.8978 14.0914 30.0175 12.6734 36.3805 12.6734C43.1391 12.6734 48.3582 14.1162 52.0367 16.9993C55.7139 19.8849 58.0471 24.3611 59.0435 30.4266H73.6541C72.7572 21.0782 69.0051 13.7164 62.3964 8.34743C58.412 5.11167 53.6093 2.97105 48.1666 1.68469C44.5753 0.835394 40.758 0.289062 36.5304 0.289062C32.0459 0.289062 28.0468 0.830427 24.3265 1.68469C18.8899 2.93256 14.1659 4.97881 10.3597 8.04944C3.94753 13.2222 0.744538 20.2338 0.744538 29.0856C0.744538 36.9441 3.2288 43.1599 8.19731 47.7341C13.167 52.3097 20.3716 55.1431 29.8184 56.2358L42.9413 57.7283C54.9657 59.1239 60.981 63.8447 60.981 71.903C60.981 76.676 59.0656 80.4568 55.2372 83.2406C51.4089 86.0257 46.3691 87.4163 40.1044 87.4163C32.5509 87.4163 26.7359 85.9499 22.6605 83.0171C18.5828 80.0843 15.999 75.5821 14.9092 69.5141H0C0.996405 78.6651 4.99677 85.9984 12.006 91.5188C19.0128 97.0392 28.3318 99.7994 39.9606 99.7994C47.1149 99.7994 53.3525 98.6298 58.6737 96.293C63.985 93.9574 68.1143 90.6745 71.0458 86.4466C73.976 82.2188 75.4467 77.2707 75.4467 71.6026C75.4467 54.9954 65.1558 45.4954 44.5839 43.1077Z"/>
                 <path d="M113.763 2.79785H99.4522V22.385H86.3281V34.5918H99.4522V76.9324C99.4522 84.2657 101.411 89.5663 105.336 92.8294C109.263 96.0949 114.012 97.7252 119.577 97.7252H126.881V84.9188H121.216C119.028 84.9188 117.238 84.2396 115.848 82.8824C114.457 81.5278 113.762 78.8905 113.762 74.9718V34.5918H126.88V22.385H113.763V2.79785Z"/>
                 <path d="M189.054 67.5216C189.054 73.0569 187.316 77.5604 183.835 81.0321C180.354 84.5038 176.08 86.2396 171.013 86.2396C165.644 86.2396 161.398 84.7086 158.266 81.6368C155.133 78.5674 153.569 73.5598 153.569 66.6164V22.3848H139.107V69.6349C139.107 79.3981 141.645 86.8679 146.711 92.0518C151.779 97.2358 158.19 99.8246 165.945 99.8246C170.22 99.8246 174.464 98.6401 178.692 96.2772C182.915 93.9131 186.372 90.568 189.054 86.2384V97.8628H203.37V22.3848H189.054V67.5216Z"/>
@@ -54,37 +53,59 @@
             </svg>
         </div>
     </section>
-    <section class="container flex row col-mobile gap-small-mobile">
-        <p class="text__l w--40 w-100-mobile">
-            Notre approche
-        </p>
-        <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-            <h3>
-                Combiner design et développement web pour créer des marques et des sites que l’on remarque.
-            </h3>
-            <p class="w--80 w-100-mobile primary-grey text__m">
-                Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
-                opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance du
-                design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
-                amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le design
-                n'est plus juste une option, mais une nécessité pour se démarquer.
-                <br><br>
-                Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir des
-                outils à la fois créatifs, intuitifs et performants.
+    <section class="container__large primary-light--bg border--top border-stroke-light">
+        <div class="container flex row col-mobile gap-small-mobile">
+            <p class="text__l w--40 w-100-mobile">
+                Notre approche
             </p>
-            <div class="flex col align--start justify--start gap--2">
-                <link-react data-icon="1" data-content="Découvrir nos services" data-href="#branding"></link-react>
-                <link-react data-icon="1" data-content="Voir nos réalisations"
-                            data-href="{{ path('app_projects') }}"></link-react>
+            <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                <h3 class="title">
+                    Combiner design et développement web pour créer des marques et des sites que l’on remarque.
+                </h3>
+                <p class="w--80 w-100-mobile primary-grey text__m">
+                    Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
+                    opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance
+                    du
+                    design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
+                    amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le
+                    design
+                    n'est plus juste une option, mais une nécessité pour se démarquer.
+                    <br><br>
+                    Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir
+                    des
+                    outils à la fois créatifs, intuitifs et performants.
+                </p>
+                <div class="flex col align--start justify--start gap--2">
+                    {% include 'main/components/link.html.twig' with
+                        {
+                            href: "#branding",
+                            content: "Découvrir nos services",
+                            color: "dark",
+                            target: "",
+                            icon: true,
+                            line: true
+                        }
+                    %}
+                    {% include 'main/components/link.html.twig' with
+                        {
+                            href: path('app_projects'),
+                            content: "Voir nos réalisations",
+                            color: "dark",
+                            target: "",
+                            icon: true,
+                            line: true
+                        }
+                    %}
+                </div>
             </div>
         </div>
     </section>
-    <section id="branding" class="container__large secondary-green--bg">
+    <section id="branding" class="container__large secondary-green--bg h--100">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
                     <p class="text__l">01</p>
-                    <h1>Branding & <br> Direction Artistique</h1>
+                    <h1 class="heading">Branding & <br> Direction Artistique</h1>
                 </div>
                 <div class="flex row justify--end">
                     <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
@@ -94,27 +115,35 @@
                             image
                             qui vous ressemble pour renforcer votre présence en ligne.
                         </p>
-                        <p class="text__s">
-                            Moodboards <br>
+                        {# <p class="text__s">
+                            Moodboards -
                             Logo <br>
-                            Identité Visuelle <br>
+                            Identité Visuelle -
                             Charte Graphique <br>
-                            Design Réseaux Sociaux <br>
+                            Design Réseaux Sociaux -
                             Pitchdeck
-                        </p>
-                        <link-react data-icon="1" data-content="Infos & Tarifs"
-                                    data-href="{{ path('app_service_branding') }}"></link-react>
+                        </p> #}
+                        {% include 'main/components/link.html.twig' with
+                            {
+                                href: path('app_service_branding'),
+                                content: "Infos & Tarifs",
+                                color: "dark",
+                                target: "",
+                                icon: true,
+                                line: true
+                            }
+                        %}
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="webdesign" class="container__large secondary-blue--bg">
+    <section id="webdesign" class="container__large secondary-blue--bg h--100">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
                     <p class="text__l">02</p>
-                    <h1>Webdesign & <br> Design Digital</h1>
+                    <h1 class="heading">Webdesign & <br> Design Digital</h1>
                 </div>
                 <div class="flex row justify--end">
                     <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
@@ -126,26 +155,34 @@
                             le
                             juste équilibre entre beauté et fonctionnalité.
                         </p>
-                        <p class=" text__s">
-                            Webdesign <br>
+                        {# <p class=" text__s">
+                            Webdesign -
                             UX & UI Design <br>
-                            Wireframe <br>
+                            Wireframe -
                             Maquettes & Prototypes <br>
                             Design System
-                        </p>
-                        <link-react data-icon="1" data-content="Infos & Tarifs"
-                                    data-href="{{ path('app_service_webdesign') }}"></link-react>
+                        </p> #}
+                        {% include 'main/components/link.html.twig' with
+                            {
+                                href: path('app_service_webdesign'),
+                                content: "Infos & Tarifs",
+                                color: "dark",
+                                target: "",
+                                icon: true,
+                                line: true
+                            }
+                        %}
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="dev" class="container__large secondary-violet--bg">
+    <section id="dev" class="container__large secondary-violet--bg h--100">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
                     <p class="text__l">03</p>
-                    <h1>Développement Web & <br> Sites Sur Mesure</h1>
+                    <h1 class="heading">Développement Web & <br> Sites Sur Mesure</h1>
                 </div>
                 <div class="flex row justify--end">
                     <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
@@ -157,77 +194,96 @@
                             vos
                             besoins.
                         </p>
-                        <p class="text__s">
-                            Site Vitrine <br>
+                        {# <p class="text__s">
+                            Site Vitrine -
                             Site E-Commerce <br>
-                            Front-end & Back-end <br>
+                            Front-end & Back-end -
                             Fonctionnalités Sur Mesure <br>
-                            SEO & Référencement naturel <br>
+                            SEO & Référencement naturel -
                             Formation & Maintenance
-                        </p>
-                        <link-react data-icon="1" data-content="Infos & Tarifs"
-                                    data-href="{{ path('app_service_development') }}"></link-react>
+                        </p> #}
+                        {% include 'main/components/link.html.twig' with
+                            {
+                                href: path('app_service_development'),
+                                content: "Infos & Tarifs",
+                                color: "dark",
+                                target: "",
+                                icon: true,
+                                line: true
+                            }
+                        %}
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="container flex col gap--16 gap-large-mobile align--start justify--center">
-        <div class="flex row col-mobile">
-            <p class="text__l w--40 w-100-mobile">
-                Nos réalisations
-            </p>
-            <div class="w--60 w-100-mobile flex col align--start justify--start gap--11 hide-mobile">
-                <p class="w--80 w-100-mobile primary-grey text__m">
-                    Nous nous efforçons de toujours créer quelque chose qui sort de l'ordinaire.
-                    <br> <br>
-                    Notre portfolio reflète notre expertise et notre engagement à fournir des produits et des marques
-                    numériques de haute qualité.
+    <section id="projects" class="primary-light--bg container__large">
+        <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
+            <div class="flex row col-mobile">
+                <p class="text__l w--40 w-100-mobile">
+                    Nos réalisations
                 </p>
-            </div>
-        </div>
-        {% for project in projects %}
-            <article class="flex col gap--5 article">
-                <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative"
-                   aria-label="{{ project.name }}">
-                    {% if project.image is not empty %}
-                        <img class="home__img home__img-case"
-                             src="{{ asset('uploads/projects/featured/large/') ~ project.image }}" loading="lazy"
-                             alt="{{ project.name }}">
-                    {% else %}
-                        <div class="home__img home__img-case stroke-dark--bg"></div>
-                    {% endif %}
-
-                    <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                        {% for tag in project.tag.toArray %}
-                            <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
-                        {% endfor %}
-                    </div>
-                    <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <circle id="Ellipse 1" cx="62.5" cy="62.5" r="62.5" fill="white"/>
-                        <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5"
-                              stroke-linecap="round" stroke-linejoin="round"/>
-                        <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5"
-                              stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex row col-mobile">
-                    <p class="text__l w--40 w-100-mobile">
-                        {{ project.name }}
+                <div class="w--60 w-100-mobile flex col align--start justify--start gap--11 hide-mobile">
+                    <p class="w--80 w-100-mobile primary-grey text__m">
+                        Nous nous efforçons de toujours créer quelque chose qui sort de l'ordinaire.
+                        <br> <br>
+                        Notre portfolio reflète notre expertise et notre engagement à fournir des produits et des
+                        marques
+                        numériques de haute qualité.
                     </p>
-                    <div class="w--60 w-100-mobile flex row col-mobile align--start justify--space-between gap--4">
-                        <p class="w--80 w-100-mobile primary-grey text__m">
-                            {{ project.excerpt }}
+                </div>
+            </div>
+            {% for project in projects %}
+                <article class="flex col gap--5 article">
+                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative"
+                       aria-label="{{ project.name }}">
+                        {% if project.image is not empty %}
+                            <img class="home__img home__img-case"
+                                 src="{{ asset('uploads/projects/featured/large/') ~ project.image }}" loading="lazy"
+                                 alt="{{ project.name }}">
+                        {% else %}
+                            <div class="home__img home__img-case stroke-dark--bg"></div>
+                        {% endif %}
+
+                        <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                            {% for tag in project.tag.toArray %}
+                                <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                            {% endfor %}
+                        </div>
+                        <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <circle id="Ellipse 1" cx="62.5" cy="62.5" r="62.5" fill="white"/>
+                            <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5"
+                                  stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5"
+                                  stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex row col-mobile">
+                        <p class="text__l w--40 w-100-mobile">
+                            {{ project.name }}
                         </p>
-                        <p class="text__m">{{ project.category }}</p>
-                    </div>
-                </a>
-            </article>
-        {% endfor %}
-        <div class="align--self-end">
-            <link-react data-icon="1" data-content="Voir toutes les réalisations"
-                        data-href="{{ path('app_projects') }}"></link-react>
+                        <div class="w--60 w-100-mobile flex row col-mobile align--start justify--space-between gap--4">
+                            <p class="w--80 w-100-mobile primary-grey text__m">
+                                {{ project.excerpt }}
+                            </p>
+                            <p class="text__m">{{ project.category }}</p>
+                        </div>
+                    </a>
+                </article>
+            {% endfor %}
+            <div class="align--self-end">
+                {% include 'main/components/link.html.twig' with
+                    {
+                        href: path('app_projects'),
+                        content: "Voir toutes les réalisations",
+                        color: "dark",
+                        target: "",
+                        icon: true,
+                        line: true
+                    }
+                %}
+            </div>
         </div>
     </section>
     {% include 'main/template-part/_process.html.twig' %}
@@ -236,7 +292,7 @@
             <h2 class="w--70 w-100-mobile">
                 Vous souhaitez recevoir un devis sur mesure ?
             </h2>
-            <button-react data-href="{{ path('app_contact') }}" data-content="Contactez-nous"></button-react>
+            {% include 'main/components/button.html.twig' with {href: path('app_contact'), content: "Contactez-nous", color: "dark", target: "", icon: true} %}
         </div>
     </section>
     <section class="container flex col gap--16">
@@ -245,7 +301,7 @@
                 Le studio
             </p>
             <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                <h3>
+                <h3 class="title">
                     Un duo créatif au service d’une seule mission : vous rendre unique.
                 </h3>
                 <p class="w--80 w-100-mobile primary-grey text__m">
@@ -257,8 +313,16 @@
                     fermement à la simplicité et aux choix audacieux pour rendre votre marque unique et mémorable.
                 </p>
                 <div class="flex col align--start justify--start gap--2">
-                    <link-react data-icon="1" data-content="Découvrir le studio"
-                                data-href="{{ path('app_studio') }}"></link-react>
+                    {% include 'main/components/link.html.twig' with
+                        {
+                            href: path('app_studio'),
+                            content: "Découvrir le studio",
+                            color: "dark",
+                            target: "",
+                            icon: true,
+                            line: true
+                        }
+                    %}
                 </div>
             </div>
         </div>
@@ -286,8 +350,16 @@
                         <br><br>
                         Ne vous contentez pas de nous croire sur parole. Voici ce que nos clients disent de nous.
                     </p>
-                    <link-react data-icon="1" data-target="_blank" data-content="Lire tous les avis"
-                                data-href="https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA"></link-react>
+                    {% include 'main/components/link.html.twig' with
+                        {
+                            href: "https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA",
+                            content: "Lire tous les avis",
+                            color: "dark",
+                            target: "_blank",
+                            icon: true,
+                            line: true
+                        }
+                    %}
                 </div>
             </div>
         </div>
@@ -367,9 +439,16 @@
                             <p class="text__l">
                                 {{ post.name }}
                             </p>
-                            <link-react data-href="{{ path('app_post', {slug: post.slug}) }}" data-border="1"
-                                        data-content="Lire l'article"
-                                        data-color="light"></link-react>
+                            {% include 'main/components/link.html.twig' with
+                                {
+                                    href: path('app_post', {slug: post.slug}),
+                                    content: "Lire l'article",
+                                    color: "light",
+                                    target: "",
+                                    icon: false,
+                                    line: true
+                                }
+                            %}
                         </div>
                     </article>
                 {% endfor %}
@@ -382,8 +461,12 @@
         </p>
         <div class="w--60 w-100-mobile flex col align--start justify--start">
             {% for key, faq in faqs %}
-                <faq-react class="w--100" data-id="{{ key }}" data-title="{{ faq.question }}"
-                           data-content="{{ faq.answer }}"></faq-react>
+                {% include 'main/components/faq.html.twig' with
+                    {
+                        title: faq.question,
+                        content: faq.answer
+                    }
+                %}
             {% endfor %}
         </div>
     </section>

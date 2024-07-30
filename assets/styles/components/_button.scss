@@ -112,7 +112,6 @@ $duration: var(--hover-duration);
     background-color: unset;
     text-align: left;
     border-radius: unset;
-    border-bottom: 1px solid var(--primary-dark);
 
     font-family: "Inter", sans-serif;
     font-size: 1.1875rem;
@@ -162,6 +161,14 @@ $duration: var(--hover-duration);
     }
     &__no-underline {
         border: none;
+    }
+}
+
+.line {
+    height: 1px;
+    background-color: var(--primary-dark);
+    &__light {
+        background-color: var(--primary-light);
     }
 }
 
