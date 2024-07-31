@@ -14,9 +14,9 @@
 
 {% block body %}
 
-    <section class="container__large border--bottom border-stroke-light">
+    <section class="container__large border--bottom border-stroke-light pt--20">
         <div class="container">
-            <h1>Parlons de votre projet</h1>
+            <h1 class="reveal">Parlons de votre projet</h1>
         </div>
     </section>
     <section class="container grid grid--2 grid-gap--6 grid--1-mobile">
@@ -24,7 +24,13 @@
             <p class="text__l w--50 w-100-mobile">
                 Remplissez le formulaire de contact ci-dessous et parlez-nous de votre projet.
             </p>
-            <button-react class="hide-mobile" data-content="Demander un devis" data-href="#"></button-react>
+            {% include 'main/components/button.html.twig' with
+                {
+                    href: "mailto:hello@studiokhi.com",
+                    content: "Demander un devis",
+                    color: "dark",
+                    target: "",
+                    icon: true} %}
         </div>
         <div>
             {{ form_start(form, {'attr': {'class': 'flex col gap--5 w-100'}}) }}

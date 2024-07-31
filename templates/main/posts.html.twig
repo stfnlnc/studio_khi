@@ -5,58 +5,78 @@
 {% endblock %}
 
 {% block meta %}
-    <meta name="description" content="Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles.">
-    <meta property="og:title" content="Les Articles - Studio Khi" />
-    <meta property="og:description" content="Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles." />
-    <meta property="og:url" content="https://studiokhi.com{{ path('app_posts') }}" />
+    <meta name="description"
+          content="Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles.">
+    <meta property="og:title" content="Les Articles - Studio Khi"/>
+    <meta property="og:description"
+          content="Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles."/>
+    <meta property="og:url" content="https://studiokhi.com{{ path('app_posts') }}"/>
     {{ parent() }}
 {% endblock %}
 
 {% block body %}
-    <div class="container flex col gap--16 gap-large-mobile align--start">
-        <h1>Articles & Blog</h1>
-        <p class="w--60 w-100-mobile text__l align--self-end">
-            Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles.
-        </p>
-    </div>
-    <div class="container__large border--top border--bottom border-stroke-light">
-        <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
-            <filter-react data-id="all" data-content="Tous les articles"></filter-react>
+    <section id="top-content" class="container__large primary-light--bg pt--20 mb--10">
+        <div class="container flex col gap--16 gap-large-mobile align--start">
+            <h1 class="reveal">Articles & Blog</h1>
+            <p class="w--60 w-100-mobile text__l align--self-end">
+                Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre
+                sélection d’articles.
+            </p>
+        </div>
+    </section>
+    <section class="container__large primary-light--bg border--top border--bottom border-stroke-light">
+        <div class="container container__scroll primary-light--bg pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
+                <span id="all" class="filter filter--active">
+                    Tous les projets
+                </span>
             {% for tag in tags %}
-                <filter-react data-id="{{ tag.slug }}" data-content="{{ tag.name }}"></filter-react>
+                <span id="{{ tag.slug }}" class="filter">
+                    {{ tag.name }}
+                </span>
             {% endfor %}
         </div>
-    </div>
-    <section class="container flex col gap--16 gap-large-mobile align--start justify--center">
-        <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
-            {% for post in posts %}
-                <article class="flex col gap--5 article mb--20 {% for tag in post.tag.toArray %}{{ tag.slug }}{% endfor %}">
-                    <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}" aria-label="{{ post.name }}">
-                        {% if post.image is not empty %}
-                            <img class="home__img home__img-post" src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
-                                 loading="lazy" alt="{{ post.name }}">
-                        {% else %}
-                            <div class="home__img home__img-post stroke-dark--bg"></div>
-                        {% endif %}
-                        <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                            {% for tag in post.tag.toArray %}
-                                <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
-                            {% endfor %}
-                        </div>
-                        <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle id="Ellipse 1" cx="62.5" cy="62.5" r="62.5" fill="white"/>
-                            <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    <a href="{{ path('app_post', {slug: post.slug}) }}" class="flex col gap--3">
-                        <p class="text__l">
-                            {{ post.name }}
-                        </p>
-                        <link-react data-href="{{ path('app_post', {slug: post.slug}) }}" data-border="1" data-content="Lire l'article"></link-react>
-                    </a>
-                </article>
-            {% endfor %}
+    </section>
+    <section class="container__large primary-light--bg">
+        <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
+            <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
+                {% for post in posts %}
+                    <article
+                            class="flex col gap--5 article mb--20 {% for tag in post.tag.toArray %}{{ tag.slug }}{% endfor %}">
+                        <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}"
+                           aria-label="{{ post.name }}">
+                            {% if post.image is not empty %}
+                                <img class="home__img home__img-post"
+                                     src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
+                                     loading="lazy" alt="{{ post.name }}">
+                            {% else %}
+                                <img class="home__img home__img-post"
+                                     src="{{ asset('build/images/background/empty.png') }}"
+                                     loading="lazy" alt="{{ post.name }}">
+                            {% endif %}
+                            <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                                {% for tag in post.tag.toArray %}
+                                    <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                                {% endfor %}
+                            </div>
+                            <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle id="Ellipse 1" cx="62.5" cy="62.5" r="62.5" fill="white"/>
+                                <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="{{ path('app_post', {slug: post.slug}) }}" class="flex col gap--3">
+                            <p class="text__l">
+                                {{ post.name }}
+                            </p>
+                            <link-react data-href="{{ path('app_post', {slug: post.slug}) }}" data-border="1"
+                                        data-content="Lire l'article"></link-react>
+                        </a>
+                    </article>
+                {% endfor %}
+            </div>
         </div>
     </section>
 

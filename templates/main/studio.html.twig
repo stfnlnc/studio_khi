@@ -5,52 +5,68 @@
 {% endblock %}
 
 {% block meta %}
-    <meta name="description" content="Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des Pyrénées. Nous créons des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web, et ce, à travers la France.">
-    <meta property="og:title" content="Le Studio - Studio Khi" />
-    <meta property="og:description" content="Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des Pyrénées. Nous créons des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web, et ce, à travers la France." />
-    <meta property="og:url" content="https://studiokhi.com{{ path('app_studio') }}" />
+    <meta name="description"
+          content="Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des Pyrénées. Nous créons des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web, et ce, à travers la France.">
+    <meta property="og:title" content="Le Studio - Studio Khi"/>
+    <meta property="og:description"
+          content="Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des Pyrénées. Nous créons des sites et des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web, et ce, à travers la France."/>
+    <meta property="og:url" content="https://studiokhi.com{{ path('app_studio') }}"/>
     {{ parent() }}
 {% endblock %}
 
 {% block body %}
-    <section class="container flex col gap--16 gap-large-mobile align--start justify--start">
-        <h1 class="w--60 w-100-mobile">Découvrir notre studio</h1>
-        <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end pb--20">
-            <p class="text__l">
-                Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des
-                Pyrénées. Nous créons des sites et des designs sur mesure pour des marques et des entrepreneurs qui
-                souhaitent se démarquer sur le web, et ce, à travers la France.
-            </p>
-            <button-react data-href="{{path('app_contact') }}" data-content="Commencer votre projet"></button-react>
+    <section id="top-content" class="container__large primary-light--bg pt--20">
+        <div class="container flex col gap--16 gap-large-mobile align--start justify--start">
+            <h1 class="w--60 w-100-mobile reveal">Découvrir notre studio</h1>
+            <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end pb--20">
+                <p class="text__l">
+                    Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des
+                    Pyrénées. Nous créons des sites et des designs sur mesure pour des marques et des entrepreneurs qui
+                    souhaitent se démarquer sur le web, et ce, à travers la France.
+                </p>
+                {% include 'main/components/button.html.twig' with
+                    {
+                        href: path('app_contact'),
+                        content: "Commencer votre projet",
+                        color: "dark",
+                        target: "",
+                        icon: true}
+                %}
+            </div>
         </div>
     </section>
     <section class="container__large primary-light primary-dark--bg"
              style="background-image: url('{{ asset('build/images/uploads/le-studio-1.webp') }}'); background-position: center; background-size: cover;">
         <div class="container h--100 h-50-mobile"></div>
     </section>
-    <section class="container flex row col-mobile gap-small-mobile">
-        <p class="text__l w--40 w-100-mobile">
-            Notre approche
-        </p>
-        <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-            <h3>
-                Combiner design et développement web pour créer des marques et des sites que l’on remarque.
-            </h3>
-            <p class="w--80 w-100-mobile primary-grey text__m">
-                Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
-                opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance du
-                design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
-                amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le design
-                n'est plus juste une option, mais une nécessité pour se démarquer.
-                <br><br>
-                Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir des
-                outils à la fois créatifs, intuitifs et performants.
+    <section class="container__large primary-light--bg">
+        <div class="container flex row col-mobile gap-small-mobile">
+            <p class="text__l w--40 w-100-mobile">
+                Notre approche
             </p>
+            <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                <h3 class="title">
+                    Combiner design et développement web pour créer des marques et des sites que l’on remarque.
+                </h3>
+                <p class="w--80 w-100-mobile primary-grey text__m">
+                    Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
+                    opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance
+                    du
+                    design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
+                    amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le
+                    design
+                    n'est plus juste une option, mais une nécessité pour se démarquer.
+                    <br><br>
+                    Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir
+                    des
+                    outils à la fois créatifs, intuitifs et performants.
+                </p>
+            </div>
         </div>
     </section>
     <section class="container__large primary-light primary-dark--bg">
         <div class="container flex col gap--16 align--start justify--center">
-            <h3 class="w--50 w-100-mobile">
+            <h3 class="w--50 w-100-mobile title">
                 Une agence à 360° pour tout votre site
             </h3>
             <div class="w--100 grid grid--3 grid-gap--11 grid--1-mobile">
@@ -66,8 +82,16 @@
                         Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web
                         pour renforcer votre présence en ligne.
                     </p>
-                    <link-react data-href="{{ path('app_service_branding') }}" data-color="light" data-icon="1"
-                                data-content="Infos & Tarifs"></link-react>
+                    {% include 'main/components/link.html.twig' with
+                        {
+                            href: path('app_service_branding'),
+                            content: "Infos & Tarifs",
+                            color: "light",
+                            target: "",
+                            icon: true,
+                            line: true
+                        }
+                    %}
                 </div>
                 <div class="flex col gap--5">
                     <p class="text__m">
@@ -78,10 +102,19 @@
                         </span>
                     </p>
                     <p class="primary-grey text__s">
-                        La phase de design sur Figma permet de créer une maquette de site web qui répond à vos attentes tout en proposant une expérience utilisateur optimale.
+                        La phase de design sur Figma permet de créer une maquette de site web qui répond à vos attentes
+                        tout en proposant une expérience utilisateur optimale.
                     </p>
-                    <link-react data-href="{{ path('app_service_webdesign') }}" data-color="light" data-icon="1"
-                                data-content="Infos & Tarifs"></link-react>
+                    {% include 'main/components/link.html.twig' with
+                        {
+                            href: path('app_service_webdesign'),
+                            content: "Infos & Tarifs",
+                            color: "light",
+                            target: "",
+                            icon: true,
+                            line: true
+                        }
+                    %}
                 </div>
                 <div class="flex col gap--5">
                     <p class="text__m">
@@ -92,133 +125,182 @@
                         </span>
                     </p>
                     <p class="primary-grey text__s">
-                        Nous développons votre site en langage web, identique à la maquette, tout en respectant les meilleures pratiques du web.
+                        Nous développons votre site en langage web, identique à la maquette, tout en respectant les
+                        meilleures pratiques du web.
                     </p>
-                    <link-react data-href="{{ path('app_service_development') }}" data-color="light" data-icon="1"
-                                data-content="Infos & Tarifs"></link-react>
+                    {% include 'main/components/link.html.twig' with
+                        {
+                            href: path('app_service_development'),
+                            content: "Infos & Tarifs",
+                            color: "light",
+                            target: "",
+                            icon: true,
+                            line: true
+                        }
+                    %}
                 </div>
             </div>
         </div>
     </section>
-    <section class="container flex col align--end gap--16">
-        <div class="flex row col-mobile gap-small-mobile">
-            <p class="text__l w--40 w-100-mobile">
-                L'équipe
-            </p>
-            <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                <h3>
-                    Un duo de passionnés dévoués à des projets passionnants.
-                </h3>
-            </div>
-        </div>
-        <div class="flex row col-mobile gap--4 gap-large-mobile justify--end align--end w--60 w-100-mobile">
-            <div>
-                <img src="{{ asset('build/images/uploads/cynthia-jego.webp') }}"
-                     class="studio__img studio__img-about" loading="lazy" alt="Cynthia - Designer">
-                <div class="flex col gap--5">
-                    <p class="text__l flex col gap--0">
-                        Cynthia Jego <br>
-                        <span class="text__m primary-grey">Designer</span>
-                    </p>
-                    <link-react data-target="_blank" data-content="LinkedIn" data-href="https://www.linkedin.com/in/cynthia-jego/" data-border="1"></link-react>
+    <section class="container__large primary-light--bg">
+        <div class="container flex col align--end gap--16">
+            <div class="flex row col-mobile gap-small-mobile">
+                <p class="text__l w--40 w-100-mobile">
+                    L'équipe
+                </p>
+                <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                    <h3 class="title">
+                        Un duo de passionnés dévoués à des projets passionnants.
+                    </h3>
                 </div>
             </div>
-            <div>
-                <img src="{{ asset('build/images/uploads/stefan-lancelot.webp') }}"
-                     class="studio__img studio__img-about" loading="lazy" alt="Stéfan - Développeur Web">
-                <div class="flex col gap--5">
-                    <p class="text__l flex col gap--0">
-                        Stéfan Lancelot <br>
-                        <span class="text__m primary-grey">Développeur Web</span>
-                    </p>
-                    <link-react data-target="_blank" data-content="LinkedIn" data-href="https://www.linkedin.com/in/stefan-lancelot/" data-border="1"></link-react>
+            <div class="flex row col-mobile gap--4 gap-large-mobile justify--end align--end w--60 w-100-mobile">
+                <div>
+                    <img src="{{ asset('build/images/uploads/cynthia-jego.webp') }}"
+                         class="studio__img studio__img-about" loading="lazy" alt="Cynthia - Designer">
+                    <div class="flex col gap--5">
+                        <p class="text__l flex col gap--0">
+                            Cynthia Jego <br>
+                            <span class="text__m primary-grey">Designer</span>
+                        </p>
+                        {% include 'main/components/link.html.twig' with
+                            {
+                                href: "https://www.linkedin.com/in/cynthia-jego/",
+                                content: "Linkedin",
+                                color: "dark",
+                                target: "_blank",
+                                icon: true,
+                                line: true
+                            }
+                        %}
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ asset('build/images/uploads/stefan-lancelot.webp') }}"
+                         class="studio__img studio__img-about" loading="lazy" alt="Stéfan - Développeur Web">
+                    <div class="flex col gap--5">
+                        <p class="text__l flex col gap--0">
+                            Stéfan Lancelot <br>
+                            <span class="text__m primary-grey">Développeur Web</span>
+                        </p>
+                        {% include 'main/components/link.html.twig' with
+                            {
+                                href: "https://www.linkedin.com/in/stefan-lancelot/",
+                                content: "Linkedin",
+                                color: "dark",
+                                target: "_blank",
+                                icon: true,
+                                line: true
+                            }
+                        %}
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     {% include 'main/template-part/_process.html.twig' %}
-    <section class="container flex row col-mobile gap-small-mobile">
-        <p class="text__l w--40 w-100-mobile">
-            Notre approche
-        </p>
-        <div class="w--60 w-100-mobile flex col align--start justify--start gap--5">
-            <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" fill="#191919"/>
-                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
-                          stroke-miterlimit="10"/>
-                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
-                          fill="white"/>
-                </svg>
-                <p class="text__l">
-                    Une équipe réactive et dévouée
-                </p>
-                <p class="text__s primary-grey">
-                    En tant que studio indépendant, nous attachons une grande importance à la qualité plutôt qu'à la quantité de nos projets. C'est pourquoi nous nous engageons sur un nombre limité de projets à la fois, nous permettant ainsi de nous concentrer pleinement sur chaque client et chaque projet.
-                </p>
-            </div>
-            <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" fill="#191919"/>
-                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
-                          stroke-miterlimit="10"/>
-                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
-                          fill="white"/>
-                </svg>
-                <p class="text__l">
-                    Une expertise web complète
-                </p>
-                <p class="text__s primary-grey">
-                    Notre studio offre une gamme complète de services de création de sites web et de designs, couvrant tous les besoins de nos clients, de la conception initiale à la mise en ligne et au-delà.
-                </p>
-            </div>
-            <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" fill="#191919"/>
-                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
-                          stroke-miterlimit="10"/>
-                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
-                          fill="white"/>
-                </svg>
-                <p class="text__l">
-                    Une approche créative & sur mesure
-                </p>
-                <p class="text__s primary-grey">
-                    Nous sommes reconnus pour notre approche créative et personnalisée dans la conception de sites web et de designs, ce qui garantit à nos clients des produits uniques et qui répondent pleinement à leurs besoins.
-                </p>
-            </div>
-            <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" fill="#191919"/>
-                    <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
-                          stroke-miterlimit="10"/>
-                    <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
-                          fill="white"/>
-                </svg>
-                <p class="text__l">
-                    Pour les entrepreneurs et les entreprises
-                </p>
-                <p class="text__s primary-grey">
-                    Que vous soyez en phase de refonte de site internet ou en train de développer une nouvelle marque, nous accompagnons aussi bien les entrepreneurs solo que les entreprises dans cette étape de transformation ou création.
-                </p>
+    <section class="container__large primary-light--bg">
+        <div class="container flex row col-mobile gap-small-mobile">
+            <p class="text__l w--40 w-100-mobile">
+                Notre approche
+            </p>
+            <div class="w--60 w-100-mobile flex col align--start justify--start gap--5">
+                <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="#191919"/>
+                        <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
+                              stroke-miterlimit="10"/>
+                        <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
+                              fill="white"/>
+                    </svg>
+                    <p class="text__l">
+                        Une équipe réactive et dévouée
+                    </p>
+                    <p class="text__s primary-grey">
+                        En tant que studio indépendant, nous attachons une grande importance à la qualité plutôt qu'à la
+                        quantité de nos projets. C'est pourquoi nous nous engageons sur un nombre limité de projets à la
+                        fois, nous permettant ainsi de nous concentrer pleinement sur chaque client et chaque projet.
+                    </p>
+                </div>
+                <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="#191919"/>
+                        <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
+                              stroke-miterlimit="10"/>
+                        <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
+                              fill="white"/>
+                    </svg>
+                    <p class="text__l">
+                        Une expertise web complète
+                    </p>
+                    <p class="text__s primary-grey">
+                        Notre studio offre une gamme complète de services de création de sites web et de designs,
+                        couvrant tous les besoins de nos clients, de la conception initiale à la mise en ligne et
+                        au-delà.
+                    </p>
+                </div>
+                <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="#191919"/>
+                        <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
+                              stroke-miterlimit="10"/>
+                        <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
+                              fill="white"/>
+                    </svg>
+                    <p class="text__l">
+                        Une approche créative & sur mesure
+                    </p>
+                    <p class="text__s primary-grey">
+                        Nous sommes reconnus pour notre approche créative et personnalisée dans la conception de sites
+                        web et de designs, ce qui garantit à nos clients des produits uniques et qui répondent
+                        pleinement à leurs besoins.
+                    </p>
+                </div>
+                <div class="flex col gap--5 w--100 primary-light primary-dark--bg p--5 border-rounded">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="#191919"/>
+                        <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5"
+                              stroke-miterlimit="10"/>
+                        <path d="M17.469 19.6706L26.9203 10.1869L21.7554 5.00431L12.3045 14.4876L12.3044 5.00006L5 5V19.7922C5 21.0887 5.51325 22.3322 6.42685 23.249L8.73754 25.5679C9.65131 26.4848 10.8907 27 12.183 27L26.9251 26.9998L26.9252 19.6706L17.469 19.6706Z"
+                              fill="white"/>
+                    </svg>
+                    <p class="text__l">
+                        Pour les entrepreneurs et les entreprises
+                    </p>
+                    <p class="text__s primary-grey">
+                        Que vous soyez en phase de refonte de site internet ou en train de développer une nouvelle
+                        marque, nous accompagnons aussi bien les entrepreneurs solo que les entreprises dans cette étape
+                        de transformation ou création.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
-    <section class="container__large border--top border-stroke-light flex col align--center justify--center">
+    <section
+            class="container__large primary-light--bg border--top border-stroke-light flex col align--center justify--center">
         <div class="container flex col gap--16">
             <div class="flex row col-mobile gap-large-mobile">
                 <p class="text__l w--40 w-100-mobile">
                     Nos clients
                 </p>
                 <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                    <h3>
+                    <h3 class="title">
                         Ne vous contentez pas de nous croire sur parole. Voici ce que nos clients disent de nous.
                     </h3>
                     <p class="w--80 w-100-mobile primary-grey text__m">
                         Nous avons eu la chance de travailler sur des projets passionnants et nous cherchons à former
                         des partenariats créatifs et durables avec tous nos clients.
                     </p>
-                    <link-react data-target="_blank" data-icon="1" data-content="Lire tous les avis" data-href="https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA"></link-react>
+                    {% include 'main/components/link.html.twig' with
+                        {
+                            href: "https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA",
+                            content: "Lire tous les avis",
+                            color: "dark",
+                            target: "_blank",
+                            icon: true,
+                            line: true
+                        }
+                    %}
                 </div>
             </div>
         </div>
@@ -244,11 +326,11 @@
                             </svg>
                         </div>
                         <p class="text__s">
-                            {{ review.name}} <br>
+                            {{ review.name }} <br>
                             <span class="primary-grey">{{ review.subtitle }}</span>
                         </p>
                         <p class="text__s mt--4">
-                            “ {{ review.description}} ”
+                            “ {{ review.description }} ”
                         </p>
                     </card>
                 {% endfor %}
@@ -259,23 +341,36 @@
              style="background-image: url('{{ asset('build/images/uploads/le-studio-2.webp') }}'); background-position: center; background-size: cover;">
         <div class="container h--100 h-50-mobile"></div>
     </section>
-    <section class="container flex row col-mobile gap-large-mobile">
-        <p class="text__l w--40 w-100-mobile">
-            FAQ
-        </p>
-        <div class="w--60 w-100-mobile flex col align--start justify--start">
-            {% for key, faq in faqs %}
-                <faq-react class="w--100" data-id="{{ key }}" data-title="{{ faq.question }}"
-                           data-content="{{ faq.answer }}"></faq-react>
-            {% endfor %}
+    <section class="container__large primary-light--bg">
+        <div class="container flex row col-mobile gap-large-mobile">
+            <p class="text__l w--40 w-100-mobile">
+                FAQ
+            </p>
+            <div class="w--60 w-100-mobile flex col align--start justify--start">
+                {% for key, faq in faqs %}
+                    {% include 'main/components/faq.html.twig' with
+                        {
+                            title: faq.question,
+                            content: faq.answer
+                        }
+                    %}
+                {% endfor %}
+            </div>
         </div>
     </section>
     <section class="container__large secondary-beige--bg">
         <div class="container flex col align--center justify--center gap--11 text-center">
-            <h2 class="w--70 w-100-mobile">
+            <h2 class="w--70 w-100-mobile heading">
                 Prêts à nous partager votre projet ?
             </h2>
-            <button-react data-href="{{ path('app_contact') }}" data-content="Demander votre devis"></button-react>
+            {% include 'main/components/button.html.twig' with
+                {
+                    href: path('app_contact'),
+                    content: "Demander votre devis",
+                    color: "dark",
+                    target: "",
+                    icon: true}
+            %}
         </div>
     </section>
 {% endblock %}

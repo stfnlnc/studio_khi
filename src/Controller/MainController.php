@@ -13,8 +13,11 @@ use App\Repository\PostTagRepository;
 use App\Repository\ProjectRepository;
 use App\Repository\ReviewRepository;
 use App\Repository\TagRepository;
+use DateTime;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
@@ -172,5 +175,13 @@ class MainController extends AbstractController
         return $this->render('legal/cookies.html.twig', [
             'legal' => $legal
         ]);
+    }
+
+    #[Route(name: 'set_cookie')]
+    public function setCookie(Request $request): void
+    {
+        $cookie = new Cookie('TestCookie2', 'titi', time() + 60, '/', null, false, false);
+        $response->headers->setCookie($cookie);
+
     }
 }

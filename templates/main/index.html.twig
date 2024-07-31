@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ parent() }} - Créations de sites web et identité visuelle
+    {{ parent() }} - Création de sites web et identités visuelles
 {% endblock %}
 
 {% block meta %}
@@ -15,9 +15,16 @@
 {% endblock %}
 
 {% block body %}
-    <section id="top-content" class="container__large h--100 flex row align--end">
+    <section id="top-content" class="container__large h--100 flex row">
         <div class="container container__top flex col col-rev-mobile align--center justify--center relative">
-            {% include 'main/components/button.html.twig' with {href: path('app_contact'), content: "Commencer votre projet", color: "dark", target: "", icon: true} %}
+            {% include 'main/components/button.html.twig' with
+                {
+                    href: path('app_contact'),
+                    content: "Commencer votre projet",
+                    color: "dark",
+                    target: "",
+                    icon: true}
+            %}
             <p class="w--50 primary-grey text-center mt--11 mb--8 w-100-mobile text__m">
                 Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des marques et
                 des
@@ -100,7 +107,7 @@
             </div>
         </div>
     </section>
-    <section id="branding" class="container__large secondary-green--bg h--100">
+    <section id="service-1" class="container__large secondary-green--bg h--100">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
@@ -138,7 +145,7 @@
             </div>
         </div>
     </section>
-    <section id="webdesign" class="container__large secondary-blue--bg h--100">
+    <section id="service-2" class="container__large secondary-blue--bg h--100">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
@@ -177,7 +184,7 @@
             </div>
         </div>
     </section>
-    <section id="dev" class="container__large secondary-violet--bg h--100">
+    <section id="service-3" class="container__large secondary-violet--bg h--100">
         <div class="container">
             <div class="flex col gap--16">
                 <div class="flex col gap--3">
@@ -234,7 +241,7 @@
                 </div>
             </div>
             {% for project in projects %}
-                <article class="flex col gap--5 article">
+                <article class="flex col gap--5 article w--100">
                     <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative"
                        aria-label="{{ project.name }}">
                         {% if project.image is not empty %}
@@ -242,12 +249,14 @@
                                  src="{{ asset('uploads/projects/featured/large/') ~ project.image }}" loading="lazy"
                                  alt="{{ project.name }}">
                         {% else %}
-                            <div class="home__img home__img-case stroke-dark--bg"></div>
+                            <img class="home__img home__img-case"
+                                 src="{{ asset('build/images/background/empty.png') }}"
+                                 loading="lazy" alt="{{ project.name }}">
                         {% endif %}
 
                         <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
                             {% for tag in project.tag.toArray %}
-                                <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                                <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
                             {% endfor %}
                         </div>
                         <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none"
@@ -292,7 +301,14 @@
             <h2 class="w--70 w-100-mobile">
                 Vous souhaitez recevoir un devis sur mesure ?
             </h2>
-            {% include 'main/components/button.html.twig' with {href: path('app_contact'), content: "Contactez-nous", color: "dark", target: "", icon: true} %}
+            {% include 'main/components/button.html.twig' with
+                {
+                    href: path('app_contact'),
+                    content: "Contactez-nous",
+                    color: "dark",
+                    target: "",
+                    icon: true}
+            %}
         </div>
     </section>
     <section class="container flex col gap--16">
@@ -419,11 +435,13 @@
                                      src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
                                      loading="lazy" alt="{{ post.name }}">
                             {% else %}
-                                <div class="home__img home__img-post stroke-dark--bg"></div>
+                                <img class="home__img home__img-post"
+                                     src="{{ asset('build/images/background/empty.png') }}"
+                                     loading="lazy" alt="{{ post.name }}">
                             {% endif %}
                             <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
                                 {% for tag in post.tag.toArray %}
-                                    <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                                    <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
                                 {% endfor %}
                             </div>
                             <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none"

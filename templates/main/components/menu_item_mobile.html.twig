@@ -1,0 +1,3 @@
+<a {{ id|default(null) ? 'id=' ~ id : '' }} href="{{ href|default(null) }}" class="{{ color|default(null) ? 'menu__item__mobile menu__item__' ~ color : 'menu__item' }}">
+    {{ content|default(null) }}
+</a>

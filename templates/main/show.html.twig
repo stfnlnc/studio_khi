@@ -13,9 +13,10 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container__large primary-light primary-dark--bg">
+    <div class="header__gap"></div>
+    <section id="top-content" class="container__large primary-light primary-dark--bg pt--20 pb--20">
         <div class="container container__top flex col gap--16 gap-large-mobile align--start justify--start">
-            <h1>{{ project.name }}</h1>
+            <h1 class="reveal">{{ project.name }}</h1>
             <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
                 <p class="text__l">
                     {{ project.excerpt }}
@@ -24,7 +25,7 @@
             </div>
         </div>
     </section>
-    <section class="p--0 w--100">
+    <section class="container__large primary-light--bg p--0 w--100">
         <div class="">
                 <img class="w--100" src="{{ asset('uploads/projects/featured/full/') ~ project.image }}"
                      loading="lazy" alt="{{ project.name }}">
@@ -35,12 +36,12 @@
             <span class="text__l">Résumé du projet</span>
             <div class="flex col gap--2">
                 {% for tag in project.tag.toArray %}
-                    <tag-react data-content="{{ tag.name }}"></tag-react>
+                    <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
                 {% endfor %}
             </div>
         </div>
         <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-            <h3>
+            <h3 class="title">
                 {{ project.title }}
             </h3>
             <div class="w--80 w-100-mobile primary-grey text__m">
@@ -67,8 +68,14 @@
                 {% endif %}
             </div>
             {% if project.url is not empty %}
-                <button-react data-target="_blank" data-href="{{ project.url }}"
-                              data-content="Voir le site"></button-react>
+                {% include 'main/components/button.html.twig' with
+                    {
+                        href: project.url,
+                        content: "Voir le site",
+                        color: "dark",
+                        target: "_blank",
+                        icon: true}
+                %}
             {% endif %}
         </div>
     </section>
@@ -86,7 +93,7 @@
                 Découvrir un autre projet
             </p>
             <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                <h3>
+                <h3 class="title">
                     Envie d’en voir plus ?
                 </h3>
             </div>
@@ -99,11 +106,13 @@
                             <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/large/') ~ project.image }}"
                                  loading="lazy" alt="{{ project.name }}">
                         {% else %}
-                            <div class="home__img home__img-post stroke-dark--bg"></div>
+                            <img class="home__img home__img-post"
+                                 src="{{ asset('build/images/background/empty.png') }}"
+                                 loading="lazy" alt="{{ project.name }}">
                         {% endif %}
                         <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
                             {% for tag in project.tag.toArray %}
-                                <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                                <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
                             {% endfor %}
                         </div>
                         <svg class="absolute pos-center" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">

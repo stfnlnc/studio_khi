@@ -12,41 +12,63 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container flex col gap--16 gap-large-mobile align--start">
-        <h1>Des questions ?</h1>
+    <section id="top-content" class="container__large primary-light--bg pt--20 mb--10">
+    <div class="container flex col gap--16 gap-large-mobile align--start">
+        <h1 class="reveal">Des questions ?</h1>
         <p class="w--60 w-100-mobile text__l align--self-end">
             Nous avons peut-être déjà les réponses à vos questions ! Ne manquez pas notre FAQ pour trouver les réponses
             dont vous avez besoin.
         </p>
+    </div>
     </section>
-    <section class="container__large border--top border--bottom border-stroke-light">
+    <section class="container__large primary-light--bg border--top border--bottom border-stroke-light">
         <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
-            <filter-react data-id="general" data-content="Général"></filter-react>
-            <filter-react data-id="branding" data-content="Branding & Logo"></filter-react>
-            <filter-react data-id="webdesign" data-content="Webdesign & UI/UX Design"></filter-react>
-            <filter-react data-id="website" data-content="Site Web & Développement"></filter-react>
+            <span id="all" class="filter filter--active">
+                    Général
+            </span>
+            <span id="branding" class="filter">
+                Branding & Logo
+            </span>
+            <span id="webdesign" class="filter">
+                Webdesign & UX/UI Design
+            </span>
+            <span id="website" class="filter">
+                Site Web & Développement
+            </span>
         </div>
     </section>
-    <section class="container flex row col-mobile gap-large-mobile">
+    <section class="container__large primary-light--bg">
+    <div class="container flex row col-mobile gap-large-mobile">
         <p class="text__l w--40 w-100-mobile">
             FAQ
         </p>
         <div class="w--60 w-100-mobile flex col align--start justify--start">
             {% for key, faq in faqs %}
-                <article class="w--100 {{ faq.category }}">
-                    <faq-react class="w--100" data-id="{{ key }}" data-title="{{ faq.question }}"
-                               data-content="{{ faq.answer }}"></faq-react>
+                <article class="w--100 article {{ faq.category }}">
+                    {% include 'main/components/faq.html.twig' with
+                        {
+                            title: faq.question,
+                            content: faq.answer
+                        }
+                    %}
                 </article>
             {% endfor %}
         </div>
+    </div>
     </section>
     <section class="container__large secondary-beige--bg">
         <div class="container flex col align--center justify--center gap--11 text-center">
-            <h2 class="w--70 w-100-mobile">
+            <h2 class="w--70 w-100-mobile heading">
                 Autre chose ?
             </h2>
-            <button-react data-href="{{ path('app_contact') }}"
-                          data-content="Contactez-nous directement"></button-react>
+            {% include 'main/components/button.html.twig' with
+                {
+                    href: path('app_contact'),
+                    content: "Contactez-nous directment",
+                    color: "dark",
+                    target: "",
+                    icon: true}
+            %}
         </div>
     </section>
 

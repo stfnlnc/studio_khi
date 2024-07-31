@@ -6,7 +6,7 @@
     width: 100%;
     border-bottom: 1px solid var(--stroke-light);
     transition: border var(--dropdown-duration) var(--dropdown-cubic), transform var(--dropdown-duration) ease;
-    z-index: 5;
+    z-index: 10;
     &__nav {
         width: 100%;
         max-width: var(--max-width);
