@@ -1,5 +1,3 @@
-$duration: var(--hover-duration);
-
 .btn {
     color: var(--primary-light);
     background-color: var(--primary-dark);
@@ -23,7 +21,7 @@ $duration: var(--hover-duration);
 
     width: fit-content;
     height: fit-content;
-    transition: background-color $duration, color $duration, border $duration;
+    transition: background-color var(--hover-duration), color var(--hover-duration), border var(--hover-duration);
     &:hover {
         cursor: pointer;
         background-color: var(--primary-grey);
@@ -34,11 +32,11 @@ $duration: var(--hover-duration);
         height: 1.125rem;
         fill: none;
         stroke: var(--primary-light);
-        transition: stroke $duration;
+        transition: stroke var(--hover-duration);
     }
     &__light {
-        color: var(--primary-dark);
-          background-color: var(--primary-light);
+            color: var(--primary-dark);
+            background-color: var(--primary-light);
         &:hover {
             color: var(--primary-light);
             background-color: var(--primary-dark);
@@ -104,75 +102,5 @@ $duration: var(--hover-duration);
             cursor: pointer;
             text-transform: uppercase;
         }
-    }
-}
-
-.link {
-    color: var(--primary-dark);
-    background-color: unset;
-    text-align: left;
-    border-radius: unset;
-
-    font-family: "Inter", sans-serif;
-    font-size: 1.1875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: -0.03563rem;
-
-    padding: 0.31rem 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 8.4375rem;
-
-    width: fit-content;
-    transition: background-color $duration, color $duration, border $duration;
-    &__icon {
-        width: 1.125rem;
-        height: 1.125rem;
-        fill: none;
-        stroke: var(--primary-dark);
-        transition: stroke $duration;
-    }
-    &:hover {
-        cursor: pointer;
-        color: var(--primary-grey);
-        border-color: var(--primary-grey);
-    }
-    &:hover &__icon {
-        stroke: var(--primary-grey);
-    }
-    &__light {
-        color: var(--primary-light);
-        border-color: var(--primary-light);
-        &:hover {
-            color: var(--primary-grey);
-            border-color: var(--primary-grey);
-        }
-        &__icon {
-            stroke: var(--primary-light);
-        }
-        &:hover &__icon {
-            stroke: var(--primary-grey);
-        }
-    }
-    &__no-underline {
-        border: none;
-    }
-}
-
-.line {
-    height: 1px;
-    background-color: var(--primary-dark);
-    &__light {
-        background-color: var(--primary-light);
-    }
-}
-
-@media screen and (max-width: 870px) {
-    .link {
-        font-size: 1rem;
     }
 }

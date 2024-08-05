@@ -13,19 +13,23 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container__large border--bottom border-stroke-light">
+    <section class="container__large border--bottom border-stroke-light pt--20">
         <div class="container">
-            <h1>Nos tarifs</h1>
+            <h1 class="reveal">Nos tarifs</h1>
         </div>
     </section>
     <section class="container__large border--bottom border-stroke-light">
         <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
-            <filter-react data-id="logo" data-content="Branding & Logo"></filter-react>
-            <filter-react data-id="website" data-content="Webdesign & Développement"></filter-react>
+            <span id="logo" class="filter filter--active">
+                Branding & Logo
+            </span>
+            <span id="website" class="filter">
+                Webdesign & Développement
+            </span>
         </div>
     </section>
     <section class="container__large border--bottom border-stroke-light flex col align--center justify--center">
-        <article class="container logo flex col">
+        <article class="container article logo flex col">
             <div class="grid grid--4 grid--3-mobile grid-gap--2 text__m text-center p--5 border--bottom border-stroke-light">
                 <div class="hide-mobile"></div>
                 <div class="flex col gap--1">
@@ -238,7 +242,7 @@
                 </div>
             </div>
         </article>
-        <article class="container website flex col">
+        <article class="container article website flex col display-none">
             <div class="grid grid--4 grid--3-mobile grid-gap--2 text__m text-center p--5 border--bottom border-stroke-light">
                 <div class="hide-mobile"></div>
                 <div>
@@ -474,7 +478,14 @@
             <h2 class="w--70 w-100-mobile">
                 Vous souhaitez recevoir un devis sur mesure ?
             </h2>
-            <button-react data-href="{{ path('app_contact') }}" data-content="Contactez-nous"></button-react>
+            {% include 'main/components/button.html.twig' with
+                {
+                    href: path('app_contact'),
+                    content: "Contactez-nous",
+                    color: "dark",
+                    target: "",
+                    icon: true}
+            %}
         </div>
     </section>
 {% endblock %}

@@ -10,8 +10,8 @@
         </svg>
     </div>
     <div class='faq__answer'>
-        <p class="primary-grey text__s pt--2">
-            {{ content|default(null) }}
-        </p>
+        <div class="primary-grey text__s pt--2">
+            {{ content|default(null)|raw }}
+        </div>
     </div>
 </div>

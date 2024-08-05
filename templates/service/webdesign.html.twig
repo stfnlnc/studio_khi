@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block body %}
-    <section id="top-content" class="container__large secondary-blue--bg">
+    <section id="top-content" class="container__large  container__top secondary-blue--bg flex row align--center">
         <div class="container">
             <div class="flex col gap--16 pt--10">
                 <div class="flex col gap--3">
@@ -34,7 +34,7 @@
                             {
                                 href: path('app_contact'),
                                 content: "Commander votre design",
-                                color: "dark",
+                                color: "",
                                 target: "",
                                 icon: true}
                         %}
@@ -46,7 +46,7 @@
     <section class="container__large primary-light--bg">
 
         <div class="container flex row col-mobile gap-small-mobile">
-            <div class="w--40 w-100-mobile">
+            <div id="title-fixed" class="w--40 w-100-mobile">
                 <p class="text__l w--80 w-100-mobile">
                     Trouver le juste équilibre entre beauté et fonctionnalité pour votre site web.
                 </p>
@@ -136,7 +136,7 @@
                     Notre savoir-faire
                 </p>
                 <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                    <h3 class="w--80 w-100-mobile title">
+                    <h3 class="w--80 w-100-mobile">
                         Maximiser vos chances de conversion avec un design innovant et impactant.
                     </h3>
                 </div>
@@ -206,7 +206,7 @@
     </section>
     <section class="container__large secondary-blue--bg">
         <div class="container flex row col-mobile align--end justify--space-between align--center-mobile gap-large-mobile">
-            <h3 class="w--50 w-100-mobile text-center-mobile title">Vous souhaitez connaître nos tarifs ? </h3>
+            <h3 class="w--50 w-100-mobile text-center-mobile">Vous souhaitez connaître nos tarifs ? </h3>
             {% include 'main/components/button.html.twig' with
                 {
                     href: path('app_prices'),
@@ -235,7 +235,7 @@
     <section class="container__large primary-light primary-dark--bg">
         <div class="container flex col gap--16">
             <div class="flex row col-mobile align--end justify--space-between align--center-mobile gap-large-mobile">
-                <h3 class="w--50 w-100-mobile text-center-mobile title">Une agence à 360° <br>pour tout votre site</h3>
+                <h3 class="w--50 w-100-mobile text-center-mobile">Une agence à 360° <br>pour tout votre site</h3>
                 {% include 'main/components/button.html.twig' with
                     {
                         href: path('app_contact'),
@@ -290,7 +290,7 @@
     </section>
     <section class="container__large secondary-blue--bg">
         <div class="container flex col align--center justify--center gap--11 text-center">
-            <h2 class="w--70 w-100-mobile heading">
+            <h2 class="w--70 w-100-mobile">
                 Prêts à nous partager votre projet ?
             </h2>
             {% include 'main/components/button.html.twig' with

@@ -1,12 +1,8 @@
 .home {
     &__logo {
-        width: 100%;
+        width: 98%;
         height: auto;
         fill: var(--primary-dark);
-        position: absolute;
-        transform: translate(-50%, 0);
-        bottom: 5px;
-        left: 50%;
         &-mobile {
             width: 200px;
             height: auto;
@@ -55,18 +51,21 @@
     z-index: 1;
 }
 
-.article > a > img {
-    transition: filter var(--hover-duration) ease;
+.article > a > div > img {
+    transition: filter var(--hover-duration) var(--dropdown-cubic), transform var(--hover-duration) var(--dropdown-cubic);
 }
-.article:hover > a > img {
+.article:hover > a > div > img {
     filter: brightness(0.7);
+    transform: scale(1.02);
 }
 .article > a > svg {
-    transition: opacity var(--hover-duration) ease;
+    transition: opacity var(--hover-duration) ease-in-out, transform var(--hover-duration) var(--dropdown-cubic);
+    transform: translate(-50%, -50%) scale(0.5);
     opacity: 0;
     width: 125px;
     height: 125px;
 }
 .article:hover > a > svg {
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }

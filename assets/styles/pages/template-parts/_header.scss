@@ -2,9 +2,9 @@
     position: fixed;
     top: 0;
     left: 50%;
+    background-color: transparent;
     transform: translate(-50%, 0);
     width: 100%;
-    border-bottom: 1px solid var(--stroke-light);
     transition: border var(--dropdown-duration) var(--dropdown-cubic), transform var(--dropdown-duration) ease;
     z-index: 10;
     &__nav {
@@ -13,14 +13,17 @@
         padding: var(--nav-padding-v) var(--main-padding-h);
         z-index: 5;
         transition: padding var(--dropdown-duration) var(--dropdown-cubic);
+        background-color: transparent;
     }
     &__logo {
         width: 12.875rem;
         height: 2.9375rem;
         fill: var(--primary-dark);
         transition: fill var(--dropdown-duration) var(--dropdown-cubic);
+        background-color: transparent;
     }
     &__gap {
+        width: 100%;
         height: 115px;
         background-color: var(--primary-light);
     }
@@ -29,8 +32,14 @@
     }
 }
 
+.spacer {
+    height: 100vh;
+    z-index: -5;
+}
+
 @media screen and (max-width: 1080px) {
     .header {
+        backdrop-filter: unset;
         &__logo {
             width: 10.3725rem;
             height: 1.28938rem;

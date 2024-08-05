@@ -6,141 +6,142 @@
 
 {% block meta %}
     <meta name="description" content="{{ project.excerpt }}">
-    <meta property="og:title" content="{{ project.name }} - Studio Khi" />
-    <meta property="og:description" content="{{ project.excerpt }}" />
-    <meta property="og:url" content="https://studiokhi.com{{ path('app_show', {slug: project.slug}) }}" />
+    <meta property="og:title" content="{{ project.name }} - Studio Khi"/>
+    <meta property="og:description" content="{{ project.excerpt }}"/>
+    <meta property="og:url" content="https://studiokhi.com{{ path('app_show', {slug: project.slug}) }}"/>
     {{ parent() }}
 {% endblock %}
 
 {% block body %}
-    <div class="header__gap"></div>
-    <section id="top-content" class="container__large primary-light primary-dark--bg pt--20 pb--20">
-        <div class="container container__top flex col gap--16 gap-large-mobile align--start justify--start">
-            <h1 class="reveal">{{ project.name }}</h1>
-            <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end">
-                <p class="text__l">
-                    {{ project.excerpt }}
-                </p>
-                <p class="text__m underline">Scroll pour découvrir</p>
+    <section id="trigger-image">
+        <div id="top-image" class="primary-light primary-dark--bg h--100 flex col align--center justify--space-between"
+                 style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url({{ asset('uploads/projects/featured/full/') ~ project.image }}); background-position: center; background-size: cover">
+        </div>
+    </section>
+    <section class="container__large primary-light--bg">
+        <div class="container pt--0 flex col gap--16">
+            <h1 class="">{{ project.name }}</h1>
+            <div class=" flex row col-mobile gap-small-mobile">
+                <div class="flex col gap--11 w--40 w-100-mobile hide-mobile">
+                    <span class="text__l">Résumé du projet</span>
+                    <div class="flex col gap--2">
+                        {% for tag in project.tag.toArray %}
+                            <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                    <h3 class="">
+                        {{ project.title }}
+                    </h3>
+                    <div class="w--80 w-100-mobile primary-grey text__m">
+                        {{ project.description|raw }}
+                    </div>
+                    <div class="flex col align--start justify--start border--top border-stroke-light w--100">
+                        {% if project.category is not empty %}
+                            <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
+                                <p class="text__m">Catégorie</p>
+                                <p class="text__m">{{ project.category }}</p>
+                            </div>
+                        {% endif %}
+                        {% if project.type is not empty %}
+                            <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
+                                <p class="text__m">Type</p>
+                                <p class="text__m">{{ project.type }}</p>
+                            </div>
+                        {% endif %}
+                        {% if project.date is not empty %}
+                            <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
+                                <p class="text__m">Date</p>
+                                <p class="text__m">{{ project.date }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% if project.url is not empty %}
+                        {% include 'main/components/button.html.twig' with
+                            {
+                                href: project.url,
+                                content: "Voir le site",
+                                color: "dark",
+                                target: "_blank",
+                                icon: true} %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </section>
-    <section class="container__large primary-light--bg p--0 w--100">
-        <div class="">
-                <img class="w--100" src="{{ asset('uploads/projects/featured/full/') ~ project.image }}"
-                     loading="lazy" alt="{{ project.name }}">
-        </div>
-    </section>
-    <section class="container flex row col-mobile gap-small-mobile">
-        <div class="flex col gap--11 w--40 w-100-mobile hide-mobile">
-            <span class="text__l">Résumé du projet</span>
+    <section class="container__large primary-light--bg">
+        <div class="container container__project">
             <div class="flex col gap--2">
-                {% for tag in project.tag.toArray %}
-                    <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
+                {% for image in project.images.toArray|sort((a, b) => a.issue <=> b.issue) %}
+                    <img class="w-100 border-rounded image" src="{{ asset('uploads/projects/gallery/large/') ~ image.name }}"
+                         loading="lazy" alt="{{ project.name }}">
                 {% endfor %}
             </div>
         </div>
-        <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-            <h3 class="title">
-                {{ project.title }}
-            </h3>
-            <div class="w--80 w-100-mobile primary-grey text__m">
-                {{ project.description|raw }}
-            </div>
-            <div class="flex col align--start justify--start border--top border-stroke-light w--100">
-                {% if project.category is not empty %}
-                    <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
-                        <p class="text__m">Catégorie</p>
-                        <p class="text__m">{{ project.category }}</p>
-                    </div>
-                {% endif %}
-                {% if project.type is not empty %}
-                    <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
-                        <p class="text__m">Type</p>
-                        <p class="text__m">{{ project.type }}</p>
-                    </div>
-                {% endif %}
-                {% if project.date is not empty %}
-                    <div class="flex row align--center justify--space-between pt--3 pb--3 border--bottom border-stroke-light w--100">
-                        <p class="text__m">Date</p>
-                        <p class="text__m">{{ project.date }}</p>
-                    </div>
-                {% endif %}
-            </div>
-            {% if project.url is not empty %}
-                {% include 'main/components/button.html.twig' with
-                    {
-                        href: project.url,
-                        content: "Voir le site",
-                        color: "dark",
-                        target: "_blank",
-                        icon: true}
-                %}
-            {% endif %}
-        </div>
     </section>
-    <section class="container container__project">
-        <div class="flex col gap--2">
-            {% for image in project.images.toArray|sort((a, b) => a.issue <=> b.issue) %}
-                <img class="w-100 border-rounded" src="{{ asset('uploads/projects/gallery/large/') ~ image.name }}"
-                     loading="lazy" alt="{{ project.name }}">
-            {% endfor %}
-        </div>
-    </section>
-    <section class="container flex col gap--16 gap-large-mobile align--start justify--center">
-        <div class="flex row col-mobile gap-small-mobile w--100">
-            <p class="text__l w--40 w-100-mobile">
-                Découvrir un autre projet
-            </p>
-            <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                <h3 class="title">
-                    Envie d’en voir plus ?
-                </h3>
+    <section class="container__large primary-light--bg">
+        <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
+            <div class="flex row col-mobile gap-small-mobile w--100">
+                <p class="text__l w--40 w-100-mobile">
+                    Découvrir un autre projet
+                </p>
+                <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                    <h3 class="title">
+                        Envie d’en voir plus ?
+                    </h3>
+                </div>
             </div>
-        </div>
-        <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
-            {% for project in projects %}
-                <article class="flex col gap--5 article mb--20">
-                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="relative {% for tag in project.tag.toArray %} {{ tag.slug }} {% endfor %}" aria-label="{{ project.name }}">
-                        {% if project.image is not empty %}
-                            <img class="home__img home__img-post" src="{{ asset('uploads/projects/featured/large/') ~ project.image }}"
-                                 loading="lazy" alt="{{ project.name }}">
-                        {% else %}
-                            <img class="home__img home__img-post"
-                                 src="{{ asset('build/images/background/empty.png') }}"
-                                 loading="lazy" alt="{{ project.name }}">
-                        {% endif %}
-                        <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
-                            {% for tag in project.tag.toArray %}
-                                <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
-                            {% endfor %}
-                        </div>
-                        <svg class="absolute pos-center" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle id="Ellipse 1" cx="62.5" cy="62.5" r="62.5" fill="white"/>
-                            <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex col gap--3">
-                        <div class="flex row align--end justify--space-between">
-                            <p class="text__l">
-                                {{ project.name }}
-                            </p>
-                            <p class="text__m hide-mobile">
-                                {{ project.category }}
-                            </p>
-                        </div>
-                        <div class="flex col align--start justify--start gap--4">
-                            <p class="primary-grey text__m">
-                                {{ project.excerpt }}
-                            </p>
-                            <p class="text__m display-mobile">
-                                {{ project.category }}
-                            </p>
-                        </div>
-                    </a>
-                </article>
-            {% endfor %}
+            <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
+                {% for project in projects %}
+                    <article class="flex col gap--5 article mb--20">
+                        <a href="{{ path('app_show', {'slug': project.slug}) }}"
+                           class="relative {% for tag in project.tag.toArray %} {{ tag.slug }} {% endfor %}"
+                           aria-label="{{ project.name }}">
+                            {% if project.image is not empty %}
+                                <img class="home__img home__img-post"
+                                     src="{{ asset('uploads/projects/featured/large/') ~ project.image }}"
+                                     loading="lazy" alt="{{ project.name }}">
+                            {% else %}
+                                <img class="home__img home__img-post"
+                                     src="{{ asset('build/images/background/empty.png') }}"
+                                     loading="lazy" alt="{{ project.name }}">
+                            {% endif %}
+                            <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
+                                {% for tag in project.tag.toArray %}
+                                    <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
+                                {% endfor %}
+                            </div>
+                            <svg class="absolute pos-center" viewBox="0 0 125 125" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle id="Ellipse 1" cx="62.5" cy="62.5" r="62.5" fill="white"/>
+                                <path id="Vector" d="M49.5 75.5L74.5 50.5" stroke="#191919" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M54.1875 50.5H74.5V70.8125" stroke="#191919" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex col gap--3">
+                            <div class="flex row align--end justify--space-between">
+                                <p class="text__l">
+                                    {{ project.name }}
+                                </p>
+                                <p class="text__m hide-mobile">
+                                    {{ project.category }}
+                                </p>
+                            </div>
+                            <div class="flex col align--start justify--start gap--4">
+                                <p class="primary-grey text__m">
+                                    {{ project.excerpt }}
+                                </p>
+                                <p class="text__m display-mobile">
+                                    {{ project.category }}
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+                {% endfor %}
+            </div>
         </div>
     </section>
 

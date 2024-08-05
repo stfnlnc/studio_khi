@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Les Articles - {{ parent() }}
+    Articles & Blog - {{ parent() }}
 {% endblock %}
 
 {% block meta %}
@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block body %}
-    <section id="top-content" class="container__large primary-light--bg pt--20 mb--10">
+    <section class="container__large primary-light--bg pt--20 mb--10">
         <div class="container flex col gap--16 gap-large-mobile align--start">
             <h1 class="reveal">Articles & Blog</h1>
             <p class="w--60 w-100-mobile text__l align--self-end">
@@ -36,7 +36,7 @@
             {% endfor %}
         </div>
     </section>
-    <section class="container__large primary-light--bg">
+    <section class="container__large container__top primary-light--bg">
         <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
             <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
                 {% for post in posts %}

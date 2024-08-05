@@ -1,4 +1,4 @@
-{% include 'header/template-part/preloader.html.twig' %}
+{% include 'main/header/template-part/preloader.html.twig' %}
 {% for label, messages in app.flashes %}
     {% for message in messages %}
         <div class="pointer alert alert__{{ label }}">
@@ -68,7 +68,7 @@
                     {
                         href: path('app_contact'),
                         content: "Contact",
-                        color: "light",
+                        color: "",
                         target: "",
                         icon: true}
                 %}
@@ -93,7 +93,7 @@
                     <div class="flex col pl--4">
                         {% include 'main/components/link.html.twig' with
                             {
-                                href: "https://www.instagram.com/studio_khi/",
+                                href: path('app_service_branding'),
                                 content: "Branding & Direction Artistique",
                                 color: "light",
                                 target: "",
@@ -102,7 +102,7 @@
                             } %}
                         {% include 'main/components/link.html.twig' with
                             {
-                                href: "https://www.linkedin.com/company/studio-khi",
+                                href: path('app_service_webdesign'),
                                 content: "Webdesign & Design Digital",
                                 color: "light",
                                 target: "",
@@ -111,7 +111,7 @@
                             } %}
                         {% include 'main/components/link.html.twig' with
                             {
-                                href: "https://www.behance.net/studiokhi",
+                                href: path('app_service_development'),
                                 content: "Développement Web & Sites sur Mesure",
                                 color: "light",
                                 target: "",

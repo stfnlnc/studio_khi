@@ -24,7 +24,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "gsap-trial": "^3.12.5",
+        "gsap": "npm:@gsap/shockingly@^3.12.5",
         "htmx.org": "^1.9.12",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",

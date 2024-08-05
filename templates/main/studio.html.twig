@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block body %}
-    <section id="top-content" class="container__large primary-light--bg pt--20">
+    <section class="container__large primary-light--bg pt--20">
         <div class="container flex col gap--16 gap-large-mobile align--start justify--start">
             <h1 class="w--60 w-100-mobile reveal">Découvrir notre studio</h1>
             <div class="w--60 w-100-mobile flex col align--start gap--11 align--self-end pb--20">
@@ -35,17 +35,16 @@
             </div>
         </div>
     </section>
-    <section class="container__large primary-light primary-dark--bg"
-             style="background-image: url('{{ asset('build/images/uploads/le-studio-1.webp') }}'); background-position: center; background-size: cover;">
-        <div class="container h--100 h-50-mobile"></div>
+    <section id="trigger-image">
+        <img id="top-image" src="{{ asset('build/images/uploads/le-studio-1.webp') }}" class="studio__full-width" alt="" loading="lazy">
     </section>
     <section class="container__large primary-light--bg">
-        <div class="container flex row col-mobile gap-small-mobile">
+        <div class="container pt--0 flex row col-mobile gap-small-mobile">
             <p class="text__l w--40 w-100-mobile">
                 Notre approche
             </p>
             <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                <h3 class="title">
+                <h3 class="">
                     Combiner design et développement web pour créer des marques et des sites que l’on remarque.
                 </h3>
                 <p class="w--80 w-100-mobile primary-grey text__m">
@@ -66,7 +65,7 @@
     </section>
     <section class="container__large primary-light primary-dark--bg">
         <div class="container flex col gap--16 align--start justify--center">
-            <h3 class="w--50 w-100-mobile title">
+            <h3 class="w--50 w-100-mobile">
                 Une agence à 360° pour tout votre site
             </h3>
             <div class="w--100 grid grid--3 grid-gap--11 grid--1-mobile">
@@ -149,7 +148,7 @@
                     L'équipe
                 </p>
                 <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                    <h3 class="title">
+                    <h3 class="">
                         Un duo de passionnés dévoués à des projets passionnants.
                     </h3>
                 </div>
@@ -284,7 +283,7 @@
                     Nos clients
                 </p>
                 <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                    <h3 class="title">
+                    <h3 class="">
                         Ne vous contentez pas de nous croire sur parole. Voici ce que nos clients disent de nous.
                     </h3>
                     <p class="w--80 w-100-mobile primary-grey text__m">
@@ -360,7 +359,7 @@
     </section>
     <section class="container__large secondary-beige--bg">
         <div class="container flex col align--center justify--center gap--11 text-center">
-            <h2 class="w--70 w-100-mobile heading">
+            <h2 class="w--70 w-100-mobile">
                 Prêts à nous partager votre projet ?
             </h2>
             {% include 'main/components/button.html.twig' with

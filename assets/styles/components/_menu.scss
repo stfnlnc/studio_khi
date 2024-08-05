@@ -1,8 +1,12 @@
 $duration: var(--hover-duration);
 
+.mixed {
+    mix-blend-mode: difference;
+}
+
 .menu__item {
     color: var(--primary-dark);
-    background-color: unset;
+    background-color: transparent;
     text-align: center;
     border-bottom: 1px solid transparent;
     border-radius: unset;
@@ -51,7 +55,7 @@ $duration: var(--hover-duration);
     top: 0;
     left: 50%;
     transform: translate(-50%, -100%);
-    width: 100%;
+    width: 101%;
     backdrop-filter: blur(10px);
     z-index: -1;
     background-color: var(--primary-dark);
@@ -68,13 +72,13 @@ $duration: var(--hover-duration);
     position: fixed;
     top: 0;
     right: -100%;
-    width: 100%;
-    max-width: 400px;
+    width: 101%;
+    max-width: 500px;
     height: 100vh;
     background-color: var(--primary-dark);
     color: var(--primary-light);
     backdrop-filter: blur(10px);
-    z-index: 4;
+    z-index: 5;
     transition: transform var(--dropdown-duration) var(--dropdown-cubic);
     padding-bottom: var(--main-padding-v);
     overflow: auto;

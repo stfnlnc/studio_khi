@@ -1,4 +1,10 @@
 .studio {
+    &__full-width {
+        width: 100%;
+        height: 100vh;
+        object-position: center;
+        object-fit: cover;
+    }
     &__img {
         border-radius: 1rem;
         width: 100%;

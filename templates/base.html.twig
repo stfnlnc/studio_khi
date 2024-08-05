@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('build/images/logos/apple-icon-iphone-retina.png') }}">
     <link rel="apple-touch-icon" sizes="167x167" href="{{ asset('build/images/logos/apple-icon-ipad-retina.png') }}">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, user-scalable=no">
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta property="og:locale" content="fr_FR"/>
@@ -43,14 +43,15 @@
     {% endblock %}
 </head>
 <body class="body">
-{% include 'header/header.html.twig' %}
+{% include 'main/header/header.html.twig' %}
 <div id="smooth-wrapper">
     <div id="smooth-content">
         <main class="noise">
             {% block body %}{% endblock %}
         </main>
-        <div id="footer"></div>
-        {% include 'footer/footer.html.twig' %}
+        <div id="footer">
+        {% include 'main/footer/footer.html.twig' %}
+        </div>
     </div>
 </div>
 {% include 'main/components/cookies.html.twig' %}
