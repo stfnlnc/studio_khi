@@ -15,6 +15,15 @@
     }
 }
 
+@media screen and (min-width: 1920px) {
+    .w-max {
+        width: 550px;
+    }
+    .w-h3-max {
+        width: 650px;
+    }
+}
+
 @media screen and (max-width: 870px) {
     .w-100-mobile {
         width: 100%;

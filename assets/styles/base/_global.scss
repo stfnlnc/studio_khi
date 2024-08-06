@@ -1,8 +1,8 @@
 :root {
-    --main-padding-h: 4.38rem;
-    --main-padding-v: 6.25rem;
-    --nav-padding-v: 2rem;
-    --dropdown-padding-v: 7.81em;
+    --main-padding-h: 4.38vw;
+    --main-padding-v: 6.25vw;
+    --nav-padding-v: 2vw;
+    --dropdown-padding-v: 7.81vw;
     --max-width: unset;
     --hover-duration: .6s;
     --dropdown-duration: .8s;
@@ -22,7 +22,7 @@ html, body {
     padding: 0;
     font-size: 16px;
     font-family: "Inter", sans-serif;
-    background-color: var(--primary-light);
+
     overflow-x: hidden;
 }
 
@@ -34,12 +34,12 @@ body {
     align-items: center;
     width: 100%;
     color: var(--primary-dark);
+    background-color: var(--primary-light);
 }
 
 main {
     position: relative;
     z-index: 3;
-    background-color: var(--primary-light);
     width: 100%;
     height: auto;
     min-height: 100vh;
@@ -48,6 +48,7 @@ main {
     justify-content: start;
     align-items: center;
     transition: filter var(--dropdown-duration) var(--dropdown-cubic);
+    background-color: var(--primary-light);
 }
 
 section {

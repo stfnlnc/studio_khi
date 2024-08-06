@@ -2,7 +2,6 @@
     position: fixed;
     top: 0;
     left: 50%;
-    background-color: transparent;
     transform: translate(-50%, 0);
     width: 100%;
     transition: border var(--dropdown-duration) var(--dropdown-cubic), transform var(--dropdown-duration) ease;
@@ -13,14 +12,12 @@
         padding: var(--nav-padding-v) var(--main-padding-h);
         z-index: 5;
         transition: padding var(--dropdown-duration) var(--dropdown-cubic);
-        background-color: transparent;
     }
     &__logo {
-        width: 12.875rem;
-        height: 2.9375rem;
+        width: 12.875vw;
+        height: 2.9375vw;
         fill: var(--primary-dark);
         transition: fill var(--dropdown-duration) var(--dropdown-cubic);
-        background-color: transparent;
     }
     &__gap {
         width: 100%;

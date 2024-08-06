@@ -8,12 +8,13 @@
 
 .menu__item {
   color: var(--primary-dark);
+  mix-blend-mode: difference;
   background-color: transparent;
   text-align: center;
   border-bottom: 1px solid transparent;
   border-radius: unset;
   font-family: "Inter", sans-serif;
-  font-size: 1.1875rem;
+  font-size: 1.1875vw;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -274,11 +275,11 @@ textarea {
 
 card {
   border: 1px solid var(--primary-dark);
-  width: 412px;
-  height: 450px;
+  width: 25vw;
+  height: auto;
   border-radius: 1rem;
   white-space: normal;
-  padding: 55px;
+  padding: 3vw;
 }
 
 .star {
@@ -338,17 +339,18 @@ card {
 
 .tag {
   color: var(--primary-dark);
-  background-color: var(--primary-light);
+  background-color: transparent;
   text-align: center;
   border-radius: 0.375rem;
   border: 1px solid var(--primary-dark);
-  font-size: 1.1875rem;
+  white-space: nowrap;
+  font-size: 1.1875vw;
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
   letter-spacing: -0.03563rem;
-  padding: 0.31rem 0.63rem;
+  padding: 0.31vw 0.63vw;
   width: fit-content;
   user-select: none;
 }
@@ -375,12 +377,12 @@ card {
   text-align: left;
   border-radius: unset;
   font-family: "Inter", sans-serif;
-  font-size: 1.1875rem;
+  font-size: 1.1875vw;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: -0.03563rem;
-  padding: 0.31rem 0;
+  letter-spacing: -0.03563vw;
+  padding: 0.31vw 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -390,8 +392,8 @@ card {
   transition: background-color var(--hover-duration), color var(--hover-duration), border var(--hover-duration);
 }
 .link__icon {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1.125vw;
+  height: 1.125vw;
   fill: none;
   stroke: var(--primary-dark);
   transition: stroke var(--hover-duration);
@@ -442,12 +444,12 @@ card {
   border-radius: 0.375rem;
   border: 1px solid var(--primary-dark);
   font-family: "Inter", sans-serif;
-  font-size: 1.1875rem;
+  font-size: 1.1875vw;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: -0.03563rem;
-  padding: 0.31rem 0.63rem;
+  letter-spacing: -0.03563vw;
+  padding: 0.31vw 0.63vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -463,8 +465,8 @@ card {
   border-color: var(--primary-grey);
 }
 .btn__icon {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1.125vw;
+  height: 1.125vw;
   fill: none;
   stroke: var(--primary-light);
   transition: stroke var(--hover-duration);
@@ -492,6 +494,22 @@ card {
   color: var(--primary-light);
   background-color: var(--primary-grey);
   border-color: var(--primary-grey);
+}
+.btn__transparent {
+  color: var(--primary-dark);
+  background-color: transparent;
+  border-color: var(--primary-dark);
+}
+.btn__transparent:hover {
+  color: var(--primary-light);
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+.btn__transparent__icon {
+  stroke: var(--primary-dark);
+}
+.btn__transparent:hover .btn__transparent__icon {
+  stroke: var(--primary-light);
 }
 .btn__delete {
   position: absolute;
@@ -550,17 +568,17 @@ p {
   letter-spacing: 0;
 }
 .text__s {
-  font-size: 1rem;
+  font-size: 1vw;
   line-height: 150%;
   letter-spacing: 0;
 }
 .text__m {
-  font-size: 1.1875rem;
+  font-size: 1.1875vw;
   line-height: 150%;
   letter-spacing: -3%;
 }
 .text__l {
-  font-size: 1.625rem;
+  font-size: 1.625vw;
   line-height: 150%;
   letter-spacing: -3%;
 }
@@ -636,12 +654,12 @@ blockquote > p {
   }
 }
 :root {
-  --h1: 6.125rem;
-  --h2: 4.6875rem;
-  --h3: 3.5rem;
-  --h4: 2rem;
-  --h5: 1.5rem;
-  --h6: 1rem;
+  --h1: 6.125vw;
+  --h2: 4.6875vw;
+  --h3: 3.5vw;
+  --h4: 2vw;
+  --h5: 1.5vw;
+  --h6: 1vw;
   --font-heading: "Overused Grotesk", sans-serif;
   --weight-heading: 400;
   --letter-spacing-heading: 0;
@@ -987,7 +1005,6 @@ h1, .h1 {
   position: fixed;
   top: 0;
   left: 50%;
-  background-color: transparent;
   transform: translate(-50%, 0);
   width: 100%;
   transition: border var(--dropdown-duration) var(--dropdown-cubic), transform var(--dropdown-duration) ease;
@@ -999,14 +1016,12 @@ h1, .h1 {
   padding: var(--nav-padding-v) var(--main-padding-h);
   z-index: 5;
   transition: padding var(--dropdown-duration) var(--dropdown-cubic);
-  background-color: transparent;
 }
 .header__logo {
-  width: 12.875rem;
-  height: 2.9375rem;
+  width: 12.875vw;
+  height: 2.9375vw;
   fill: var(--primary-dark);
   transition: fill var(--dropdown-duration) var(--dropdown-cubic);
-  background-color: transparent;
 }
 .header__gap {
   width: 100%;
@@ -1554,6 +1569,9 @@ h1, .h1 {
   .h-50-mobile {
     height: 30vh;
   }
+  .h-100-mobile {
+    height: fit-content;
+  }
 }
 .w-auto {
   width: auto;
@@ -1603,6 +1621,14 @@ h1, .h1 {
   width: 100%;
 }
 
+@media screen and (min-width: 1920px) {
+  .w-max {
+    width: 550px;
+  }
+  .w-h3-max {
+    width: 650px;
+  }
+}
 @media screen and (max-width: 870px) {
   .w-100-mobile {
     width: 100%;
@@ -2780,10 +2806,10 @@ h1, .h1 {
   }
 }
 :root {
-  --main-padding-h: 4.38rem;
-  --main-padding-v: 6.25rem;
-  --nav-padding-v: 2rem;
-  --dropdown-padding-v: 7.81em;
+  --main-padding-h: 4.38vw;
+  --main-padding-v: 6.25vw;
+  --nav-padding-v: 2vw;
+  --dropdown-padding-v: 7.81vw;
   --max-width: unset;
   --hover-duration: .6s;
   --dropdown-duration: .8s;
@@ -2803,7 +2829,6 @@ html, body {
   padding: 0;
   font-size: 16px;
   font-family: "Inter", sans-serif;
-  background-color: var(--primary-light);
   overflow-x: hidden;
 }
 
@@ -2814,12 +2839,12 @@ body {
   align-items: center;
   width: 100%;
   color: var(--primary-dark);
+  background-color: var(--primary-light);
 }
 
 main {
   position: relative;
   z-index: 3;
-  background-color: var(--primary-light);
   width: 100%;
   height: auto;
   min-height: 100vh;
@@ -2828,6 +2853,7 @@ main {
   justify-content: start;
   align-items: center;
   transition: filter var(--dropdown-duration) var(--dropdown-cubic);
+  background-color: var(--primary-light);
 }
 
 section {

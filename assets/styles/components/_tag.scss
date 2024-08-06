@@ -1,18 +1,19 @@
 .tag {
     color: var(--primary-dark);
-    background-color: var(--primary-light);
+    background-color: transparent;
     text-align: center;
     border-radius: 0.375rem;
     border: 1px solid var(--primary-dark);
+    white-space: nowrap;
 
-    font-size: 1.1875rem;
+    font-size: 1.1875vw;
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.03563rem;
 
-    padding: 0.31rem 0.63rem;
+    padding: 0.31vw 0.63vw;
 
     width: fit-content;
     user-select: none;
