@@ -277,7 +277,7 @@ card {
   width: 412px;
   height: 450px;
   border-radius: 1rem;
-  white-space: wrap;
+  white-space: normal;
   padding: 55px;
 }
 
