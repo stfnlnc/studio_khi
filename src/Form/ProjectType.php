@@ -45,17 +45,6 @@ class ProjectType extends AbstractType
                 ],
                 'required' => false
             ])
-            ->add('excerpt', TextareaType::class, [
-                'label' => 'Extrait',
-                'attr' => [
-                    'class' => 'form-textarea',
-                    'placeholder' => 'Extrait haut de page'
-                ],
-                'label_attr' => [
-                    'class' => 'form-label'
-                ],
-                'required' => false
-            ])
             ->add('title', TextType::class, [
                 'label' => 'Titre',
                 'attr' => [

@@ -44,6 +44,39 @@ class MainController extends AbstractController
         ]);
     }
 
+    #[Route('/services/branding-et-direction-artistique', name: 'service_branding')]
+    public function branding(FaqRepository $faqRepository): Response
+    {
+        $faqs = $faqRepository->findBy(['category' => 'branding']);
+
+        return $this->render('main/service/branding.html.twig', [
+            'faqs' => $faqs,
+            'footer' => true
+        ]);
+    }
+
+    #[Route('/services/webdesign-et-design-digital', name: 'service_webdesign')]
+    public function webdesign(FaqRepository $faqRepository): Response
+    {
+        $faqs = $faqRepository->findBy(['category' => 'webdesign']);
+
+        return $this->render('main/service/webdesign.html.twig', [
+            'faqs' => $faqs,
+            'footer' => true
+        ]);
+    }
+
+    #[Route('/services/sites-sur-mesure', name: 'service_development')]
+    public function development(FaqRepository $faqRepository): Response
+    {
+        $faqs = $faqRepository->findBy(['category' => 'website']);
+
+        return $this->render('main/service/development.html.twig', [
+            'faqs' => $faqs,
+            'footer' => true
+        ]);
+    }
+
     #[Route('/studio', name: 'studio')]
     public function studio(ReviewRepository $reviewRepository, FaqRepository $faqRepository): Response
     {

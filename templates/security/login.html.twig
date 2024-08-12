@@ -3,7 +3,7 @@
 {% block title %}Se connecter - {{ parent() }}{% endblock %}
 
 {% block body %}
-    <div id="form" class="container flex row col-mobile gap--8 align--center justify--center">
+    <div id="form" class="container container__top flex row col-mobile gap--8 align--center justify--center">
             <form method="post" class="w--50 flex col gap--8 w-100-mobile">
                 {% if error %}
                     <div class="alert alert__danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>

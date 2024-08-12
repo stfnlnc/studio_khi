@@ -29,8 +29,6 @@ class Project
     #[ORM\Column(length: 255)]
     #[Groups(['projects.index'])]
     private ?string $slug = null;
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $excerpt = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $title = null;
@@ -110,18 +108,6 @@ class Project
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
-
-        return $this;
-    }
-
-    public function getExcerpt(): ?string
-    {
-        return $this->excerpt;
-    }
-
-    public function setExcerpt(?string $excerpt): static
-    {
-        $this->excerpt = $excerpt;
 
         return $this;
     }

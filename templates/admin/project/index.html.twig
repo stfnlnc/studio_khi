@@ -4,13 +4,20 @@
 
 {% block body %}
     <div class="container__large">
-        <div class="container border--bottom border-stroke-light">
+        <div class="container mt--20 pb--0">
             <h1>Les projets en ligne</h1>
         </div>
     </div>
-    <div class="container__large border--bottom border-stroke-light">
-        <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
-            <button-react data-content="Nouveau projet" data-href="{{ path('app_admin_project_new') }}"></button-react>
+    <div class="container__large">
+        <div class="container container__scroll pt--11 pb--11 flex row align--center justify--start justify--start-mobile gap--5">
+            {% include 'main/components/button.html.twig' with
+                {
+                    href: path('app_admin_project_new'),
+                    content: "Ajouter un projet",
+                    color: "",
+                    target: "",
+                    icon: true}
+            %}
         </div>
     </div>
     <div id="projects" class="container">
@@ -65,7 +72,7 @@
             {% for tag in tags %}
                 <div class="flex row gap--1 align--center relative">
                     <a href="{{ path('app_admin_project_tag_edit', {id: tag.id}) }}">
-                        <tag-react data-content="{{ tag.name }}" data-color="{{ tag.color }}"></tag-react>
+                        <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
                     </a>
                     <form class="btn__delete" action="{{ path('app_admin_project_tag_delete', {id: tag.id}) }}" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
@@ -79,10 +86,5 @@
                 <p class="text__s">Aucun tag n'a été trouvé</p>
             </div>
         {% endif %}
-    </div>
-    <div class="container__large secondary-beige--bg">
-        <div class="container flex col align--center justify--center gap--11 text-center">
-            <button-react data-href="{{ path('app_admin_index') }}" data-content="Retour"></button-react>
-        </div>
     </div>
 {% endblock %}

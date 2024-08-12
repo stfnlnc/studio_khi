@@ -4,8 +4,8 @@
 
 {% block body %}
     <div class="container__large">
-        <div class="container border--bottom border-stroke-light">
-            <h1>Les questions et réponses</h1>
+        <div class="container mt--20 pb--0">
+            <h1>FAQ</h1>
         </div>
     </div>
     <div class="container">
@@ -35,14 +35,9 @@
             {% endif %}
         </div>
     </div>
-    <div class="container flex col gap--11">
-        <h3 class="mb--8">Ajouter une question</h3>
+    <div class="container pt--0 flex col gap--11">
+        <h3>Ajouter une question</h3>
         {% include 'admin/faq/template-part/_faq-form.html.twig' %}
-    </div>
-    <div class="container__large secondary-beige--bg">
-        <div class="container flex col align--center justify--center gap--11 text-center">
-            <button-react data-href="{{ path('app_admin_index') }}" data-content="Retour"></button-react>
-        </div>
     </div>
 {% endblock %}
 
