@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block meta %}
-    <meta name="description" content="{{ project.excerpt }}">
+    <meta name="description" content="{{ project.description }}">
     <meta property="og:title" content="{{ project.name }} - Studio Khi"/>
-    <meta property="og:description" content="{{ project.excerpt }}"/>
+    <meta property="og:description" content="{{ project.description }}"/>
     <meta property="og:url" content="https://studiokhi.com{{ path('app_show', {slug: project.slug}) }}"/>
     {{ parent() }}
 {% endblock %}
@@ -133,7 +133,7 @@
                             </div>
                             <div class="flex col align--start justify--start gap--4">
                                 <p class="primary-grey text__m">
-                                    {{ project.excerpt }}
+                                    {{ project.title }}
                                 </p>
                                 <p class="text__m display-mobile">
                                     {{ project.category }}
