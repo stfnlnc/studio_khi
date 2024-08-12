@@ -160,33 +160,7 @@ class MainController extends AbstractController
     #[Route('/contact', name: 'contact')]
     public function contact(Request $request, MailerInterface $mailer): Response
     {
-        $data = new ContactDTO();
-        $form = $this->createForm(ContactType::class, $data);
-        $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid()) {
-            $email = (new TemplatedEmail())
-                ->from('hello@studiokhi.com')
-                ->to('stefan@studiokhi.com')
-                ->replyTo($data->email)
-                ->cc('cynthia@studiokhi.com')
-                ->subject('Nouveau message depuis studiokhi.com')
-                ->htmlTemplate('emails/contact.html.twig')
-                ->context([
-                    'data' => $data
-                ]);
-            try {
-                $mailer->send($email);
-            } catch (TransportExceptionInterface $e) {
-                echo $e->getMessage();
-            }
-
-            $this->addFlash('success', 'Votre message a bien été envoyé');
-            return $this->redirectToRoute('app_contact');
-        }
-
         return $this->render('main/contact.html.twig', [
-            'form' => $form,
             'footer' => false
         ]);
     }

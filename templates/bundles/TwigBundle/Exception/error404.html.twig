@@ -11,9 +11,18 @@
 {% block body %}
 
     <section class="container__large">
-        <div class="container flex col gap--11 justify--center">
-            <h1>Oups, on s'est trompé de chemin</h1>
-            <link-react data-icon="1" data-content="Retourner sur le site" data-href="{{ path('app_index') }}"></link-react>
+        <div class="container flex col gap--1 mt--16">
+            <h1>404</h1>
+            <p>Oups, on s'est trompé de chemin</p>
+            {% include 'main/components/link.html.twig' with
+                {
+                    href: path('app_index'),
+                    content: "Retourner sur le site",
+                    color: "dark",
+                    target: "",
+                    icon: true,
+                    line: true
+                } %}
         </div>
     </section>
 
