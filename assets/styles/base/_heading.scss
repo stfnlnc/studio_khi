@@ -38,11 +38,40 @@ h1, .h1 {
     font-weight: 500;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1440px) {
     :root {
-        --h1: 3.4375rem;
-        --h2: 2.8125rem;
-        --h3: 2.3125rem;
+        --h1: 5.4rem;
+        --h2: 4.6875rem;
+        --h3: 3.5rem;
+        --h4: 2rem;
+        --h5: 1.5rem;
+        --h6: 1rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 834px) {
+    :root {
+        --h1: 4rem;
+        --h2: 3.8rem;
+        --h3: 3rem;
+        --h4: 2rem;
+        --h5: 1.5rem;
+        --h6: 1rem;
+    }
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 480px) {
+    :root {
+        --h1: 3rem;
+        --h2: 2.8rem;
+        --h3: 2.4rem;
         --h4: 2rem;
         --h5: 1.5rem;
         --h6: 1rem;

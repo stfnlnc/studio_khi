@@ -15,17 +15,27 @@
     }
 }
 
-@media screen and (min-width: 1920px) {
-    .w-max {
-        width: 550px;
-    }
-    .w-h3-max {
-        width: 650px;
-    }
-}
-
 @media screen and (max-width: 870px) {
     .w-100-mobile {
         width: 100%;
     }
+}
+
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1440px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 834px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 480px) {
+
 }

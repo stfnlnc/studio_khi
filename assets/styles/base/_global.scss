@@ -7,6 +7,9 @@
     --hover-duration: .6s;
     --dropdown-duration: .8s;
     --dropdown-cubic: cubic-bezier(0.49, 0.17, 0, 0.87);
+    --text-s: 1vw;
+    --text-m: 1.1875vw;
+    --text-l: 1.625vw;
 }
 
 * {
@@ -22,7 +25,6 @@ html, body {
     padding: 0;
     font-size: 16px;
     font-family: "Inter", sans-serif;
-
     overflow-x: hidden;
 }
 
@@ -34,7 +36,7 @@ body {
     align-items: center;
     width: 100%;
     color: var(--primary-dark);
-    background-color: var(--primary-light);
+    background-color: var(--primary-dark);
 }
 
 main {
@@ -63,23 +65,6 @@ a {
 p > a {
     text-decoration: underline;
     text-underline-offset: 0.3rem;
-}
-
-.favicon {
-    width: 1.92325rem;
-    height: 1.92325rem;
-}
-
-.logo-inline {
-    width: 50.27931rem;
-    height: 6.25rem;
-    fill: var(--primary-dark);
-}
-
-.logo-square {
-    width: 15.625rem;
-    height: 15.625rem;
-    fill: var(--primary-dark);
 }
 
 #smooth-content, #smooth-wrapper {
@@ -125,37 +110,57 @@ p > a {
     z-index: -1;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1440px) {
     :root {
-        --main-padding-h: 1.25rem;
-        --main-padding-v: 4rem;
+        --main-padding-h: 4rem;
+        --main-padding-v: 6rem;
         --nav-padding-v: 2rem;
-        --dropdown-padding-v: 7.81em;
+        --dropdown-padding-v: 7rem;
+        --max-width: unset;
+        --text-s: 1rem;
+        --text-m: 1.1rem;
+        --text-l: 1.5rem;
+    }
+
+    #cookies {
+        bottom: 30px;
+        right: 30px;
+    }
+
+}
+@media screen and (max-width: 1024px) {
+    :root {
+        --main-padding-h: 2rem;
+        --main-padding-v: 5rem;
+        --nav-padding-v: 2rem;
+        --dropdown-padding-v: 7rem;
+        --max-width: unset;
+        --text-s: 0.8rem;
+        --text-m: 1rem;
+        --text-l: 1.4rem;
     }
 }
-
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 834px) {
     .hide-mobile {
         display: none;
     }
     .display-mobile {
         display: block;
     }
+}
+@media screen and (max-width: 768px) {
 
+}
+@media screen and (max-width: 480px) {
     :root {
-        --main-padding-h: 1.25rem;
-        --main-padding-v: 4rem;
-        --nav-padding-v: 2rem;
-        --dropdown-padding-v: 7.81em;
-    }
-
-    #cookies {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        opacity: 1;
-        max-width: 100%;
-        transition: opacity var(--hover-duration) ease-in-out;
-        z-index: 10;
+        --main-padding-h: 1rem;
+        --main-padding-v: 3rem;
+        --nav-padding-v: 1.2rem;
+        --text-s: 0.8rem;
+        --text-m: 1rem;
+        --text-l: 1.1rem;
     }
 }

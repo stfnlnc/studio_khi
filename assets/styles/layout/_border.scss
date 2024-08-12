@@ -33,7 +33,7 @@ $pos: ("t": top, "b": bottom, "l": left, "r": right);
     border-style: none none dashed none;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 870px) {
     .border {
         border: 1px solid var(--primary-dark);
         @each $key, $p in $pos {

@@ -2,10 +2,23 @@
     <div class="primary-light flex col align--center w--100">
         <div class="footer__container flex row align--start justify--space-between pb--16">
             <div class="flex col gap--11">
-                <h3 class="w--70 w-100-mobile">Nous avons hâte d'écouter votre projet</h3>
+                <h2 class="w--70 w-100-mobile">Nous avons hâte d'écouter votre projet</h2>
                 <div class="flex row gap--5 col-mobile gap-mobile">
-                    {% include 'main/components/button.html.twig' with {href: path('app_contact'), content: "Commander votre site ou design", color: "light", target: "", icon: true} %}
-                    {% include 'main/components/button.html.twig' with {href: "mailto:hello@studiokhi.com", content: "Contactez nous par mail", color: "dark", target: "", icon: true} %}
+                    {% include 'main/components/button.html.twig' with
+                        {
+                            href: path('app_contact'),
+                            content: "Réservez votre appel découverte",
+                            color: "light",
+                            target: "",
+                            icon: true
+                        } %}
+                    {% include 'main/components/button.html.twig' with
+                        {
+                            href: "mailto:hello@studiokhi.com",
+                            content: "Contactez nous par mail",
+                            color: "dark",
+                            target: "",
+                            icon: true} %}
                 </div>
             </div>
             <svg class="footer__logo hide-mobile" viewBox="0 0 169 219" xmlns="http://www.w3.org/2000/svg">

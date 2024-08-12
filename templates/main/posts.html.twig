@@ -15,17 +15,25 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container__large primary-light--bg pt--20 mb--10">
-        <div class="container flex col gap--16 gap-large-mobile align--start">
-            <h1 class="reveal">Articles & Blog</h1>
-            <p class="w--60 w-100-mobile text__l align--self-end">
-                Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre
-                sélection d’articles.
-            </p>
+    <section class="container__large primary-light--bg pt--10 pb--10 flex row align--center">
+        <div class="container">
+            <div class="flex col gap--16 pt--10">
+                <div class="flex col gap--3">
+                    <h1 class="reveal">Articles & Blog</h1>
+                </div>
+                <div class="flex row justify--end">
+                    <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                        <p class="w--80 w-100-mobile text__m">
+                            Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre
+                            sélection d’articles.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="container__large primary-light--bg border--top border--bottom border-stroke-light">
-        <div class="container container__scroll primary-light--bg pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
+        <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
                 <span id="all" class="filter filter--active">
                     Tous les projets
                 </span>
@@ -38,7 +46,7 @@
     </section>
     <section class="container__large container__top primary-light--bg">
         <div class="container flex col gap--16 gap-large-mobile align--start justify--center">
-            <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
+            <div class="grid grid--2 grid-gap--5 row grid--1-mobile w--100">
                 {% for post in posts %}
                     <article
                             class="flex col gap--5 article mb--20 {% for tag in post.tag.toArray %}{{ tag.slug }}{% endfor %}">
@@ -46,7 +54,7 @@
                            aria-label="{{ post.name }}">
                             {% if post.image is not empty %}
                                 <img class="home__img home__img-post"
-                                     src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
+                                     src="{{ asset('uploads/posts/featured/large/') ~ post.image }}"
                                      loading="lazy" alt="{{ post.name }}">
                             {% else %}
                                 <img class="home__img home__img-post"
@@ -55,7 +63,7 @@
                             {% endif %}
                             <div class="absolute pos-t--4 pos-l--4 flex row col-mobile gap--2">
                                 {% for tag in post.tag.toArray %}
-                                    <tag-react data-color="{{ tag.color }}" data-content="{{ tag.name }}"></tag-react>
+                                    <span class="tag tag__{{ tag.color }}">{{ tag.name }}</span>
                                 {% endfor %}
                             </div>
                             <svg class="absolute pos-center" width="125" height="125" viewBox="0 0 125 125" fill="none"
@@ -71,8 +79,16 @@
                             <p class="text__l">
                                 {{ post.name }}
                             </p>
-                            <link-react data-href="{{ path('app_post', {slug: post.slug}) }}" data-border="1"
-                                        data-content="Lire l'article"></link-react>
+                            {% include 'main/components/link.html.twig' with
+                                {
+                                    href: path('app_post', {slug: post.slug}),
+                                    content: "Lire l'article",
+                                    color: "dark",
+                                    target: "",
+                                    icon: false,
+                                    line: true
+                                }
+                            %}
                         </a>
                     </article>
                 {% endfor %}

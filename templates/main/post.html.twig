@@ -71,7 +71,7 @@
                     </h3>
                 </div>
             </div>
-            <div class="grid grid--2 grid-gap--5 row grid--1-mobile">
+            <div class="grid grid--2 grid-gap--5 row grid--1-mobile w--100">
                 {% for post in posts %}
                     <article
                             class="flex col gap--5 article {% for tag in post.tag.toArray %}{{ tag.slug }}{% endfor %}">
@@ -79,7 +79,7 @@
                            aria-label="{{ post.name }}">
                             {% if post.image is not empty %}
                                 <img class="home__img home__img-post"
-                                     src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
+                                     src="{{ asset('uploads/posts/featured/large/') ~ post.image }}"
                                      loading="lazy" alt="{{ post.name }}">
                             {% else %}
                                 <img class="home__img home__img-post"

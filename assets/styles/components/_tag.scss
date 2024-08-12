@@ -6,14 +6,14 @@
     border: 1px solid var(--primary-dark);
     white-space: nowrap;
 
-    font-size: 1.1875vw;
+    font-size: var(--text-m);
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    letter-spacing: -0.03563rem;
+    letter-spacing: -0.03563vw;
 
-    padding: 0.31vw 0.63vw;
+    padding: calc(var(--text-m) / 4) calc(var(--text-m) / 2);
 
     width: fit-content;
     user-select: none;
@@ -33,4 +33,23 @@
         border: none;
         background-color: var(--secondary-beige);
     }
+}
+
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1440px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 834px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 480px) {
+
 }

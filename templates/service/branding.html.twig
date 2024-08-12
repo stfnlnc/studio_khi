@@ -19,7 +19,6 @@
         <div class="container">
             <div class="flex col gap--16 pt--10">
                 <div class="flex col gap--3">
-                    <p class="text__l">01</p>
                     <h1 class="reveal">Branding & <br> Direction Artistique</h1>
                 </div>
                 <div class="flex row justify--end">
@@ -33,7 +32,7 @@
                         {% include 'main/components/button.html.twig' with
                             {
                                 href: path('app_contact'),
-                                content: "Commander votre branding",
+                                content: "Réservez votre appel découverte",
                                 color: "",
                                 target: "",
                                 icon: true}
@@ -145,7 +144,7 @@
         </div>
     </section>
     <section class="container__large border--top border-stroke-light">
-        <div class="container flex col gap--16 align--center justify--center">
+        <div class="container flex col gap--20 align--center justify--center">
             <div class="flex row col-mobile gap-small-mobile">
                 <p class="text__l w--40 w-100-mobile">
                     Notre savoir-faire
@@ -156,7 +155,7 @@
                     </h3>
                 </div>
             </div>
-            <div class="w--100 grid grid--3 grid-gap--11 grid--1-mobile">
+            <div class="w--100 grid grid--3 grid-gap--11 grid--1-mobile mt--10">
                 <div class="flex col gap--5">
                     <p class="text__m">
                         Adobe Designer
@@ -226,7 +225,7 @@
                 {
                     href: path('app_prices'),
                     content: "Accéder aux tarifs",
-                    color: "dark",
+                    color: "",
                     target: "",
                     icon: true}
             %}
@@ -247,62 +246,6 @@
             {% endfor %}
         </div>
     </section>
-    <section class="container__large primary-light primary-dark--bg">
-        <div class="container flex col gap--16">
-            <div class="flex row col-mobile align--end justify--space-between align--center-mobile gap-large-mobile">
-                <h3 class="w--50 w-100-mobile text-center-mobile">Une agence à 360° <br>pour tout votre site</h3>
-                {% include 'main/components/button.html.twig' with
-                    {
-                        href: path('app_contact'),
-                        content: "Contacter le studio",
-                        color: "light",
-                        target: "",
-                        icon: true}
-                %}
-            </div>
-            <div class="w--100 grid grid--3 grid-gap--11 hide-mobile">
-                <div class="flex col gap--5">
-                    <p class="text__m">
-                        01 <br>
-                        <span class="text__l">
-                            Branding & <br>
-                            Direction Artistique
-                        </span>
-                    </p>
-                    <p class="primary-grey text__s">
-                        Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web
-                        pour renforcer votre présence en ligne.
-                    </p>
-                </div>
-                <div class="flex col gap--5">
-                    <p class="text__m">
-                        02 <br>
-                        <span class="text__l">
-                            Webdesign & <br>
-                            Design Digital
-                        </span>
-                    </p>
-                    <p class="primary-grey text__s">
-                        La phase de design sur Figma permet de créer une maquette de site web qui répond à vos attentes
-                        tout en proposant une expérience utilisateur optimale.
-                    </p>
-                </div>
-                <div class="flex col gap--5">
-                    <p class="text__m">
-                        03 <br>
-                        <span class="text__l">
-                            Développement Web & <br>
-                            Sites Sur Mesure
-                        </span>
-                    </p>
-                    <p class="primary-grey text__s">
-                        Nous développons votre site en langage web, identique à la maquette, tout en respectant les
-                        meilleures pratiques du web.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="container__large secondary-green--bg">
         <div class="container flex col align--center justify--center gap--11 text-center">
             <h2 class="w--70 w-100-mobile">
@@ -311,8 +254,8 @@
             {% include 'main/components/button.html.twig' with
                 {
                     href: path('app_contact'),
-                    content: "Demandez votre devis",
-                    color: "dark",
+                    content: "Réservez votre appel découverte",
+                    color: "",
                     target: "",
                     icon: true}
             %}

@@ -5,7 +5,7 @@
     border-radius: unset;
 
     font-family: "Inter", sans-serif;
-    font-size: 1.1875vw;
+    font-size: var(--text-m);
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -16,13 +16,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 8.4375rem;
+    gap: calc(var(--text-m) * 7);
 
     width: fit-content;
     transition: background-color var(--hover-duration), color var(--hover-duration), border var(--hover-duration);
     &__icon {
-        width: 1.125vw;
-        height: 1.125vw;
+        width: var(--text-m);
+        height: var(--text-m);
         fill: none;
         stroke: var(--primary-dark);
         transition: stroke var(--hover-duration);
@@ -62,8 +62,21 @@
     }
 }
 
-@media screen and (max-width: 870px) {
-    .link {
-        font-size: 1rem;
-    }
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1440px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 834px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 480px) {
+
 }

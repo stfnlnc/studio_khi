@@ -17,6 +17,7 @@ class ServiceController extends AbstractController
 
         return $this->render('service/branding.html.twig', [
             'faqs' => $faqs,
+            'footer' => true
         ]);
     }
 
@@ -27,6 +28,7 @@ class ServiceController extends AbstractController
 
         return $this->render('service/webdesign.html.twig', [
             'faqs' => $faqs,
+            'footer' => true
         ]);
     }
 
@@ -37,6 +39,7 @@ class ServiceController extends AbstractController
 
         return $this->render('service/development.html.twig', [
             'faqs' => $faqs,
+            'footer' => true
         ]);
     }
 }

@@ -15,19 +15,19 @@
 {% endblock %}
 
 {% block body %}
-    <section id="top-content" class="container__large h--100 flex row">
-        <div class="w--100 container__top flex col align--center justify--space-between relative">
+    <section id="top-content" class="container__large  flex row pb--10">
+        <div class="w--100 flex col align--center justify--space-between h--100 h-100-mobile">
             <div></div>
-            <div class="container mt--10 pb--0 flex col w--100 align--center gap--4">
+            <div class="container mt--10 pb--0 flex col w--100 align--center gap--8">
                 {% include 'main/components/button.html.twig' with
                     {
                         href: path('app_contact'),
-                        content: "Commencer votre projet",
-                        color: "dark",
+                        content: "Réservez votre appel découverte",
+                        color: "",
                         target: "",
                         icon: true} %}
-                <p class="title-delay w--70 text-center w-100-mobile text__l">
-                    Studio Khi est un studio indépendant qui conçoit des sites et des designs sur mesure pour des
+                <p class="title-delay w--50 text-center w-100-mobile text__m">
+                    Nous créons des sites et des designs pour des
                     marques et des entrepreneurs qui souhaitent se démarquer sur le web.
                 </p>
             </div>
@@ -47,33 +47,28 @@
             </svg>
         </div>
     </section>
-    <section class="container__large primary-light--bg">
+    <section class="container__large primary-light--bg border--top border-stroke-light">
         <div class="container flex row col-mobile gap-small-mobile">
             <p class="text__l w--40 w-100-mobile">
                 Notre approche
             </p>
-            <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+            <div class="w--50 w-100-mobile flex col align--start justify--start gap--11">
                 <h3 class="">
-                    Combiner design et développement web pour créer des marques et des sites que l’on remarque.
+                    On vous accompagne pour que vous ne ressembliez à personne.
                 </h3>
-                <p class="w--80 w-100-mobile primary-grey text__m">
-                    Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une
-                    opportunité d'établir une présence en ligne distinctive et mémorable. Nous croyons en la puissance
-                    du
-                    design sur mesure pour façonner des expériences numériques uniques qui captivent les utilisateurs et
-                    amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque détail compte, le
-                    design
-                    n'est plus juste une option, mais une nécessité pour se démarquer.
+                <p class="w-100-mobile primary-grey text__m">
+                    Chez Studio Khi, nous combinons stratégie digitale, design et développement web pour créer des identités de marque et des sites que l'on remarque.
                     <br><br>
-                    Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir
-                    des
-                    outils à la fois créatifs, intuitifs et performants.
+                    Nous vous aidons à :<br>
+                    Définir votre positionnement <br>
+                    Créer une identité forte <br>
+                    Déployer un site orienté design
                 </p>
                 <div class="flex col align--start justify--start gap--2">
                     {% include 'main/components/link.html.twig' with
                         {
-                            href: "#branding",
-                            content: "Découvrir nos services",
+                            href: path('app_studio'),
+                            content: "Découvrir le studio",
                             color: "dark",
                             target: "",
                             icon: true,
@@ -92,29 +87,17 @@
             </div>
         </div>
     </section>
-    <section id="service-1" class="container__large secondary-green--bg h--100">
-        <div class="container">
-            <div class="flex col gap--16">
+    <section id="service-1" class="container__large secondary-green--bg h--100 h-100-mobile">
+        <div class="container flex col justify--center">
+            <div class="flex col gap--20">
                 <div class="flex col gap--3">
-                    <p class="text__l">01</p>
                     <h1 class="">Branding & <br> Direction Artistique</h1>
                 </div>
                 <div class="flex row justify--end">
-                    <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                    <div class="w--60 w-100-mobile flex col align--start justify--start gap--10">
                         <p class="w--80 w-100-mobile primary-grey text__m">
-                            Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos
-                            valeurs et votre discours. Du logo à la charte graphique, nous élaborons ensemble une
-                            image
-                            qui vous ressemble pour renforcer votre présence en ligne.
+                            Du logo à un système graphique audacieux, nous élaborons ensemble une image qui vous ressemble pour renforcer votre présence en ligne.
                         </p>
-                        {# <p class="text__s">
-                            Moodboards -
-                            Logo <br>
-                            Identité Visuelle -
-                            Charte Graphique <br>
-                            Design Réseaux Sociaux -
-                            Pitchdeck
-                        </p> #}
                         {% include 'main/components/link.html.twig' with
                             {
                                 href: path('app_service_branding'),
@@ -129,30 +112,18 @@
             </div>
         </div>
     </section>
-    <section id="service-2" class="container__large secondary-blue--bg h--100">
-        <div class="container">
-            <div class="flex col gap--16">
+    <section id="service-2" class="container__large secondary-blue--bg h--100 h-100-mobile">
+        <div class="container flex col justify--center">
+            <div class="flex col gap--20">
                 <div class="flex col gap--3">
-                    <p class="text__l">02</p>
                     <h1 class="">Webdesign & <br> Design Digital</h1>
                 </div>
                 <div class="flex row justify--end">
-                    <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                    <div class="w--60 w-100-mobile flex col align--start justify--start gap--10">
                         <p class="w--80 w-100-mobile primary-grey text__m">
                             Nous sommes spécialisés dans la conception de sites web qui attirent et retiennent
-                            l'attention. Nous créons des designs web élégants et nous veillons à ce que
-                            l'architecture
-                            soit claire, logique et intuitive pour les utilisateurs. Notre approche est de trouver
-                            le
-                            juste équilibre entre beauté et fonctionnalité.
+                            l'attention. Notre approche est de trouver le juste équilibre entre beauté et fonctionnalité.
                         </p>
-                        {# <p class=" text__s">
-                            Webdesign -
-                            UX & UI Design <br>
-                            Wireframe -
-                            Maquettes & Prototypes <br>
-                            Design System
-                        </p> #}
                         {% include 'main/components/link.html.twig' with
                             {
                                 href: path('app_service_webdesign'),
@@ -167,31 +138,19 @@
             </div>
         </div>
     </section>
-    <section id="service-3" class="container__large secondary-violet--bg h--100">
-        <div class="container">
-            <div class="flex col gap--16">
+    <section id="service-3" class="container__large secondary-violet--bg h--100 h-100-mobile">
+        <div class="container flex col justify--center">
+            <div class="flex col gap--20">
                 <div class="flex col gap--3">
-                    <p class="text__l">03</p>
                     <h1 class="">Développement Web & <br> Sites Sur Mesure</h1>
                 </div>
                 <div class="flex row justify--end">
-                    <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                    <div class="w--60 w-100-mobile flex col align--start justify--start gap--10">
                         <p class="w--80 w-100-mobile primary-grey text__m">
                             Nous développons des sites web sur mesure qui rehaussent la présence en ligne de votre
                             marque. Grâce à notre expertise technique, nous transformons vos idées en réalité
                             digitale.
-                            Avec nous, votre site sera fonctionnel, sécurisé, performant et parfaitement adapté à
-                            vos
-                            besoins.
                         </p>
-                        {# <p class="text__s">
-                            Site Vitrine -
-                            Site E-Commerce <br>
-                            Front-end & Back-end -
-                            Fonctionnalités Sur Mesure <br>
-                            SEO & Référencement naturel -
-                            Formation & Maintenance
-                        </p> #}
                         {% include 'main/components/link.html.twig' with
                             {
                                 href: path('app_service_development'),
@@ -229,7 +188,7 @@
                         {% if project.image is not empty %}
                             <div class="overflow-hidden home__img">
                                 <img class="home__img home__img-case"
-                                     src="{{ asset('uploads/projects/featured/large/') ~ project.image }}"
+                                     src="{{ asset('uploads/projects/featured/full/') ~ project.image }}"
                                      loading="lazy"
                                      alt="{{ project.name }}">
                             </div>
@@ -254,14 +213,14 @@
                         </svg>
                     </a>
                     <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex row col-mobile">
-                        <p class="text__l w--40 w-100-mobile">
+                        <p class="text__s w--40 w-100-mobile">
                             {{ project.name }}
                         </p>
                         <div class="w--60 w-100-mobile flex row col-mobile align--start justify--space-between gap--4">
-                            <p class="w--80 w-100-mobile primary-grey text__m">
+                            <p class="w--80 w-100-mobile primary-grey text__s">
                                 {{ project.excerpt }}
                             </p>
-                            <p class="text__m">{{ project.category }}</p>
+                            <p class="text__s">{{ project.category }}</p>
                         </div>
                     </a>
                 </article>
@@ -280,20 +239,6 @@
         </div>
     </section>
     {% include 'main/template-part/_process.html.twig' %}
-    <section class="container__large secondary-beige--bg">
-        <div class="container flex col align--center justify--center gap--11 text-center">
-            <h2 class="w--70 w-100-mobile">
-                Vous souhaitez recevoir un devis sur mesure ?
-            </h2>
-            {% include 'main/components/button.html.twig' with
-                {
-                    href: path('app_contact'),
-                    content: "Contactez-nous",
-                    color: "dark",
-                    target: "",
-                    icon: true} %}
-        </div>
-    </section>
     <section class="container flex col gap--16">
         <div class="flex row col-mobile gap-small-mobile">
             <p class="text__l w--40 w-100-mobile">
@@ -305,11 +250,7 @@
                 </h3>
                 <p class="w--80 w-100-mobile primary-grey text__m">
                     Derrière Studio Khi, nous sommes deux : une designer et un développeur. Nous avons rassemblé nos
-                    compétences afin de vous proposer une expertise complète au service de votre marque : du design
-                    d’identité visuelle à la création de votre site internet sur mesure.
-                    <br><br>
-                    Nous sommes une petite équipe passionnée qui se consacre entièrement à vos projets. Nous croyons
-                    fermement à la simplicité et aux choix audacieux pour rendre votre marque unique et mémorable.
+                    compétences afin de vous proposer une expertise complète au service de votre marque.
                 </p>
                 <div class="flex col align--start justify--start gap--2">
                     {% include 'main/components/link.html.twig' with
@@ -324,75 +265,18 @@
                 </div>
             </div>
         </div>
-        <div class="flex row gap--4 hide-mobile">
-            <div class="w--40">
+        <div class="flex row col-mobile gap--4">
+            <div class="w--40 w-100-mobile">
                 <img src="{{ asset('build/images/uploads/studio-1.webp') }}"
                      class="home__img home__img-studio-left" loading="lazy" alt="Le Studio">
             </div>
-            <div class="w--60">
+            <div class="w--60 w-100-mobile">
                 <img src="{{ asset('build/images/uploads/studio-2.webp') }}"
                      class="home__img home__img-studio-right" loading="lazy" alt="Le Studio">
             </div>
         </div>
     </section>
-    <section class="container__large border--top border-stroke-light flex col align--center justify--center">
-        <div class="container flex col gap--16">
-            <div class="flex row col-mobile gap-large-mobile">
-                <p class="text__l w--40 w-100-mobile">
-                    Nos clients
-                </p>
-                <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
-                    <p class="w--80 w-100-mobile primary-grey text__m">
-                        Nous avons eu la chance de travailler sur des projets passionnants et nous cherchons à former
-                        des partenariats créatifs et durables avec tous nos clients.
-                        <br><br>
-                        Ne vous contentez pas de nous croire sur parole. Voici ce que nos clients disent de nous.
-                    </p>
-                    {% include 'main/components/link.html.twig' with
-                        {
-                            href: "https://maps.app.goo.gl/7Y5c5KVU7YQsAJdGA",
-                            content: "Lire tous les avis",
-                            color: "dark",
-                            target: "_blank",
-                            icon: true,
-                            line: true
-                        } %}
-                </div>
-            </div>
-        </div>
-        <div class="container container__scroll p--10 pt--0 pb--20 flex row align--center justify--center justify--start-mobile gap--5">
-            <div class="flex row gap--5 w-fit-content">
-                {% for review in reviews %}
-                    <card class="flex col gap--2">
-                        <div class="flex row gap--1">
-                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
-                            </svg>
-                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
-                            </svg>
-                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
-                            </svg>
-                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
-                            </svg>
-                            <svg class="star" viewBox="0 0 13 12" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.70984 0.385452C5.92622 -0.128484 6.66318 -0.128484 6.87955 0.385453L8.1566 3.4188C8.24787 3.63546 8.45413 3.7835 8.69088 3.80225L12.0057 4.06479C12.5673 4.10927 12.795 4.80168 12.3671 5.16379L9.84162 7.30101C9.66124 7.45369 9.58242 7.69324 9.63753 7.92146L10.4091 11.1171C10.5398 11.6585 9.94367 12.0865 9.46282 11.7963L6.62488 10.0838C6.42217 9.9615 6.16723 9.9615 5.96453 10.0838L3.12657 11.7963C2.64573 12.0865 2.04953 11.6585 2.18025 11.1171L2.95185 7.92146C3.00696 7.69324 2.92818 7.45369 2.7478 7.30101L0.222242 5.16379C-0.205659 4.80168 0.0220742 4.10927 0.583702 4.06479L3.89853 3.80225C4.1353 3.7835 4.34155 3.63546 4.43277 3.4188L5.70984 0.385452Z"/>
-                            </svg>
-                        </div>
-                        <p class="text__s">
-                            {{ review.name }} <br>
-                            <span class="primary-grey">{{ review.subtitle }}</span>
-                        </p>
-                        <p class="text__s mt--4">
-                            “ {{ review.description }} ”
-                        </p>
-                    </card>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+    {% include('main/template-part/_review.html.twig') %}
     <section class="container__large primary-light primary-dark--bg">
         <div class="container flex col gap--16 gap-large-mobile align--center justify--center">
             <div class="flex row col-mobile w--100">
@@ -412,9 +296,9 @@
                         <a class="relative" href="{{ path('app_post', {slug: post.slug}) }}"
                            aria-label="{{ post.name }}">
                             {% if post.image is not empty %}
-                                <div>
+                                <div class="overflow-hidden home__img home__img-post">
                                     <img class="home__img home__img-post"
-                                         src="{{ asset('uploads/posts/featured/medium/') ~ post.image }}"
+                                         src="{{ asset('uploads/posts/featured/large/') ~ post.image }}"
                                          loading="lazy" alt="{{ post.name }}">
                                 </div>
                             {% else %}

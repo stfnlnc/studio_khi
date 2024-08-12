@@ -15,18 +15,26 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container__large primary-light--bg pt--20">
-        <div class="container flex col gap--16 gap-large-mobile align--start">
-            <h1 class="reveal">Nos Réalisations</h1>
-            <p class="w--60 w-100-mobile text__l align--self-end">
-                Découvrez une série de projets sur lesquels nous avons travaillé, allant de la création d'identités
-                visuelles à la conception de sites web. Chaque projet est une histoire à part entière, reflétant notre
-                passion pour le design et notre volonté de satisfaire nos clients.
-            </p>
+    <section class="container__large primary-light--bg pt--10 pb--10 flex row align--center">
+        <div class="container">
+            <div class="flex col gap--16 pt--10">
+                <div class="flex col gap--3">
+                    <h1 class="reveal">Nos Réalisations</h1>
+                </div>
+                <div class="flex row justify--end">
+                    <div class="w--60 w-100-mobile flex col align--start justify--start gap--11">
+                        <p class="w--80 w-100-mobile text__m">
+                            Découvrez une série de projets sur lesquels nous avons travaillé, allant de la création d'identités
+                            visuelles à la conception de sites web. Chaque projet est une histoire à part entière, reflétant notre
+                            passion pour le design et notre volonté de satisfaire nos clients.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="container__large primary-light--bg border--top border--bottom border-stroke-light">
-        <div class="container container__scroll primary-light--bg pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
+        <div class="container container__scroll pt--11 pb--11 flex row align--center justify--center justify--start-mobile gap--5">
                 <span id="all" class="filter filter--active">
                     Tous les projets
                 </span>
@@ -70,18 +78,18 @@
                         </a>
                         <a href="{{ path('app_show', {'slug': project.slug}) }}" class="flex col gap--3">
                             <div class="flex row align--end justify--space-between">
-                                <p class="text__l">
+                                <p class="text__s">
                                     {{ project.name }}
                                 </p>
-                                <p class="text__m hide-mobile">
+                                <p class="text__s hide-mobile">
                                     {{ project.category }}
                                 </p>
                             </div>
                             <div class="flex col align--start justify--start gap--4">
-                                <p class="primary-grey text__m">
+                                <p class="primary-grey text__s">
                                     {{ project.excerpt }}
                                 </p>
-                                <p class="text__m display-mobile">
+                                <p class="text__s display-mobile">
                                     {{ project.category }}
                                 </p>
                             </div>

@@ -13,10 +13,36 @@ card {
     height: 12px;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1440px) {
+    card {
+        width: 30vw;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 870px) {
     card {
         width: 350px;
-        height: 420px;
+        height: auto;
         padding: 30px;
     }
+}
+
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1440px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 834px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 480px) {
+
 }

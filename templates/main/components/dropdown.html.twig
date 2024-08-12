@@ -1,8 +1,7 @@
-<div class="dropdown flex col align--center justify--center">
-    <div class="dropdown__menu primary-light flex row align--start justify--space-between mt--10">
+<div class="dropdown dropdown--active flex col align--center justify--center">
+    <div class="dropdown__menu primary-light flex row align--start justify--center gap--16 mt--10">
         <div class="flex col gap--5">
             <div class="flex col">
-                <p class="text__m">01</p>
                 {% include 'main/components/link.html.twig' with
                     {
                         href: path('app_service_branding'),
@@ -27,7 +26,6 @@
         </div>
         <div class="flex col gap--5">
             <div class="flex col">
-                <p class="text__m">02</p>
                 {% include 'main/components/link.html.twig' with
                     {
                         href: path('app_service_webdesign'),
@@ -51,7 +49,6 @@
         </div>
         <div class="flex col gap--5">
             <div class="flex col">
-                <p class="text__m">03</p>
                 {% include 'main/components/link.html.twig' with
                     {
                         href: path('app_service_development'),

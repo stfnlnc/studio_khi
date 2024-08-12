@@ -40,6 +40,7 @@ class MainController extends AbstractController
             'faqs' => $faqs,
             'posts' => $posts,
             'reviews' => $reviews,
+            'footer' => true
         ]);
     }
 
@@ -51,7 +52,8 @@ class MainController extends AbstractController
 
         return $this->render('main/studio.html.twig', [
             'reviews' => $reviews,
-            'faqs' => $faqs
+            'faqs' => $faqs,
+            'footer' => true
         ]);
     }
 
@@ -70,6 +72,7 @@ class MainController extends AbstractController
         return $this->render('main/projects.html.twig', [
             'projects' => $projects,
             'tags' => $tags,
+            'footer' => true
         ]);
     }
 
@@ -81,6 +84,7 @@ class MainController extends AbstractController
         return $this->render('main/show.html.twig', [
             'project' => $project,
             'projects' => $projects,
+            'footer' => true
         ]);
     }
 
@@ -93,6 +97,7 @@ class MainController extends AbstractController
         return $this->render('main/posts.html.twig', [
             'posts' => $posts,
             'tags' => $tags,
+            'footer' => true
         ]);
     }
 
@@ -104,6 +109,7 @@ class MainController extends AbstractController
         return $this->render('main/post.html.twig', [
             'post' => $post,
             'posts' => $posts,
+            'footer' => true
         ]);
     }
 
@@ -114,6 +120,7 @@ class MainController extends AbstractController
 
         return $this->render('main/faq.html.twig', [
             'faqs' => $faqs,
+            'footer' => true
         ]);
     }
 
@@ -147,6 +154,7 @@ class MainController extends AbstractController
 
         return $this->render('main/contact.html.twig', [
             'form' => $form,
+            'footer' => false
         ]);
     }
 
@@ -155,7 +163,8 @@ class MainController extends AbstractController
     {
         $legal = $legalRepository->findOneBy(['id' => 1]);
         return $this->render('legal/legal-notice.html.twig', [
-            'legal' => $legal
+            'legal' => $legal,
+            'footer' => true
         ]);
     }
 
@@ -164,7 +173,8 @@ class MainController extends AbstractController
     {
         $legal = $legalRepository->findOneBy(['id' => 1]);
         return $this->render('legal/privacy-policy.html.twig', [
-            'legal' => $legal
+            'legal' => $legal,
+            'footer' => true
         ]);
     }
 
@@ -173,15 +183,8 @@ class MainController extends AbstractController
     {
         $legal = $legalRepository->findOneBy(['id' => 1]);
         return $this->render('legal/cookies.html.twig', [
-            'legal' => $legal
+            'legal' => $legal,
+            'footer' => true
         ]);
-    }
-
-    #[Route(name: 'set_cookie')]
-    public function setCookie(Request $request): void
-    {
-        $cookie = new Cookie('TestCookie2', 'titi', time() + 60, '/', null, false, false);
-        $response->headers->setCookie($cookie);
-
     }
 }

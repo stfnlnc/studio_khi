@@ -1,5 +1,5 @@
 .footer {
-    z-index: 10;
+    z-index: 1;
     width: 100%;
     height: fit-content;
     transition: filter var(--dropdown-duration) var(--dropdown-cubic);
@@ -28,6 +28,21 @@
     }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1440px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 834px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 480px) {
 
 }
