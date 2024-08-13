@@ -124,12 +124,6 @@ p > a {
         --text-m: 1.1rem;
         --text-l: 1.5rem;
     }
-
-    #cookies {
-        bottom: 30px;
-        right: 30px;
-    }
-
 }
 @media screen and (max-width: 1024px) {
     :root {
@@ -149,6 +143,11 @@ p > a {
     }
     .display-mobile {
         display: block;
+    }
+
+    #cookies {
+        bottom: 10px;
+        right: 10px;
     }
 }
 @media screen and (max-width: 768px) {

@@ -41,5 +41,21 @@ $pos: ("t": top, "b": bottom, "l": left, "r": right);
                 border-#{$p}: 1px solid;
             }
         }
+        &-dark {
+            border-color: var(--primary-dark);
+        }
+        &-light {
+            border-color: var(--primary-light);
+        }
+        &-grey {
+            border-color: var(--primary-grey);
+        }
+        &-stroke-dark {
+            border-color: var(--stroke-dark);
+        }
+        &-stroke-light {
+            border-color: var(--stroke-light);
+        }
     }
+
 }

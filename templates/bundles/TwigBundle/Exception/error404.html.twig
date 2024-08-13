@@ -10,15 +10,14 @@
 
 {% block body %}
 
-    <section class="container__large">
-        <div class="container flex col gap--1 mt--16">
-            <h1>404</h1>
-            <p>Oups, on s'est trompé de chemin</p>
-            {% include 'main/components/link.html.twig' with
+    <section class="container__large container__top primary-light primary-dark--bg">
+        <div class="container flex col gap--16 mt--16">
+            <h1 class="w--70 w-100-mobile">Oups ! On dirait que vous vous êtes trompés de chemin...</h1>
+            {% include 'main/components/button.html.twig' with
                 {
                     href: path('app_index'),
-                    content: "Retourner sur le site",
-                    color: "dark",
+                    content: "Revenir au site",
+                    color: "light",
                     target: "",
                     icon: true,
                     line: true

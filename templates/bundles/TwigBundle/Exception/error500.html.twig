@@ -10,11 +10,18 @@
 
 {% block body %}
 
-    <section class="container__large">
-        <div class="container flex col gap--1 mt--16">
-            <h1>Erreur 500</h1>
-            <p>Merci de contacter l'administrateur du site</p>
-            <p>hello@studiokhi.com</p>
+    <section class="container__large container__top primary-light primary-dark--bg">
+        <div class="container flex col gap--16 mt--16">
+            <h1 class="w--70 w-100-mobile">Erreur 500</h1>
+            {% include 'main/components/button.html.twig' with
+                {
+                    href: "mailto:hello@studiokhi.com",
+                    content: "Contacter l'administrateur du site",
+                    color: "light",
+                    target: "",
+                    icon: true,
+                    line: true
+                } %}
         </div>
     </section>
 
