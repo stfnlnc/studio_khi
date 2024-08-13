@@ -93,7 +93,9 @@ class MainController extends AbstractController
     #[Route('/tarifs', name: 'prices')]
     public function prices(): Response
     {
-        return $this->render('main/prices.html.twig');
+        return $this->render('main/prices.html.twig', [
+            'footer' => true
+        ]);
     }
 
     #[Route('/realisations', name: 'projects')]

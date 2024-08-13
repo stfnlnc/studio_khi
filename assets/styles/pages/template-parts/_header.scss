@@ -35,41 +35,33 @@
     z-index: -5;
 }
 
-@media screen and (max-width: 1440px) {
-    .header {
-        &__logo {
-            width: 10.3725rem;
-            height: 1.28938rem;
-        }
-        &__gap {
-            height: 89px;
-        }
-    }
-}
-
-@media screen and (max-width: 870px) {
-    .header {
-        &__logo {
-            width: 10.3725rem;
-            height: 1.28938rem;
-        }
-        &__gap {
-            height: 89px;
-        }
-    }
-}
-
 @media screen and (max-width: 1920px) {
 
 }
 @media screen and (max-width: 1440px) {
-
+    .header {
+        &__logo {
+            width: 10.3725rem;
+            height: 1.28938rem;
+        }
+        &__gap {
+            height: 89px;
+        }
+    }
 }
 @media screen and (max-width: 1024px) {
 
 }
 @media screen and (max-width: 834px) {
-
+    .header {
+        &__logo {
+            width: 10.3725rem;
+            height: 1.28938rem;
+        }
+        &__gap {
+            height: 89px;
+        }
+    }
 }
 @media screen and (max-width: 768px) {
 

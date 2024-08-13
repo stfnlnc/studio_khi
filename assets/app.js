@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let mm = gsap.matchMedia();
 
 // add a media query. When it matches, the associated function will run
-        mm.add("(min-width: 1080px)", () => {
+        mm.add("(min-width: 834px)", () => {
             topContent()
             topImage()
             revealFooter()
